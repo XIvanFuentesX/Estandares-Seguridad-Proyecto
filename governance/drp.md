@@ -1,6 +1,6 @@
 # Disaster Recovery Plan (DRP) — laboratorio UVCG
 
-Generado: 2026-11-07T11:23:29-06:00. Borrador académico pendiente de aprobación y de infraestructura alterna. Deriva de `bia.md` y `bcp.md`.
+Generado: 2026-11-07T13:09:47-06:00. Borrador académico pendiente de aprobación y de infraestructura alterna. Deriva de `bia.md` y `bcp.md`.
 
 ## 1. Dependencias y orden de recuperación
 

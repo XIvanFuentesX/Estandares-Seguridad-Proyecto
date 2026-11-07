@@ -1,6 +1,6 @@
 # Plan de tratamiento de riesgos
 
-Generado: 2026-11-07T11:23:29-06:00. Plazos y responsables son propuestas académicas pendientes de aprobación. Toda referencia ISO corresponde a un control presente en la SoA (`declaracion-aplicabilidad.csv`).
+Generado: 2026-11-07T13:09:47-06:00. Plazos y responsables son propuestas académicas pendientes de aprobación. Toda referencia ISO corresponde a un control presente en la SoA (`declaracion-aplicabilidad.csv`).
 
 | riesgo_id | estrategia | control_propuesto | referencia_iso_27001_27002_2022 | responsable | prioridad | plazo_academico | estado | evidencia | riesgo_residual_esperado |
 |---|---|---|---|---|---|---|---|---|---|
@@ -20,7 +20,7 @@ Generado: 2026-11-07T11:23:29-06:00. Plazos y responsables son propuestas acadé
 | R-014 | Transferir/Mitigar | Seguro, sitio alterno, energía y copia externa | A.7.5; A.7.11; A.5.30 | Administración/TI | Alta | 12 meses | Pendiente | governance/bcp.md | 8 Moderado |
 | R-015 | Mitigar | Restringir ACL de .env (propuesto CHG-005), Vault/rotación y separación de funciones | A.5.17; A.8.24; A.8.3 | Seguridad TI | Alta | 180 días | Parcial; ACL pendiente de autorización | governance/registros-operativos.md | 4 Bajo |
 | R-016 | Mitigar | PAM, revisión de eventos admin y doble control | A.5.3; A.8.2; A.8.15 | IAM/Auditoría | Alta | 180 días | Parcial | local/identity/uvcg-realm.json | 6 Moderado |
-| R-017 | Evitar hasta aprobación | No desplegar; revisar plan, costos y guardrails | A.5.23; A.8.9; A.8.20 | Cloud/DevSecOps | Alta | Antes de despliegue | Preparado | aws/main.tf | 6 Moderado |
+| R-017 | Mitigar | Compuerta de plan, pruebas post-despliegue y presupuesto de gasto cero en cada cambio | A.5.23; A.8.9; A.8.20 | Cloud/DevSecOps | Alta | Cada despliegue | Implementado (desplegado y probado) | evidencias/aws/pruebas-aws-20261107-130835.json | 6 Moderado |
 | R-018 | Transferir/Mitigar | Due diligence, SLA, seguridad contractual y salida | A.5.19; A.5.20; A.5.21; A.5.22; A.5.23 | Compras/Legal/TI | Alta | Antes de contratar | Pendiente | governance/declaracion-aplicabilidad.md | 8 Moderado |
 | R-019 | Mitigar | Archivado WAL/PITR (archive_timeout 900 s académico, 60 s identidad) en las bases principales | A.8.13; A.5.30 | DBA/Continuidad | Alta | Al autorizar | Validado en réplicas; activación pendiente de autorización | local/compose.pitr.yaml | 4 Bajo |
 | R-020 | Mitigar | Revisión del plan con revisar_plan.py, presupuesto con alertas y desactivación segura | A.5.23; A.8.32 | Responsable SGSI | Alta | Antes de cada apply | Preparado | aws/scripts/revisar_plan.py | 6 Moderado |

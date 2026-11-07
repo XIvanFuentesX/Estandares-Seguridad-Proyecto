@@ -1,0 +1,74 @@
+﻿{
+    "timestamp":  "2026-11-07T13:08:53.3406127-06:00",
+    "bucket":  "uvcg-sgsi-lab-005465454685-us-east-2",
+    "resultados":  [
+                       {
+                           "prueba":  "PT-AWS-01 bucket existe",
+                           "estado":  "exitoso",
+                           "detalle":  "uvcg-sgsi-lab-005465454685-us-east-2"
+                       },
+                       {
+                           "prueba":  "PT-AWS-02 bloqueo de acceso público",
+                           "estado":  "exitoso",
+                           "detalle":  "{\"BlockPublicAcls\":true,\"IgnorePublicAcls\":true,\"BlockPublicPolicy\":true,\"RestrictPublicBuckets\":true}"
+                       },
+                       {
+                           "prueba":  "PT-AWS-03 cifrado por defecto SSE-S3",
+                           "estado":  "exitoso",
+                           "detalle":  "AES256"
+                       },
+                       {
+                           "prueba":  "PT-AWS-04 carga por HTTPS con rol de carga",
+                           "estado":  "exitoso",
+                           "detalle":  "laboratorio/prueba-20261107-130835.txt"
+                       },
+                       {
+                           "prueba":  "PT-AWS-05 integridad SHA-256 y SSE en reposo",
+                           "estado":  "exitoso",
+                           "detalle":  "sha256=c96fe61d9a70073c9c8eda5065be2bb8bc70ca39267186e4ec563e6ae5470f52 sse=AES256"
+                       },
+                       {
+                           "prueba":  "PT-AWS-06 carga fuera de prefijo denegada",
+                           "estado":  "exitoso",
+                           "detalle":  "otro-prefijo/"
+                       },
+                       {
+                           "prueba":  "PT-AWS-07 borrado denegado al rol de carga",
+                           "estado":  "exitoso",
+                           "detalle":  "s3:DeleteObject"
+                       },
+                       {
+                           "prueba":  "PT-AWS-08 transporte sin TLS denegado",
+                           "estado":  "exitoso",
+                           "detalle":  "aws:SecureTransport=false"
+                       },
+                       {
+                           "prueba":  "PT-AWS-09 auditor sin acceso a objetos",
+                           "estado":  "exitoso",
+                           "detalle":  "s3:GetObject denegado"
+                       },
+                       {
+                           "prueba":  "PT-AWS-10 auditor lee la configuración",
+                           "estado":  "exitoso",
+                           "detalle":  "s3:GetBucketPolicy"
+                       },
+                       {
+                           "prueba":  "PT-AWS-11 acceso anónimo denegado",
+                           "estado":  "exitoso",
+                           "detalle":  "HTTP 403"
+                       },
+                       {
+                           "prueba":  "PT-AWS-12 eventos AssumeRole registrados en CloudTrail",
+                           "estado":  "exitoso",
+                           "detalle":  "eventos=5 (puede tardar hasta 15 min)"
+                       },
+                       {
+                           "prueba":  "PT-AWS-13 cuenta sigue en plan FREE",
+                           "estado":  "exitoso",
+                           "detalle":  "creditos=120.0"
+                       }
+                   ],
+    "exitosos":  13,
+    "fallidos":  0,
+    "nota":  "Transferencia por Internet con TLS e identidad temporal; NO equivale a una VPN híbrida privada."
+}

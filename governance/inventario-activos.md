@@ -1,12 +1,12 @@
 # Inventario de activos del SGSI UVCG
 
-Generado: 2026-11-07T11:23:29-06:00. Supuestos académicos pendientes de validación y aprobación por responsables institucionales; no provienen de entrevistas ni de datos financieros reales.
+Generado: 2026-11-07T13:09:47-06:00. Supuestos académicos pendientes de validación y aprobación por responsables institucionales; no provienen de entrevistas ni de datos financieros reales.
 
 Escala CIA: 1 insignificante, 2 baja, 3 moderada, 4 alta, 5 crítica. Criticidad del activo = máximo de C/I/A, ajustado por dependencia transversal.
 
 Clasificación por estado real: **Implementado** = existe y se prueba en el laboratorio; **Planificado** = diseñado o requerido, sin despliegue; **Académico no implementado** = sólo forma parte del escenario universitario.
 
-Resumen: Académico no implementado: 3; Implementado: 18; Planificado: 12.
+Resumen: Académico no implementado: 3; Implementado: 21; Parcial (S3, IAM y presupuesto desplegados; VPC diseñada): 1; Parcial (historial CloudTrail activo; GuardDuty/Security Hub diseñados): 1; Planificado: 7.
 
 | id | activo | tipo | propietario | custodio | ubicacion | informacion_procesada | confidencialidad_1_5 | integridad_1_5 | disponibilidad_1_5 | criticidad | dependencias | estado_real |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -24,7 +24,7 @@ Resumen: Académico no implementado: 3; Implementado: 18; Planificado: 12.
 | ACT-012 | Código y configuración SGSI | Software/Información | TI UVCG | DevSecOps | Workspace local | Código, Compose, Terraform y políticas | 4 | 5 | 4 | Alta | ACT-001; control de versiones futuro | Implementado |
 | ACT-013 | Certificado y clave TLS de laboratorio | Criptográfico | Seguridad TI | TI Infraestructura | Host/volumen TLS | Identidad TLS autofirmada del laboratorio | 5 | 5 | 4 | Alta | ACT-004; ACT-011 | Implementado laboratorio |
 | ACT-014 | Evidencias técnicas y documentos SGSI | Información | Responsable SGSI | Equipo del proyecto | Workspace local | Resultados, matrices y reportes saneados | 4 | 5 | 4 | Alta | ACT-001; ACT-012 | Implementado |
-| ACT-015 | Entorno híbrido AWS (VPC multi-AZ) | Cloud | TI UVCG | Cloud/DevSecOps | AWS us-east-1 | Redes, IAM, monitoreo y recuperación | 4 | 5 | 5 | Crítica | Cuenta AWS, presupuesto, conectividad | Planificado |
+| ACT-015 | Entorno híbrido AWS (VPC multi-AZ) | Cloud | TI UVCG | Cloud/DevSecOps | AWS us-east-2 | Redes, IAM, monitoreo y recuperación | 4 | 5 | 5 | Crítica | Cuenta AWS, presupuesto, conectividad | Parcial (S3, IAM y presupuesto desplegados; VPC diseñada) |
 | ACT-016 | Repositorio offsite/inmutable | Respaldo | TI UVCG | DBA/Continuidad | Por definir | Segunda copia y retención institucional | 5 | 5 | 5 | Crítica | Proveedor/ubicación aprobados | Planificado |
 | ACT-017 | SIEM empresarial | Seguridad | Seguridad TI | SOC/Proveedor | Por definir | Telemetría institucional y casos de uso | 5 | 5 | 5 | Crítica | Licencia, almacenamiento, personal | Planificado |
 | ACT-018 | MDM/EDR institucional | Endpoint | Seguridad TI | Soporte/SOC | Dispositivos institucionales | Postura, cumplimiento y respuesta endpoint | 5 | 5 | 4 | Alta | Licencias y enrolamiento | Planificado |
@@ -34,12 +34,12 @@ Resumen: Académico no implementado: 3; Implementado: 18; Planificado: 12.
 | ACT-022 | Monitor de disponibilidad continuo (uptime-monitor) | Monitoreo | Seguridad TI | Analista de Seguridad | Red DMZ Docker | Estado y latencia de Nginx, API y Keycloak | 2 | 4 | 4 | Media | ACT-004; ACT-008 | Implementado |
 | ACT-023 | Laboratorio PITR y archivo WAL aislado | Respaldo | TI UVCG | DBA/Continuidad | Volúmenes sgsi_pitr_* (red recovery/none) | Respaldos base y segmentos WAL de réplicas | 5 | 5 | 4 | Alta | ACT-010; ACT-011 | Implementado (réplicas); principales preparado |
 | ACT-024 | Registro operativo del SGSI | Información | Responsable SGSI | Equipo del proyecto | evidencias/gestion | Incidentes, cambios, accesos, activos y evaluaciones | 4 | 5 | 3 | Alta | ACT-014 | Implementado |
-| ACT-030 | Cuenta AWS del SGSI (plan Free) | Servicio cloud | Dirección TI | Operador de plataforma | AWS us-east-1 | Recursos del laboratorio híbrido | 3 | 4 | 3 | Alta | ACT-015 | Planificado |
-| ACT-031 | VPC, subredes y grupos de seguridad AWS | Red | Seguridad TI | Operador de plataforma | AWS us-east-1 | Flujos DMZ/apps/datos/endpoints privados | 3 | 5 | 4 | Alta | ACT-030; ACT-015 | Planificado |
-| ACT-032 | AWS KMS / Secrets Manager del SGSI | Criptográfico | Seguridad TI | Administrador de seguridad | AWS us-east-1 | Secretos y certificados | 5 | 5 | 4 | Crítica | ACT-030; ACT-031 | Planificado |
-| ACT-033 | Bucket S3 privado (evidencias e intercambio) | Información | Responsable SGSI | Operador de plataforma | AWS us-east-1 | Evidencias y copias cifradas ficticias | 4 | 5 | 3 | Alta | ACT-031; ACT-032; ACT-011 | Planificado |
-| ACT-034 | CloudTrail / GuardDuty / Security Hub | Monitoreo | Seguridad TI | Analista de seguridad | AWS us-east-1 | Registros de actividad y diagnósticos | 4 | 5 | 3 | Alta | ACT-030 | Planificado |
-| ACT-035 | AWS Backup / S3 Object Lock | Respaldo | TI UVCG | Operador de respaldo | AWS us-east-1 | Copias de servidores locales | 5 | 5 | 4 | Alta | ACT-030; ACT-001 | Planificado |
+| ACT-030 | Cuenta AWS del SGSI (plan Free) | Servicio cloud | Dirección TI | Operador de plataforma | AWS us-east-2 | Recursos del laboratorio híbrido | 3 | 4 | 3 | Alta | ACT-015 | Implementado |
+| ACT-031 | VPC, subredes y grupos de seguridad AWS | Red | Seguridad TI | Operador de plataforma | AWS us-east-2 | Flujos DMZ/apps/datos/endpoints privados | 3 | 5 | 4 | Alta | ACT-030; ACT-015 | Planificado |
+| ACT-032 | AWS KMS / Secrets Manager del SGSI | Criptográfico | Seguridad TI | Administrador de seguridad | AWS us-east-2 | Secretos y certificados | 5 | 5 | 4 | Crítica | ACT-030; ACT-031 | Planificado |
+| ACT-033 | Bucket S3 privado (evidencias e intercambio) | Información | Responsable SGSI | Operador de plataforma | AWS us-east-2 | Evidencias y copias cifradas ficticias | 4 | 5 | 3 | Alta | ACT-030; ACT-011 | Implementado (13/13 pruebas) |
+| ACT-034 | CloudTrail / GuardDuty / Security Hub | Monitoreo | Seguridad TI | Analista de seguridad | AWS us-east-2 | Registros de actividad y diagnósticos | 4 | 5 | 3 | Alta | ACT-030 | Parcial (historial CloudTrail activo; GuardDuty/Security Hub diseñados) |
+| ACT-035 | AWS Backup / S3 Object Lock | Respaldo | TI UVCG | Operador de respaldo | AWS us-east-2 | Copias de servidores locales | 5 | 5 | 4 | Alta | ACT-030; ACT-001 | Planificado |
 | ACT-036 | Conectividad híbrida (AWS Site-to-Site VPN) | Red | Redes | Operador de redes | AWS + campus | Tráfico cifrado campus-AWS | 4 | 5 | 3 | Alta | ACT-001; ACT-031 | Planificado |
-| ACT-037 | Código IaC y estado de Terraform | Software/Información | DevSecOps | Operador de plataforma | Repositorio + backend Storage | Definición de infraestructura; estado sensible | 4 | 5 | 3 | Alta | ACT-030 | Implementado (código validado); estado inexistente |
-| ACT-038 | Guardrails AWS (Budgets, AWS Config) y presupuesto | Gobierno | Responsable SGSI | Finanzas/SGSI | AWS | Reglas de cumplimiento y alertas de gasto | 2 | 4 | 2 | Media | ACT-030 | Planificado |
+| ACT-037 | Código IaC y estado de Terraform | Software/Información | DevSecOps | Operador de plataforma | Repositorio + estado local | Definición de infraestructura; estado sensible | 4 | 5 | 3 | Alta | ACT-030 | Implementado (estado local fuera de Git) |
+| ACT-038 | Guardrails AWS (Budgets, AWS Config) y presupuesto | Gobierno | Responsable SGSI | Finanzas/SGSI | AWS | Reglas de cumplimiento y alertas de gasto | 2 | 4 | 2 | Media | ACT-030 | Implementado (Budgets; AWS Config diseñado) |

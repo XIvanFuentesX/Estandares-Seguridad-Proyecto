@@ -1,0 +1,303 @@
+module.iam.data.aws_iam_policy_document.trust: Reading...
+module.iam.data.aws_iam_policy_document.auditor: Reading...
+module.iam.data.aws_iam_policy_document.uploader: Reading...
+module.guardrails.aws_budgets_budget.zero_spend: Refreshing state... [id=005465454685:uvcg-sgsi-lab-gasto-cero]
+module.iam.data.aws_iam_policy_document.trust: Read complete after 0s [id=2494851629]
+module.iam.data.aws_iam_policy_document.uploader: Read complete after 0s [id=3306106021]
+module.iam.data.aws_iam_policy_document.auditor: Read complete after 0s [id=2409788327]
+module.iam.aws_iam_role.uploader: Refreshing state... [id=uvcg-sgsi-lab-uploader]
+module.iam.aws_iam_role.auditor: Refreshing state... [id=uvcg-sgsi-lab-auditor]
+module.iam.aws_iam_role_policy.uploader: Refreshing state... [id=uvcg-sgsi-lab-uploader:minimo-privilegio-carga]
+module.iam.aws_iam_role_policy.auditor: Refreshing state... [id=uvcg-sgsi-lab-auditor:solo-lectura-auditoria]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # module.iam.aws_iam_role_policy.auditor will be updated in-place
+  ~ resource "aws_iam_role_policy" "auditor" {
+        id          = "uvcg-sgsi-lab-auditor:solo-lectura-auditoria"
+        name        = "solo-lectura-auditoria"
+      ~ policy      = jsonencode(
+          ~ {
+              ~ Statement = [
+                  ~ {
+                      ~ Resource = "arn:aws:s3:::uvcg-sgsi-lab-005465454685-us-east-1" -> "arn:aws:s3:::uvcg-sgsi-lab-005465454685-us-east-2"
+                        # (3 unchanged attributes hidden)
+                    },
+                    {
+                        Action   = [
+                            "freetier:GetFreeTierUsage",
+                            "freetier:GetAccountPlanState",
+                            "cloudtrail:LookupEvents",
+                            "budgets:ViewBudget",
+                        ]
+                        Effect   = "Allow"
+                        Resource = "*"
+                        Sid      = "EstadoDelPlanYEventos"
+                    },
+                    # (1 unchanged element hidden)
+                ]
+                # (1 unchanged attribute hidden)
+            }
+        )
+        # (2 unchanged attributes hidden)
+    }
+
+  # module.iam.aws_iam_role_policy.uploader will be updated in-place
+  ~ resource "aws_iam_role_policy" "uploader" {
+        id          = "uvcg-sgsi-lab-uploader:minimo-privilegio-carga"
+        name        = "minimo-privilegio-carga"
+      ~ policy      = jsonencode(
+          ~ {
+              ~ Statement = [
+                  ~ {
+                      ~ Resource  = "arn:aws:s3:::uvcg-sgsi-lab-005465454685-us-east-1" -> "arn:aws:s3:::uvcg-sgsi-lab-005465454685-us-east-2"
+                        # (4 unchanged attributes hidden)
+                    },
+                  ~ {
+                      ~ Resource = "arn:aws:s3:::uvcg-sgsi-lab-005465454685-us-east-1/laboratorio/*" -> "arn:aws:s3:::uvcg-sgsi-lab-005465454685-us-east-2/laboratorio/*"
+                        # (3 unchanged attributes hidden)
+                    },
+                    {
+                        Action   = [
+                            "s3:PutBucketPolicy",
+                            "s3:DeleteObjectVersion",
+                            "s3:DeleteObject",
+                            "freetier:UpgradeAccountPlan",
+                        ]
+                        Effect   = "Deny"
+                        Resource = "*"
+                        Sid      = "SinBorradoNiCambioDePlan"
+                    },
+                ]
+                # (1 unchanged attribute hidden)
+            }
+        )
+        # (2 unchanged attributes hidden)
+    }
+
+  # module.storage.data.aws_iam_policy_document.bucket will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "bucket" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "s3:*",
+            ]
+          + effect    = "Deny"
+          + resources = [
+              + (known after apply),
+              + (known after apply),
+            ]
+          + sid       = "DenegarTransporteNoCifrado"
+
+          + condition {
+              + test     = "Bool"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:SecureTransport"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "*"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "s3:*",
+            ]
+          + effect    = "Deny"
+          + resources = [
+              + (known after apply),
+              + (known after apply),
+            ]
+          + sid       = "DenegarTLSAntiguo"
+
+          + condition {
+              + test     = "NumericLessThan"
+              + values   = [
+                  + "1.2",
+                ]
+              + variable = "s3:TlsVersion"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "*"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "s3:PutObject",
+            ]
+          + effect    = "Deny"
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "DenegarEscrituraFueraDelRolDeCarga"
+
+          + condition {
+              + test     = "ArnNotEquals"
+              + values   = [
+                  + "arn:aws:iam::005465454685:role/uvcg-sgsi-lab-uploader",
+                ]
+              + variable = "aws:PrincipalArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "*"
+            }
+        }
+    }
+
+  # module.storage.aws_s3_bucket.lab will be created
+  + resource "aws_s3_bucket" "lab" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = "uvcg-sgsi-lab-005465454685-us-east-2"
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = false
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-2"
+      + request_payer               = (known after apply)
+      + tags_all                    = {
+          + "Ambiente"      = "academico-demo"
+          + "Costo"         = "plan-free-cero-cargos"
+          + "Datos"         = "ficticios"
+          + "GestionadoPor" = "terraform"
+          + "Propietario"   = "laboratorio-sgsi"
+          + "Proyecto"      = "SGSI-UVCG"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # module.storage.aws_s3_bucket_lifecycle_configuration.lab will be created
+  + resource "aws_s3_bucket_lifecycle_configuration" "lab" {
+      + bucket                                 = (known after apply)
+      + expected_bucket_owner                  = (known after apply)
+      + id                                     = (known after apply)
+      + region                                 = "us-east-2"
+      + transition_default_minimum_object_size = "all_storage_classes_128K"
+
+      + rule {
+          + id     = "expirar-datos-ficticios"
+          + status = "Enabled"
+            # (1 unchanged attribute hidden)
+
+          + abort_incomplete_multipart_upload {
+              + days_after_initiation = 1
+            }
+
+          + expiration {
+              + days                         = 30
+              + expired_object_delete_marker = false
+            }
+
+          + filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # module.storage.aws_s3_bucket_ownership_controls.lab will be created
+  + resource "aws_s3_bucket_ownership_controls" "lab" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + region = "us-east-2"
+
+      + rule {
+          + object_ownership = "BucketOwnerEnforced"
+        }
+    }
+
+  # module.storage.aws_s3_bucket_policy.lab will be created
+  + resource "aws_s3_bucket_policy" "lab" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + policy = (known after apply)
+      + region = "us-east-2"
+    }
+
+  # module.storage.aws_s3_bucket_public_access_block.lab will be created
+  + resource "aws_s3_bucket_public_access_block" "lab" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + region                  = "us-east-2"
+      + restrict_public_buckets = true
+    }
+
+  # module.storage.aws_s3_bucket_server_side_encryption_configuration.lab will be created
+  + resource "aws_s3_bucket_server_side_encryption_configuration" "lab" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + region = "us-east-2"
+
+      + rule {
+          + blocked_encryption_types = (known after apply)
+          + bucket_key_enabled       = false
+
+          + apply_server_side_encryption_by_default {
+              + kms_master_key_id = (known after apply)
+              + sse_algorithm     = "AES256"
+            }
+        }
+    }
+
+Plan: 6 to add, 2 to change, 0 to destroy.
+
+Changes to Outputs:
+  ~ bucket_name       = "uvcg-sgsi-lab-005465454685-us-east-1" -> "uvcg-sgsi-lab-005465454685-us-east-2"
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: plan-20261107-130521.tfplan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "plan-20261107-130521.tfplan"

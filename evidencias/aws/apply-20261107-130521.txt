@@ -1,0 +1,33 @@
+module.iam.aws_iam_role_policy.uploader: Modifying... [id=uvcg-sgsi-lab-uploader:minimo-privilegio-carga]
+module.iam.aws_iam_role_policy.auditor: Modifying... [id=uvcg-sgsi-lab-auditor:solo-lectura-auditoria]
+module.storage.aws_s3_bucket.lab: Creating...
+module.iam.aws_iam_role_policy.auditor: Modifications complete after 6s [id=uvcg-sgsi-lab-auditor:solo-lectura-auditoria]
+module.iam.aws_iam_role_policy.uploader: Modifications complete after 6s [id=uvcg-sgsi-lab-uploader:minimo-privilegio-carga]
+module.storage.aws_s3_bucket.lab: Still creating... [00m10s elapsed]
+module.storage.aws_s3_bucket.lab: Creation complete after 13s [id=uvcg-sgsi-lab-005465454685-us-east-2]
+module.storage.data.aws_iam_policy_document.bucket: Reading...
+module.storage.aws_s3_bucket_ownership_controls.lab: Creating...
+module.storage.aws_s3_bucket_public_access_block.lab: Creating...
+module.storage.aws_s3_bucket_server_side_encryption_configuration.lab: Creating...
+module.storage.data.aws_iam_policy_document.bucket: Read complete after 0s [id=2061238295]
+module.storage.aws_s3_bucket_lifecycle_configuration.lab: Creating...
+module.storage.aws_s3_bucket_server_side_encryption_configuration.lab: Creation complete after 1s [id=uvcg-sgsi-lab-005465454685-us-east-2]
+module.storage.aws_s3_bucket_ownership_controls.lab: Creation complete after 1s [id=uvcg-sgsi-lab-005465454685-us-east-2]
+module.storage.aws_s3_bucket_public_access_block.lab: Creation complete after 2s [id=uvcg-sgsi-lab-005465454685-us-east-2]
+module.storage.aws_s3_bucket_policy.lab: Creating...
+module.storage.aws_s3_bucket_policy.lab: Creation complete after 0s [id=uvcg-sgsi-lab-005465454685-us-east-2]
+module.storage.aws_s3_bucket_lifecycle_configuration.lab: Still creating... [00m10s elapsed]
+module.storage.aws_s3_bucket_lifecycle_configuration.lab: Still creating... [00m20s elapsed]
+module.storage.aws_s3_bucket_lifecycle_configuration.lab: Still creating... [00m30s elapsed]
+module.storage.aws_s3_bucket_lifecycle_configuration.lab: Still creating... [00m40s elapsed]
+module.storage.aws_s3_bucket_lifecycle_configuration.lab: Still creating... [00m50s elapsed]
+module.storage.aws_s3_bucket_lifecycle_configuration.lab: Creation complete after 57s [id=uvcg-sgsi-lab-005465454685-us-east-2]
+
+Apply complete! Resources: 6 added, 2 changed, 0 destroyed.
+
+Outputs:
+
+auditor_role_arn = "arn:aws:iam::005465454685:role/uvcg-sgsi-lab-auditor"
+bucket_name = "uvcg-sgsi-lab-005465454685-us-east-2"
+budget_name = "uvcg-sgsi-lab-gasto-cero"
+uploader_role_arn = "arn:aws:iam::005465454685:role/uvcg-sgsi-lab-uploader"

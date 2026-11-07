@@ -1,7 +1,7 @@
 """Genera los diagramas del documento final (arquitectura híbrida objetivo y laboratorio implementado).
 
 Uso: python documento/generar_diagramas.py  ->  documento/figuras/*.png
-Convención visual: verde = implementado y probado; azul = preparado en Terraform (no desplegado);
+Convención visual: verde = implementado y probado; azul = desplegado en AWS con Terraform y probado;
 gris punteado = diseñado (sólo documentado).
 """
 from pathlib import Path
@@ -51,7 +51,7 @@ def zone(ax, x, y, w, h, title, style, right=False):
 def legend(ax, y=0.0):
     ax.legend(handles=[
         Patch(fc=IMPL["fc"], ec=IMPL["ec"], label="Implementado y probado (laboratorio local)"),
-        Patch(fc=PREP["fc"], ec=PREP["ec"], label="Preparado en Terraform (AWS)"),
+        Patch(fc=PREP["fc"], ec=PREP["ec"], label="Desplegado en AWS (13/13 pruebas)"),
         Patch(fc=DIS["fc"], ec=DIS["ec"], ls="--", label="Diseñado (sólo documentado)"),
     ], loc="lower center", bbox_to_anchor=(0.5, y), ncol=3, frameon=False, prop={"family": "Arial", "size": 7})
 
@@ -115,7 +115,7 @@ def hibrida():
 
     # AWS
     box(ax, 0.58, 0.04, 0.41, 0.92, "", ZONE, round_=0.01, lw=1.6)
-    ax.text(0.59, 0.945, "Nube pública AWS — región us-east-1", fontsize=7.6, weight="bold", family="Arial")
+    ax.text(0.59, 0.945, "Nube pública AWS — región us-east-2 (Ohio)", fontsize=7.6, weight="bold", family="Arial")
     box(ax, 0.595, 0.80, 0.185, 0.12, "IAM: roles de mínimo\nprivilegio (uploader y\nauditor) asumidos con\ncredenciales temporales STS", PREP, fs=5.9)
     box(ax, 0.79, 0.80, 0.19, 0.12, "Guardrails: AWS Budgets\n(gasto cero) e historial\nde CloudTrail (90 días)", PREP, fs=5.9)
     arrow(ax, (0.47, 0.90), (0.595, 0.88), color="#1F5FA8")
@@ -124,7 +124,7 @@ def hibrida():
     box(ax, 0.595, 0.36, 0.385, 0.42, "", DIS, round_=0.01)
     ax.text(0.7875, 0.765, "VPC 10.30.0.0/16 — dos zonas de disponibilidad (diseño de DR)", ha="center", va="center",
             fontsize=6.6, weight="bold", family="Arial")
-    for i, az in enumerate(["us-east-1a", "us-east-1b"]):
+    for i, az in enumerate(["us-east-2a", "us-east-2b"]):
         x0 = 0.605 + i * 0.19
         ax.text(x0 + 0.0875, 0.74, az, ha="center", fontsize=6.0, family="Arial", style="italic")
         box(ax, x0, 0.635, 0.175, 0.09, f"Subred pública 10.30.{i}.0/24\nALB + AWS WAF", DIS, fs=5.8)

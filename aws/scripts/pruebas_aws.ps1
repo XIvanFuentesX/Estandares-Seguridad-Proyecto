@@ -25,6 +25,8 @@ $tf = Get-Content (Join-Path $aws "terraform.tfstate") -Raw | ConvertFrom-Json
 $bucket = $tf.outputs.bucket_name.value
 $uploader = $tf.outputs.uploader_role_arn.value
 $auditor = $tf.outputs.auditor_role_arn.value
+$region = (aws s3api get-bucket-location --bucket $bucket --query LocationConstraint --output text)
+if (-not $region -or $region -eq "None") { $region = "us-east-1" }
 
 # 1. Existencia y configuración de seguridad (identidad administradora de la sesión)
 aws s3api head-bucket --bucket $bucket 2>$null; Add "PT-AWS-01 bucket existe" ($LASTEXITCODE -eq 0) $bucket
@@ -40,23 +42,23 @@ $sampleRel = "salidas/uvcg-ficticio-$stamp.txt"; $sample = Join-Path $aws $sampl
 "CLASIFICACION: INTERNA`nMUESTRA FICTICIA para la prueba híbrida AWS ($stamp). Sin datos reales." | Set-Content -Encoding UTF8 $sample
 $localHash = (Get-FileHash $sample).Hash.ToLower()
 Use-Role $uploader
-aws s3api put-object --bucket $bucket --key "laboratorio/prueba-$stamp.txt" --body $sampleRel --output json | Out-Null
+aws s3api put-object --bucket $bucket --key "laboratorio/prueba-$stamp.txt" --body $sample --output json | Out-Null
 Add "PT-AWS-04 carga por HTTPS con rol de carga" ($LASTEXITCODE -eq 0) "laboratorio/prueba-$stamp.txt"
 $dlRel = "salidas/uvcg-descarga-$stamp.txt"; $dl = Join-Path $aws $dlRel
-$head = aws s3api get-object --bucket $bucket --key "laboratorio/prueba-$stamp.txt" $dlRel --output json | ConvertFrom-Json
+$head = aws s3api get-object --bucket $bucket --key "laboratorio/prueba-$stamp.txt" $dl --output json | ConvertFrom-Json
 Add "PT-AWS-05 integridad SHA-256 y SSE en reposo" (((Get-FileHash $dl).Hash.ToLower() -eq $localHash) -and $head.ServerSideEncryption -eq "AES256") "sha256=$localHash sse=$($head.ServerSideEncryption)"
 
 # 3. Accesos denegados esperados (mínimo privilegio)
-Add "PT-AWS-06 carga fuera de prefijo denegada" (Test-Denied { aws s3api put-object --bucket $bucket --key "otro-prefijo/x.txt" --body $sampleRel }) "otro-prefijo/"
+Add "PT-AWS-06 carga fuera de prefijo denegada" (Test-Denied { aws s3api put-object --bucket $bucket --key "otro-prefijo/x.txt" --body $sample }) "otro-prefijo/"
 Add "PT-AWS-07 borrado denegado al rol de carga" (Test-Denied { aws s3api delete-object --bucket $bucket --key "laboratorio/prueba-$stamp.txt" }) "s3:DeleteObject"
-Add "PT-AWS-08 transporte sin TLS denegado" (Test-Denied { aws s3api put-object --bucket $bucket --key "laboratorio/http-$stamp.txt" --body $sampleRel --endpoint-url "http://s3.amazonaws.com" }) "aws:SecureTransport=false"
+Add "PT-AWS-08 transporte sin TLS denegado" (Test-Denied { aws s3api put-object --bucket $bucket --key "laboratorio/http-$stamp.txt" --body $sample --endpoint-url "http://s3.$region.amazonaws.com" }) "aws:SecureTransport=false"
 Reset-Role
 Use-Role $auditor
-Add "PT-AWS-09 auditor sin acceso a objetos" (Test-Denied { aws s3api get-object --bucket $bucket --key "laboratorio/prueba-$stamp.txt" $dlRel }) "s3:GetObject denegado"
+Add "PT-AWS-09 auditor sin acceso a objetos" (Test-Denied { aws s3api get-object --bucket $bucket --key "laboratorio/prueba-$stamp.txt" $dl }) "s3:GetObject denegado"
 aws s3api get-bucket-policy --bucket $bucket --output json | Out-Null
 Add "PT-AWS-10 auditor lee la configuración" ($LASTEXITCODE -eq 0) "s3:GetBucketPolicy"
 Reset-Role
-$anon = & curl.exe --silent --output NUL --write-out "%{http_code}" "https://$bucket.s3.amazonaws.com/laboratorio/prueba-$stamp.txt"
+$anon = & curl.exe --silent --output NUL --write-out "%{http_code}" "https://$bucket.s3.$region.amazonaws.com/laboratorio/prueba-$stamp.txt"
 Add "PT-AWS-11 acceso anónimo denegado" ($anon -eq "403") "HTTP $anon"
 
 # 4. Registro (historial de eventos de CloudTrail, gratuito 90 días) y costo

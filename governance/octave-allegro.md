@@ -1,6 +1,6 @@
 # Evaluación OCTAVE Allegro — ejercicio de escritorio
 
-Generado: 2026-11-07T11:23:29-06:00.
+Generado: 2026-11-07T13:09:47-06:00.
 
 > **Naturaleza:** evaluación de escritorio realizada por el equipo del proyecto con base en el laboratorio y en supuestos del escenario. **No se realizaron entrevistas ni talleres**, por lo que no hay resultados de participantes. Una evaluación organizacional real requiere talleres con Registro, Dirección Académica, Finanzas, Legal, RRHH y TI, y validación de los propietarios.
 

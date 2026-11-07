@@ -1,6 +1,6 @@
 # Business Impact Analysis — UVCG
 
-Generado: 2026-11-07T11:23:29-06:00. **Supuestos académicos pendientes de validación y aprobación por responsables institucionales; no provienen de entrevistas ni de datos financieros reales.**
+Generado: 2026-11-07T13:09:47-06:00. **Supuestos académicos pendientes de validación y aprobación por responsables institucionales; no provienen de entrevistas ni de datos financieros reales.**
 
 ## Escalas de impacto (1–5)
 

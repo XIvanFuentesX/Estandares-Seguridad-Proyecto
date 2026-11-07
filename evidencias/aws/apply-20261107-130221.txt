@@ -1,0 +1,19 @@
+module.iam.aws_iam_role.uploader: Creating...
+module.iam.aws_iam_role.auditor: Creating...
+module.guardrails.aws_budgets_budget.zero_spend: Creating...
+module.storage.aws_s3_bucket.lab: Creating...
+module.iam.aws_iam_role.auditor: Creation complete after 5s [id=uvcg-sgsi-lab-auditor]
+module.iam.aws_iam_role_policy.auditor: Creating...
+module.iam.aws_iam_role.uploader: Creation complete after 5s [id=uvcg-sgsi-lab-uploader]
+module.iam.aws_iam_role_policy.uploader: Creating...
+module.iam.aws_iam_role_policy.auditor: Creation complete after 1s [id=uvcg-sgsi-lab-auditor:solo-lectura-auditoria]
+module.iam.aws_iam_role_policy.uploader: Creation complete after 1s [id=uvcg-sgsi-lab-uploader:minimo-privilegio-carga]
+module.guardrails.aws_budgets_budget.zero_spend: Still creating... [00m10s elapsed]
+module.guardrails.aws_budgets_budget.zero_spend: Creation complete after 12s [id=005465454685:uvcg-sgsi-lab-gasto-cero]
+
+Error: creating S3 Bucket (uvcg-sgsi-lab-005465454685-us-east-1): operation error S3: CreateBucket, https response error StatusCode: 403, RequestID: 82VPW31XAD9BSWMP, HostID: ltwFR/Gh26w0qzp69HXbCVSirBDWJD2zeOoYYUawZlqZRAKbUvVgzD0aDCgywBrIn5DncepNteHmuyIVGBoZjzm4LbH8P6cf, api error AccessDenied: User: arn:aws:sts::005465454685:assumed-role/AccountFullAccessRole/74181498-80e1-70f1-896f-f7332e5b56fa is not authorized to perform: s3:CreateBucket on resource: "arn:aws:s3:::uvcg-sgsi-lab-005465454685-us-east-1" with an explicit deny in a service control policy: arn:aws:organizations::715948498997:policy/o-xc65dp6htq/service_control_policy/p-ckpyisxz
+
+  with module.storage.aws_s3_bucket.lab,
+  on modules/storage/main.tf line 13, in resource "aws_s3_bucket" "lab":
+  13: resource "aws_s3_bucket" "lab" {
+

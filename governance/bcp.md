@@ -1,6 +1,6 @@
 # Plan de Continuidad del Negocio (BCP) — borrador UVCG
 
-Generado: 2026-11-07T11:23:29-06:00. Objetivos, roles y estrategias son **supuestos académicos pendientes de aprobación**. Se basa en `bia.md`; el detalle técnico de recuperación está en `drp.md`.
+Generado: 2026-11-07T13:09:47-06:00. Objetivos, roles y estrategias son **supuestos académicos pendientes de aprobación**. Se basa en `bia.md`; el detalle técnico de recuperación está en `drp.md`.
 
 ## 1. Alcance y objetivos
 

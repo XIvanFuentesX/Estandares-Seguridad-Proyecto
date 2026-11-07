@@ -1,0 +1,11 @@
+﻿{
+    "timestamp":  "2026-11-07T12:44:27.1527551-06:00",
+    "checks":  {
+                   "cli_version":  "aws-cli/2.38.5 Python/3.14.8 Windows/11 exe/AMD64",
+                   "account_masked":  "0127****8168",
+                   "principal_type":  "root",
+                   "warning_root":  "Sesión con usuario raíz: se recomienda un usuario IAM/Identity Center con MFA."
+               },
+    "eligible":  false,
+    "reason":  "No se pudo leer el estado del plan (freetier:GetAccountPlanState)."
+}

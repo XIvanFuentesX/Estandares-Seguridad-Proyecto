@@ -1,6 +1,8 @@
 # Cierre AWS — SGSI UVCG (despliegue mínimo en plan Free)
 
-Fecha: 2026-10-24. **Estado: PREPARADO, NO DESPLEGADO.**
+> **Actualización 2026-11-07: DESPLEGADO Y PROBADO.** Cuenta `0054****4685` (plan FREE, ACTIVE), región **us-east-2**: la SCP de la organización administradora deniega us-east-1 (INC-013). 11 recursos creados con el plan revisado (CHG-007); `pruebas_aws.ps1`: **13/13 exitosas**. Evidencias: `evidencias/aws/plan-20261107-130521.txt`, `apply-20261107-130521.txt`, `pruebas-aws-20261107-130835.json`. Las secciones siguientes describen el estado previo y se conservan como historial.
+
+Fecha: 2026-10-24. **Estado (histórico): PREPARADO, NO DESPLEGADO.**
 
 ## 1. Motivo por el que no se desplegó
 

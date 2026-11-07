@@ -1,10 +1,10 @@
 # Registros operativos del SGSI (laboratorio)
 
-Exportado: 2026-10-24T11:34:28-06:00 desde `evidencias/gestion/registro-sgsi.db`. Origen `real-laboratorio` = hecho ocurrido en este laboratorio; `ejercicio` = caso de práctica con identidades ficticias. Ninguna entrada representa una aprobación institucional; "aprobado_por" refleja la autorización dada por el usuario del laboratorio en la conversación de trabajo.
+Exportado: 2026-11-07T13:09:17-06:00 desde `evidencias/gestion/registro-sgsi.db`. Origen `real-laboratorio` = hecho ocurrido en este laboratorio; `ejercicio` = caso de práctica con identidades ficticias. Ninguna entrada representa una aprobación institucional; "aprobado_por" refleja la autorización dada por el usuario del laboratorio en la conversación de trabajo.
 
-Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas: 34.
+Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas: 37.
 
-## Incidentes (12)
+## Incidentes (13)
 
 | id | creado | titulo | severidad | origen | estado | detectado | contencion | resolucion | leccion | riesgo | evidencia | cerrado |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -20,8 +20,9 @@ Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas:
 | INC-010 | 2026-10-24T11:08:33-06:00 | Archivo de secretos .env con permisos heredados amplios | media | real-laboratorio | abierto | 2026-10-24T11:08:33-06:00 | Sin cambio de ACL (requiere autorización); propuesta registrada como cambio |  |  | R-015 |  |  |
 | INC-011 | 2026-10-24T11:08:33-06:00 | Bases principales sin archivado WAL: RPO propuesto no alcanzable | alta | real-laboratorio | abierto | 2026-10-24T11:08:33-06:00 | PITR validado en réplicas; activación pendiente de autorización |  |  | R-019 | local/backups/execution.log (target=wal-*-principal) |  |
 | INC-012 | 2026-10-24T11:34:28-06:00 | Validación integral interrumpida por falta de memoria del sistema; contenedor PITR efímero huérfano | baja | real-laboratorio | abierto | 2026-10-24T11:34:28-06:00 | Contenedor efímero detenido; servicios principales verificados healthy; datos y volúmenes intactos |  |  | R-004 |  |  |
+| INC-013 | 2026-11-07T13:09:08-06:00 | Despliegue AWS parcial: SCP de la organización deniega us-east-1 (s3:CreateBucket) | baja | real-laboratorio | cerrado | 2026-11-07T13:03:00-06:00 | Sin datos expuestos; se crearon sólo IAM y presupuesto (globales). Se verificó con consultas de sólo lectura que sólo us-east-2 está permitida y se re-planificó. | Región cambiada a us-east-2 (permitida por la SCP); nuevo plan revisado y aplicado: 6 creados, 2 actualizados, 0 eliminados; 13/13 pruebas exitosas. | Verificar las regiones permitidas por las SCP de la organización antes de planificar; las pruebas no deben asumir el endpoint global de S3. | R-017 | evidencias/aws/apply-20261107-130221.txt | 2026-11-07T13:09:16-06:00 |
 
-## Cambios (6)
+## Cambios (7)
 
 | id | creado | titulo | tipo | riesgo | descripcion | rollback | aprobado_por | estado | ejecutado | evidencia | origen |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -31,6 +32,7 @@ Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas:
 | CHG-004 | 2026-10-24T11:08:32-06:00 | Activar archivado WAL en db e identity-db (compose.pitr.yaml) | normal | R-019 | Requiere recrear ambas bases; validado en réplicas aisladas | Levantar sólo con compose.yaml |  | preparado - pendiente de autorizacion |  | evidencias/pitr | real-laboratorio |
 | CHG-005 | 2026-10-24T11:08:32-06:00 | Restringir ACL de local/.env al usuario propietario | normal | R-015 | ACL heredada concede Modificar a Usuarios autentificados | icacls .env /restore con la ACL guardada |  | propuesto - pendiente de autorizacion |  |  | real-laboratorio |
 | CHG-006 | 2026-10-24T11:34:28-06:00 | uptime-monitor: deshabilitar healthcheck heredado (falso unhealthy) | estandar | R-012 |  | Quitar el bloque healthcheck del servicio | Encargo de cierre local (cambio seguro y reversible) | implementado |  | evidencias/integridad/linea-base-configuracion.json | real-laboratorio |
+| CHG-007 | 2026-11-07T13:09:07-06:00 | Despliegue AWS: S3 privado, roles IAM uploader/auditor y presupuesto de gasto cero (us-east-2) | normal | R-011 | Plan revisado por la compuerta de costo; 11 recursos en la cuenta 0054****4685 (plan FREE). Región cambiada de us-east-1 a us-east-2 por SCP de la organización. | aws/scripts/retirar.ps1 -Confirmacion RETIRAR-SGSI-UVCG | Titular de la cuenta (autorización explícita 2026-11-07) | ejecutado | 2026-11-07T13:06:00-06:00 | evidencias/aws/apply-20261107-130521.txt; evidencias/aws/pruebas-aws-20261107-130835.json | real-laboratorio |
 
 ## Accesos (2)
 

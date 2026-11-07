@@ -1,0 +1,106 @@
+{
+  "resources": [
+    {
+      "address": "module.guardrails.aws_budgets_budget.zero_spend",
+      "type": "aws_budgets_budget",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "Budgets sin acciones: monitoreo y notificación gratuitos"
+    },
+    {
+      "address": "module.iam.aws_iam_role.auditor",
+      "type": "aws_iam_role",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "IAM sin costo"
+    },
+    {
+      "address": "module.iam.aws_iam_role.uploader",
+      "type": "aws_iam_role",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "IAM sin costo"
+    },
+    {
+      "address": "module.iam.aws_iam_role_policy.auditor",
+      "type": "aws_iam_role_policy",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "IAM sin costo"
+    },
+    {
+      "address": "module.iam.aws_iam_role_policy.uploader",
+      "type": "aws_iam_role_policy",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "IAM sin costo"
+    },
+    {
+      "address": "module.storage.aws_s3_bucket.lab",
+      "type": "aws_s3_bucket",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "S3 disponible en el plan Free; uso de KB consume créditos, no tarjeta"
+    },
+    {
+      "address": "module.storage.aws_s3_bucket_lifecycle_configuration.lab",
+      "type": "aws_s3_bucket_lifecycle_configuration",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "configuración sin costo"
+    },
+    {
+      "address": "module.storage.aws_s3_bucket_ownership_controls.lab",
+      "type": "aws_s3_bucket_ownership_controls",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "configuración sin costo"
+    },
+    {
+      "address": "module.storage.aws_s3_bucket_policy.lab",
+      "type": "aws_s3_bucket_policy",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "configuración sin costo"
+    },
+    {
+      "address": "module.storage.aws_s3_bucket_public_access_block.lab",
+      "type": "aws_s3_bucket_public_access_block",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "configuración sin costo"
+    },
+    {
+      "address": "module.storage.aws_s3_bucket_server_side_encryption_configuration.lab",
+      "type": "aws_s3_bucket_server_side_encryption_configuration",
+      "actions": [
+        "create"
+      ],
+      "allowed": true,
+      "justification": "SSE-S3 sin costo adicional"
+    }
+  ],
+  "count": 11,
+  "problems": [],
+  "approved": true
+}

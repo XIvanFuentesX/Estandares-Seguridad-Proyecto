@@ -1,6 +1,6 @@
 # Matrices de calor 5 × 5
 
-Generado: 2026-11-07T11:23:29-06:00. Supuestos académicos pendientes de validación y aprobación por responsables institucionales; no provienen de entrevistas ni de datos financieros reales.
+Generado: 2026-11-07T13:09:47-06:00. Supuestos académicos pendientes de validación y aprobación por responsables institucionales; no provienen de entrevistas ni de datos financieros reales.
 
 Cada ID corresponde a una fila de `matriz-riesgos.csv`; la celda muestra entre paréntesis el nivel de P × I.
 

@@ -71,7 +71,7 @@ function introduccion() {
     p("Las universidades concentran información de alto valor —expedientes académicos, credenciales, datos financieros y propiedad intelectual— y la exponen a una población de usuarios amplia, rotativa y que trabaja desde dispositivos propios. A esa superficie se suma la adopción de servicios en la nube, que traslada parte del control a un proveedor y exige gobernar la responsabilidad compartida. En ese contexto, la seguridad no puede limitarse a productos aislados: requiere un sistema de gestión que identifique qué proteger, por qué, con qué prioridad y cómo demostrar que los controles funcionan."),
     p("Este documento presenta el diseño y la implementación de un Sistema de Gestión de Seguridad de la Información (SGSI) para la UVCG, una universidad privada ficticia de Guatemala con unos 3,000 estudiantes, 180 docentes y 120 colaboradores administrativos. La solución adopta una **arquitectura de nube híbrida**: un sitio principal en el campus y servicios de **Amazon Web Services (AWS)** como nube pública, con soporte para computadoras, teléfonos móviles y tabletas institucionales y personales (BYOD)."),
     p("El trabajo sigue un enfoque basado en riesgos. Parte del contexto y del inventario de activos, analiza el impacto de la interrupción de los procesos críticos (BIA), evalúa los riesgos con NIST SP 800-30 e ISO/IEC 27005 y los contrasta con OCTAVE Allegro, y deriva de allí el plan de tratamiento, los controles de ISO/IEC 27002, las políticas, la arquitectura Zero Trust, la continuidad según ISO 22301, el gobierno con COBIT 2019 e ITIL 4 y las buenas prácticas de centro de datos según TIA-942."),
-    p("Una característica central del proyecto es la **trazabilidad verificable**: cada control implementado cuenta con una prueba automatizada y una evidencia identificada en el repositorio del proyecto. Para cumplir con los criterios de originalidad del curso, el documento distingue de forma explícita entre componentes **implementados y probados**, **preparados** (por ejemplo, infraestructura como código validada pero no desplegada) y **diseñados** (sólo documentados). Ninguna evidencia fue simulada como si fuera real; cuando un resultado proviene de un ejercicio o de datos sintéticos, se indica."),
+    p("Una característica central del proyecto es la **trazabilidad verificable**: cada control implementado cuenta con una prueba automatizada y una evidencia identificada en el repositorio del proyecto. Para cumplir con los criterios de originalidad del curso, el documento distingue de forma explícita entre componentes **implementados y probados**, **preparados** (configuración lista y validada, sin desplegar) y **diseñados** (sólo documentados). Ninguna evidencia fue simulada como si fuera real; cuando un resultado proviene de un ejercicio o de datos sintéticos, se indica."),
     p("El documento se organiza así: el capítulo 2 resume el marco de referencia y cómo se aplicó cada estándar; el capítulo 3 describe la metodología; el capítulo 4 presenta los veinte resultados mínimos exigidos; el capítulo 5 desarrolla la discusión académica del grupo; el capítulo 6 expone las conclusiones, y los anexos contienen las matrices completas y el registro de evidencias."),
   ];
 }
@@ -190,7 +190,7 @@ function arquitectura() {
     h2("4.3 Diagrama de infraestructura"),
     p("La Figura 1 muestra la arquitectura híbrida objetivo y diferencia con colores lo implementado, lo preparado y lo diseñado. La Figura 2 muestra el laboratorio efectivamente construido, que materializa las zonas DMZ, aplicaciones, identidad y datos del sitio principal mediante redes Docker aisladas."),
     ...figure("Arquitectura híbrida objetivo de la UVCG (campus + AWS)", "documento/figuras/arquitectura-hibrida.png",
-      "Elaboración propia. Verde: implementado y probado en el laboratorio; azul: preparado en Terraform para AWS; gris punteado: diseñado. El diagrama fue presentado al docente para aprobación el [[FECHA DE APROBACIÓN DEL DIAGRAMA]]."),
+      "Elaboración propia. Verde: implementado y probado en el laboratorio; azul: desplegado en AWS con Terraform y probado (13/13); gris punteado: diseñado. El diagrama fue presentado al docente para aprobación el [[FECHA DE APROBACIÓN DEL DIAGRAMA]]."),
     ...figure("Laboratorio implementado en Docker Desktop", "documento/figuras/laboratorio-implementado.png",
       "Elaboración propia a partir de local/compose.yaml. Subredes asignadas por Docker y verificadas con docker network inspect el 7 de noviembre de 2026."),
     h2("4.4 Explicación de la arquitectura"),
@@ -198,7 +198,7 @@ function arquitectura() {
     ...table("Componentes de la arquitectura y estado", ["Componente", "Función", "Tecnología", "Estado"], [
       ["Servidores", "Ejecutan aplicaciones e identidad", "Hosts de virtualización N+1 (diseño); contenedores Docker (lab)", "Implementado (lab)"],
       ["Bases de datos", "Datos académicos y de identidad separados", "PostgreSQL 16 endurecido, redes internas distintas", "Implementado"],
-      ["Almacenamiento", "Volúmenes y copias", "SAN/NAS RAID 10 (diseño); volúmenes Docker y S3 privado", "Parcial / preparado"],
+      ["Almacenamiento", "Volúmenes y copias", "SAN/NAS RAID 10 (diseño); volúmenes Docker y S3 privado en AWS", "Implementado (S3) / diseñado (SAN)"],
       ["Switches", "Acceso y núcleo con VLAN y 802.1X", "Switches apilados de capa 3", "Diseñado"],
       ["Routers", "Borde con doble ISP", "Routers redundantes con BGP/estático", "Diseñado"],
       ["Firewall NGFW", "Filtrado por aplicación, IPS en línea, VPN", "Clúster activo/pasivo", "Diseñado"],
@@ -206,7 +206,7 @@ function arquitectura() {
       ["DMZ", "Única zona expuesta", "Proxy inverso Nginx con TLS", "Implementado"],
       ["Segmentación", "Separación por función", "VLAN (diseño); 5 redes Docker, 4 internas (lab); VPC con 6 subredes (AWS)", "Implementado (lab)"],
       ["Virtualización / contenedores", "Aislamiento y portabilidad", "Docker con contenedores de sólo lectura y sin privilegios", "Implementado"],
-      ["IAM y MFA", "Identidad central, OIDC, TOTP, roles", "Keycloak 26.8.1; IAM de AWS con STS", "Implementado / preparado"],
+      ["IAM y MFA", "Identidad central, OIDC, TOTP, roles", "Keycloak 26.8.1; IAM de AWS con STS", "Implementado"],
       ["Zero Trust", "Verificación explícita por solicitud", "Validación de JWT, MFA y rol en cada ruta", "Implementado (parcial)"],
       ["SIEM", "Correlación de eventos", "SIEM ligero propio (SQLite) con 11 reglas", "Implementado (parcial)"],
       ["Respaldo", "Copias cifradas y verificadas", "AES-256 + SHA-256 diario; PITR con WAL en réplicas", "Implementado"],
@@ -245,7 +245,7 @@ function arquitectura() {
     h3("4.4.5 Estrategia inicial de continuidad y recuperación"),
     p("La estrategia prioriza la identidad, porque todos los procesos dependen de ella, seguida de matrícula, aprendizaje virtual y gestión académica. Se combinan respaldos cifrados locales para recuperaciones rápidas, archivado WAL para cumplir RPO de minutos y una copia inmutable en AWS para sobrevivir a la pérdida del sitio o a un ataque de ransomware. El detalle está en la sección 4.18."),
     h3("4.4.6 Justificación técnica"),
-    p("Se eligió una **arquitectura híbrida** porque los sistemas académicos y la identidad requieren baja latencia y control local, mientras que la recuperación ante desastres y la copia fuera del sitio son más económicas y resilientes en la nube que en un segundo centro de datos propio. Se seleccionó **AWS** frente a Azure y Google Cloud porque su modelo de responsabilidad compartida está ampliamente documentado, ofrece una cuenta con plan gratuito que permite demostrar el componente cloud sin costo, y porque los controles necesarios —S3 con bloqueo de acceso público y cifrado, IAM con credenciales temporales, CloudTrail y AWS Budgets— están disponibles sin licencias adicionales. La región us-east-1 se eligió por catálogo completo de servicios y latencia aceptable desde Guatemala."),
+    p("Se eligió una **arquitectura híbrida** porque los sistemas académicos y la identidad requieren baja latencia y control local, mientras que la recuperación ante desastres y la copia fuera del sitio son más económicas y resilientes en la nube que en un segundo centro de datos propio. Se seleccionó **AWS** frente a Azure y Google Cloud porque su modelo de responsabilidad compartida está ampliamente documentado, ofrece una cuenta con plan gratuito que permite demostrar el componente cloud sin costo, y porque los controles necesarios —S3 con bloqueo de acceso público y cifrado, IAM con credenciales temporales, CloudTrail y AWS Budgets— están disponibles sin licencias adicionales. La región es us-east-2 (Ohio): es la habilitada para la cuenta de la universidad y ofrece latencia adecuada desde Guatemala."),
     p("La segmentación en zonas sigue el principio de mínima exposición: sólo el proxy de la DMZ es alcanzable desde fuera, y las bases de datos residen en redes internas sin salida. Esta decisión reduce el riesgo R-001 (acceso no autorizado) y fue verificada por pruebas que confirman que el proxy no puede resolver ni alcanzar la base de datos. La alternativa de exponer la API directamente se descartó porque eliminaba el punto único de inspección y control de cabeceras."),
   ];
 }
@@ -550,7 +550,7 @@ function siem() {
     ], [18, 34, 16, 32], { size: 16 }),
     p("**EDR.** En lugar de un agente comercial, se implementó una **vigilancia de contenedores** que compara los procesos en ejecución con una lista esperada, detecta deriva del sistema de archivos y verifica el endurecimiento de cada servicio. En la prueba, la introducción de un proceso no autorizado en la API se detectó y el intento de escritura fue bloqueado por el sistema de archivos de sólo lectura. Esta capacidad cubre los servidores contenedorizados, no las estaciones de los usuarios, que son la brecha R-013."),
     p("**XDR.** La arquitectura objetivo integra la telemetría de puntos finales (EDR), red (IDS/NGFW), identidad (Keycloak) y nube (CloudTrail, GuardDuty) en una plataforma de detección extendida que correlacione entre dominios y automatice respuestas. En el estado actual, el SIEM ligero ya correlaciona identidad, red y aplicación, lo que constituye la base de esa integración."),
-    p("**Respuesta a incidentes.** El registro operativo (`evidencias/gestion/registro-sgsi.db`) contiene 12 incidentes, 6 cambios, 2 solicitudes de acceso y 4 eventos de activos, con una bitácora de auditoría encadenada por hash. Seis incidentes son reales del laboratorio —por ejemplo, INC-007 (copia antigua sin cifrar), INC-010 (permisos amplios del archivo de secretos) e INC-011 (bases sin archivado WAL)— y seis son ejercicios de DLP rotulados como tales."),
+    p("**Respuesta a incidentes.** El registro operativo (`evidencias/gestion/registro-sgsi.db`) contiene 13 incidentes, 7 cambios, 2 solicitudes de acceso y 4 eventos de activos, con una bitácora de auditoría encadenada por hash. Siete incidentes son reales —por ejemplo, INC-007 (copia antigua sin cifrar), INC-010 (permisos amplios del archivo de secretos), INC-011 (bases sin archivado WAL) e INC-013 (región de AWS bloqueada por la organización)— y seis son ejercicios de DLP rotulados como tales."),
   ];
 }
 
@@ -562,7 +562,7 @@ function implementacion() {
     ...table("Diferenciación entre componentes implementados, preparados y diseñados", ["Categoría", "Componentes"], [
       ["Implementado y probado", "Proxy TLS, API con RBAC, Keycloak con OIDC/MFA, 2 PostgreSQL endurecidos, 5 redes segmentadas, respaldos cifrados programados, restauración aislada semanal, PITR en réplicas, SIEM ligero, IDS offline, vigilancia de contenedores, compuerta DLP, integridad de configuración, registro operativo, escaneo de vulnerabilidades"],
       ["Parcial", "Zero Trust (sin postura de dispositivo), SIEM (ingesta por lotes), DLP (sin endpoint ni correo), certificados (autofirmados), gestión de secretos (permisos amplios del archivo, INC-010)"],
-      ["Preparado (AWS)", "Bucket S3 privado con cifrado, bloqueo público, TLS ≥ 1.2 y expiración; roles IAM uploader y auditor; presupuesto de gasto cero; compuerta de costo del plan; 13 pruebas posteriores al despliegue; procedimiento de retirada"],
+      ["Implementado en AWS", "Bucket S3 privado con cifrado, bloqueo público, TLS ≥ 1.2 y expiración; roles IAM uploader y auditor; presupuesto de gasto cero; compuerta de costo del plan; 13/13 pruebas posteriores al despliegue; procedimiento de retirada preparado"],
       ["Simulado (declarado)", "Cumplimiento MDM con dispositivos ficticios; retención de respaldos en modo de simulación"],
       ["Diseñado", "NGFW, VLAN físicas, VPN Site-to-Site, VPC multi-AZ, RDS, WAF, GuardDuty, Security Hub, copia inmutable, MDM y EDR comerciales, infraestructura física TIA-942"],
     ], [20, 80]),
@@ -593,15 +593,31 @@ function implementacion() {
       ["DLP", "dlp_compuerta.py", "Bloquear confidencial y restringida hacia externo", "4 bloqueos, 1 permitido", "Exitoso"],
       ["Trazabilidad de gobierno", "validar_trazabilidad.py", "21 reglas de coherencia", "21/21", "Exitoso"],
       ["PITR en bases principales", "validar_sgsi.ps1", "archive_mode activo", "archive_mode=off (pendiente de autorización)", "No verificable"],
-      ["AWS", "pruebas_aws.ps1", "13 pruebas post-despliegue", "[[Pendiente del despliegue en la cuenta AWS]]", "Pendiente"],
+      ["AWS (nube)", "pruebas_aws.ps1", "Controles de S3 e IAM efectivos en la cuenta real", "13/13 pruebas exitosas", "Exitoso"],
     ], [16, 18, 22, 28, 16], { size: 15, fillFn: (v, i) => (i === 4 ? (String(v).startsWith("Exitoso") ? "E2F0D9" : "FFF2CC") : undefined),
       note: "Última corrida completa: evidencias/automatizacion/validacion-sgsi-20261024-112033.json (27 exitosos, 1 fallido por reestructuración de la IaC, 1 no verificable). Corrida del 7 de noviembre de 2026: 20 exitosos, 1 fallido (tarea programada interrumpida mientras el equipo estaba apagado), 5 omitidos por diseño, 1 no verificable." }),
     h3("4.17.4 Componente AWS"),
-    p("La cuenta de AWS se configurará con el plan gratuito. Antes de crear recursos, `aws/scripts/verificar_cuenta.ps1` confirma la identidad, que el plan sea FREE y esté activo, y que no se use el usuario raíz. `desplegar.ps1` genera el plan de Terraform y lo somete a una compuerta que sólo admite los 11 recursos previstos (6 de S3, 4 de IAM y 1 presupuesto) y ninguna destrucción; sólo después aplica el plan revisado. `pruebas_aws.ps1` ejecuta 13 pruebas reales: existencia de recursos, permisos permitidos y denegados por rol, rechazo de transporte sin TLS, cifrado del lado del servidor, integridad del objeto cargado, rechazo de acceso anónimo, eventos en CloudTrail y estado del plan."),
-    p("[[Estado al cierre de esta versión: la IaC está validada (fmt, validate, 2/2 pruebas con proveedor simulado, TFLint sin avisos, Trivy sin hallazgos sin aceptar), pero el despliegue en la cuenta AWS aún no se ha ejecutado. Esta sección y las Figuras 3 a 6 deben actualizarse con los resultados reales tras el despliegue.]]"),
+    p("La cuenta de AWS de la universidad (identificador `0054****4685`, plan FREE activo con 120 USD de crédito) se administra con el inicio de sesión de la consola y credenciales temporales: no se crearon usuarios IAM ni claves de acceso permanentes. Antes de crear recursos se verificó la identidad y el estado del plan, y el plan de Terraform pasó por una compuerta que sólo admite los recursos previstos y ninguna destrucción."),
+    p("**Hallazgo durante el despliegue (INC-013).** El primer intento en us-east-1 creó los recursos globales (roles IAM y presupuesto), pero la creación del bucket fue rechazada por una política de control de servicios (SCP) de la organización que administra la cuenta, que sólo habilita la región us-east-2. Mediante consultas de sólo lectura se confirmó la restricción, se cambió la región, se generó un nuevo plan (6 recursos creados, 2 actualizados, 0 eliminados) y se aplicó tras revisarlo. El incidente se registró y cerró con su lección aprendida, y el despliegue quedó documentado como el cambio CHG-007. Este episodio demostró en la práctica un control preventivo de la nube (las SCP) actuando sobre la propia universidad."),
+    ...table("Pruebas reales del componente AWS después del despliegue", ["Prueba", "Control verificado", "Resultado"], [
+      ["PT-AWS-01", "El bucket existe en us-east-2", "Exitoso"],
+      ["PT-AWS-02", "Bloqueo de acceso público en sus cuatro opciones", "Exitoso"],
+      ["PT-AWS-03", "Cifrado predeterminado SSE-S3 (AES-256)", "Exitoso"],
+      ["PT-AWS-04", "Carga por HTTPS con el rol uploader y credenciales temporales STS", "Exitoso"],
+      ["PT-AWS-05", "Integridad SHA-256 del archivo descargado y cifrado en reposo", "Exitoso"],
+      ["PT-AWS-06", "Carga fuera del prefijo laboratorio/ denegada", "Exitoso"],
+      ["PT-AWS-07", "Borrado denegado al rol de carga", "Exitoso"],
+      ["PT-AWS-08", "Transporte sin TLS denegado por la política del bucket", "Exitoso"],
+      ["PT-AWS-09", "El rol auditor no puede leer objetos", "Exitoso"],
+      ["PT-AWS-10", "El rol auditor sí puede leer la configuración", "Exitoso"],
+      ["PT-AWS-11", "Acceso anónimo denegado (HTTP 403)", "Exitoso"],
+      ["PT-AWS-12", "Eventos AssumeRole registrados en CloudTrail", "Exitoso"],
+      ["PT-AWS-13", "La cuenta sigue en plan FREE tras el despliegue", "Exitoso"],
+    ], [14, 70, 16], { size: 16, fillFn: (v, i) => (i === 2 ? "E2F0D9" : undefined),
+      note: "Ejecutadas el 7 de noviembre de 2026 con aws/scripts/pruebas_aws.ps1: 13 exitosas, 0 fallidas. Una primera corrida tuvo 4 fallos atribuibles al propio script (rutas relativas y endpoint global de S3 que responde 307 fuera de us-east-1); se corrigió el script sin relajar ninguna prueba. Evidencia: evidencias/aws/pruebas-aws-20261107-130835.json, apply-20261107-130521.txt." }),
+    p("**Alcance real del componente híbrido.** La integración demostrada es una transferencia cifrada por Internet con identidad temporal y mínimo privilegio; no es una VPN privada entre redes. La VPC multi-AZ, la VPN Site-to-Site, GuardDuty, Security Hub y la copia inmutable con Object Lock permanecen como diseño, porque su costo no está garantizado como cero en el plan gratuito."),
     ...capturePlaceholder("Consola de AWS: bucket S3 con bloqueo de acceso público y cifrado predeterminado", "Pestaña Permisos y Propiedades del bucket uvcg-sgsi-lab-*."),
     ...capturePlaceholder("Consola de IAM: roles uploader y auditor con sus políticas", "Lista de roles y política en línea de cada uno."),
-    ...capturePlaceholder("Resultado de pruebas_aws.ps1", "Salida de consola con las 13 pruebas."),
     ...capturePlaceholder("Inicio de sesión con MFA en Keycloak y respuesta 403 por rol insuficiente", "Pantalla de TOTP del realm uvcg y respuesta de /administracion con el usuario docente."),
   ];
 }
@@ -665,7 +681,7 @@ function cobitItil() {
       ["APO02 Estrategia", "Alineamiento estratégico", "Objetivos de seguridad ligados a procesos académicos críticos del BIA", "1"],
       ["APO12 Riesgo gestionado", "Gestión de riesgos", "22 riesgos con P × I, OCTAVE y trazabilidad automática", "2"],
       ["APO13 Seguridad gestionada", "Gestión de riesgos", "SGSI, declaración de aplicabilidad de 93 controles, validación integral", "2"],
-      ["BAI06 Cambios gestionados", "Cumplimiento", "Registro CHG-001 a CHG-006 con reversión", "2"],
+      ["BAI06 Cambios gestionados", "Cumplimiento", "Registro CHG-001 a CHG-007 con reversión", "2"],
       ["BAI09 Activos gestionados", "Gestión de recursos", "Inventario de 33 activos y eventos de ciclo de vida", "2"],
       ["DSS02 Incidentes gestionados", "Desempeño", "Registro INC con auditoría encadenada", "2"],
       ["DSS04 Continuidad gestionada", "Desempeño", "BCP/DRP con pruebas semanales", "2"],
@@ -674,8 +690,8 @@ function cobitItil() {
       ["MEA03 Cumplimiento externo", "Cumplimiento", "Requisitos legales identificados (sección 5.3); análisis legal pendiente", "0"],
     ], [24, 16, 50, 10], { size: 16, center: [3] }),
     ...table("Prácticas de ITIL 4 aplicadas", ["Práctica", "Aplicación demostrable", "Evidencia"], [
-      ["Gestión de incidentes", "Apertura, contención, cierre y lección aprendida de 12 incidentes", "governance/registros-operativos.md"],
-      ["Habilitación de cambios", "Cambios estándar y normales con riesgo, reversión y aprobación", "CHG-001 a CHG-006"],
+      ["Gestión de incidentes", "Apertura, contención, cierre y lección aprendida de 13 incidentes", "governance/registros-operativos.md"],
+      ["Habilitación de cambios", "Cambios estándar y normales con riesgo, reversión y aprobación", "CHG-001 a CHG-007"],
       ["Gestión de problemas", "Causa raíz de INC-008 e INC-009 corregida en los scripts", "registros-operativos.md"],
       ["Gestión de niveles de servicio", "RTO/RPO por proceso como objetivos de servicio; disponibilidad medida cada 15 s", "bia.csv, uptime-monitor"],
       ["Gestión de activos de TI", "Inventario y eventos de alta y cambio", "AST-001 a AST-004"],
@@ -741,7 +757,7 @@ function conclusiones() {
     numbered(`El análisis con NIST SP 800-30 e ISO/IEC 27005 identificó ${riesgos.length} riesgos; los controles implementados redujeron los riesgos críticos de ${inhNiv["Crítico"] || 0} a ${resNiv["Crítico"] || 0}. OCTAVE Allegro, aplicado de forma independiente, priorizó los mismos escenarios, lo que valida la priorización.`),
     numbered("El BIA permitió cuantificar una brecha que de otro modo habría pasado inadvertida: los respaldos diarios no satisfacen el RPO de 15 minutos del proceso de identidad. El archivado WAL, probado en réplicas, reduce el RPO a menos de un minuto."),
     numbered("La implementación demostró en un laboratorio funcional IAM centralizado con MFA obligatorio, control de acceso por rol con principios de Zero Trust, segmentación de red, detección de intrusos, monitoreo centralizado, prevención de fuga de datos y recuperación probada con tiempos medidos muy inferiores a los objetivos."),
-    numbered("La arquitectura híbrida con AWS se justificó por costo y resiliencia frente a un segundo centro de datos propio; su infraestructura como código está validada con controles de mínimo privilegio, cifrado y gasto cero, y su despliegue es el paso siguiente para cerrar los riesgos R-011 y R-017."),
+    numbered("La arquitectura híbrida con AWS se justificó por costo y resiliencia frente a un segundo centro de datos propio; su componente en AWS se desplegó con infraestructura como código y superó 13 de 13 pruebas de mínimo privilegio, cifrado, rechazo de acceso anónimo y registro, sin costo. Queda por desplegar la VPC de recuperación y la copia inmutable para cerrar el riesgo R-011."),
     numbered("Las principales brechas residuales —protección de dispositivos con MDM/EDR, copia fuera del sitio y sitio alterno— dependen de decisiones de inversión y no de capacidades técnicas, lo que confirma que la seguridad de la información es, ante todo, una decisión de gobierno."),
     numbered("Distinguir de forma explícita lo implementado, lo preparado y lo diseñado fortaleció la credibilidad del proyecto y permite sustentar cada afirmación durante la defensa con una prueba reproducible."),
   ];
@@ -841,7 +857,7 @@ function anexoD() {
     ["EV-15", "Trazabilidad de gobierno", "evidencias/gobernanza/trazabilidad-*.json"],
     ["EV-16", "Validación integral", "evidencias/automatizacion/validacion-sgsi-*.json"],
     ["EV-17", "IaC de AWS", "evidencias/aws/validacion-terraform-aws-20261024.txt; trivy-config-aws.json"],
-    ["EV-18", "Despliegue y pruebas AWS", "[[Pendiente: evidencias/aws/pruebas-aws-*.json tras el despliegue]]"],
+    ["EV-18", "Despliegue y pruebas AWS", "evidencias/aws/plan-20261107-130521.txt; apply-20261107-130521.txt; pruebas-aws-20261107-130835.json"],
   ];
   return [
     h2("Anexo D. Registro de evidencias"),

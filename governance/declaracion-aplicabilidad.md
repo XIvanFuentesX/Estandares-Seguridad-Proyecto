@@ -1,6 +1,6 @@
 # Declaración de Aplicabilidad (SoA) — borrador académico
 
-Generado: 2026-11-07T11:23:29-06:00. Contiene los 93 identificadores y títulos breves (en inglés, como figuran en la norma) del Anexo A de ISO/IEC 27001:2022, sin reproducir el texto normativo.
+Generado: 2026-11-07T13:09:47-06:00. Contiene los 93 identificadores y títulos breves (en inglés, como figuran en la norma) del Anexo A de ISO/IEC 27001:2022, sin reproducir el texto normativo.
 
 **Aplicabilidad:** no se excluye ningún control porque el alcance es una universidad completa (personal, instalaciones, proveedores y TI híbrida); las exclusiones deben decidirse en el proceso formal de tratamiento. La SoA no demuestra conformidad ni certificación.
 
