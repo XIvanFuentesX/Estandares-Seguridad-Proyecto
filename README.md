@@ -36,13 +36,6 @@ La base crea: grupo de recursos, VNet 10.20.0.0/16, cinco subredes, un NSG por s
 
 Registrar únicamente resultados obtenidos efectivamente: fecha, componente, comando/prueba, esperado, observado, evidencia (captura/archivo), responsable y estado. Véase `evidencias/registro.csv`.
 
-## Siguiente construcción (pendiente)
-
-1. Laboratorio local: TLS, acceso autenticado, IAM/RBAC, audit logs y respaldo/restauración de PostgreSQL.
-2. Azure: conectividad híbrida (VPN), private endpoints, telemetría y alertas según presupuesto.
-3. Seguridad: demostración MFA/Entra ID, EDR, MDM/DLP y SIEM según licencias.
-4. DRP/BCP: pruebas verificables de recuperación y medición de RTO/RPO.
-
 ## Seguridad del repositorio
 
 No subir `.env`, `terraform.tfstate`, `*.tfplan`, ni secretos. Evitar claves en capturas. Cualquier despliegue es decisión del operador después de revisar permisos, costos y red. No hay evidencia de ejecución ni simulación de resultados aquí.
