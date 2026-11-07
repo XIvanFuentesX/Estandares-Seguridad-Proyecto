@@ -36,6 +36,9 @@ function ConvertTo-Base32([byte[]]$Bytes) {
 }
 
 $required = [ordered]@{
+    DB_USER = "sgsi_demo"
+    DB_NAME = "universidad_demo"
+    DB_PASSWORD = { New-Password }
     KC_DB_NAME = "keycloak"
     KC_DB_USER = "keycloak"
     KC_DB_PASSWORD = { New-Password }

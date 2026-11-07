@@ -1,41 +1,91 @@
-# Laboratorio práctico SGSI — UVCG (versión 0.1)
+# SGSI UVCG — Proyecto final de Estándares de Seguridad
 
-Este repositorio es un **prototipo académico** para la universidad ficticia UVCG. No representa un SGSI certificado ni una infraestructura de producción. No se han desplegado recursos Azure ni ejecutado contenedores por el solo hecho de generar este repositorio.
+Sistema de Gestión de Seguridad de la Información para la universidad ficticia **UVCG**, con arquitectura híbrida: laboratorio local en Docker (DMZ, aplicaciones, identidad y datos segmentados) más un componente real en **AWS** (us-east-2). Prototipo académico con datos ficticios; no es un SGSI certificado ni infraestructura de producción.
 
-## Módulo 1: laboratorio local (Docker Desktop)
+- Documento final: [`documento/Proyecto_Final_SGSI_UVCG.docx`](documento/Proyecto_Final_SGSI_UVCG.docx)
+- Arquitectura: `localhost:8443 → Nginx (DMZ) → API Flask (apps) → PostgreSQL (datos)`, con Keycloak (OIDC + MFA) en la red de identidad. Sólo el proxy publica puertos y únicamente en `127.0.0.1`.
 
-Requisitos: Docker Desktop con Compose, al menos 4 GB de RAM libres, terminal PowerShell.
+## Levantar el laboratorio después de clonar (Windows)
 
-1. Ingresar a la carpeta `local`.
-2. Copiar `.env.example` a `.env` y sustituir `DB_PASSWORD` por una contraseña larga y única (no subir `.env` a repositorios).
-3. Ejecutar `docker compose up -d --build`.
-4. Ejecutar `python ../scripts/pruebas_locales.py`.
-5. Abrir `http://127.0.0.1:8080/cursos`.
-6. Para detener: `docker compose down`; para **borrar datos**, solo si se desea: `docker compose down -v`.
+### Requisitos
 
-Arquitectura: `localhost:8080 -> Nginx (DMZ) -> API Flask (APPS) -> PostgreSQL (DATOS)`.
-La API y la base no publican puertos al host. Hay redes Docker `internal` para APPS y DATOS. Es **segmentación funcional simplificada**, no equivale a un firewall NGFW ni prueba Zero Trust. HTTP se limita a loopback para laboratorio; no publicar directamente en Internet ni tratar datos reales. No hay login institucional en el prototipo, por lo que solo contiene información ficticia pública.
+- **Docker Desktop** iniciado (WSL2), con al menos 6 GB de RAM asignados.
+- **Python 3.10+** y **Git** (Git para Windows ya incluye la configuración necesaria).
+- **PowerShell 5.1** o superior (viene con Windows).
+- Los puertos **8080** y **8443** libres.
 
-## Módulo 2: base Azure (Terraform)
+### Pasos (una sola vez)
 
-Requisitos: suscripción Azure, Azure CLI, Terraform >=1.6 y permisos para crear recursos. **Hay costos potenciales**, aun con monitoreo desactivado; verificar precios y presupuestos antes de desplegar.
+Desde la carpeta del repositorio, en PowerShell:
 
-1. Ingresar a `azure`.
-2. Copiar `terraform.tfvars.example` a `terraform.tfvars` y definir `subscription_id`.
-3. Ejecutar `az login` y `az account set --subscription <ID>`.
-4. Ejecutar `terraform init`, `terraform fmt -check`, `terraform validate` y `terraform plan -out=plan.tfplan`.
-5. **Revisar el plan y costos**; solo después ejecutar `terraform apply plan.tfplan`.
-6. Comprobar en Azure Portal el grupo de recursos, las cinco subredes, los NSG y sus asociaciones; tomar capturas reales.
-7. Eliminar el laboratorio cuando deje de usarse con `terraform destroy` tras revisar los recursos afectados.
+```powershell
+# 1. Secretos propios (contraseñas, claves TOTP y clave de respaldo) en local\.env
+powershell -ExecutionPolicy Bypass -File scripts\generar_secretos_lab.ps1
 
-La base crea: grupo de recursos, VNet 10.20.0.0/16, cinco subredes, un NSG por subred, permiso TCP 443 de DMZ a APPS, permiso TCP 5432 de APPS a DATOS, y denegación del resto de tráfico entrante (incluido tráfico lateral no autorizado). **No crea máquinas virtuales, VPN, servicios de aplicación, firewall NGFW, IDS/IPS, IAM/MFA, DLP/MDM, backups ni SIEM**. Log Analytics es opcional y desactivado por defecto; activarlo no crea por sí solo integración de diagnósticos ni SIEM.
+# 2. Certificado TLS autofirmado de laboratorio en local\tls\
+powershell -ExecutionPolicy Bypass -File scripts\generar_certificado_lab.ps1
 
-**Advertencia:** los NSG son restrictivos deliberadamente; al añadir máquinas de gestión o servicios reales habrá que ajustar reglas concretas. Los nombres de NSG, subredes y demás se deben reconciliar con el diagrama final aprobado.
+# 3. Construir y levantar los 5 servicios principales (la primera vez tarda varios minutos)
+cd local
+docker compose -f compose.yaml up -d --build
+cd ..
+```
 
-## Evidencias para el docente
+Cada integrante genera **sus propios** secretos: `local\.env`, `local\tls\*.key` y los respaldos nunca se suben a GitHub. No compartan su `.env` por chat ni correo.
 
-Registrar únicamente resultados obtenidos efectivamente: fecha, componente, comando/prueba, esperado, observado, evidencia (captura/archivo), responsable y estado. Véase `evidencias/registro.csv`.
+### Comprobar que funciona
+
+```powershell
+python scripts\pruebas_locales.py      # HTTPS, cabeceras y bloqueos -> debe decir "OK: ..."
+python scripts\pruebas_identidad.py    # OIDC, MFA TOTP y matriz de roles -> "OK: ..."
+```
+
+Keycloak tarda alrededor de un minuto en quedar listo; si una prueba falla justo al arrancar, espere y repita.
+
+### Entrar a Keycloak con MFA (navegador)
+
+1. Abrir <https://localhost:8443/auth/realms/uvcg/account/> y aceptar el aviso del certificado de laboratorio.
+2. Usuario `docente.lab` (también `admin.lab`, `estudiante.lab`, `administrativo.lab`). La contraseña está en su `local\.env` (`UVCG_DOCENTE_PASSWORD`, etc.).
+3. En la pantalla del código de 6 dígitos: `python scripts\codigo_totp.py docente` (vale 30 s).
+
+Tras el inicio de sesión, la consola de cuenta muestra un error: es esperado, los usuarios no tienen el rol `manage-account` (mínimo privilegio).
+
+### Servicios opcionales y validación integral
+
+```powershell
+cd local
+docker compose -f compose.yaml --profile backup-scheduled --profile monitoring up -d   # respaldos diarios y monitor
+cd ..
+powershell -ExecutionPolicy Bypass -File scripts\validar_sgsi.ps1                      # todas las pruebas sin interrupción
+```
+
+Comandos por módulo (SIEM, IDS, DLP, MDM, respaldos, PITR, continuidad): [`MANUAL_EJECUCION.md`](MANUAL_EJECUCION.md).
+
+### Detener
+
+```powershell
+cd local
+docker compose -f compose.yaml --profile backup-scheduled --profile monitoring down
+```
+
+**No usar `down -v`**: borra las bases de datos y los usuarios de Keycloak. Apagar la laptop no borra nada; al encender basta con iniciar Docker Desktop y repetir el `up -d`.
+
+## Componente AWS
+
+Desplegado en la cuenta del titular del proyecto (plan Free, región **us-east-2**): bucket S3 privado y cifrado, roles IAM `uploader`/`auditor` con credenciales temporales y presupuesto de gasto cero; 13/13 pruebas (`evidencias/aws/pruebas-aws-*.json`). Los demás integrantes **no necesitan** cuenta de AWS para probar el laboratorio local. Detalle, costos y retirada: [`CIERRE_AWS.md`](CIERRE_AWS.md) y [`aws/README.md`](aws/README.md). La carpeta `azure/` es una alternativa evaluada y descartada.
+
+## Estructura
+
+| Carpeta | Contenido |
+|---|---|
+| `local/` | Laboratorio Docker: Nginx, API, Keycloak, PostgreSQL, respaldos, IDS, DLP, MDM |
+| `scripts/` | Pruebas, validación integral, SIEM ligero, gobierno y utilidades |
+| `governance/` | Inventario, BIA, riesgos, OCTAVE, matriz de calor, tratamiento, SoA, BCP/DRP, COBIT/ITIL |
+| `policies/` | Políticas, clasificación, Zero Trust, BYOD/MDM, procedimiento de incidentes |
+| `aws/` | Terraform y scripts del componente AWS |
+| `evidencias/` | Resultados de todas las pruebas, con fecha |
+| `documento/` | Documento final y sus generadores (`node documento/generar_documento.js`) |
 
 ## Seguridad del repositorio
 
-No subir `.env`, `terraform.tfstate`, `*.tfplan`, ni secretos. Evitar claves en capturas. Cualquier despliegue es decisión del operador después de revisar permisos, costos y red. No hay evidencia de ejecución ni simulación de resultados aquí.
+No subir `.env`, claves TLS, respaldos, `terraform.tfstate`, `terraform.tfvars` ni `*.tfplan` (ya están en `.gitignore`). No incluir contraseñas ni tokens en capturas.
