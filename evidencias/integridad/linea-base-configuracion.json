@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-10-24T11:34:28-06:00",
-  "reason": "uptime-monitor: deshabilitar healthcheck heredado de la imagen local-api",
+  "created_at": "2026-11-07T13:31:30-06:00",
+  "reason": "CHG-008: CSP y limit_req de /auth/ en Nginx",
   "algorithm": "SHA-256",
   "files": {
     "compose.yaml": "0b4726f0e2958a9e2d4844bc69bcaa31b54075e5dedb2217fa9cfa7def369f6f",
@@ -8,7 +8,7 @@
     "init.sql": "57e0dacc4f1446faaaf5d234bde35ba8527888671b30f5fa42b81a1c896ca92b",
     ".env.example": "c4649f7435ebe6468b1d003fddade1b5a0f8b58c2e2551f3a26124626aa8cff2",
     ".gitignore": "2d4071d5e83419bbff84ae90842e1e2924345990ae144141156aa9729e2cfdf7",
-    "nginx/default.conf": "a2c978aaa63313b4c29d73c9b327143b09be494ac0fff31c5c5f924bf053bcda",
+    "nginx/default.conf": "addc857d4196036e9e6f4c3e8cbf35339706fc0998f1c86c48e96388b0a95885",
     "nginx/Dockerfile": "c5bff944c0c0ade99c579e14f5f3b0c5f7aa2e435ba6c35f65cb87a455df2507",
     "api/app.py": "4325f7d66600431d9b604c28a37e534a5ce61ee60b8764b5dee9ac4aa6417403",
     "api/Dockerfile": "7ab62f8247168c6be851cd55c5d45fd350fddd3f580d425a8e5d6ea72fffb361",

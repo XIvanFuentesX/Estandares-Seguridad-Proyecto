@@ -550,7 +550,7 @@ function siem() {
     ], [18, 34, 16, 32], { size: 16 }),
     p("**EDR.** En lugar de un agente comercial, se implementó una **vigilancia de contenedores** que compara los procesos en ejecución con una lista esperada, detecta deriva del sistema de archivos y verifica el endurecimiento de cada servicio. En la prueba, la introducción de un proceso no autorizado en la API se detectó y el intento de escritura fue bloqueado por el sistema de archivos de sólo lectura. Esta capacidad cubre los servidores contenedorizados, no las estaciones de los usuarios, que son la brecha R-013."),
     p("**XDR.** La arquitectura objetivo integra la telemetría de puntos finales (EDR), red (IDS/NGFW), identidad (Keycloak) y nube (CloudTrail, GuardDuty) en una plataforma de detección extendida que correlacione entre dominios y automatice respuestas. En el estado actual, el SIEM ligero ya correlaciona identidad, red y aplicación, lo que constituye la base de esa integración."),
-    p("**Respuesta a incidentes.** El registro operativo (`evidencias/gestion/registro-sgsi.db`) contiene 13 incidentes, 7 cambios, 2 solicitudes de acceso y 4 eventos de activos, con una bitácora de auditoría encadenada por hash. Siete incidentes son reales —por ejemplo, INC-007 (copia antigua sin cifrar), INC-010 (permisos amplios del archivo de secretos), INC-011 (bases sin archivado WAL) e INC-013 (región de AWS bloqueada por la organización)— y seis son ejercicios de DLP rotulados como tales."),
+    p("**Respuesta a incidentes.** El registro operativo (`evidencias/gestion/registro-sgsi.db`) contiene 13 incidentes, 8 cambios, 2 solicitudes de acceso y 4 eventos de activos, con una bitácora de auditoría encadenada por hash. Siete incidentes son reales —por ejemplo, INC-007 (copia antigua sin cifrar), INC-010 (permisos amplios del archivo de secretos), INC-011 (bases sin archivado WAL) e INC-013 (región de AWS bloqueada por la organización)— y seis son ejercicios de DLP rotulados como tales."),
   ];
 }
 
@@ -618,7 +618,8 @@ function implementacion() {
     p("**Alcance real del componente híbrido.** La integración demostrada es una transferencia cifrada por Internet con identidad temporal y mínimo privilegio; no es una VPN privada entre redes. La VPC multi-AZ, la VPN Site-to-Site, GuardDuty, Security Hub y la copia inmutable con Object Lock permanecen como diseño, porque su costo no está garantizado como cero en el plan gratuito."),
     ...capturePlaceholder("Consola de AWS: bucket S3 con bloqueo de acceso público y cifrado predeterminado", "Pestaña Permisos y Propiedades del bucket uvcg-sgsi-lab-*."),
     ...capturePlaceholder("Consola de IAM: roles uploader y auditor con sus políticas", "Lista de roles y política en línea de cada uno."),
-    ...capturePlaceholder("Inicio de sesión con MFA en Keycloak y respuesta 403 por rol insuficiente", "Pantalla de TOTP del realm uvcg y respuesta de /administracion con el usuario docente."),
+    ...figure("Inicio de sesión con MFA en Keycloak (realm uvcg, usuario docente.lab)", "documento/figuras/keycloak-mfa.png",
+      "Capturas reales del laboratorio en ejecución tomadas el 7 de noviembre de 2026 con documento/capturar_keycloak.py (Chrome automatizado); sólo se recortaron alrededor del formulario. La contraseña se muestra enmascarada y no se capturó ningún código válido. El rechazo por rol insuficiente (403) se verifica con scripts/pruebas_identidad.py (Tabla de pruebas de la validación integral)."),
   ];
 }
 
@@ -681,7 +682,7 @@ function cobitItil() {
       ["APO02 Estrategia", "Alineamiento estratégico", "Objetivos de seguridad ligados a procesos académicos críticos del BIA", "1"],
       ["APO12 Riesgo gestionado", "Gestión de riesgos", "22 riesgos con P × I, OCTAVE y trazabilidad automática", "2"],
       ["APO13 Seguridad gestionada", "Gestión de riesgos", "SGSI, declaración de aplicabilidad de 93 controles, validación integral", "2"],
-      ["BAI06 Cambios gestionados", "Cumplimiento", "Registro CHG-001 a CHG-007 con reversión", "2"],
+      ["BAI06 Cambios gestionados", "Cumplimiento", "Registro CHG-001 a CHG-008 con reversión", "2"],
       ["BAI09 Activos gestionados", "Gestión de recursos", "Inventario de 33 activos y eventos de ciclo de vida", "2"],
       ["DSS02 Incidentes gestionados", "Desempeño", "Registro INC con auditoría encadenada", "2"],
       ["DSS04 Continuidad gestionada", "Desempeño", "BCP/DRP con pruebas semanales", "2"],
@@ -691,7 +692,7 @@ function cobitItil() {
     ], [24, 16, 50, 10], { size: 16, center: [3] }),
     ...table("Prácticas de ITIL 4 aplicadas", ["Práctica", "Aplicación demostrable", "Evidencia"], [
       ["Gestión de incidentes", "Apertura, contención, cierre y lección aprendida de 13 incidentes", "governance/registros-operativos.md"],
-      ["Habilitación de cambios", "Cambios estándar y normales con riesgo, reversión y aprobación", "CHG-001 a CHG-007"],
+      ["Habilitación de cambios", "Cambios estándar y normales con riesgo, reversión y aprobación", "CHG-001 a CHG-008"],
       ["Gestión de problemas", "Causa raíz de INC-008 e INC-009 corregida en los scripts", "registros-operativos.md"],
       ["Gestión de niveles de servicio", "RTO/RPO por proceso como objetivos de servicio; disponibilidad medida cada 15 s", "bia.csv, uptime-monitor"],
       ["Gestión de activos de TI", "Inventario y eventos de alta y cambio", "AST-001 a AST-004"],

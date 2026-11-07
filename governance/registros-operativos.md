@@ -1,8 +1,8 @@
 # Registros operativos del SGSI (laboratorio)
 
-Exportado: 2026-11-07T13:09:17-06:00 desde `evidencias/gestion/registro-sgsi.db`. Origen `real-laboratorio` = hecho ocurrido en este laboratorio; `ejercicio` = caso de práctica con identidades ficticias. Ninguna entrada representa una aprobación institucional; "aprobado_por" refleja la autorización dada por el usuario del laboratorio en la conversación de trabajo.
+Exportado: 2026-11-07T13:31:30-06:00 desde `evidencias/gestion/registro-sgsi.db`. Origen `real-laboratorio` = hecho ocurrido en este laboratorio; `ejercicio` = caso de práctica con identidades ficticias. Ninguna entrada representa una aprobación institucional; "aprobado_por" refleja la autorización dada por el usuario del laboratorio en la conversación de trabajo.
 
-Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas: 37.
+Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas: 38.
 
 ## Incidentes (13)
 
@@ -22,7 +22,7 @@ Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas:
 | INC-012 | 2026-10-24T11:34:28-06:00 | Validación integral interrumpida por falta de memoria del sistema; contenedor PITR efímero huérfano | baja | real-laboratorio | abierto | 2026-10-24T11:34:28-06:00 | Contenedor efímero detenido; servicios principales verificados healthy; datos y volúmenes intactos |  |  | R-004 |  |  |
 | INC-013 | 2026-11-07T13:09:08-06:00 | Despliegue AWS parcial: SCP de la organización deniega us-east-1 (s3:CreateBucket) | baja | real-laboratorio | cerrado | 2026-11-07T13:03:00-06:00 | Sin datos expuestos; se crearon sólo IAM y presupuesto (globales). Se verificó con consultas de sólo lectura que sólo us-east-2 está permitida y se re-planificó. | Región cambiada a us-east-2 (permitida por la SCP); nuevo plan revisado y aplicado: 6 creados, 2 actualizados, 0 eliminados; 13/13 pruebas exitosas. | Verificar las regiones permitidas por las SCP de la organización antes de planificar; las pruebas no deben asumir el endpoint global de S3. | R-017 | evidencias/aws/apply-20261107-130221.txt | 2026-11-07T13:09:16-06:00 |
 
-## Cambios (7)
+## Cambios (8)
 
 | id | creado | titulo | tipo | riesgo | descripcion | rollback | aprobado_por | estado | ejecutado | evidencia | origen |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -33,6 +33,7 @@ Integridad de la bitácora de auditoría: verificada (cadena SHA-256); entradas:
 | CHG-005 | 2026-10-24T11:08:32-06:00 | Restringir ACL de local/.env al usuario propietario | normal | R-015 | ACL heredada concede Modificar a Usuarios autentificados | icacls .env /restore con la ACL guardada |  | propuesto - pendiente de autorizacion |  |  | real-laboratorio |
 | CHG-006 | 2026-10-24T11:34:28-06:00 | uptime-monitor: deshabilitar healthcheck heredado (falso unhealthy) | estandar | R-012 |  | Quitar el bloque healthcheck del servicio | Encargo de cierre local (cambio seguro y reversible) | implementado |  | evidencias/integridad/linea-base-configuracion.json | real-laboratorio |
 | CHG-007 | 2026-11-07T13:09:07-06:00 | Despliegue AWS: S3 privado, roles IAM uploader/auditor y presupuesto de gasto cero (us-east-2) | normal | R-011 | Plan revisado por la compuerta de costo; 11 recursos en la cuenta 0054****4685 (plan FREE). Región cambiada de us-east-1 a us-east-2 por SCP de la organización. | aws/scripts/retirar.ps1 -Confirmacion RETIRAR-SGSI-UVCG | Titular de la cuenta (autorización explícita 2026-11-07) | ejecutado | 2026-11-07T13:06:00-06:00 | evidencias/aws/apply-20261107-130521.txt; evidencias/aws/pruebas-aws-20261107-130835.json | real-laboratorio |
+| CHG-008 | 2026-11-07T13:31:30-06:00 | Nginx: CSP de mismo origen para /auth/ y recursos estáticos de Keycloak sin limit_req | estandar | R-008 | La CSP default-src 'none' del server bloqueaba estilos/scripts de Keycloak y limit_req (ráfaga 20) devolvía 503 a la consola. /auth/ usa CSP 'self'; /auth/resources/ (sólo GET) sin limit_req. API sin cambios; login conserva el límite. | Copiar local/rollback/nginx-default.conf.pre-csp-auth-20261107.bak y nginx -s reload | Titular del laboratorio (solicitud de capturas 2026-11-07) | ejecutado | 2026-11-07T13:30:00-06:00 | local/nginx/default.conf; scripts/pruebas_locales.py OK; scripts/pruebas_identidad.py OK | real-laboratorio |
 
 ## Accesos (2)
 
