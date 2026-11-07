@@ -1,0 +1,11 @@
+﻿{
+    "timestamp":  "2026-10-24T08:49:17.6878999-06:00",
+    "scenario":  "api_container_interruption",
+    "baseline_http_status":  200,
+    "interruption_http_status":  504,
+    "recovery_http_status":  200,
+    "recovery_seconds":  12.83,
+    "database_course_count":  3,
+    "scope_warning":  "MediciÃ³n de laboratorio; no constituye garantÃ­a institucional.",
+    "result":  "success"
+}

@@ -1,0 +1,11 @@
+﻿{
+    "timestamp":  "2026-10-24T11:13:51.0525878-06:00",
+    "mode":  "verify",
+    "checks":  {
+                   "rollback_compose_exists":  true,
+                   "rollback_compose_valid":  true,
+                   "rollback_compose_uses_official_image":  true,
+                   "previous_image_available":  true,
+                   "volumes_present":  true
+               }
+}

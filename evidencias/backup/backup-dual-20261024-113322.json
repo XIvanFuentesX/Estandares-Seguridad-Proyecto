@@ -1,0 +1,29 @@
+﻿{
+    "timestamp":  "2026-10-24T11:33:22.9960745-06:00",
+    "target_requested":  "both",
+    "results":  [
+                    {
+                        "target":  "academic",
+                        "result":  "success",
+                        "file":  "academic-20261024-173321.dump.enc",
+                        "encrypted":  true,
+                        "sha256_verified":  true,
+                        "bytes":  1760,
+                        "elapsed_seconds":  0.866
+                    },
+                    {
+                        "target":  "identity",
+                        "result":  "success",
+                        "file":  "identity-20261024-173322.dump.enc",
+                        "encrypted":  true,
+                        "sha256_verified":  true,
+                        "bytes":  264560,
+                        "elapsed_seconds":  1.303
+                    }
+                ],
+    "retention_days":  30,
+    "retention_candidates":  0,
+    "retention_applied":  false,
+    "encryption":  "AES-256-CBC/PBKDF2-200000; secreto separado en .env local ignorado",
+    "elapsed_seconds":  2.195
+}

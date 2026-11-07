@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-10-24T11:13:56-06:00",
+  "synthetic_data_only": true,
+  "results": [
+    {
+      "file": "confidencial-ficticio.txt",
+      "label": "CONFIDENCIAL",
+      "detections": [],
+      "channel": "interno",
+      "decision": "allowed",
+      "reason": "conforme a la política de clasificación",
+      "copied_to": "local/dlp/salida/interno/confidencial-ficticio.txt"
+    },
+    {
+      "file": "credencial-ficticia.txt",
+      "label": "INTERNA",
+      "detections": [
+        {
+          "rule": "CREDENCIAL",
+          "value_sha256_prefix": "9770e3dfd81b"
+        }
+      ],
+      "channel": "interno",
+      "decision": "blocked",
+      "reason": "credencial o secreto en el contenido"
+    },
+    {
+      "file": "publico.txt",
+      "label": "PUBLICA",
+      "detections": [],
+      "channel": "interno",
+      "decision": "allowed",
+      "reason": "conforme a la política de clasificación",
+      "copied_to": "local/dlp/salida/interno/publico.txt"
+    },
+    {
+      "file": "restringido-ficticio.txt",
+      "label": "RESTRINGIDA",
+      "detections": [
+        {
+          "rule": "GT-DPI-13",
+          "value_sha256_prefix": "aa2f79dfbdfc"
+        }
+      ],
+      "channel": "interno",
+      "decision": "blocked",
+      "reason": "información restringida fuera de canal aprobado"
+    },
+    {
+      "file": "tarjeta-ficticia.txt",
+      "label": "INTERNA",
+      "detections": [
+        {
+          "rule": "TARJETA-PAGO",
+          "value_sha256_prefix": "6a7e0e79b018"
+        }
+      ],
+      "channel": "interno",
+      "decision": "allowed",
+      "reason": "conforme a la política de clasificación",
+      "copied_to": "local/dlp/salida/interno/tarjeta-ficticia.txt"
+    }
+  ]
+}

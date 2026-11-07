@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-11-07T11:12:29-06:00",
+  "naturaleza": "SIMULACIÓN con inventario ficticio; no existe plataforma MDM ni dispositivos inscritos",
+  "politica": "UVCG-BYOD-Cumplimiento-v1",
+  "dispositivos": 5,
+  "conformes": 3,
+  "no_conformes": 2,
+  "resultados": [
+    {
+      "id": "DEV-001",
+      "propietario": "docente01",
+      "tipo": "institucional",
+      "so": "windows 10.0.22631",
+      "conforme": true,
+      "incumplimientos": [],
+      "acceso": {
+        "confidencial_restringida": "permitido (MFA)",
+        "interna": "permitido (MFA)",
+        "publica": "permitido"
+      },
+      "accion_recomendada": "ninguna"
+    },
+    {
+      "id": "DEV-002",
+      "propietario": "estudiante01",
+      "tipo": "byod",
+      "so": "android 14",
+      "conforme": true,
+      "incumplimientos": [],
+      "acceso": {
+        "confidencial_restringida": "permitido (MFA)",
+        "interna": "permitido (MFA)",
+        "publica": "permitido"
+      },
+      "accion_recomendada": "ninguna"
+    },
+    {
+      "id": "DEV-003",
+      "propietario": "estudiante02",
+      "tipo": "byod",
+      "so": "android 11",
+      "conforme": false,
+      "incumplimientos": [
+        "bloqueo_pantalla",
+        "pin_min_longitud",
+        "so_minimo",
+        "antimalware_activo",
+        "sin_root_jailbreak",
+        "borrado_selectivo",
+        "perfil_trabajo_separado"
+      ],
+      "acceso": {
+        "confidencial_restringida": "denegado",
+        "interna": "sólo navegador sin descargas (MFA)",
+        "publica": "permitido"
+      },
+      "accion_recomendada": "borrado selectivo del perfil de trabajo y bloqueo"
+    },
+    {
+      "id": "DEV-004",
+      "propietario": "administrativo01",
+      "tipo": "institucional",
+      "so": "windows 10.0.19044",
+      "conforme": false,
+      "incumplimientos": [
+        "cifrado_disco",
+        "so_minimo"
+      ],
+      "acceso": {
+        "confidencial_restringida": "denegado",
+        "interna": "sólo navegador sin descargas (MFA)",
+        "publica": "permitido"
+      },
+      "accion_recomendada": "notificar y corregir en 3 días; bloquear al vencer"
+    },
+    {
+      "id": "DEV-005",
+      "propietario": "docente02",
+      "tipo": "byod",
+      "so": "ios 17.5",
+      "conforme": true,
+      "incumplimientos": [],
+      "acceso": {
+        "confidencial_restringida": "permitido (MFA)",
+        "interna": "permitido (MFA)",
+        "publica": "permitido"
+      },
+      "accion_recomendada": "ninguna"
+    }
+  ],
+  "mapeo_intune": {
+    "cifrado_disco": "Compliance policy > Device Health > Require BitLocker / Require encryption (Android/iOS)",
+    "bloqueo_pantalla_max_min": "Compliance policy > System Security > Maximum minutes of inactivity before password is required",
+    "pin_min_longitud": "Compliance policy > System Security > Minimum password length",
+    "so_minimo": "Compliance policy > Device Properties > Minimum OS version",
+    "antimalware_activo": "Compliance policy > Defender / Microsoft Defender for Endpoint risk score",
+    "sin_root_jailbreak": "Compliance policy > Device Health > Rooted/jailbroken devices: Block",
+    "borrado_selectivo": "App protection policy (MAM) + Retire / Selective wipe",
+    "perfil_trabajo_separado": "Android Enterprise work profile / iOS user enrollment"
+  },
+  "dependencias": [
+    "Microsoft Intune (licencia Intune Plan 1 o M365 A3/A5)",
+    "Entra ID P1 para Acceso Condicional",
+    "Microsoft Defender for Endpoint para riesgo del dispositivo"
+  ]
+}

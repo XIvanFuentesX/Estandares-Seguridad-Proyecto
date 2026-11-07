@@ -1,0 +1,268 @@
+"""Genera inventario, BIA, riesgos, OCTAVE, tratamiento, SoA, BCP y DRP."""
+
+import csv
+import datetime as dt
+from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "governance"
+OUT.mkdir(exist_ok=True)
+STAMP = dt.datetime.now().astimezone().isoformat(timespec="seconds")
+DISCLAIMER = "Supuestos académicos pendientes de validación y aprobación por responsables institucionales; no provienen de entrevistas ni de datos financieros reales."
+
+
+def write_csv(name, rows):
+    path = OUT / name
+    with path.open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    return path
+
+
+def table(rows, fields=None):
+    fields = fields or list(rows[0])
+    def clean(value):
+        return str(value).replace("|", "\\|").replace("\n", " ")
+    lines = ["| " + " | ".join(fields) + " |", "|" + "|".join("---" for _ in fields) + "|"]
+    lines += ["| " + " | ".join(clean(row.get(field, "")) for field in fields) + " |" for row in rows]
+    return "\n".join(lines)
+
+
+assets = [
+    ("ACT-001","Host Windows/Docker Desktop","Infraestructura","TI UVCG","Administrador del laboratorio","Local","Contenedores y volúmenes del SGSI",3,5,5,"Crítica","Energía; hardware; Docker Desktop","Implementado"),
+    ("ACT-002","Redes Docker segmentadas","Red","Seguridad TI","Administrador del laboratorio","Local","Flujos entre DMZ, aplicaciones, datos e identidad",3,5,5,"Crítica","ACT-001; compose.yaml","Implementado"),
+    ("ACT-003","API académica Flask/Gunicorn","Aplicación","Dirección Académica","TI Aplicaciones","Red apps","Cursos y decisiones RBAC",4,5,4,"Alta","ACT-005; ACT-006; ACT-002","Implementado"),
+    ("ACT-004","Proxy Nginx/TLS","Aplicación perimetral","Seguridad TI","TI Infraestructura","DMZ Docker","Solicitudes HTTPS y logs de acceso",3,5,5,"Crítica","ACT-003; ACT-013; ACT-002","Implementado"),
+    ("ACT-005","PostgreSQL académico","Base de datos","Dirección Académica","DBA/TI","Red datos","Información académica ficticia",5,5,5,"Crítica","ACT-001; ACT-010","Implementado"),
+    ("ACT-006","Keycloak","Identidad","Seguridad TI","IAM/TI","Red identidad/apps","Identidades, roles y eventos de autenticación ficticios",5,5,5,"Crítica","ACT-007; ACT-004","Implementado"),
+    ("ACT-007","PostgreSQL de identidad","Base de datos","Seguridad TI","DBA/IAM","Red identidad","Configuración, usuarios y credenciales derivadas",5,5,5,"Crítica","ACT-001; ACT-010","Implementado"),
+    ("ACT-008","SIEM ligero SQLite","Monitoreo","Seguridad TI","Analista de Seguridad","Host local","Eventos saneados y alertas",4,5,4,"Alta","Docker logs; ACT-009","Implementado"),
+    ("ACT-009","Suricata offline","IDS","Seguridad TI","Analista de Seguridad","Perfil Docker aislado","PCAP sintético y alertas EVE",3,5,3,"Alta","Reglas IDS; ACT-008","Implementado parcial"),
+    ("ACT-010","Repositorio local de backups cifrados","Respaldo","TI UVCG","DBA/TI","Disco local","Copias cifradas de ACT-005 y ACT-007",5,5,5,"Crítica","ACT-001; ACT-011","Implementado"),
+    ("ACT-011","Secretos locales .env","Información de autenticación","Seguridad TI","Administrador del laboratorio","Host local, ignorado por Git","Claves de DB, IAM y cifrado",5,5,5,"Crítica","ACL del host; gestión manual","Implementado laboratorio"),
+    ("ACT-012","Código y configuración SGSI","Software/Información","TI UVCG","DevSecOps","Workspace local","Código, Compose, Terraform y políticas",4,5,4,"Alta","ACT-001; control de versiones futuro","Implementado"),
+    ("ACT-013","Certificado y clave TLS de laboratorio","Criptográfico","Seguridad TI","TI Infraestructura","Host/volumen TLS","Identidad TLS autofirmada del laboratorio",5,5,4,"Alta","ACT-004; ACT-011","Implementado laboratorio"),
+    ("ACT-014","Evidencias técnicas y documentos SGSI","Información","Responsable SGSI","Equipo del proyecto","Workspace local","Resultados, matrices y reportes saneados",4,5,4,"Alta","ACT-001; ACT-012","Implementado"),
+    ("ACT-015","Azure hub-and-spoke","Cloud","TI UVCG","Cloud/DevSecOps","Microsoft Azure","Redes, RBAC, monitoreo y recuperación",4,5,5,"Crítica","Suscripción, presupuesto, conectividad","Planificado"),
+    ("ACT-016","Repositorio offsite/inmutable","Respaldo","TI UVCG","DBA/Continuidad","Por definir","Segunda copia y retención institucional",5,5,5,"Crítica","Proveedor/ubicación aprobados","Planificado"),
+    ("ACT-017","SIEM empresarial","Seguridad","Seguridad TI","SOC/Proveedor","Por definir","Telemetría institucional y casos de uso",5,5,5,"Crítica","Licencia, almacenamiento, personal","Planificado"),
+    ("ACT-018","MDM/EDR institucional","Endpoint","Seguridad TI","Soporte/SOC","Dispositivos institucionales","Postura, cumplimiento y respuesta endpoint",5,5,4,"Alta","Licencias y enrolamiento","Planificado"),
+    ("ACT-019","Plataforma virtual de aprendizaje","Aplicación","Dirección Académica","TI Aplicaciones","Escenario institucional","Contenido, evaluaciones y actividad docente",5,5,5,"Crítica","Identidad; red; proveedores","Académico no implementado"),
+    ("ACT-020","Sistema financiero/pagos","Aplicación","Dirección Financiera","TI/Finanzas","Escenario institucional","Pagos y registros financieros",5,5,5,"Crítica","Banca; identidad; cumplimiento","Académico no implementado"),
+    ("ACT-021","Correo/comunicaciones","Servicio","Comunicación Institucional","TI/Proveedor","Escenario institucional","Mensajes y notificaciones",4,4,5,"Alta","Proveedor; DNS; identidad","Académico no implementado"),
+]
+asset_fields = ["id","activo","tipo","propietario","custodio","ubicacion","informacion_procesada","confidencialidad_1_5","integridad_1_5","disponibilidad_1_5","criticidad","dependencias","estado_real"]
+asset_rows = [dict(zip(asset_fields, row)) for row in assets]
+write_csv("inventario-activos.csv", asset_rows)
+(OUT / "inventario-activos.md").write_text(
+    f"# Inventario de activos del SGSI UVCG\n\nGenerado: {STAMP}. {DISCLAIMER}\n\nEscala CIA: 1 insignificante, 2 baja, 3 moderada, 4 alta, 5 crítica.\n\n" + table(asset_rows), encoding="utf-8")
+
+bia_fields = ["id","proceso","responsable","descripcion","dependencias_tecnologicas","activos","impacto_operativo_1_5","impacto_financiero_1_5","impacto_academico_1_5","impacto_reputacional_1_5","impacto_legal_1_5","rto_horas","rpo_horas","mtpd_horas","criticidad","justificacion","estado_datos"]
+bia_data = [
+    ("PROC-001","Inscripción y matrícula","Registro Académico","Alta y modificación de matrícula estudiantil","Identidad; portal; base académica; pagos","ACT-005; ACT-006; ACT-020",5,4,5,5,4,4,1,12,"Crítica","La indisponibilidad en ventanas de inscripción detiene el ingreso académico y puede afectar ingresos.",DISCLAIMER),
+    ("PROC-002","Gestión académica","Dirección Académica","Cursos, calificaciones, expedientes y programación","API; base académica; identidad","ACT-003; ACT-005; ACT-006",5,3,5,4,5,8,4,24,"Crítica","La integridad de expedientes es esencial y existen obligaciones de conservación/privacidad.",DISCLAIMER),
+    ("PROC-003","Aprendizaje virtual","Dirección Académica","Entrega de contenido, tareas, evaluación y clases","LMS; identidad; comunicaciones; Internet","ACT-006; ACT-019; ACT-021",5,3,5,4,3,4,1,12,"Crítica","Una interrupción durante evaluaciones afecta directamente continuidad docente.",DISCLAIMER),
+    ("PROC-004","Identidad y autenticación","Seguridad TI","Autenticación, MFA, sesiones y roles","Keycloak; DB identidad; TLS; DNS/tiempo","ACT-006; ACT-007; ACT-013",5,4,5,5,5,2,0.25,4,"Crítica","Es dependencia transversal; su caída bloquea múltiples procesos.",DISCLAIMER),
+    ("PROC-005","Gestión financiera y pagos","Dirección Financiera","Cobros, conciliación y obligaciones financieras","Sistema financiero; identidad; banca","ACT-006; ACT-020",4,5,3,5,5,8,1,24,"Crítica","Errores o indisponibilidad afectan ingresos, conciliación y obligaciones regulatorias.",DISCLAIMER),
+    ("PROC-006","Servicios administrativos","Administración","RRHH, compras, expedientes y soporte administrativo","Identidad; sistemas administrativos; correo","ACT-006; ACT-021",3,3,3,3,4,24,8,72,"Alta","Tolera mayor demora fuera de cierres, pero maneja información confidencial.",DISCLAIMER),
+    ("PROC-007","Correo y comunicaciones","Comunicación Institucional","Avisos, coordinación y comunicaciones de emergencia","Correo; identidad; DNS; Internet","ACT-006; ACT-021",4,3,4,5,3,8,4,24,"Alta","Es canal operativo y de crisis; existen alternativas temporales limitadas.",DISCLAIMER),
+]
+bia_rows = [dict(zip(bia_fields, row)) for row in bia_data]
+for row in bia_rows:
+    assert float(row["rpo_horas"]) <= float(row["rto_horas"]) < float(row["mtpd_horas"]), row["id"]
+write_csv("bia.csv", bia_rows)
+(OUT / "bia.md").write_text(
+    f"# Business Impact Analysis — UVCG\n\nGenerado: {STAMP}. **{DISCLAIMER}**\n\n## Escala\n\n1 insignificante; 2 menor; 3 moderado; 4 alto; 5 crítico. La criticidad considera el máximo impacto y la dependencia transversal. RPO ≤ RTO < MTPD fue validado automáticamente. Los 12.83 s de recuperación API y 8.222 s de restore local son evidencia del laboratorio, no objetivos institucionales.\n\n" + table(bia_rows), encoding="utf-8")
+
+risk_fields = ["id","proceso","activo","amenaza","vulnerabilidad","escenario","probabilidad_1_5","impacto_1_5","riesgo_inherente","nivel_inherente","controles_existentes","efectividad_control_1_5","riesgo_residual","nivel_residual","responsable","evidencia","naturaleza_valoracion"]
+risk_data = [
+    ("R-001","PROC-002","ACT-003/005","Acceso no autorizado","Token/rol comprometido","Un actor consulta información académica fuera de su función.",3,5,15,"Alto","OIDC; MFA; RBAC; TLS; logging",4,6,"Moderado","Seguridad TI","pruebas_identidad.py; SIEM-RBAC-001",DISCLAIMER),
+    ("R-002","PROC-004","ACT-006","Fuerza bruta/credential stuffing","Credenciales reutilizadas o intentos automatizados","Intentos reiterados buscan tomar una cuenta.",4,4,16,"Crítico","MFA; bloqueo Keycloak; política contraseña; SIEM-AUTH-001",4,6,"Moderado","IAM","realm UVCG; consulta auth denied",DISCLAIMER),
+    ("R-003","PROC-002","ACT-005/014","Exposición de información","Manejo o transferencia inadecuada","Datos académicos o evidencias salen por canal no autorizado.",3,5,15,"Alto","Clasificación; DLP demostrativo; RBAC; redacción",3,9,"Moderado","Propietario de información","policies/clasificacion-informacion.md; dlp",DISCLAIMER),
+    ("R-004","PROC-001","ACT-001","Interrupción de servicios","Dependencia de un único host local","Fallo de host/Docker detiene inscripción y servicios relacionados.",4,5,20,"Crítico","Restart; healthchecks; backup; DRP laboratorio",2,15,"Alto","TI Infraestructura","continuidad-api-20261024-084904.json",DISCLAIMER),
+    ("R-005","PROC-002","ACT-005","Pérdida/corrupción de datos","Fallo lógico, humano o de almacenamiento","Se pierden registros académicos sin copia recuperable.",3,5,15,"Alto","Backup cifrado programado; SHA; restore aislado",4,6,"Moderado","DBA","backup-dual; restauracion-dual",DISCLAIMER),
+    ("R-006","PROC-004","ACT-007","Pérdida de identidades","Antes no existía backup validado de identidad","La base IAM se corrompe e impide autenticación.",3,5,15,"Alto","Backup cifrado identidad; restore con conteo",4,6,"Moderado","IAM/DBA","restauracion-dual",DISCLAIMER),
+    ("R-007","PROC-002/004","ACT-010","Fallo de respaldos","Copia incompleta, clave ausente o tarea detenida","La recuperación falla cuando se requiere.",3,5,15,"Alto","Schedulers; manifiesto; SHA; alert log; pruebas periódicas",4,6,"Moderado","DBA/Continuidad","execution.log; scripts backup/restore",DISCLAIMER),
+    ("R-008","Todos","ACT-012","Configuración insegura","Cambio no validado o secreto expuesto","Una configuración introduce exposición o indisponibilidad.",3,4,12,"Alto","Compose validate; Trivy; detect-secrets; revisión",4,4,"Bajo","DevSecOps","trivy-fs.json; validar_sgsi.ps1",DISCLAIMER),
+    ("R-009","PROC-002","ACT-005","Explotación de vulnerabilidades PostgreSQL","1 CVE critical y 25 high en Go stdlib de binario incluido","Un componente vulnerable es explotado pese a que DB no se publica.",4,5,20,"Crítico","Segmentación; sin puertos; read-only; mínimo privilegio",3,12,"Alto","DBA/DevSecOps","trivy-postgres-image.json",DISCLAIMER),
+    ("R-010","PROC-004","ACT-006","Explotación de vulnerabilidades Keycloak","2 high OpenJDK y cobertura JAR incompleta","Una falla del runtime o dependencia afecta IAM.",3,5,15,"Alto","No publicado directo; TLS proxy; cap_drop; MFA; monitoreo",3,10,"Alto","IAM/DevSecOps","trivy-keycloak-image.json",DISCLAIMER),
+    ("R-011","Todos","ACT-001/015/016","Desastre del sitio/equipo","Sin despliegue híbrido ni copia offsite","Pérdida del host destruye servicio y copias locales.",4,5,20,"Crítico","Terraform preparado; backups locales",1,20,"Crítico","Dirección TI","azure/main.tf; estado proyecto",DISCLAIMER),
+    ("R-012","Todos","ACT-008","Detección insuficiente","SIEM local sin HA/UEBA/agentes","Un incidente no es correlacionado o preservado oportunamente.",4,4,16,"Crítico","SQLite; reglas; consultas; rotación Docker; Suricata",3,9,"Moderado","Seguridad TI","reporte SIEM integrado",DISCLAIMER),
+    ("R-013","PROC-006","ACT-018","Malware en endpoints","Sin MDM/EDR real","Un endpoint comprometido roba sesión o información.",4,4,16,"Crítico","Política BYOD; MFA; DLP demostrativo",1,16,"Crítico","Seguridad TI","policies/byod-mdm.md",DISCLAIMER),
+    ("R-014","Todos","ACT-001","Incidente físico/ambiental","Sin sitio alterno ni controles físicos evaluados","Robo, incendio o energía afecta el único host.",3,5,15,"Alto","Backups locales; procedimientos",1,15,"Alto","Administración/TI","BIA; DRP",DISCLAIMER),
+    ("R-015","PROC-002/004","ACT-011","Compromiso de clave de backup","Gestión local manual de secretos","Un actor descifra copias o impide recuperación.",2,5,10,"Alto","Secreto separado; .gitignore; cifrado; no se imprime",3,6,"Moderado","Seguridad TI",".env.example; backup manifests",DISCLAIMER),
+    ("R-016","PROC-004","ACT-006","Abuso de privilegios","Cuenta administrativa comprometida o mal utilizada","Se alteran roles o clientes IAM.",3,5,15,"Alto","MFA; eventos admin; mínimo privilegio; consola no publicada",4,6,"Moderado","Responsable IAM","events config; Keycloak logs",DISCLAIMER),
+    ("R-017","Todos","ACT-015","Configuración cloud insegura","Arquitectura aún no probada contra una suscripción","Un futuro despliegue expone recursos o genera costos.",3,5,15,"Alto","Terraform validate; defaults cost=false; NSG deny",2,12,"Alto","Cloud/DevSecOps","azure validate evidence",DISCLAIMER),
+    ("R-018","PROC-003/005/007","ACT-019/020/021","Fallo de tercero","Dependencia contractual no evaluada","Proveedor de LMS/pagos/correo interrumpe o expone datos.",3,4,12,"Alto","Requisitos preparados; no hay contratos reales",1,12,"Alto","Compras/Propietarios","SoA 5.19-5.23",DISCLAIMER),
+]
+risk_rows = [dict(zip(risk_fields, row)) for row in risk_data]
+write_csv("matriz-riesgos.csv", risk_rows)
+
+scale = """## Método y aceptación\n\nProbabilidad e impacto: 1 raro/insignificante, 2 improbable/menor, 3 posible/moderado, 4 probable/alto, 5 casi cierto/crítico. Riesgo = P×I. 1–4 bajo (aceptable por propietario), 5–9 moderado (tratar o aceptación documentada), 10–15 alto (tratamiento obligatorio), 16–25 crítico (prioridad inmediata). Efectividad 1 inexistente, 2 limitada, 3 parcial, 4 efectiva en laboratorio, 5 validada institucionalmente. Las cifras son estimaciones de escritorio, no mediciones objetivas.\n"""
+(OUT / "matriz-riesgos.md").write_text(f"# Análisis de riesgos ISO 27005 / NIST SP 800-30\n\nGenerado: {STAMP}. {DISCLAIMER}\n\n{scale}\n" + table(risk_rows), encoding="utf-8")
+
+cells = defaultdict(list)
+for risk in risk_rows:
+    cells[(int(risk["impacto_1_5"]), int(risk["probabilidad_1_5"]))].append(risk["id"])
+heat = ["# Matriz de calor 5 × 5", "", DISCLAIMER, "", "Cada ID enlaza con `matriz-riesgos.csv`; se representa el riesgo inherente.", "", "| Impacto \\ Probabilidad | 1 | 2 | 3 | 4 | 5 |", "|---|---|---|---|---|---|"]
+for impact in range(5, 0, -1):
+    heat.append("| " + str(impact) + " | " + " | ".join(", ".join(cells[(impact, probability)]) or "—" for probability in range(1, 6)) + " |")
+heat += ["", "Leyenda: 1–4 bajo; 5–9 moderado; 10–15 alto; 16–25 crítico."]
+(OUT / "matriz-calor.md").write_text("\n".join(heat), encoding="utf-8")
+
+treatment_fields = ["riesgo_id","estrategia","control_propuesto","referencia_iso_27001_27002_2022","responsable","prioridad","plazo_academico","estado","evidencia","riesgo_residual_esperado"]
+strategies = {
+"R-001":("Mitigar","Revisión trimestral de roles y pruebas RBAC","A.5.15; A.5.16; A.5.18; A.8.3","IAM","Alta","90 días","En curso","pruebas_identidad.py","4 Bajo"),
+"R-002":("Mitigar","Alertar ráfagas y revisar bloqueo/adopción de MFA","A.5.17; A.8.5; A.8.16","IAM/SOC","Alta","30 días","Implementado laboratorio","SIEM-AUTH-001","4 Bajo"),
+"R-003":("Mitigar","DLP empresarial, etiquetado y canales aprobados","A.5.12; A.5.13; A.5.14; A.8.12","Propietarios/Seguridad","Alta","180 días","Parcial","DLP demo","6 Moderado"),
+"R-004":("Mitigar","Segundo nodo/sitio y automatización de recuperación","A.5.29; A.5.30; A.8.14","TI/Continuidad","Crítica","12 meses","Planificado","DRP","8 Moderado"),
+"R-005":("Mitigar","Copia offsite/inmutable y restore trimestral","A.8.13; A.5.30","DBA","Alta","90 días","Parcial","restore dual","4 Bajo"),
+"R-006":("Mitigar","Mantener backup IAM cifrado y prueba trimestral","A.8.13; A.5.30","IAM/DBA","Alta","90 días","Implementado laboratorio","restore identidad","4 Bajo"),
+"R-007":("Mitigar","Monitorear scheduler, alertar fallos y revisar retención","A.8.13; A.8.16","DBA/SOC","Alta","30 días","En curso","execution.log","4 Bajo"),
+"R-008":("Mitigar","Control de cambios, CI y revisión de configuración","A.8.9; A.8.25; A.8.29; A.8.32","DevSecOps","Alta","90 días","Parcial","Trivy/Compose","4 Bajo"),
+"R-009":("Mitigar","Seguir imagen upstream, segmentar y actualizar tras prueba","A.8.8; A.8.20; A.8.22","DBA/DevSecOps","Crítica","30 días/revisión mensual","Pendiente upstream","Trivy PostgreSQL","8 Moderado"),
+"R-010":("Mitigar","Escaneo Java completo y actualización compatible probada","A.8.8; A.8.29","IAM/DevSecOps","Alta","60 días","Pendiente","Trivy Keycloak","8 Moderado"),
+"R-011":("Mitigar","Aprobar copia offsite y arquitectura híbrida/DR","A.5.30; A.8.13; A.8.14","Dirección/TI","Crítica","12 meses","Requiere autorización","Terraform preparado","10 Alto"),
+"R-012":("Mitigar","Adoptar SIEM con HA/agentes/retención inmutable","A.8.15; A.8.16","Seguridad TI","Alta","12 meses","Parcial","SIEM ligero","6 Moderado"),
+"R-013":("Mitigar","Seleccionar MDM/EDR y acceso condicional","A.6.7; A.8.1; A.8.7","Seguridad/Soporte","Crítica","12 meses","Requiere licencia","BYOD-MDM","10 Alto"),
+"R-014":("Transferir/Mitigar","Seguro, sitio alterno, energía y copia externa","A.7.5; A.7.11; A.5.30","Administración/TI","Alta","12 meses","Pendiente","BCP/DRP","8 Moderado"),
+"R-015":("Mitigar","Vault/rotación y separación de funciones","A.5.17; A.8.24","Seguridad TI","Alta","180 días","Parcial","secreto separado","4 Bajo"),
+"R-016":("Mitigar","PAM, revisión de eventos admin y doble control","A.5.3; A.8.2; A.8.15","IAM/Auditoría","Alta","180 días","Parcial","Keycloak admin events","6 Moderado"),
+"R-017":("Evitar hasta aprobación","No desplegar; revisar plan, costos y guardrails","A.5.23; A.8.9; A.8.20","Cloud/DevSecOps","Alta","Antes de despliegue","Preparado","terraform validate","6 Moderado"),
+"R-018":("Transferir/Mitigar","Due diligence, SLA, seguridad contractual y salida","A.5.19–A.5.23","Compras/Legal/TI","Alta","Antes de contratar","Pendiente","SoA","8 Moderado"),
+}
+treatment_rows = [dict(zip(treatment_fields, (risk_id, *strategies[risk_id]))) for risk_id in sorted(strategies)]
+write_csv("plan-tratamiento.csv", treatment_rows)
+(OUT / "plan-tratamiento.md").write_text(f"# Plan de tratamiento de riesgos\n\nGenerado: {STAMP}. Plazos y responsables son propuestas académicas pendientes de aprobación.\n\n" + table(treatment_rows), encoding="utf-8")
+
+controls_text = """5.1|Policies for information security
+5.2|Information security roles and responsibilities
+5.3|Segregation of duties
+5.4|Management responsibilities
+5.5|Contact with authorities
+5.6|Contact with special interest groups
+5.7|Threat intelligence
+5.8|Information security in project management
+5.9|Inventory of information and other associated assets
+5.10|Acceptable use of information and other associated assets
+5.11|Return of assets
+5.12|Classification of information
+5.13|Labelling of information
+5.14|Information transfer
+5.15|Access control
+5.16|Identity management
+5.17|Authentication information
+5.18|Access rights
+5.19|Information security in supplier relationships
+5.20|Addressing information security within supplier agreements
+5.21|Managing information security in the ICT supply chain
+5.22|Monitoring, review and change management of supplier services
+5.23|Information security for use of cloud services
+5.24|Information security incident management planning and preparation
+5.25|Assessment and decision on information security events
+5.26|Response to information security incidents
+5.27|Learning from information security incidents
+5.28|Collection of evidence
+5.29|Information security during disruption
+5.30|ICT readiness for business continuity
+5.31|Legal, statutory, regulatory and contractual requirements
+5.32|Intellectual property rights
+5.33|Protection of records
+5.34|Privacy and protection of PII
+5.35|Independent review of information security
+5.36|Compliance with policies, rules and standards for information security
+5.37|Documented operating procedures
+6.1|Screening
+6.2|Terms and conditions of employment
+6.3|Information security awareness, education and training
+6.4|Disciplinary process
+6.5|Responsibilities after termination or change of employment
+6.6|Confidentiality or non-disclosure agreements
+6.7|Remote working
+6.8|Information security event reporting
+7.1|Physical security perimeters
+7.2|Physical entry
+7.3|Securing offices, rooms and facilities
+7.4|Physical security monitoring
+7.5|Protecting against physical and environmental threats
+7.6|Working in secure areas
+7.7|Clear desk and clear screen
+7.8|Equipment siting and protection
+7.9|Security of assets off-premises
+7.10|Storage media
+7.11|Supporting utilities
+7.12|Cabling security
+7.13|Equipment maintenance
+7.14|Secure disposal or re-use of equipment
+8.1|User endpoint devices
+8.2|Privileged access rights
+8.3|Information access restriction
+8.4|Access to source code
+8.5|Secure authentication
+8.6|Capacity management
+8.7|Protection against malware
+8.8|Management of technical vulnerabilities
+8.9|Configuration management
+8.10|Information deletion
+8.11|Data masking
+8.12|Data leakage prevention
+8.13|Information backup
+8.14|Redundancy of information processing facilities
+8.15|Logging
+8.16|Monitoring activities
+8.17|Clock synchronization
+8.18|Use of privileged utility programs
+8.19|Installation of software on operational systems
+8.20|Networks security
+8.21|Security of network services
+8.22|Segregation of networks
+8.23|Web filtering
+8.24|Use of cryptography
+8.25|Secure development life cycle
+8.26|Application security requirements
+8.27|Secure system architecture and engineering principles
+8.28|Secure coding
+8.29|Security testing in development and acceptance
+8.30|Outsourced development
+8.31|Separation of development, test and production environments
+8.32|Change management
+8.33|Test information
+8.34|Protection of information systems during audit testing"""
+implemented = {"5.9","5.12","5.15","5.16","5.17","5.18","5.24","5.25","5.28","5.29","5.30","5.37","6.8","8.2","8.3","8.5","8.6","8.8","8.9","8.12","8.13","8.15","8.16","8.17","8.20","8.21","8.22","8.24","8.25","8.26","8.27","8.28","8.29","8.31","8.32","8.33","8.34"}
+partial = {"5.1","5.2","5.3","5.7","5.8","5.10","5.13","5.14","5.19","5.20","5.21","5.22","5.23","5.26","5.27","5.31","5.33","5.34","5.36","6.3","6.6","6.7","7.7","7.9","7.10","8.1","8.4","8.7","8.10","8.11","8.14","8.18","8.19","8.23"}
+risk_by_control = defaultdict(list)
+for rid, ids in {
+    "R-001":["5.15","5.16","5.18","8.3"], "R-002":["5.17","8.5","8.16"], "R-003":["5.12","5.13","5.14","8.12"],
+    "R-004":["5.29","5.30","8.14"], "R-005":["8.13"], "R-006":["8.13"], "R-007":["8.13","8.16"], "R-008":["8.9","8.29","8.32"],
+    "R-009":["8.8","8.20","8.22"], "R-010":["8.8","8.29"], "R-011":["5.30","8.13","8.14"], "R-012":["8.15","8.16"],
+    "R-013":["6.7","8.1","8.7"], "R-014":["7.5","7.11","5.30"], "R-015":["5.17","8.24"], "R-016":["5.3","8.2","8.15"],
+    "R-017":["5.23","8.9","8.20"], "R-018":["5.19","5.20","5.21","5.22","5.23"]}.items():
+    for control in ids: risk_by_control[control].append(rid)
+soa_rows = []
+for line in controls_text.splitlines():
+    cid, title = line.split("|", 1)
+    status = "Implementado/validado en laboratorio" if cid in implemented else "Parcial/preparado" if cid in partial else "Pendiente de implementación institucional"
+    evidence = "CONTROLES_IMPLEMENTADOS.md; ESTADO_PROYECTO.md" if cid in implemented else "governance/plan-tratamiento.md" if cid in partial else "Sin evidencia técnica; requisito académico pendiente"
+    related = "; ".join(risk_by_control[cid]) or "Riesgos de gobierno/cumplimiento por evaluar con responsables"
+    soa_rows.append({
+        "control_id": f"A.{cid}", "control_name": title, "applicable": "Sí",
+        "justification": "Incluido por el alcance universitario, el tratamiento de riesgos o la necesidad de comprobar que no se omitan controles necesarios.",
+        "implementation_status": status, "related_risks": related, "evidence": evidence,
+    })
+assert len(soa_rows) == 93
+write_csv("declaracion-aplicabilidad.csv", soa_rows)
+soa_intro = f"""# Declaración de Aplicabilidad (SoA) — borrador académico\n\nGenerado: {STAMP}. Contiene los 93 identificadores y títulos breves del Anexo A 2022, sin reproducir el texto normativo. Todos se consideran aplicables provisionalmente por el alcance amplio de la universidad; la aplicabilidad, exclusiones y controles necesarios deben aprobarse mediante el proceso formal de tratamiento. La SoA no demuestra conformidad ni certificación.\n\nFuentes de estructura: ISO/IEC 27001:2022, ISO/IEC 27002:2022 e ISO/IEC JTC 1/SC 27 (93 controles en cuatro grupos).\n\n"""
+(OUT / "declaracion-aplicabilidad.md").write_text(soa_intro + table(soa_rows), encoding="utf-8")
+
+octave = f"""# Evaluación OCTAVE Allegro — ejercicio de escritorio\n\nGenerado: {STAMP}. **No se realizaron entrevistas ni talleres.** Se eligió OCTAVE Allegro porque prioriza activos de información y permite una evaluación acotada con recursos limitados. Es un ejercicio de escritorio basado en el laboratorio y requiere validación participativa real.\n\n## Criterios y activos críticos\n\nSe usan los impactos 1–5 del BIA y los umbrales de `matriz-riesgos.md`. Activos prioritarios: información académica (ACT-005), identidades (ACT-006/007), backups (ACT-010/011), registros de seguridad (ACT-008/014) y disponibilidad del host (ACT-001). Requisitos: confidencialidad de expedientes/credenciales, integridad de registros/roles/copias y disponibilidad conforme a RTO/RPO propuestos.\n\n## Ocho pasos aplicados\n\n1. Criterios de impacto definidos en BIA/riesgos.\n2. Perfiles de activos de información documentados en inventario.\n3. Contenedores de información: bases, volúmenes, logs, backups y futuras plataformas cloud.\n4. Áreas de preocupación: acceso indebido, pérdida, indisponibilidad, vulnerabilidades, terceros y sitio único.\n5. Escenarios: R-001 a R-018, sin atribuir hechos no observados.\n6. Riesgos identificados y vinculados con procesos/activos.\n7. Riesgos analizados con P×I y efectividad estimada.\n8. Estrategias de mitigación/transferencia/evitación en el plan de tratamiento.\n\n## Resultados\n\nCríticos: R-002, R-004, R-009, R-011, R-012 y R-013. Prioridades: resiliencia fuera del host, vulnerabilidades upstream, telemetría institucional, endpoints y recuperación. Fortalezas demostradas: MFA/RBAC, segmentación, TLS, backups duales cifrados, restauración aislada y correlación local.\n\n## Recomendaciones\n\nConvocar talleres con Registro, Académica, Finanzas, Legal, RRHH y TI; validar propietarios/impactos; aprobar apetito de riesgo; seleccionar repositorio offsite; definir MDM/EDR/SIEM; revisar riesgos trimestralmente y tras cambios importantes.\n"""
+(OUT / "octave-allegro.md").write_text(octave, encoding="utf-8")
+
+bcp = f"""# Plan de Continuidad del Negocio (BCP) — borrador UVCG\n\nGenerado: {STAMP}. Objetivos y roles son supuestos académicos pendientes de aprobación.\n\n## Activación y prioridades\n\nSe activa ante indisponibilidad proyectada superior al 50 % del MTPD, corrupción confirmada, pérdida del host, incidente que comprometa identidad o decisión del Coordinador de Continuidad. Prioridad: PROC-004 identidad (RTO 2 h), PROC-001/003 (4 h), PROC-002/005/007 (8 h), PROC-006 (24 h).\n\n## Roles\n\nDirector de crisis: autoriza activación y comunicaciones. Coordinador de Continuidad: mantiene bitácora y prioridades. Líder TI: recuperación técnica. Seguridad: contención/evidencia. Propietarios de proceso: validación funcional. Comunicaciones: mensajes aprobados. Legal/privacidad: evaluación de obligaciones. Los nombramientos reales están pendientes.\n\n## Estrategia\n\n- Mantener MFA/RBAC, backups cifrados diarios y pruebas trimestrales de restore.\n- Preparar copia offsite/inmutable y capacidad alternativa; hoy son brechas R-011/R-014.\n- Ante caída breve: healthchecks/restart y validación. Ante pérdida de datos: activar DRP.\n- Alternativas manuales temporales deben ser definidas por cada propietario y proteger datos.\n- Comunicar sólo hechos confirmados; preservar evidencia y decisiones.\n\n## Pruebas y retorno\n\nPrueba técnica observada: API recuperada en 12.83 s; restore académico inicial 1.399 s, endurecido 8.222 s; restore dual cifrado registrado separadamente. No se extrapolan como garantía. Para retorno: confirmar integridad, seguridad, aceptación del propietario, sincronizar transacciones manuales, comunicar normalización y realizar lección aprendida.\n"""
+(OUT / "bcp.md").write_text(bcp, encoding="utf-8")
+
+drp = f"""# Disaster Recovery Plan (DRP) — laboratorio UVCG\n\nGenerado: {STAMP}. Borrador académico pendiente de aprobación y de infraestructura alterna.\n\n## Dependencias y orden\n\n1. Host/Docker, almacenamiento, red y tiempo. 2. PostgreSQL académico e identidad. 3. Keycloak. 4. API. 5. Nginx/TLS. 6. SIEM/evidencias y tareas de backup.\n\n## Procedimiento\n\n1. Declarar incidente, congelar cambios y registrar tiempo.\n2. Verificar seguridad física/lógica y preservar logs/hashes.\n3. Determinar si reinicio seguro basta; no restaurar sobre base activa.\n4. Verificar SHA-256 de copia cifrada y disponibilidad separada de clave.\n5. Restaurar primero en instancia aislada con `scripts/restaurar_prueba.ps1 -Target Both`.\n6. Validar 3 cursos y al menos 4 identidades, autenticación, RBAC, TLS y logs.\n7. Para recuperación real, obtener autorización, respaldar estado fallido, definir ventana y migrar de forma controlada.\n8. Validación por propietarios, monitoreo reforzado y retorno documentado.\n\n## Objetivos propuestos\n\nIdentidad RTO 2 h/RPO 15 min; inscripción y LMS RTO 4 h/RPO 1 h; académica, finanzas y correo RTO 8 h; administrativos RTO 24 h. El scheduler actual es diario y **no satisface** RPO de 15 min/1 h: se requiere WAL/PITR o mayor frecuencia y almacenamiento alterno.\n\n## Pruebas\n\nMensual: salud y hashes. Trimestral: restore aislado de ambas bases. Semestral: interrupción de servicio. Anual: ejercicio de pérdida de host/sitio cuando exista entorno alterno. Registrar observado contra objetivo, desviaciones, responsables y correcciones.\n"""
+(OUT / "drp.md").write_text(drp, encoding="utf-8")
+
+print(f"OK: activos={len(asset_rows)} procesos_bia={len(bia_rows)} riesgos={len(risk_rows)} controles_soa={len(soa_rows)}")

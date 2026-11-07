@@ -1,0 +1,29 @@
+﻿{
+    "timestamp":  "2026-10-24T09:48:35.8316834-06:00",
+    "result":  "success",
+    "interval_seconds":  86400,
+    "schedulers_running":  [
+                               "academic-backup-scheduler",
+                               "identity-backup-scheduler"
+                           ],
+    "copies":  [
+                   {
+                       "target":  "academic",
+                       "file":  "academic-20261024-154629.dump.enc",
+                       "bytes":  1760,
+                       "sha256_verified":  true,
+                       "encrypted":  true,
+                       "last_write":  "2026-10-24T09:46:29.4617837-06:00"
+                   },
+                   {
+                       "target":  "identity",
+                       "file":  "identity-20261024-154629.dump.enc",
+                       "bytes":  261408,
+                       "sha256_verified":  true,
+                       "encrypted":  true,
+                       "last_write":  "2026-10-24T09:46:29.6325305-06:00"
+                   }
+               ],
+    "retention":  "30 dÃ­as configurables; borrado no aplicado sin -ApplyRetention",
+    "failure_alert_source":  "backups/execution.log + SIEM-BACKUP-001"
+}

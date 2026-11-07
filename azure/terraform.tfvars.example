@@ -1,0 +1,10 @@
+# Plantilla genérica. Prefiera los ejemplos por ambiente en environments/:
+#   dev.tfvars.example  -> Escenario 1, mínimo académico
+#   demo.tfvars.example -> Escenario 2, académico recomendado
+#   inst.tfvars.example -> Escenario 3, institucional de referencia (no aplicar)
+# Sin valores, TODAS las funciones con costo quedan en false.
+# El ID de suscripción NO se escribe aquí: use ARM_SUBSCRIPTION_ID o la sesión de az login.
+
+environment = "dev"
+location    = "eastus2"
+prefix      = "uvcg-sgsi"

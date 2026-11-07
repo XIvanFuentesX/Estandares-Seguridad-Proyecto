@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1956,
+    "event_time": "2026-10-24T17:06:03+00:00",
+    "source": "controles",
+    "category": "config_integrity",
+    "outcome": "failure",
+    "message": "2026-10-24T17:06:03Z target=config-integrity result=failure changed=compose.yaml missing=none added=monitoring/procesos-permitidos.json,monitoring/uptime_monitor.py"
+  },
+  {
+    "id": 1934,
+    "event_time": "2026-10-24T17:03:50+00:00",
+    "source": "controles",
+    "category": "config_integrity",
+    "outcome": "failure",
+    "message": "2026-10-24T17:03:50Z target=config-integrity result=failure changed=ids/rules/uvcg.rules missing=none added=none"
+  },
+  {
+    "id": 1931,
+    "event_time": "2026-10-24T17:03:42+00:00",
+    "source": "controles",
+    "category": "config_integrity",
+    "outcome": "failure",
+    "message": "2026-10-24T17:03:42Z target=config-integrity result=failure changed=monitoring/rules.json missing=none added=compose.pitr.yaml"
+  },
+  {
+    "id": 1932,
+    "event_time": "2026-10-24T17:03:42+00:00",
+    "source": "controles",
+    "category": "config_integrity",
+    "outcome": "failure",
+    "message": "2026-10-24T17:03:42Z target=config-integrity result=failure changed=ids/rules/uvcg.rules missing=none added=none"
+  },
+  {
+    "id": 1933,
+    "event_time": "2026-10-24T17:03:42+00:00",
+    "source": "controles",
+    "category": "config_integrity",
+    "outcome": "failure",
+    "message": "2026-10-24T17:03:42Z target=config-integrity result=failure changed=monitoring/controles.log missing=none added=none"
+  }
+]

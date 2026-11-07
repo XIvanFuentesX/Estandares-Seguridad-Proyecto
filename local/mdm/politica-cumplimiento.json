@@ -1,0 +1,20 @@
+{
+  "nombre": "UVCG-BYOD-Cumplimiento-v1",
+  "estado": "Propuesta académica; SIMULACIÓN sin plataforma MDM real",
+  "requisitos": {
+    "cifrado_disco": {"requerido": true, "intune": "Compliance policy > Device Health > Require BitLocker / Require encryption (Android/iOS)"},
+    "bloqueo_pantalla_max_min": {"valor": 5, "intune": "Compliance policy > System Security > Maximum minutes of inactivity before password is required"},
+    "pin_min_longitud": {"valor": 6, "intune": "Compliance policy > System Security > Minimum password length"},
+    "so_minimo": {"windows": "10.0.19045", "android": "13", "ios": "17.0", "macos": "14.0", "intune": "Compliance policy > Device Properties > Minimum OS version"},
+    "antimalware_activo": {"requerido": true, "intune": "Compliance policy > Defender / Microsoft Defender for Endpoint risk score"},
+    "sin_root_jailbreak": {"requerido": true, "intune": "Compliance policy > Device Health > Rooted/jailbroken devices: Block"},
+    "borrado_selectivo": {"requerido": true, "intune": "App protection policy (MAM) + Retire / Selective wipe"},
+    "perfil_trabajo_separado": {"requerido_byod": true, "intune": "Android Enterprise work profile / iOS user enrollment"}
+  },
+  "acceso_condicional": {
+    "confidencial_restringida": "Sólo dispositivos conformes + MFA (Entra ID P1: Conditional Access 'Require device to be marked as compliant')",
+    "interna": "MFA; dispositivo no conforme permitido sólo vía navegador sin descarga (Conditional Access App Control)",
+    "publica": "Sin requisitos de dispositivo"
+  },
+  "periodo_gracia_dias": 3
+}

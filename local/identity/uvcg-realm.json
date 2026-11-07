@@ -1,0 +1,133 @@
+{
+  "realm": "uvcg",
+  "displayName": "UVCG - Laboratorio SGSI",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": false,
+  "rememberMe": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "bruteForceProtected": true,
+  "permanentLockout": false,
+  "maxFailureWaitSeconds": 900,
+  "minimumQuickLoginWaitSeconds": 60,
+  "waitIncrementSeconds": 60,
+  "quickLoginCheckMilliSeconds": 1000,
+  "maxDeltaTimeSeconds": 43200,
+  "failureFactor": 5,
+  "accessTokenLifespan": 300,
+  "ssoSessionIdleTimeout": 900,
+  "ssoSessionMaxLifespan": 28800,
+  "offlineSessionIdleTimeout": 86400,
+  "revokeRefreshToken": true,
+  "refreshTokenMaxReuse": 0,
+  "passwordPolicy": "length(12) and digits(1) and lowerCase(1) and upperCase(1) and specialChars(1) and passwordHistory(5)",
+  "otpPolicyType": "totp",
+  "otpPolicyAlgorithm": "HmacSHA256",
+  "otpPolicyInitialCounter": 0,
+  "otpPolicyDigits": 6,
+  "otpPolicyLookAheadWindow": 1,
+  "otpPolicyPeriod": 30,
+  "otpPolicyCodeReusable": false,
+  "eventsEnabled": true,
+  "eventsListeners": ["jboss-logging"],
+  "eventsExpiration": 604800,
+  "adminEventsEnabled": true,
+  "adminEventsDetailsEnabled": true,
+  "enabledEventTypes": [
+    "LOGIN", "LOGIN_ERROR", "LOGOUT", "CODE_TO_TOKEN", "CODE_TO_TOKEN_ERROR",
+    "REFRESH_TOKEN", "REFRESH_TOKEN_ERROR", "INTROSPECT_TOKEN", "INTROSPECT_TOKEN_ERROR"
+  ],
+  "roles": {
+    "realm": [
+      {"name": "administrador", "description": "Administración del laboratorio académico"},
+      {"name": "docente", "description": "Personal docente"},
+      {"name": "estudiante", "description": "Estudiante"},
+      {"name": "administrativo", "description": "Personal administrativo"}
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "sgsi-web",
+      "name": "Aplicación académica UVCG",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "implicitFlowEnabled": false,
+      "redirectUris": ["https://localhost:8443/*"],
+      "webOrigins": ["https://localhost:8443"],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "https://localhost:8443/*"
+      }
+    },
+    {
+      "clientId": "sgsi-cli",
+      "name": "Cliente de pruebas automatizadas del laboratorio",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "implicitFlowEnabled": false,
+      "attributes": {
+        "access.token.lifespan": "180"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "admin.lab",
+      "firstName": "Ana",
+      "lastName": "Administradora",
+      "email": "admin.lab@uvcg.example",
+      "enabled": true,
+      "emailVerified": true,
+      "realmRoles": ["administrador"],
+      "credentials": [
+        {"type": "password", "value": "${UVCG_ADMIN_PASSWORD}", "temporary": false},
+        {"type": "otp", "userLabel": "TOTP laboratorio", "secretData": "{\"value\":\"${UVCG_ADMIN_TOTP}\"}", "credentialData": "{\"subType\":\"totp\",\"digits\":6,\"counter\":0,\"period\":30,\"algorithm\":\"HmacSHA256\"}"}
+      ]
+    },
+    {
+      "username": "docente.lab",
+      "firstName": "Diana",
+      "lastName": "Docente",
+      "email": "docente.lab@uvcg.example",
+      "enabled": true,
+      "emailVerified": true,
+      "realmRoles": ["docente"],
+      "credentials": [
+        {"type": "password", "value": "${UVCG_DOCENTE_PASSWORD}", "temporary": false},
+        {"type": "otp", "userLabel": "TOTP laboratorio", "secretData": "{\"value\":\"${UVCG_DOCENTE_TOTP}\"}", "credentialData": "{\"subType\":\"totp\",\"digits\":6,\"counter\":0,\"period\":30,\"algorithm\":\"HmacSHA256\"}"}
+      ]
+    },
+    {
+      "username": "estudiante.lab",
+      "firstName": "Esteban",
+      "lastName": "Estudiante",
+      "email": "estudiante.lab@uvcg.example",
+      "enabled": true,
+      "emailVerified": true,
+      "realmRoles": ["estudiante"],
+      "credentials": [
+        {"type": "password", "value": "${UVCG_ESTUDIANTE_PASSWORD}", "temporary": false},
+        {"type": "otp", "userLabel": "TOTP laboratorio", "secretData": "{\"value\":\"${UVCG_ESTUDIANTE_TOTP}\"}", "credentialData": "{\"subType\":\"totp\",\"digits\":6,\"counter\":0,\"period\":30,\"algorithm\":\"HmacSHA256\"}"}
+      ]
+    },
+    {
+      "username": "administrativo.lab",
+      "firstName": "Adriana",
+      "lastName": "Administrativa",
+      "email": "administrativo.lab@uvcg.example",
+      "enabled": true,
+      "emailVerified": true,
+      "realmRoles": ["administrativo"],
+      "credentials": [
+        {"type": "password", "value": "${UVCG_ADMINISTRATIVO_PASSWORD}", "temporary": false},
+        {"type": "otp", "userLabel": "TOTP laboratorio", "secretData": "{\"value\":\"${UVCG_ADMINISTRATIVO_TOTP}\"}", "credentialData": "{\"subType\":\"totp\",\"digits\":6,\"counter\":0,\"period\":30,\"algorithm\":\"HmacSHA256\"}"}
+      ]
+    }
+  ]
+}

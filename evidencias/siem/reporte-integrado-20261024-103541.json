@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-10-24T16:35:43+00:00",
+  "events": 1515,
+  "alerts": 7,
+  "by_source": {
+    "academic-backup-scheduler-1": 4,
+    "api-1": 128,
+    "backup-scheduler": 20,
+    "db-1": 44,
+    "file": 16,
+    "identity-backup-scheduler-1": 4,
+    "identity-db-1": 54,
+    "keycloak-1": 567,
+    "proxy-1": 552,
+    "suricata": 126
+  },
+  "by_category": {
+    "authentication": 17,
+    "authorization": 24,
+    "backup": 4,
+    "database_authentication": 4,
+    "http_access": 115,
+    "ids_alert": 126,
+    "operational": 1225
+  },
+  "rules": [
+    {
+      "rule_id": "SIEM-BACKUP-001",
+      "rule_name": "Fallo de respaldo programado",
+      "severity": "high",
+      "event_count": 3,
+      "first_event_time": "2026-10-24T15:52:44+00:00",
+      "last_event_time": "2026-10-24T15:56:33+00:00"
+    },
+    {
+      "rule_id": "SIEM-DB-001",
+      "rule_name": "Fallo de autenticación PostgreSQL",
+      "severity": "high",
+      "event_count": 2,
+      "first_event_time": "2026-10-24T15:55:33+00:00",
+      "last_event_time": "2026-10-24T15:55:33+00:00"
+    },
+    {
+      "rule_id": "SIEM-BACKUP-001",
+      "rule_name": "Fallo de respaldo programado",
+      "severity": "high",
+      "event_count": 1,
+      "first_event_time": "2026-10-24T15:52:44+00:00",
+      "last_event_time": "2026-10-24T15:52:44+00:00"
+    },
+    {
+      "rule_id": "SIEM-AUTH-001",
+      "rule_name": "Ráfaga de autenticaciones fallidas",
+      "severity": "high",
+      "event_count": 4,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-RBAC-001",
+      "rule_name": "Acceso denegado por RBAC",
+      "severity": "medium",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-HTTP-001",
+      "rule_name": "Ráfaga HTTP 401/403",
+      "severity": "medium",
+      "event_count": 12,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-IDS-001",
+      "rule_name": "Alerta IDS Suricata",
+      "severity": "high",
+      "event_count": 2,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    }
+  ],
+  "limitations": [
+    "Sin alta disponibilidad ni almacenamiento inmutable.",
+    "Sin agentes de endpoint, UEBA, inteligencia de amenazas ni respuesta automática.",
+    "Búsqueda local SQLite; no equivale a Wazuh/OpenSearch/Sentinel empresarial."
+  ]
+}

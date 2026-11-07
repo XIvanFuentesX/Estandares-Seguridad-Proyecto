@@ -1,0 +1,65 @@
+fecha_utc=2026-10-24T18:16:55Z
+alcance=validacion estatica sin credenciales; NO es un plan real ni un despliegue
+== fmt -check
+exit=0
+== validate
+Success! The configuration is valid.
+
+exit=0
+== test (mock_provider)
+tests/minimo.tftest.hcl... in progress
+  run "plan_minimo_seguro"... pass
+  run "region_no_permitida"... pass
+tests/minimo.tftest.hcl... tearing down
+tests/minimo.tftest.hcl... pass
+
+Success! 2 passed, 0 failed.
+exit=0
+== proveedor
+provider "registry.terraform.io/hashicorp/aws" {
+  version     = "6.70.0"
+  constraints = "~> 6.0"
+== tflint
+exit=0
+== trivy config
+With versioning you can recover more easily from both unintended user actions and application failures.
+
+When you enable versioning, also keep in mind the potential costs of storing noncurrent versions of objects. To help manage those costs, consider setting up an S3 Lifecycle configuration.
+
+
+See https://avd.aquasec.com/misconfig/aws-0090
+────────────────────────────────────────
+ modules/storage/main.tf:13-16
+   via main.tf:4-9 (module.storage)
+────────────────────────────────────────
+  13 ┌ resource "aws_s3_bucket" "lab" {
+  14 │   bucket        = var.bucket_name
+  15 │   force_destroy = false # la retirada vacía el bucket de forma explícita (scripts/retirar.ps1)
+  16 └ }
+────────────────────────────────────────
+
+
+AWS-0132 (HIGH): Bucket does not encrypt data with a customer managed key.
+════════════════════════════════════════
+Encryption using AWS keys provides protection for your S3 buckets. To gain greater control over encryption, such as key rotation, access policies, and auditability, use customer managed keys (CMKs) with SSE-KMS.
+Note that SSE-KMS is not supported for S3 server access logging destination buckets; in such cases, use SSE-S3 instead.
+
+
+See https://avd.aquasec.com/misconfig/aws-0132
+────────────────────────────────────────
+ modules/storage/main.tf:34-42
+   via main.tf:4-9 (module.storage)
+────────────────────────────────────────
+  34 ┌ resource "aws_s3_bucket_server_side_encryption_configuration" "lab" {
+  35 │   bucket = aws_s3_bucket.lab.id
+  36 │   rule {
+  37 │     apply_server_side_encryption_by_default {
+  38 │       sse_algorithm = "AES256"
+  39 │     }
+  40 │     bucket_key_enabled = false
+  41 │   }
+  42 └ }
+────────────────────────────────────────
+
+
+exit=0

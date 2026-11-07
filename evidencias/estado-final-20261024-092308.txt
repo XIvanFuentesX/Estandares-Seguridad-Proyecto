@@ -1,0 +1,21 @@
+Fecha: 2026-10-24 09:23:08 -06:00
+docker compose config --quiet: OK
+
+Servicios principales:
+- local-proxy-1: healthy; únicos puertos publicados 127.0.0.1:8080 y 127.0.0.1:8443
+- local-api-1: healthy; sin puertos publicados
+- local-db-1: healthy; sin puertos publicados
+- local-identity-db-1: healthy; sin puertos publicados
+- local-keycloak-1: healthy; sin puertos publicados
+- local-tls-init-1: exited 0 esperado (servicio de inicialización)
+- local-restore-db-1: exited 0 esperado (perfil de recuperación aislado)
+
+Metadatos inspeccionados:
+- proxy: usuario 101:101, raíz read-only, no privilegiado, cap_drop ALL
+- API: usuario app, raíz read-only, no privilegiado, cap_drop ALL
+- PostgreSQL académico: raíz read-only, no privilegiado, cap_drop ALL; sólo CHOWN, DAC_OVERRIDE, FOWNER, SETGID, SETUID añadidas para el entrypoint
+- PostgreSQL identidad: mismo endurecimiento que PostgreSQL académico
+- Keycloak: usuario 1000, raíz read-only, no privilegiado, cap_drop ALL
+
+Integridad observada después de recrear/endurecer PostgreSQL: 3 cursos.
+No se eliminaron volúmenes ni bases de datos.

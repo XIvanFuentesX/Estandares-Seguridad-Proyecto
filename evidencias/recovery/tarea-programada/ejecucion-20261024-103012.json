@@ -1,0 +1,11 @@
+﻿{
+    "fecha":  "2026-10-24",
+    "hora_inicio":  "10:30:12",
+    "origen":  "prueba-docker-no-disponible",
+    "usuario":  "Ivan Fuentes",
+    "duracion_s":  0.2,
+    "resultado":  "no_verificable",
+    "detalle":  "Docker Desktop no disponible (¿sesión sin iniciar o motor detenido?).",
+    "evidencia":  "",
+    "hora_fin":  "10:30:12"
+}

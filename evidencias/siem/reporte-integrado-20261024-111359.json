@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-10-24T17:14:02+00:00",
+  "events": 2601,
+  "alerts": 11,
+  "by_source": {
+    "academic-backup-scheduler-1": 6,
+    "api-1": 209,
+    "backup-scheduler": 46,
+    "controles": 54,
+    "db-1": 62,
+    "disponibilidad": 99,
+    "file": 24,
+    "identity-backup-scheduler-1": 6,
+    "identity-db-1": 104,
+    "keycloak-1": 909,
+    "proxy-1": 880,
+    "suricata": 202
+  },
+  "by_category": {
+    "authentication": 25,
+    "authorization": 36,
+    "availability": 99,
+    "backup": 4,
+    "config_integrity": 9,
+    "container_monitoring": 25,
+    "database_authentication": 4,
+    "dlp": 20,
+    "http_access": 189,
+    "ids_alert": 202,
+    "operational": 1966,
+    "wal_archiving": 22
+  },
+  "rules": [
+    {
+      "rule_id": "SIEM-DLP-001",
+      "rule_name": "Incidente DLP bloqueado",
+      "severity": "medium",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T17:07:52+00:00",
+      "last_event_time": "2026-10-24T17:07:52+00:00"
+    },
+    {
+      "rule_id": "SIEM-WAL-001",
+      "rule_name": "Fallo o advertencia de archivado WAL",
+      "severity": "high",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T16:56:03+00:00",
+      "last_event_time": "2026-10-24T17:00:42+00:00"
+    },
+    {
+      "rule_id": "SIEM-CFG-001",
+      "rule_name": "Modificación no autorizada de configuración",
+      "severity": "high",
+      "event_count": 5,
+      "first_event_time": "2026-10-24T17:03:42+00:00",
+      "last_event_time": "2026-10-24T17:06:03+00:00"
+    },
+    {
+      "rule_id": "SIEM-EDR-001",
+      "rule_name": "Proceso inesperado o deriva en contenedor",
+      "severity": "high",
+      "event_count": 4,
+      "first_event_time": "2026-10-24T17:04:22+00:00",
+      "last_event_time": "2026-10-24T17:04:41+00:00"
+    },
+    {
+      "rule_id": "SIEM-BACKUP-001",
+      "rule_name": "Fallo de respaldo programado",
+      "severity": "high",
+      "event_count": 3,
+      "first_event_time": "2026-10-24T15:52:44+00:00",
+      "last_event_time": "2026-10-24T15:56:33+00:00"
+    },
+    {
+      "rule_id": "SIEM-DB-001",
+      "rule_name": "Fallo de autenticación PostgreSQL",
+      "severity": "high",
+      "event_count": 2,
+      "first_event_time": "2026-10-24T15:55:33+00:00",
+      "last_event_time": "2026-10-24T15:55:33+00:00"
+    },
+    {
+      "rule_id": "SIEM-BACKUP-001",
+      "rule_name": "Fallo de respaldo programado",
+      "severity": "high",
+      "event_count": 1,
+      "first_event_time": "2026-10-24T15:52:44+00:00",
+      "last_event_time": "2026-10-24T15:52:44+00:00"
+    },
+    {
+      "rule_id": "SIEM-AUTH-001",
+      "rule_name": "Ráfaga de autenticaciones fallidas",
+      "severity": "high",
+      "event_count": 4,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-RBAC-001",
+      "rule_name": "Acceso denegado por RBAC",
+      "severity": "medium",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-HTTP-001",
+      "rule_name": "Ráfaga HTTP 401/403",
+      "severity": "medium",
+      "event_count": 12,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-IDS-001",
+      "rule_name": "Alerta IDS Suricata",
+      "severity": "high",
+      "event_count": 2,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    }
+  ],
+  "limitations": [
+    "Sin alta disponibilidad ni almacenamiento inmutable.",
+    "Sin agentes de endpoint, UEBA, inteligencia de amenazas ni respuesta automática.",
+    "Búsqueda local SQLite; no equivale a Wazuh/OpenSearch/Sentinel empresarial."
+  ]
+}

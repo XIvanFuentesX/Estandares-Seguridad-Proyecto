@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-10-24T11:06:03-06:00",
+  "reason": "Cierre local: servicio opcional uptime-monitor (perfil monitoring) y monitor de disponibilidad; procesos permitidos para vigilancia de contenedores",
+  "algorithm": "SHA-256",
+  "files": {
+    "compose.yaml": "956fd8dabf6793cb7dc47138913b91f7898cc5519e4000aaa949669f68a3ff0f",
+    "compose.pitr.yaml": "b9b01e2f7406f163a6ba945ac288b04fc572bebfd78ec3249506fbd3220aa9a9",
+    "init.sql": "57e0dacc4f1446faaaf5d234bde35ba8527888671b30f5fa42b81a1c896ca92b",
+    ".env.example": "c4649f7435ebe6468b1d003fddade1b5a0f8b58c2e2551f3a26124626aa8cff2",
+    ".gitignore": "2d4071d5e83419bbff84ae90842e1e2924345990ae144141156aa9729e2cfdf7",
+    "nginx/default.conf": "a2c978aaa63313b4c29d73c9b327143b09be494ac0fff31c5c5f924bf053bcda",
+    "nginx/Dockerfile": "c5bff944c0c0ade99c579e14f5f3b0c5f7aa2e435ba6c35f65cb87a455df2507",
+    "api/app.py": "4325f7d66600431d9b604c28a37e534a5ce61ee60b8764b5dee9ac4aa6417403",
+    "api/Dockerfile": "7ab62f8247168c6be851cd55c5d45fd350fddd3f580d425a8e5d6ea72fffb361",
+    "api/requirements.txt": "1e052026110a1993e6ce1158ab65d46bb965b52d9263353f6f20835bb211dfc4",
+    "api/.dockerignore": "df52cc2002cc8f94c327cafa2f3953328b7c3e3b3b21829d1ee419d33c7003d9",
+    "identity/Dockerfile": "8f0f331e479f8708507aea4403d29b01da57d00823e0abc889deb5b2ceedfaa8",
+    "identity/events-config.json": "96a7b64cb6ac7cf1ce5f0355c4db459e1561d6e2cfba1050d662530225e1c506",
+    "identity/uvcg-realm.json": "e003f42257cf60b0e0e38ea2ec197d9a2a45957c634dbbe4ef231ce3ace36729",
+    "backup/backup-encrypted.sh": "d116019cfcb54aa55828718d1b9c4b5b143d14c0a7be4d4510d02f60d23a831a",
+    "backup/Dockerfile": "75e2707bb1e8ae7b2081ade6845e1a433da52fa6cc6e5c5845d5ccae7890a95c",
+    "backup/retention-policy.json": "c2377bb38028e116572cd79582080fc0e9e548401b4745f1ddbb9f734217b1b9",
+    "postgres-hardened/Dockerfile": "a081d1827793699ba3af32fcd8ebe8f2cb7cd2fbec0e648933569c9114f726d9",
+    "ids/rules/uvcg.rules": "faffd5432cd6a9c6f9021e62a504c568e839c3cffa45d19041c07dfb99b7bc80",
+    "monitoring/procesos-permitidos.json": "221313237eb4568a27f9bc49a71ad2c8576697868c31093982df76e48725a609",
+    "monitoring/rules.json": "7b108a91533fffcd10af92da863a6c96b15b025426379f9bd7da5e01dd645d51",
+    "monitoring/uptime_monitor.py": "eaa4a0cb1f9ae9f7838bbc947a2d72696f025f272151654c51f4c28fe69fc200"
+  },
+  "secrets_excluded_from_hash": [
+    ".env",
+    "tls/uvcg-lab.key"
+  ]
+}

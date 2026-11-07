@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-10-24T15:36:28+00:00",
+  "events": 230,
+  "alerts": 4,
+  "by_source": {
+    "api-1": 23,
+    "db-1": 7,
+    "file": 4,
+    "identity-db-1": 7,
+    "keycloak-1": 103,
+    "proxy-1": 74,
+    "suricata": 12
+  },
+  "by_category": {
+    "authentication": 4,
+    "authorization": 6,
+    "http_access": 12,
+    "ids_alert": 12,
+    "operational": 196
+  },
+  "rules": [
+    {
+      "rule_id": "SIEM-AUTH-001",
+      "rule_name": "Ráfaga de autenticaciones fallidas",
+      "severity": "high",
+      "event_count": 4,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-RBAC-001",
+      "rule_name": "Acceso denegado por RBAC",
+      "severity": "medium",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-HTTP-001",
+      "rule_name": "Ráfaga HTTP 401/403",
+      "severity": "medium",
+      "event_count": 12,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-IDS-001",
+      "rule_name": "Alerta IDS Suricata",
+      "severity": "high",
+      "event_count": 2,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    }
+  ],
+  "limitations": [
+    "Sin alta disponibilidad ni almacenamiento inmutable.",
+    "Sin agentes de endpoint, UEBA, inteligencia de amenazas ni respuesta automática.",
+    "Búsqueda local SQLite; no equivale a Wazuh/OpenSearch/Sentinel empresarial."
+  ]
+}

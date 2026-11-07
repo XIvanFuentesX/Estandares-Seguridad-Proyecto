@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-10-24T11:04:22-06:00",
+  "label": "benigno",
+  "services": {
+    "proxy": {
+      "processes": [
+        "nginx"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [
+        "C /etc",
+        "C /etc/nginx",
+        "A /etc/nginx/tls"
+      ],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true
+      },
+      "issues": [
+        "deriva:C /etc",
+        "deriva:C /etc/nginx",
+        "deriva:A /etc/nginx/tls"
+      ],
+      "result": "failure"
+    },
+    "api": {
+      "processes": [
+        "python3.12"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [],
+      "result": "success"
+    },
+    "keycloak": {
+      "processes": [
+        "java",
+        "sh"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [
+        "C /opt",
+        "C /opt/keycloak",
+        "C /opt/keycloak/data",
+        "A /opt/keycloak/data/import",
+        "A /opt/keycloak/data/import/uvcg-realm.json",
+        "A /opt/keycloak/data/tmp"
+      ],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [
+        "deriva:C /opt",
+        "deriva:C /opt/keycloak",
+        "deriva:C /opt/keycloak/data",
+        "deriva:A /opt/keycloak/data/import",
+        "deriva:A /opt/keycloak/data/import/uvcg-realm.json",
+        "deriva:A /opt/keycloak/data/tmp"
+      ],
+      "result": "failure"
+    },
+    "db": {
+      "processes": [
+        "postgres"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [
+        "C /docker-entrypoint-initdb.d",
+        "A /docker-entrypoint-initdb.d/init.sql"
+      ],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [
+        "deriva:C /docker-entrypoint-initdb.d",
+        "deriva:A /docker-entrypoint-initdb.d/init.sql"
+      ],
+      "result": "failure"
+    },
+    "identity-db": {
+      "processes": [
+        "postgres"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [],
+      "result": "success"
+    }
+  },
+  "result": "failure"
+}

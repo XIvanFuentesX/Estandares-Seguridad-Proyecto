@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-10-24T09:30:47-06:00",
+  "result": "success",
+  "synthetic_events": 4,
+  "rules_verified": [
+    "SIEM-AUTH-001",
+    "SIEM-RBAC-001"
+  ],
+  "secret_redaction_verified": true,
+  "database": "prueba-siem-20261024-093047.db",
+  "report": "resultado-siem-20261024-093047.json"
+}

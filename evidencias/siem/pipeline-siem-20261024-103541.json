@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-10-24T10:35:43-06:00",
+  "result": "success",
+  "steps": [
+    "OK: inserted=567 duplicate=76 source=docker",
+    "OK: inserted=7 duplicate=13 source=backup-scheduler",
+    "OK: inserted=38 duplicate=0 source=suricata",
+    "OK: alerts_created=0"
+  ],
+  "sources_present": [
+    "academic-backup-scheduler-1",
+    "api-1",
+    "backup-scheduler",
+    "db-1",
+    "file",
+    "identity-backup-scheduler-1",
+    "identity-db-1",
+    "keycloak-1",
+    "proxy-1",
+    "suricata"
+  ],
+  "missing_required_sources": [],
+  "rules_fired": [
+    "SIEM-AUTH-001",
+    "SIEM-BACKUP-001",
+    "SIEM-DB-001",
+    "SIEM-HTTP-001",
+    "SIEM-IDS-001",
+    "SIEM-RBAC-001"
+  ],
+  "missing_expected_rules": [],
+  "alert_sources_by_rule": {
+    "SIEM-AUTH-001": [
+      "api-1",
+      "keycloak-1"
+    ],
+    "SIEM-RBAC-001": [
+      "api-1"
+    ],
+    "SIEM-DB-001": [
+      "db-1"
+    ],
+    "SIEM-IDS-001": [
+      "suricata"
+    ],
+    "SIEM-BACKUP-001": [
+      "backup-scheduler"
+    ]
+  },
+  "query_result_counts": {
+    "auth-denied": 17,
+    "rbac-denied": 24,
+    "db-auth-denied": 4,
+    "backup-failure": 4,
+    "suricata": 100
+  },
+  "unredacted_secret_patterns": 0,
+  "retention": "OK: candidates=0 applied=False retention_days=30",
+  "artifacts": [
+    "alertas-20261024-103541.json",
+    "tablero-siem-20261024-103541.html",
+    "reporte-integrado-20261024-103541.json"
+  ]
+}

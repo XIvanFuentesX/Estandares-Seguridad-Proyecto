@@ -1,0 +1,7 @@
+10/24/2026-17:33:16.004000  [**] [1:1000002:1] UVCG LAB intento directo a PostgreSQL [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.10.10.30:55222 -> 10.10.10.40:5432
+10/24/2026-17:33:16.017000  [**] [1:1000006:1] UVCG LAB conexion al puerto de gestion Keycloak [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.10.10.14:54700 -> 10.10.10.50:9000
+10/24/2026-17:33:16.000000  [**] [1:1000003:1] UVCG LAB posible inyeccion SQL UNION SELECT en URI [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.10.11:54400 -> 10.10.10.20:8080
+10/24/2026-17:33:16.000000  [**] [1:1000001:2] UVCG LAB intento de path traversal controlado [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.10.10:54321 -> 10.10.10.20:8080
+10/24/2026-17:33:16.000000  [**] [1:1000007:1] UVCG LAB rafaga de intentos de login Keycloak [**] [Classification: Attempted User Privilege Gain] [Priority: 1] {TCP} 10.10.10.15:54800 -> 10.10.10.20:8080
+10/24/2026-17:33:16.000000  [**] [1:1000005:1] UVCG LAB acceso a consola administrativa Keycloak [**] [Classification: Potential Corporate Privacy Violation] [Priority: 1] {TCP} 10.10.10.13:54600 -> 10.10.10.20:8080
+10/24/2026-17:33:16.000000  [**] [1:1000004:1] UVCG LAB agente de escaneo automatizado conocido [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.10.12:54500 -> 10.10.10.20:8080

@@ -1,0 +1,84 @@
+{
+  "verified": true,
+  "mode": "offline_pcap_detection",
+  "rules_file": "local/ids/rules/uvcg.rules",
+  "alert_count": 7,
+  "alerts_by_sid": {
+    "1000001": 1,
+    "1000002": 1,
+    "1000003": 1,
+    "1000004": 1,
+    "1000005": 1,
+    "1000006": 1,
+    "1000007": 1
+  },
+  "scenarios": [
+    {
+      "id": "IDS-T01",
+      "description": "Path traversal en URI",
+      "expected_sid": 1000001,
+      "src_ip": "10.10.10.10",
+      "observed": "1 alertas sid 1000001",
+      "result": "success"
+    },
+    {
+      "id": "IDS-T02",
+      "description": "SYN directo a PostgreSQL",
+      "expected_sid": 1000002,
+      "src_ip": "10.10.10.30",
+      "observed": "1 alertas sid 1000002",
+      "result": "success"
+    },
+    {
+      "id": "IDS-T03",
+      "description": "Inyección SQL UNION SELECT",
+      "expected_sid": 1000003,
+      "src_ip": "10.10.10.11",
+      "observed": "1 alertas sid 1000003",
+      "result": "success"
+    },
+    {
+      "id": "IDS-T04",
+      "description": "Agente de escaneo sqlmap",
+      "expected_sid": 1000004,
+      "src_ip": "10.10.10.12",
+      "observed": "1 alertas sid 1000004",
+      "result": "success"
+    },
+    {
+      "id": "IDS-T05",
+      "description": "Acceso a consola admin Keycloak",
+      "expected_sid": 1000005,
+      "src_ip": "10.10.10.13",
+      "observed": "1 alertas sid 1000005",
+      "result": "success"
+    },
+    {
+      "id": "IDS-T06",
+      "description": "SYN al puerto de gestión Keycloak",
+      "expected_sid": 1000006,
+      "src_ip": "10.10.10.14",
+      "observed": "1 alertas sid 1000006",
+      "result": "success"
+    },
+    {
+      "id": "IDS-T07",
+      "description": "Ráfaga de 6 POST de login en < 60 s",
+      "expected_sid": 1000007,
+      "src_ip": "10.10.10.15",
+      "observed": "1 alertas sid 1000007",
+      "result": "success"
+    },
+    {
+      "id": "IDS-N01",
+      "description": "Tráfico benigno GET /health (no debe alertar)",
+      "expected_sid": null,
+      "src_ip": "10.10.10.16",
+      "observed": "0 alertas (esperado 0)",
+      "result": "success"
+    }
+  ],
+  "true_positives": 7,
+  "false_positives_on_benign": 0,
+  "limitations": "Detección IDS offline sobre PCAP sintético; no captura tráfico en vivo, no es IPS ni EDR/XDR."
+}

@@ -1,0 +1,6 @@
+Fecha de última validación: 2026-10-24
+Herramientas: Terraform 1.14 en contenedor; AzureRM 4.81.0
+Comandos: terraform fmt -check; terraform validate -no-color
+Resultado real: Success! The configuration is valid.
+Alcance: validación estática sin backend, credenciales, plan ni despliegue.
+Estado: preparado; no implementado en Microsoft Azure.

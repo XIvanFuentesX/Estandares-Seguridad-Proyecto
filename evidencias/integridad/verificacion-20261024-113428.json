@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-24T11:34:28-06:00",
+  "result": "failure",
+  "files_verified": 22,
+  "changed": [
+    "compose.yaml"
+  ],
+  "missing": [],
+  "added": [],
+  "secrets_missing": []
+}

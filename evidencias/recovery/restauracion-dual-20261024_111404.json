@@ -1,0 +1,35 @@
+﻿{
+    "timestamp":  "2026-10-24T11:14:22.8581341-06:00",
+    "requested":  "both",
+    "result":  "success",
+    "results":  [
+                    {
+                        "target":  "academic",
+                        "source_backup":  "academic-20261024-171402.dump.enc",
+                        "sha256_verified":  true,
+                        "encrypted":  true,
+                        "isolated_service":  "restore-db",
+                        "isolated_database":  "restore_academic_20261024_111404",
+                        "verification_metric":  "course_count",
+                        "verification_count":  3,
+                        "elapsed_seconds":  8.239,
+                        "restored_copy_dropped_after_verification":  false,
+                        "primary_database_modified":  false,
+                        "result":  "success"
+                    },
+                    {
+                        "target":  "identity",
+                        "source_backup":  "identity-20261024-171403.dump.enc",
+                        "sha256_verified":  true,
+                        "encrypted":  true,
+                        "isolated_service":  "identity-restore-db",
+                        "isolated_database":  "restore_identity_20261024_111404",
+                        "verification_metric":  "identity_count",
+                        "verification_count":  5,
+                        "elapsed_seconds":  9.076,
+                        "restored_copy_dropped_after_verification":  false,
+                        "primary_database_modified":  false,
+                        "result":  "success"
+                    }
+                ]
+}

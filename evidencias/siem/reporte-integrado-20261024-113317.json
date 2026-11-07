@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-10-24T17:33:20+00:00",
+  "events": 3446,
+  "alerts": 12,
+  "by_source": {
+    "academic-backup-scheduler-1": 6,
+    "api-1": 245,
+    "backup-scheduler": 58,
+    "controles": 72,
+    "db-1": 62,
+    "disponibilidad": 330,
+    "file": 24,
+    "identity-backup-scheduler-1": 6,
+    "identity-db-1": 128,
+    "keycloak-1": 1045,
+    "proxy-1": 1230,
+    "suricata": 240
+  },
+  "by_category": {
+    "authentication": 29,
+    "authorization": 42,
+    "availability": 330,
+    "backup": 4,
+    "config_integrity": 12,
+    "container_monitoring": 30,
+    "database_authentication": 4,
+    "dlp": 30,
+    "http_access": 225,
+    "ids_alert": 240,
+    "operational": 2468,
+    "wal_archiving": 32
+  },
+  "rules": [
+    {
+      "rule_id": "SIEM-AVAIL-001",
+      "rule_name": "Servicio no disponible",
+      "severity": "high",
+      "event_count": 4,
+      "first_event_time": "2026-10-24T17:19:36+00:00",
+      "last_event_time": "2026-10-24T17:20:21+00:00"
+    },
+    {
+      "rule_id": "SIEM-DLP-001",
+      "rule_name": "Incidente DLP bloqueado",
+      "severity": "medium",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T17:07:52+00:00",
+      "last_event_time": "2026-10-24T17:07:52+00:00"
+    },
+    {
+      "rule_id": "SIEM-WAL-001",
+      "rule_name": "Fallo o advertencia de archivado WAL",
+      "severity": "high",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T16:56:03+00:00",
+      "last_event_time": "2026-10-24T17:00:42+00:00"
+    },
+    {
+      "rule_id": "SIEM-CFG-001",
+      "rule_name": "Modificación no autorizada de configuración",
+      "severity": "high",
+      "event_count": 5,
+      "first_event_time": "2026-10-24T17:03:42+00:00",
+      "last_event_time": "2026-10-24T17:06:03+00:00"
+    },
+    {
+      "rule_id": "SIEM-EDR-001",
+      "rule_name": "Proceso inesperado o deriva en contenedor",
+      "severity": "high",
+      "event_count": 4,
+      "first_event_time": "2026-10-24T17:04:22+00:00",
+      "last_event_time": "2026-10-24T17:04:41+00:00"
+    },
+    {
+      "rule_id": "SIEM-BACKUP-001",
+      "rule_name": "Fallo de respaldo programado",
+      "severity": "high",
+      "event_count": 3,
+      "first_event_time": "2026-10-24T15:52:44+00:00",
+      "last_event_time": "2026-10-24T15:56:33+00:00"
+    },
+    {
+      "rule_id": "SIEM-DB-001",
+      "rule_name": "Fallo de autenticación PostgreSQL",
+      "severity": "high",
+      "event_count": 2,
+      "first_event_time": "2026-10-24T15:55:33+00:00",
+      "last_event_time": "2026-10-24T15:55:33+00:00"
+    },
+    {
+      "rule_id": "SIEM-BACKUP-001",
+      "rule_name": "Fallo de respaldo programado",
+      "severity": "high",
+      "event_count": 1,
+      "first_event_time": "2026-10-24T15:52:44+00:00",
+      "last_event_time": "2026-10-24T15:52:44+00:00"
+    },
+    {
+      "rule_id": "SIEM-AUTH-001",
+      "rule_name": "Ráfaga de autenticaciones fallidas",
+      "severity": "high",
+      "event_count": 4,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-RBAC-001",
+      "rule_name": "Acceso denegado por RBAC",
+      "severity": "medium",
+      "event_count": 6,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-HTTP-001",
+      "rule_name": "Ráfaga HTTP 401/403",
+      "severity": "medium",
+      "event_count": 12,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    },
+    {
+      "rule_id": "SIEM-IDS-001",
+      "rule_name": "Alerta IDS Suricata",
+      "severity": "high",
+      "event_count": 2,
+      "first_event_time": "2026-10-24T15:36:28+00:00",
+      "last_event_time": "2026-10-24T15:36:28+00:00"
+    }
+  ],
+  "limitations": [
+    "Sin alta disponibilidad ni almacenamiento inmutable.",
+    "Sin agentes de endpoint, UEBA, inteligencia de amenazas ni respuesta automática.",
+    "Búsqueda local SQLite; no equivale a Wazuh/OpenSearch/Sentinel empresarial."
+  ]
+}

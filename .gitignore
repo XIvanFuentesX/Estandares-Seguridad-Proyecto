@@ -1,0 +1,14 @@
+# Dependencias y artefactos locales
+node_modules/
+__pycache__/
+*.pyc
+.terraform/
+
+# Secretos y datos locales (nunca se versionan)
+.env
+*.pem
+*.key
+*.p12
+*.pfx
+local/backups/
+local/rollback/volumes/

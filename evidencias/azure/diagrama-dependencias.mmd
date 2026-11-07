@@ -1,0 +1,191 @@
+%% Generado desde `terraform graph` (recursos reales del código). Flecha: A --> B = A depende de B.
+flowchart LR
+    data_azurerm_client_config_current["data.azurerm_client_config.current"]
+    data_azurerm_subscription_current["data.azurerm_subscription.current"]
+    azurerm_resource_group_lab["azurerm_resource_group.lab"]
+  subgraph backup["module.backup"]
+    module_backup_azurerm_backup_policy_vm_diaria["azurerm_backup_policy_vm.diaria"]
+    module_backup_azurerm_monitor_diagnostic_setting_vault["azurerm_monitor_diagnostic_setting.vault"]
+    module_backup_azurerm_recovery_services_vault_this["azurerm_recovery_services_vault.this"]:::costo
+  end
+  subgraph hybrid_connectivity["module.hybrid_connectivity"]
+    module_hybrid_connectivity_azurerm_local_network_gateway_onprem["azurerm_local_network_gateway.onprem"]
+    module_hybrid_connectivity_azurerm_monitor_diagnostic_setting_vpn["azurerm_monitor_diagnostic_setting.vpn"]
+    module_hybrid_connectivity_azurerm_public_ip_vpn["azurerm_public_ip.vpn"]:::costo
+    module_hybrid_connectivity_azurerm_role_assignment_arc_onboarding["azurerm_role_assignment.arc_onboarding"]
+    module_hybrid_connectivity_azurerm_virtual_network_gateway_this["azurerm_virtual_network_gateway.this"]:::costo
+    module_hybrid_connectivity_azurerm_virtual_network_gateway_connection_s2s["azurerm_virtual_network_gateway_connection.s2s"]:::costo
+  end
+  subgraph identity["module.identity"]
+    module_identity_azurerm_role_assignment_additional["azurerm_role_assignment.additional"]
+    module_identity_azurerm_role_assignment_app_evidencias_lectura["azurerm_role_assignment.app_evidencias_lectura"]
+    module_identity_azurerm_role_assignment_app_gateway_kv["azurerm_role_assignment.app_gateway_kv"]
+    module_identity_azurerm_role_assignment_app_kv_secrets["azurerm_role_assignment.app_kv_secrets"]
+    module_identity_azurerm_role_assignment_arc_intercambio["azurerm_role_assignment.arc_intercambio"]
+    module_identity_azurerm_role_assignment_intercambio_escritura["azurerm_role_assignment.intercambio_escritura"]
+    module_identity_azurerm_role_assignment_sod["azurerm_role_assignment.sod"]
+    module_identity_azurerm_user_assigned_identity_app["azurerm_user_assigned_identity.app"]
+    module_identity_azurerm_user_assigned_identity_app_gateway["azurerm_user_assigned_identity.app_gateway"]
+    module_identity_azurerm_user_assigned_identity_intercambio["azurerm_user_assigned_identity.intercambio"]
+  end
+  subgraph monitoring["module.monitoring"]
+    module_monitoring_azurerm_consumption_budget_resource_group_this["azurerm_consumption_budget_resource_group.this"]
+    module_monitoring_azurerm_log_analytics_workspace_this["azurerm_log_analytics_workspace.this"]:::costo
+    module_monitoring_azurerm_monitor_action_group_this["azurerm_monitor_action_group.this"]
+    module_monitoring_azurerm_monitor_activity_log_alert_sensitive["azurerm_monitor_activity_log_alert.sensitive"]
+    module_monitoring_azurerm_monitor_activity_log_alert_service_health["azurerm_monitor_activity_log_alert.service_health"]
+    module_monitoring_azurerm_monitor_diagnostic_setting_activity_log["azurerm_monitor_diagnostic_setting.activity_log"]
+    module_monitoring_azurerm_monitor_scheduled_query_rules_alert_v2_operaciones_fallidas["azurerm_monitor_scheduled_query_rules_alert_v2.operaciones_fallidas"]:::costo
+    module_monitoring_azurerm_sentinel_log_analytics_workspace_onboarding_this["azurerm_sentinel_log_analytics_workspace_onboarding.this"]:::costo
+  end
+  subgraph networking["module.networking"]
+    module_networking_azurerm_monitor_diagnostic_setting_nsg["azurerm_monitor_diagnostic_setting.nsg"]
+    module_networking_azurerm_network_security_group_hub_management["azurerm_network_security_group.hub_management"]
+    module_networking_azurerm_network_security_group_spoke["azurerm_network_security_group.spoke"]
+    module_networking_azurerm_network_security_rule_deny_inbound["azurerm_network_security_rule.deny_inbound"]
+    module_networking_azurerm_network_security_rule_explicit["azurerm_network_security_rule.explicit"]
+    module_networking_azurerm_private_dns_zone_this["azurerm_private_dns_zone.this"]:::costo
+    module_networking_azurerm_private_dns_zone_virtual_network_link_this["azurerm_private_dns_zone_virtual_network_link.this"]
+    module_networking_azurerm_route_table_gateway["azurerm_route_table.gateway"]
+    module_networking_azurerm_route_table_spoke["azurerm_route_table.spoke"]
+    module_networking_azurerm_subnet_hub["azurerm_subnet.hub"]
+    module_networking_azurerm_subnet_spoke["azurerm_subnet.spoke"]
+    module_networking_azurerm_subnet_network_security_group_association_hub_management["azurerm_subnet_network_security_group_association.hub_management"]
+    module_networking_azurerm_subnet_network_security_group_association_spoke["azurerm_subnet_network_security_group_association.spoke"]
+    module_networking_azurerm_subnet_route_table_association_gateway["azurerm_subnet_route_table_association.gateway"]
+    module_networking_azurerm_subnet_route_table_association_spoke["azurerm_subnet_route_table_association.spoke"]
+    module_networking_azurerm_virtual_network_hub["azurerm_virtual_network.hub"]
+    module_networking_azurerm_virtual_network_spoke["azurerm_virtual_network.spoke"]
+    module_networking_azurerm_virtual_network_peering_hub_to_spoke["azurerm_virtual_network_peering.hub_to_spoke"]
+    module_networking_azurerm_virtual_network_peering_spoke_to_hub["azurerm_virtual_network_peering.spoke_to_hub"]
+  end
+  subgraph policies["module.policies"]
+    module_policies_azurerm_resource_group_policy_assignment_this["azurerm_resource_group_policy_assignment.this"]
+  end
+  subgraph security["module.security"]
+    module_security_azurerm_application_gateway_this["azurerm_application_gateway.this"]:::costo
+    module_security_azurerm_bastion_host_this["azurerm_bastion_host.this"]:::costo
+    module_security_azurerm_firewall_this["azurerm_firewall.this"]:::costo
+    module_security_azurerm_firewall_policy_this["azurerm_firewall_policy.this"]
+    module_security_azurerm_firewall_policy_rule_collection_group_this["azurerm_firewall_policy_rule_collection_group.this"]
+    module_security_azurerm_key_vault_this["azurerm_key_vault.this"]:::costo
+    module_security_azurerm_monitor_diagnostic_setting_this["azurerm_monitor_diagnostic_setting.this"]
+    module_security_azurerm_private_endpoint_key_vault["azurerm_private_endpoint.key_vault"]:::costo
+    module_security_azurerm_public_ip_app_gateway["azurerm_public_ip.app_gateway"]:::costo
+    module_security_azurerm_public_ip_bastion["azurerm_public_ip.bastion"]:::costo
+    module_security_azurerm_public_ip_firewall["azurerm_public_ip.firewall"]:::costo
+    module_security_azurerm_public_ip_firewall_management["azurerm_public_ip.firewall_management"]:::costo
+    module_security_azurerm_security_center_contact_this["azurerm_security_center_contact.this"]
+    module_security_azurerm_security_center_subscription_pricing_this["azurerm_security_center_subscription_pricing.this"]:::costo
+    module_security_azurerm_web_application_firewall_policy_this["azurerm_web_application_firewall_policy.this"]
+  end
+  subgraph storage["module.storage"]
+    module_storage_azurerm_monitor_diagnostic_setting_blob["azurerm_monitor_diagnostic_setting.blob"]
+    module_storage_azurerm_private_endpoint_blob["azurerm_private_endpoint.blob"]:::costo
+    module_storage_azurerm_storage_account_this["azurerm_storage_account.this"]:::costo
+    module_storage_azurerm_storage_container_this["azurerm_storage_container.this"]
+    module_storage_azurerm_storage_management_policy_this["azurerm_storage_management_policy.this"]
+  end
+  module_backup_azurerm_backup_policy_vm_diaria --> module_backup_azurerm_recovery_services_vault_this
+  module_backup_azurerm_monitor_diagnostic_setting_vault --> module_backup_azurerm_recovery_services_vault_this
+  module_backup_azurerm_monitor_diagnostic_setting_vault --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_backup_azurerm_recovery_services_vault_this --> azurerm_resource_group_lab
+  module_hybrid_connectivity_azurerm_local_network_gateway_onprem --> azurerm_resource_group_lab
+  module_hybrid_connectivity_azurerm_monitor_diagnostic_setting_vpn --> module_hybrid_connectivity_azurerm_virtual_network_gateway_this
+  module_hybrid_connectivity_azurerm_monitor_diagnostic_setting_vpn --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_hybrid_connectivity_azurerm_public_ip_vpn --> azurerm_resource_group_lab
+  module_hybrid_connectivity_azurerm_role_assignment_arc_onboarding --> azurerm_resource_group_lab
+  module_hybrid_connectivity_azurerm_virtual_network_gateway_this --> module_hybrid_connectivity_azurerm_public_ip_vpn
+  module_hybrid_connectivity_azurerm_virtual_network_gateway_this --> module_networking_azurerm_subnet_hub
+  module_hybrid_connectivity_azurerm_virtual_network_gateway_connection_s2s --> module_hybrid_connectivity_azurerm_local_network_gateway_onprem
+  module_hybrid_connectivity_azurerm_virtual_network_gateway_connection_s2s --> module_hybrid_connectivity_azurerm_virtual_network_gateway_this
+  module_identity_azurerm_role_assignment_additional --> azurerm_resource_group_lab
+  module_identity_azurerm_role_assignment_app_evidencias_lectura --> module_identity_azurerm_user_assigned_identity_app
+  module_identity_azurerm_role_assignment_app_evidencias_lectura --> module_storage_azurerm_storage_container_this
+  module_identity_azurerm_role_assignment_app_gateway_kv --> module_identity_azurerm_user_assigned_identity_app_gateway
+  module_identity_azurerm_role_assignment_app_gateway_kv --> module_security_azurerm_key_vault_this
+  module_identity_azurerm_role_assignment_app_kv_secrets --> module_identity_azurerm_user_assigned_identity_app
+  module_identity_azurerm_role_assignment_app_kv_secrets --> module_security_azurerm_key_vault_this
+  module_identity_azurerm_role_assignment_arc_intercambio --> module_storage_azurerm_storage_container_this
+  module_identity_azurerm_role_assignment_intercambio_escritura --> module_identity_azurerm_user_assigned_identity_intercambio
+  module_identity_azurerm_role_assignment_intercambio_escritura --> module_storage_azurerm_storage_container_this
+  module_identity_azurerm_role_assignment_sod --> module_backup_azurerm_recovery_services_vault_this
+  module_identity_azurerm_role_assignment_sod --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_identity_azurerm_role_assignment_sod --> module_security_azurerm_key_vault_this
+  module_identity_azurerm_user_assigned_identity_app --> azurerm_resource_group_lab
+  module_identity_azurerm_user_assigned_identity_app_gateway --> azurerm_resource_group_lab
+  module_identity_azurerm_user_assigned_identity_intercambio --> azurerm_resource_group_lab
+  module_monitoring_azurerm_consumption_budget_resource_group_this --> module_monitoring_azurerm_monitor_action_group_this
+  module_monitoring_azurerm_log_analytics_workspace_this --> azurerm_resource_group_lab
+  module_monitoring_azurerm_monitor_action_group_this --> azurerm_resource_group_lab
+  module_monitoring_azurerm_monitor_activity_log_alert_sensitive --> module_monitoring_azurerm_monitor_action_group_this
+  module_monitoring_azurerm_monitor_activity_log_alert_service_health --> data_azurerm_subscription_current
+  module_monitoring_azurerm_monitor_activity_log_alert_service_health --> module_monitoring_azurerm_monitor_action_group_this
+  module_monitoring_azurerm_monitor_diagnostic_setting_activity_log --> data_azurerm_subscription_current
+  module_monitoring_azurerm_monitor_diagnostic_setting_activity_log --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_monitoring_azurerm_monitor_scheduled_query_rules_alert_v2_operaciones_fallidas --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_monitoring_azurerm_monitor_scheduled_query_rules_alert_v2_operaciones_fallidas --> module_monitoring_azurerm_monitor_action_group_this
+  module_monitoring_azurerm_sentinel_log_analytics_workspace_onboarding_this --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_networking_azurerm_monitor_diagnostic_setting_nsg --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_networking_azurerm_monitor_diagnostic_setting_nsg --> module_networking_azurerm_network_security_group_spoke
+  module_networking_azurerm_network_security_group_hub_management --> azurerm_resource_group_lab
+  module_networking_azurerm_network_security_group_spoke --> azurerm_resource_group_lab
+  module_networking_azurerm_network_security_rule_deny_inbound --> module_networking_azurerm_network_security_group_spoke
+  module_networking_azurerm_network_security_rule_explicit --> module_networking_azurerm_network_security_group_spoke
+  module_networking_azurerm_private_dns_zone_this --> azurerm_resource_group_lab
+  module_networking_azurerm_private_dns_zone_virtual_network_link_this --> module_networking_azurerm_private_dns_zone_this
+  module_networking_azurerm_private_dns_zone_virtual_network_link_this --> module_networking_azurerm_virtual_network_hub
+  module_networking_azurerm_private_dns_zone_virtual_network_link_this --> module_networking_azurerm_virtual_network_spoke
+  module_networking_azurerm_route_table_gateway --> module_security_azurerm_firewall_this
+  module_networking_azurerm_route_table_spoke --> module_security_azurerm_firewall_this
+  module_networking_azurerm_subnet_hub --> module_networking_azurerm_virtual_network_hub
+  module_networking_azurerm_subnet_spoke --> module_networking_azurerm_virtual_network_spoke
+  module_networking_azurerm_subnet_network_security_group_association_hub_management --> module_networking_azurerm_network_security_group_hub_management
+  module_networking_azurerm_subnet_network_security_group_association_hub_management --> module_networking_azurerm_subnet_hub
+  module_networking_azurerm_subnet_network_security_group_association_spoke --> module_networking_azurerm_network_security_group_spoke
+  module_networking_azurerm_subnet_network_security_group_association_spoke --> module_networking_azurerm_subnet_spoke
+  module_networking_azurerm_subnet_route_table_association_gateway --> module_networking_azurerm_route_table_gateway
+  module_networking_azurerm_subnet_route_table_association_spoke --> module_networking_azurerm_route_table_spoke
+  module_networking_azurerm_subnet_route_table_association_spoke --> module_networking_azurerm_subnet_spoke
+  module_networking_azurerm_virtual_network_hub --> azurerm_resource_group_lab
+  module_networking_azurerm_virtual_network_spoke --> azurerm_resource_group_lab
+  module_networking_azurerm_virtual_network_peering_hub_to_spoke --> module_networking_azurerm_virtual_network_hub
+  module_networking_azurerm_virtual_network_peering_hub_to_spoke --> module_networking_azurerm_virtual_network_spoke
+  module_networking_azurerm_virtual_network_peering_spoke_to_hub --> module_hybrid_connectivity_azurerm_virtual_network_gateway_this
+  module_networking_azurerm_virtual_network_peering_spoke_to_hub --> module_networking_azurerm_virtual_network_peering_hub_to_spoke
+  module_policies_azurerm_resource_group_policy_assignment_this --> azurerm_resource_group_lab
+  module_security_azurerm_application_gateway_this --> module_identity_azurerm_role_assignment_app_gateway_kv
+  module_security_azurerm_application_gateway_this --> module_networking_azurerm_subnet_spoke
+  module_security_azurerm_application_gateway_this --> module_security_azurerm_public_ip_app_gateway
+  module_security_azurerm_application_gateway_this --> module_security_azurerm_web_application_firewall_policy_this
+  module_security_azurerm_bastion_host_this --> module_networking_azurerm_subnet_hub
+  module_security_azurerm_bastion_host_this --> module_security_azurerm_public_ip_bastion
+  module_security_azurerm_firewall_this --> module_networking_azurerm_subnet_hub
+  module_security_azurerm_firewall_this --> module_security_azurerm_firewall_policy_rule_collection_group_this
+  module_security_azurerm_firewall_this --> module_security_azurerm_public_ip_firewall
+  module_security_azurerm_firewall_this --> module_security_azurerm_public_ip_firewall_management
+  module_security_azurerm_firewall_policy_this --> azurerm_resource_group_lab
+  module_security_azurerm_firewall_policy_rule_collection_group_this --> module_security_azurerm_firewall_policy_this
+  module_security_azurerm_key_vault_this --> data_azurerm_client_config_current
+  module_security_azurerm_key_vault_this --> azurerm_resource_group_lab
+  module_security_azurerm_monitor_diagnostic_setting_this --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_security_azurerm_monitor_diagnostic_setting_this --> module_security_azurerm_application_gateway_this
+  module_security_azurerm_monitor_diagnostic_setting_this --> module_security_azurerm_bastion_host_this
+  module_security_azurerm_monitor_diagnostic_setting_this --> module_security_azurerm_firewall_this
+  module_security_azurerm_private_endpoint_key_vault --> module_networking_azurerm_private_dns_zone_this
+  module_security_azurerm_private_endpoint_key_vault --> module_networking_azurerm_subnet_spoke
+  module_security_azurerm_private_endpoint_key_vault --> module_security_azurerm_key_vault_this
+  module_security_azurerm_public_ip_app_gateway --> azurerm_resource_group_lab
+  module_security_azurerm_public_ip_bastion --> azurerm_resource_group_lab
+  module_security_azurerm_public_ip_firewall --> azurerm_resource_group_lab
+  module_security_azurerm_public_ip_firewall_management --> azurerm_resource_group_lab
+  module_security_azurerm_web_application_firewall_policy_this --> azurerm_resource_group_lab
+  module_storage_azurerm_monitor_diagnostic_setting_blob --> module_monitoring_azurerm_log_analytics_workspace_this
+  module_storage_azurerm_monitor_diagnostic_setting_blob --> module_storage_azurerm_storage_account_this
+  module_storage_azurerm_private_endpoint_blob --> module_networking_azurerm_private_dns_zone_this
+  module_storage_azurerm_private_endpoint_blob --> module_networking_azurerm_subnet_spoke
+  module_storage_azurerm_private_endpoint_blob --> module_storage_azurerm_storage_account_this
+  module_storage_azurerm_storage_account_this --> azurerm_resource_group_lab
+  module_storage_azurerm_storage_container_this --> module_storage_azurerm_storage_account_this
+  module_storage_azurerm_storage_management_policy_this --> module_storage_azurerm_storage_account_this
+  classDef costo fill:#fde2e1,stroke:#b42318,color:#000

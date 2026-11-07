@@ -1,0 +1,54 @@
+# ESCENARIO 1 — MÍNIMO ACADÉMICO (ambiente dev)
+# Copie a dev.tfvars (ignorado por git). NO incluya secretos ni el ID de suscripción:
+#   $env:ARM_SUBSCRIPTION_ID = "<guid>"   (o use la sesión de az login)
+# Costo estimado y fórmula: evidencias/azure/costos-escenarios-20261024.md
+
+environment   = "dev"
+location      = "eastus2"
+prefix        = "uvcg-sgsi"
+unique_suffix = "lab01"
+
+# Controles sin costo
+enable_policies       = true
+enable_budget         = true
+manage_defender_plans = true # Free en todos los planes
+budget_amount         = 25
+budget_start_date     = "2026-11-01T00:00:00Z"
+budget_contact_emails = ["seguridad-ti@uvcg.example"]
+
+# Con costo bajo (autorizar antes del apply)
+enable_monitoring        = true # Log Analytics con tope diario 0.16 GB (~5 GB/mes)
+log_retention_days       = 30
+log_daily_quota_gb       = 0.16
+enable_alerts            = true
+enable_key_vault         = true
+enable_storage           = true
+storage_replication_type = "LRS"
+enable_private_endpoints = true
+
+# Con costo alto: apagados
+enable_sentinel    = false
+enable_backup      = false
+enable_vpn_gateway = false
+enable_firewall    = false
+enable_bastion     = false
+enable_app_gateway = false
+
+alert_email_receivers = {
+  seguridad = "seguridad-ti@uvcg.example"
+}
+security_contact_email = "seguridad-ti@uvcg.example"
+
+# Separación de funciones: object IDs de GRUPOS de Entra ID (rellenar fuera del repositorio).
+principals = {
+  lectores            = []
+  auditores_registros = []
+  operadores_red      = []
+  operadores_respaldo = []
+  administradores_seg = []
+  lectores_costos     = []
+}
+
+# Conectividad híbrida de bajo costo: Azure Arc (rellenar tras crear el principal de incorporación).
+# arc_onboarding_principal_id = "<object-id>"
+# arc_machine_principal_id    = "<object-id de la identidad del servidor Arc>"

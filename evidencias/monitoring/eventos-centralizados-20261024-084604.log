@@ -1,0 +1,282 @@
+identity-db-1  | 2026-10-24T14:31:08.137685381Z The files belonging to this database system will be owned by user "postgres".
+db-1           | 2026-10-24T14:31:08.136706633Z 
+proxy-1        | 2026-10-24T14:37:11.049687315Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+keycloak-1     | 2026-10-24T14:43:15.457312468Z JAVA_OPTS_KC_HEAP already set in environment; overriding default settings
+api-1          | 2026-10-24T14:35:17.474681298Z [2026-10-24 14:35:17 +0000] [1] [INFO] Starting gunicorn 23.0.0
+identity-db-1  | 2026-10-24T14:31:08.137707358Z This user must also own the server process.
+identity-db-1  | 2026-10-24T14:31:08.137709414Z 
+identity-db-1  | 2026-10-24T14:31:08.137904968Z The database cluster will be initialized with locale "en_US.utf8".
+identity-db-1  | 2026-10-24T14:31:08.137911927Z The default database encoding has accordingly been set to "UTF8".
+keycloak-1     | 2026-10-24T14:43:17.957668286Z 2026-10-24 14:43:16,876 WARN  [org.keycloak.models.sessions.infinispan.InfinispanStickySessionEncoderProviderFactory] (main) The option `shouldAttachRoute` is deprecated and will be removed in a future release. Disable it by setting `spi-sticky-session-encoder--infinispan--should-attach-route` to `false`
+db-1           | 2026-10-24T14:31:08.136730127Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+keycloak-1     | 2026-10-24T14:43:17.961279892Z 2026-10-24 14:43:17,948 INFO  [org.infinispan.CONTAINER] (main) ISPN000974: Virtual threads support: enabled
+db-1           | 2026-10-24T14:31:08.136731925Z 
+keycloak-1     | 2026-10-24T14:43:28.030304728Z 2026-10-24 14:43:28,029 WARN  [com.arjuna.ats.common] (main) ARJUNA048006: cannot create new instance of com.arjuna.ats.internal.arjuna.recovery.AtomicActionRecoveryModule
+keycloak-1     | 2026-10-24T14:43:37.974940488Z 2026-10-24 14:43:37,974 WARN  [com.arjuna.ats.common] (main) ARJUNA048006: cannot create new instance of com.arjuna.ats.internal.jta.recovery.arjunacore.XARecoveryModule
+proxy-1        | 2026-10-24T14:37:11.049704952Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+proxy-1        | 2026-10-24T14:37:11.050448771Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+keycloak-1     | 2026-10-24T14:43:47.919985367Z 2026-10-24 14:43:47,917 WARN  [com.arjuna.ats.common] (main) ARJUNA048006: cannot create new instance of com.arjuna.ats.internal.arjuna.recovery.ExpiredTransactionStatusManagerScanner
+proxy-1        | 2026-10-24T14:37:11.053096729Z 10-listen-on-ipv6-by-default.sh: info: can not modify /etc/nginx/conf.d/default.conf (read-only file system?)
+keycloak-1     | 2026-10-24T14:43:48.639071538Z 2026-10-24 14:43:48,638 INFO  [org.hibernate.orm.jdbc.batch] (JPA Startup Thread) HHH100501: Automatic JDBC statement batching enabled (maximum batch size 32)
+identity-db-1  | 2026-10-24T14:31:08.137913307Z The default text search configuration will be set to "english".
+keycloak-1     | 2026-10-24T14:43:48.671805986Z 2026-10-24 14:43:48,671 WARNING [io.opentelemetry.usage] (main) OpenTelemetry API usage issue detected. To see more details, enable FINEST logging for io.opentelemetry.usage. Stacktraces are includes to identify the offending call site.
+db-1           | 2026-10-24T14:31:08.150203023Z 2026-10-24 14:31:08.150 UTC [1] LOG:  starting PostgreSQL 16.14 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1           | 2026-10-24T14:31:08.150214258Z 2026-10-24 14:31:08.150 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+api-1          | 2026-10-24T14:35:17.474710462Z [2026-10-24 14:35:17 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+db-1           | 2026-10-24T14:31:08.150215804Z 2026-10-24 14:31:08.150 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+proxy-1        | 2026-10-24T14:37:11.053382685Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+identity-db-1  | 2026-10-24T14:31:08.137914359Z 
+proxy-1        | 2026-10-24T14:37:11.053576313Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+db-1           | 2026-10-24T14:31:08.152100348Z 2026-10-24 14:31:08.151 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+keycloak-1     | 2026-10-24T14:43:48.736738915Z 2026-10-24 14:43:48,736 WARN  [org.keycloak.common.Profile] (executor-thread-1) Deprecated features identity-brokering-api:v1, twitter-broker:v1 enabled by default. Check the upgrading guide for steps to use later versions if available.
+api-1          | 2026-10-24T14:35:17.474758888Z [2026-10-24 14:35:17 +0000] [1] [INFO] Using worker: sync
+keycloak-1     | 2026-10-24T14:43:48.794841363Z 2026-10-24 14:43:48,794 INFO  [io.quarkus] (main) Keycloak 26.8.1 on JVM (powered by Quarkus 3.40.1) started in 33.251s. Listening on: http://0.0.0.0:8080. Management interface listening on http://0.0.0.0:9000.
+proxy-1        | 2026-10-24T14:37:11.056435427Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+proxy-1        | 2026-10-24T14:37:11.057690504Z /docker-entrypoint.sh: Configuration complete; ready for start up
+proxy-1        | 2026-10-24T14:37:11.059585980Z 2026/10/24 14:37:11 [warn] 1#1: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2
+identity-db-1  | 2026-10-24T14:31:08.137915249Z Data page checksums are disabled.
+keycloak-1     | 2026-10-24T14:43:48.795049311Z 2026-10-24 14:43:48,794 INFO  [io.quarkus] (main) Profile prod activated. 
+identity-db-1  | 2026-10-24T14:31:08.137916134Z 
+db-1           | 2026-10-24T14:31:08.154315013Z 2026-10-24 14:31:08.154 UTC [29] LOG:  database system was shut down at 2026-10-24 14:31:06 UTC
+db-1           | 2026-10-24T14:31:08.157650330Z 2026-10-24 14:31:08.157 UTC [1] LOG:  database system is ready to accept connections
+keycloak-1     | 2026-10-24T14:43:48.795129123Z 2026-10-24 14:43:48,794 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-postgresql, keycloak, micrometer, narayana-jta, opentelemetry, rest, rest-jackson, smallrye-context-propagation, smallrye-health, vertx]
+keycloak-1     | 2026-10-24T14:43:49.000899877Z 2026-10-24 14:43:49,000 INFO  [org.keycloak.spi.infinispan.impl.embedded.JGroupsConfigurator] (db-index-checker) JGroups JDBC_PING discovery enabled.
+proxy-1        | 2026-10-24T14:37:11.059595341Z nginx: [warn] the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2
+identity-db-1  | 2026-10-24T14:31:08.137916927Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+proxy-1        | 2026-10-24T14:37:11.065078339Z 2026/10/24 14:37:11 [notice] 1#1: using the "epoll" event method
+api-1          | 2026-10-24T14:35:17.476613330Z [2026-10-24 14:35:17 +0000] [7] [INFO] Booting worker with pid: 7
+keycloak-1     | 2026-10-24T14:43:49.006410681Z 2026-10-24 14:43:49,006 INFO  [org.keycloak.spi.infinispan.impl.embedded.JGroupsConfigurator] (db-index-checker) JGroups Encryption enabled (mTLS).
+api-1          | 2026-10-24T14:35:17.496531784Z [2026-10-24 14:35:17 +0000] [8] [INFO] Booting worker with pid: 8
+api-1          | 2026-10-24T14:37:29.000995777Z {"event": "authorization", "outcome": "denied", "path": "/cursos", "reason": "missing_token"}
+keycloak-1     | 2026-10-24T14:43:49.167107092Z 2026-10-24 14:43:49,166 INFO  [org.keycloak.jgroups.certificates.CertificateReloadManager] (db-index-checker) Starting JGroups certificate reload manager
+keycloak-1     | 2026-10-24T14:43:49.460269246Z 2026-10-24 14:43:49,459 INFO  [org.infinispan.CONTAINER] (db-index-checker) ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+api-1          | 2026-10-24T14:41:20.053036016Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "admin.lab"}
+identity-db-1  | 2026-10-24T14:31:08.139919824Z creating subdirectories ... ok
+db-1           | 2026-10-24T14:36:08.229901819Z 2026-10-24 14:36:08.228 UTC [27] LOG:  checkpoint starting: time
+identity-db-1  | 2026-10-24T14:31:08.139927074Z selecting dynamic shared memory implementation ... posix
+keycloak-1     | 2026-10-24T14:43:49.522166112Z 2026-10-24 14:43:49,521 INFO  [org.infinispan.CLUSTER] (db-index-checker) ISPN000078: Starting JGroups channel `ISPN` with stack `jdbc-ping`
+api-1          | 2026-10-24T14:41:22.120688752Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "admin.lab"}
+db-1           | 2026-10-24T14:36:08.248040007Z 2026-10-24 14:36:08.247 UTC [27] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.002 s, total=0.020 s; sync files=2, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/196A080, redo lsn=0/196A048
+identity-db-1  | 2026-10-24T14:31:08.148977915Z selecting default max_connections ... 100
+identity-db-1  | 2026-10-24T14:31:08.159981789Z selecting default shared_buffers ... 128MB
+identity-db-1  | 2026-10-24T14:31:08.187145424Z selecting default time zone ... UTC
+identity-db-1  | 2026-10-24T14:31:08.187808043Z creating configuration files ... ok
+api-1          | 2026-10-24T14:41:24.181440246Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "docente.lab"}
+identity-db-1  | 2026-10-24T14:31:08.259527127Z running bootstrap script ... ok
+proxy-1        | 2026-10-24T14:37:11.065094184Z 2026/10/24 14:37:11 [notice] 1#1: nginx/1.27.5
+api-1          | 2026-10-24T14:41:26.297462747Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "docente.lab"}
+keycloak-1     | 2026-10-24T14:43:49.523151389Z 2026-10-24 14:43:49,522 INFO  [org.jgroups.JChannel] (db-index-checker) local_addr: 00000000-0000-0000-0000-000000000003(v=16.0.15), name: d1a3138d8336-50372
+identity-db-1  | 2026-10-24T14:31:08.384948922Z sh: locale: not found
+identity-db-1  | 2026-10-24T14:31:08.385219078Z 2026-10-24 14:31:08.385 UTC [35] WARNING:  no usable system locales were found
+api-1          | 2026-10-24T14:41:28.364674841Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "estudiante.lab"}
+proxy-1        | 2026-10-24T14:37:11.065095949Z 2026/10/24 14:37:11 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+api-1          | 2026-10-24T14:41:30.425560721Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "estudiante.lab"}
+keycloak-1     | 2026-10-24T14:43:49.530638774Z 2026-10-24 14:43:49,530 INFO  [org.jgroups.protocols.FD_SOCK2] (db-index-checker) server listening on *:57800
+proxy-1        | 2026-10-24T14:37:11.065097185Z 2026/10/24 14:37:11 [notice] 1#1: OS: Linux 6.18.54.1-microsoft-standard-WSL2
+proxy-1        | 2026-10-24T14:37:11.065098187Z 2026/10/24 14:37:11 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+identity-db-1  | 2026-10-24T14:31:08.663145685Z performing post-bootstrap initialization ... ok
+keycloak-1     | 2026-10-24T14:43:51.543841153Z 2026-10-24 14:43:51,543 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 1
+api-1          | 2026-10-24T14:41:32.482095345Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "administrativo.lab"}
+proxy-1        | 2026-10-24T14:37:11.065099281Z 2026/10/24 14:37:11 [notice] 1#1: start worker processes
+keycloak-1     | 2026-10-24T14:43:53.560173333Z 2026-10-24 14:43:53,559 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 2
+keycloak-1     | 2026-10-24T14:43:55.568301059Z 2026-10-24 14:43:55,567 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 3
+keycloak-1     | 2026-10-24T14:43:55.924680217Z 2026-10-24 14:43:55,924 INFO  [io.smallrye.health] (vert.x-eventloop-thread-0) SRHCK01001: Reporting health down status: {"status":"DOWN","checks":[{"name":"Graceful Shutdown","status":"UP"},{"name":"Keycloak database connections async health check","status":"UP"},{"name":"Keycloak Initialized","status":"DOWN"}]}
+identity-db-1  | 2026-10-24T14:31:08.731602069Z initdb: warning: enabling "trust" authentication for local connections
+keycloak-1     | 2026-10-24T14:43:57.576501864Z 2026-10-24 14:43:57,575 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 4
+keycloak-1     | 2026-10-24T14:43:59.586127668Z 2026-10-24 14:43:59,585 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 5
+proxy-1        | 2026-10-24T14:37:11.065169475Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 21
+api-1          | 2026-10-24T14:41:34.564213260Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "administrativo.lab"}
+identity-db-1  | 2026-10-24T14:31:08.731633701Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+proxy-1        | 2026-10-24T14:37:11.065434165Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 22
+keycloak-1     | 2026-10-24T14:44:01.594183768Z 2026-10-24 14:44:01,593 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 6
+keycloak-1     | 2026-10-24T14:44:03.602017061Z 2026-10-24 14:44:03,601 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 7
+api-1          | 2026-10-24T14:41:36.646148733Z {"event": "authorization", "outcome": "allowed", "path": "/docencia", "subject": "admin.lab"}
+api-1          | 2026-10-24T14:41:38.702721895Z {"event": "authorization", "outcome": "allowed", "path": "/administracion", "subject": "admin.lab"}
+identity-db-1  | 2026-10-24T14:31:08.731602682Z syncing data to disk ... ok
+identity-db-1  | 2026-10-24T14:31:08.731639314Z 
+identity-db-1  | 2026-10-24T14:31:08.731640356Z 
+identity-db-1  | 2026-10-24T14:31:08.731641167Z Success. You can now start the database server using:
+keycloak-1     | 2026-10-24T14:44:05.607325684Z 2026-10-24 14:44:05,606 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 8
+keycloak-1     | 2026-10-24T14:44:06.001627372Z 2026-10-24 14:44:06,001 INFO  [io.smallrye.health] (vert.x-eventloop-thread-0) SRHCK01001: Reporting health down status: {"status":"DOWN","checks":[{"name":"Graceful Shutdown","status":"UP"},{"name":"Keycloak database connections async health check","status":"UP"},{"name":"Keycloak Initialized","status":"DOWN"}]}
+keycloak-1     | 2026-10-24T14:44:07.614554898Z 2026-10-24 14:44:07,613 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): JOIN(d1a3138d8336-50372(v=16.0.15)) sent to fb37de3c419e-22511 timed out (after 2000 ms), on try 9
+keycloak-1     | 2026-10-24T14:44:07.614607460Z 2026-10-24 14:44:07,614 WARN  [org.jgroups.protocols.pbcast.GMS] (db-index-checker) d1a3138d8336-50372(v=16.0.15): too many JOIN attempts (10): becoming singleton
+keycloak-1     | 2026-10-24T14:44:07.639535165Z 2026-10-24 14:44:07,639 INFO  [org.infinispan.CLUSTER] (db-index-checker) ISPN000094: Received new cluster view for channel ISPN: [d1a3138d8336-50372(v=16.0.15)|0] (1) [d1a3138d8336-50372(v=16.0.15)]
+proxy-1        | 2026-10-24T14:37:11.065446004Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 23
+keycloak-1     | 2026-10-24T14:44:07.641649157Z 2026-10-24 14:44:07,640 INFO  [org.keycloak.jgroups.certificates.CertificateReloadManager] () Reloading JGroups Certificate
+api-1          | 2026-10-24T14:41:40.764144101Z {"event": "authorization", "outcome": "allowed", "path": "/docencia", "subject": "docente.lab"}
+keycloak-1     | 2026-10-24T14:44:07.668039461Z 2026-10-24 14:44:07,667 INFO  [org.infinispan.CLUSTER] (db-index-checker) ISPN000079: Channel `ISPN` local address is `d1a3138d8336-50372`, physical addresses are `[172.26.0.3:7800]`
+keycloak-1     | 2026-10-24T14:44:07.960158143Z 2026-10-24 14:44:07,959 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (db-index-checker) Node name: d1a3138d8336-50372, Site name: null, Cluster name: ISPN
+keycloak-1     | 2026-10-24T14:44:07.989461832Z 2026-10-24 14:44:07,989 INFO  [org.keycloak.models.workflow.WorkflowsEventListenerFactory] (executor-thread-1) Workflow runner task scheduled: next execution at 02:44:07, then every PT12H
+api-1          | 2026-10-24T14:41:42.847337260Z {"event": "authorization", "outcome": "denied", "path": "/administracion", "required_roles": ["administrador"], "subject": "docente.lab"}
+keycloak-1     | 2026-10-24T14:44:08.067536787Z 2026-10-24 14:44:08,067 INFO  [org.keycloak.exportimport.dir.DirImportProvider] (executor-thread-1) Importing from directory /opt/keycloak/bin/../data/import
+api-1          | 2026-10-24T14:41:44.909796349Z {"event": "authorization", "outcome": "denied", "path": "/docencia", "required_roles": ["administrador", "docente"], "subject": "estudiante.lab"}
+proxy-1        | 2026-10-24T14:37:11.065625190Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 24
+api-1          | 2026-10-24T14:41:47.004101420Z {"event": "authorization", "outcome": "denied", "path": "/administracion", "required_roles": ["administrador"], "subject": "estudiante.lab"}
+keycloak-1     | 2026-10-24T14:44:08.461463917Z 2026-10-24 14:44:08,460 INFO  [org.keycloak.services] (executor-thread-1) KC-SERVICES0030: Full model import requested. Strategy: IGNORE_EXISTING
+api-1          | 2026-10-24T14:41:49.073733980Z {"event": "authorization", "outcome": "denied", "path": "/docencia", "required_roles": ["administrador", "docente"], "subject": "administrativo.lab"}
+api-1          | 2026-10-24T14:41:51.152991650Z {"event": "authorization", "outcome": "denied", "path": "/administracion", "required_roles": ["administrador"], "subject": "administrativo.lab"}
+api-1          | 2026-10-24T14:41:53.200961769Z {"event": "authentication", "outcome": "denied", "path": "/cursos", "reason": "DecodeError"}
+api-1          | 2026-10-24T14:45:27.020723517Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "admin.lab"}
+proxy-1        | 2026-10-24T14:37:11.065632303Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 25
+identity-db-1  | 2026-10-24T14:31:08.731642058Z 
+proxy-1        | 2026-10-24T14:37:11.065823887Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 26
+identity-db-1  | 2026-10-24T14:31:08.731642817Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+proxy-1        | 2026-10-24T14:37:11.065996319Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 27
+keycloak-1     | 2026-10-24T14:44:08.614726916Z 2026-10-24 14:44:08,614 INFO  [org.keycloak.exportimport.util.ImportUtils] (executor-thread-1) Realm 'uvcg' already exists. Import skipped
+proxy-1        | 2026-10-24T14:37:11.066003091Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 28
+keycloak-1     | 2026-10-24T14:44:08.624552098Z 2026-10-24 14:44:08,624 INFO  [org.keycloak.services] (executor-thread-1) KC-SERVICES0032: Import finished successfully
+proxy-1        | 2026-10-24T14:37:11.066274893Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 29
+proxy-1        | 2026-10-24T14:37:11.066406466Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 30
+api-1          | 2026-10-24T14:45:29.078351264Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "admin.lab"}
+keycloak-1     | 2026-10-24T14:44:08.673310314Z 2026-10-24 14:44:08,673 INFO  [org.keycloak.services.resources.KeycloakApplication] (executor-thread-1) Bootstrap completed in 19.938000 seconds
+keycloak-1     | 2026-10-24T14:44:18.364731154Z 2026-10-24 14:44:18,364 DEBUG [org.keycloak.events] (executor-thread-3) type="LOGIN", realmId="d6160a9c-778c-4659-8425-175d5bc77d6c", realmName="master", clientId="admin-cli", userId="b42fce9c-9297-4543-8344-0841dda5b2cb", sessionId="0k4XoZL3f8G6GKAiWI7RA1ie", ipAddress="127.0.0.1", refresh_token_provider_id="default", auth_method="openid-connect", token_id="onltro:0a3e0311-49af-e5ac-7425-a0684813aa63", grant_type="password", refresh_token_type="Refresh", scope="profile email", refresh_token_id="3f038ffb-6920-d27d-1020-6fad4cba570e", client_auth_method="client-secret", username="kcadmin", authSessionParentId="0k4XoZL3f8G6GKAiWI7RA1ie", authSessionTabId="9qiOgNGuqWk"
+keycloak-1     | 2026-10-24T14:44:32.075678185Z 2026-10-24 14:44:32,075 DEBUG [org.keycloak.events] (executor-thread-1) type="LOGIN", realmId="d6160a9c-778c-4659-8425-175d5bc77d6c", realmName="master", clientId="admin-cli", userId="b42fce9c-9297-4543-8344-0841dda5b2cb", sessionId="Dxo3aeAfZXuvWmdDjfgUss5-", ipAddress="127.0.0.1", refresh_token_provider_id="default", auth_method="openid-connect", token_id="onltro:c53ba34a-1eb7-acfc-4d13-30d08e8be959", grant_type="password", refresh_token_type="Refresh", scope="profile email", refresh_token_id="8ae80a9f-7533-3fa1-71e8-3b6fed66f43d", client_auth_method="client-secret", username="kcadmin", authSessionParentId="Dxo3aeAfZXuvWmdDjfgUss5-", authSessionTabId="ZFZe9YcTdEg"
+proxy-1        | 2026-10-24T14:37:11.066570632Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 31
+keycloak-1     | 2026-10-24T14:45:11.970956975Z 2026-10-24 14:45:11,970 DEBUG [org.keycloak.events] (executor-thread-3) operationType="UPDATE", realmId="d6160a9c-778c-4659-8425-175d5bc77d6c", realmName="master", clientId="4ab087f4-a2da-440b-ab49-93e59d1b3858", userId="b42fce9c-9297-4543-8344-0841dda5b2cb", ipAddress="127.0.0.1", resourceType="REALM", resourcePath="events/config"
+proxy-1        | 2026-10-24T14:37:11.066893324Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 32
+proxy-1        | 2026-10-24T14:37:11.067070016Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 33
+keycloak-1     | 2026-10-24T14:45:16.353405320Z 2026-10-24 14:45:16,352 WARN  [org.keycloak.protocol.oidc.endpoints.TokenEndpoint.full-scope-allowed] (executor-thread-3) Client 'sgsi-cli' in the realm 'uvcg' has 'Full scope allowed' switch enabled. This client switch is deprecated and will be removed in the future. Please update your client settings to disable the switch and configure needed roles, which this client application needs, to the client role scope
+keycloak-1     | 2026-10-24T14:45:16.401805390Z 2026-10-24 14:45:16,401 WARN  [org.keycloak.events] (executor-thread-3) type="LOGIN_ERROR", realmId="18ad14fd-3039-4f71-b4cc-58b11a2b1dca", realmName="uvcg", clientId="sgsi-cli", userId="804bf319-0398-4f0f-8e73-b124234efd6d", ipAddress="172.23.0.1", error="invalid_user_credentials", auth_method="openid-connect", grant_type="password", client_auth_method="client-secret", username="admin.lab"
+proxy-1        | 2026-10-24T14:37:11.067195912Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 34
+api-1          | 2026-10-24T14:45:31.097776315Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "docente.lab"}
+api-1          | 2026-10-24T14:45:33.186932536Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "docente.lab"}
+identity-db-1  | 2026-10-24T14:31:08.731643658Z 
+proxy-1        | 2026-10-24T14:37:11.067513476Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 35
+api-1          | 2026-10-24T14:45:35.270844388Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "estudiante.lab"}
+proxy-1        | 2026-10-24T14:37:11.067655960Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 36
+api-1          | 2026-10-24T14:45:37.327784369Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "estudiante.lab"}
+proxy-1        | 2026-10-24T14:37:11.067950060Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 37
+keycloak-1     | 2026-10-24T14:45:18.526419606Z 2026-10-24 14:45:18,525 WARN  [org.keycloak.protocol.oidc.endpoints.TokenEndpoint.full-scope-allowed] (executor-thread-3) Client 'sgsi-cli' in the realm 'uvcg' has 'Full scope allowed' switch enabled. This client switch is deprecated and will be removed in the future. Please update your client settings to disable the switch and configure needed roles, which this client application needs, to the client role scope
+identity-db-1  | 2026-10-24T14:31:08.758581274Z waiting for server to start....2026-10-24 14:31:08.758 UTC [41] LOG:  starting PostgreSQL 16.14 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+keycloak-1     | 2026-10-24T14:45:18.626744751Z 2026-10-24 14:45:18,626 DEBUG [org.keycloak.events] (executor-thread-3) type="LOGIN", realmId="18ad14fd-3039-4f71-b4cc-58b11a2b1dca", realmName="uvcg", clientId="sgsi-cli", userId="804bf319-0398-4f0f-8e73-b124234efd6d", sessionId="vzyh-Ak3tsgEtnfsFJl648fg", ipAddress="172.23.0.1", refresh_token_provider_id="default", auth_method="openid-connect", token_id="onrtro:5b72ec83-2b62-a324-89c4-5339b873f0e9", grant_type="password", refresh_token_type="Refresh", scope="email profile", refresh_token_id="d60b8211-91a7-a092-a5f5-4bd7f7c9fb52", client_auth_method="client-secret", username="admin.lab", authSessionParentId="vzyh-Ak3tsgEtnfsFJl648fg", authSessionTabId="4HNvveN58dA"
+api-1          | 2026-10-24T14:45:39.380601156Z {"event": "authorization", "outcome": "allowed", "path": "/cursos", "subject": "administrativo.lab"}
+identity-db-1  | 2026-10-24T14:31:08.759268365Z 2026-10-24 14:31:08.759 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+identity-db-1  | 2026-10-24T14:31:08.761917261Z 2026-10-24 14:31:08.761 UTC [44] LOG:  database system was shut down at 2026-10-24 14:31:08 UTC
+keycloak-1     | 2026-10-24T14:45:20.712237184Z 2026-10-24 14:45:20,711 WARN  [org.keycloak.protocol.oidc.endpoints.TokenEndpoint.full-scope-allowed] (executor-thread-3) Client 'sgsi-cli' in the realm 'uvcg' has 'Full scope allowed' switch enabled. This client switch is deprecated and will be removed in the future. Please update your client settings to disable the switch and configure needed roles, which this client application needs, to the client role scope
+keycloak-1     | 2026-10-24T14:45:20.754317824Z 2026-10-24 14:45:20,753 DEBUG [org.keycloak.events] (executor-thread-3) type="LOGIN", realmId="18ad14fd-3039-4f71-b4cc-58b11a2b1dca", realmName="uvcg", clientId="sgsi-cli", userId="913bf93a-038a-4660-8e1d-91817934c5cf", sessionId="73GpIWB_PzqR1qZLfu1kbAmT", ipAddress="172.23.0.1", refresh_token_provider_id="default", auth_method="openid-connect", token_id="onrtro:2239667b-9fdc-d2b6-2ff9-22f3868ba67d", grant_type="password", refresh_token_type="Refresh", scope="email profile", refresh_token_id="9866beda-a4b0-031c-4910-69d7c3c18fd0", client_auth_method="client-secret", username="docente.lab", authSessionParentId="73GpIWB_PzqR1qZLfu1kbAmT", authSessionTabId="TGj1syfaX9A"
+keycloak-1     | 2026-10-24T14:45:22.793993015Z 2026-10-24 14:45:22,793 WARN  [org.keycloak.protocol.oidc.endpoints.TokenEndpoint.full-scope-allowed] (executor-thread-3) Client 'sgsi-cli' in the realm 'uvcg' has 'Full scope allowed' switch enabled. This client switch is deprecated and will be removed in the future. Please update your client settings to disable the switch and configure needed roles, which this client application needs, to the client role scope
+keycloak-1     | 2026-10-24T14:45:22.837078726Z 2026-10-24 14:45:22,836 DEBUG [org.keycloak.events] (executor-thread-3) type="LOGIN", realmId="18ad14fd-3039-4f71-b4cc-58b11a2b1dca", realmName="uvcg", clientId="sgsi-cli", userId="e1cf4071-a8fc-4862-a7e5-e4ca5ce26227", sessionId="_wOq6QOGrADwspkklLtaj4K4", ipAddress="172.23.0.1", refresh_token_provider_id="default", auth_method="openid-connect", token_id="onrtro:cef2b9a6-7a72-749b-9923-3a02abc51421", grant_type="password", refresh_token_type="Refresh", scope="email profile", refresh_token_id="426c0b18-3c5c-55ca-4198-5238586efb07", client_auth_method="client-secret", username="estudiante.lab", authSessionParentId="_wOq6QOGrADwspkklLtaj4K4", authSessionTabId="6GKkXxA7JzM"
+keycloak-1     | 2026-10-24T14:45:24.914948937Z 2026-10-24 14:45:24,914 WARN  [org.keycloak.protocol.oidc.endpoints.TokenEndpoint.full-scope-allowed] (executor-thread-3) Client 'sgsi-cli' in the realm 'uvcg' has 'Full scope allowed' switch enabled. This client switch is deprecated and will be removed in the future. Please update your client settings to disable the switch and configure needed roles, which this client application needs, to the client role scope
+api-1          | 2026-10-24T14:45:41.464788866Z {"event": "authorization", "outcome": "allowed", "path": "/perfil", "subject": "administrativo.lab"}
+identity-db-1  | 2026-10-24T14:31:08.764844851Z 2026-10-24 14:31:08.764 UTC [41] LOG:  database system is ready to accept connections
+keycloak-1     | 2026-10-24T14:45:24.954713003Z 2026-10-24 14:45:24,954 DEBUG [org.keycloak.events] (executor-thread-3) type="LOGIN", realmId="18ad14fd-3039-4f71-b4cc-58b11a2b1dca", realmName="uvcg", clientId="sgsi-cli", userId="c45e81ad-aba4-4530-aee0-96924c594cb9", sessionId="qbquuY98BCa9dHyOqdHLYpwy", ipAddress="172.23.0.1", refresh_token_provider_id="default", auth_method="openid-connect", token_id="onrtro:f7ad671b-3e14-0857-e40f-a00c8880659e", grant_type="password", refresh_token_type="Refresh", scope="email profile", refresh_token_id="04debeb9-fa67-a0ea-6b9f-f11b936c605a", client_auth_method="client-secret", username="administrativo.lab", authSessionParentId="qbquuY98BCa9dHyOqdHLYpwy", authSessionTabId="r4zj15RFey0"
+keycloak-1     | 2026-10-24T14:46:02.230158721Z 2026-10-24 14:46:02,229 DEBUG [org.keycloak.events] (executor-thread-3) type="LOGIN", realmId="d6160a9c-778c-4659-8425-175d5bc77d6c", realmName="master", clientId="admin-cli", userId="b42fce9c-9297-4543-8344-0841dda5b2cb", sessionId="9Gj6YmyEbr7eJyihf4hL_Vy5", ipAddress="172.23.0.1", refresh_token_provider_id="default", auth_method="openid-connect", token_id="onltro:32348686-491f-fecf-6469-83e7486dea86", grant_type="password", refresh_token_type="Refresh", scope="profile email", refresh_token_id="a40d1766-6e46-dc40-e884-caa94a283ff1", client_auth_method="client-secret", username="kcadmin", authSessionParentId="9Gj6YmyEbr7eJyihf4hL_Vy5", authSessionTabId="XubF4XJQPzs"
+api-1          | 2026-10-24T14:45:43.515467052Z {"event": "authorization", "outcome": "allowed", "path": "/docencia", "subject": "admin.lab"}
+api-1          | 2026-10-24T14:45:45.591728260Z {"event": "authorization", "outcome": "allowed", "path": "/administracion", "subject": "admin.lab"}
+api-1          | 2026-10-24T14:45:47.673721353Z {"event": "authorization", "outcome": "allowed", "path": "/docencia", "subject": "docente.lab"}
+proxy-1        | 2026-10-24T14:37:11.068661762Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 38
+api-1          | 2026-10-24T14:45:49.743674787Z {"event": "authorization", "outcome": "denied", "path": "/administracion", "required_roles": ["administrador"], "subject": "docente.lab"}
+api-1          | 2026-10-24T14:45:51.785262993Z {"event": "authorization", "outcome": "denied", "path": "/docencia", "required_roles": ["administrador", "docente"], "subject": "estudiante.lab"}
+proxy-1        | 2026-10-24T14:37:11.068838868Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 39
+identity-db-1  | 2026-10-24T14:31:08.846257491Z  done
+api-1          | 2026-10-24T14:45:53.865564909Z {"event": "authorization", "outcome": "denied", "path": "/administracion", "required_roles": ["administrador"], "subject": "estudiante.lab"}
+api-1          | 2026-10-24T14:45:55.930422591Z {"event": "authorization", "outcome": "denied", "path": "/docencia", "required_roles": ["administrador", "docente"], "subject": "administrativo.lab"}
+identity-db-1  | 2026-10-24T14:31:08.846274577Z server started
+proxy-1        | 2026-10-24T14:37:11.069311875Z 2026/10/24 14:37:11 [notice] 1#1: start worker process 40
+identity-db-1  | 2026-10-24T14:31:08.886252452Z CREATE DATABASE
+proxy-1        | 2026-10-24T14:37:24.833285052Z 172.23.0.1 - - [24/Oct/2026:14:37:24 +0000] "GET /health HTTP/1.1" 301 162 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:08.886485799Z 
+proxy-1        | 2026-10-24T14:37:26.945402007Z 172.23.0.1 - - [24/Oct/2026:14:37:26 +0000] "GET /health HTTP/1.1" 200 51 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:08.886912981Z 
+identity-db-1  | 2026-10-24T14:31:08.886919253Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+identity-db-1  | 2026-10-24T14:31:08.886920668Z 
+proxy-1        | 2026-10-24T14:37:29.001425072Z 172.23.0.1 - - [24/Oct/2026:14:37:29 +0000] "GET /cursos HTTP/1.1" 401 36 "-" "Python-urllib/3.10" "-"
+api-1          | 2026-10-24T14:45:58.013730676Z {"event": "authorization", "outcome": "denied", "path": "/administracion", "required_roles": ["administrador"], "subject": "administrativo.lab"}
+proxy-1        | 2026-10-24T14:37:31.064799503Z 172.23.0.1 - - [24/Oct/2026:14:37:31 +0000] "POST /cursos HTTP/1.1" 403 146 "-" "Python-urllib/3.10" "-"
+api-1          | 2026-10-24T14:46:00.128097890Z {"event": "authentication", "outcome": "denied", "path": "/cursos", "reason": "DecodeError"}
+proxy-1        | 2026-10-24T14:37:31.064807323Z 2026/10/24 14:37:31 [error] 23#23: *8 access forbidden by rule, client: 172.23.0.1, server: localhost, request: "POST /cursos HTTP/1.1", host: "localhost:8443"
+identity-db-1  | 2026-10-24T14:31:08.887160338Z waiting for server to shut down....2026-10-24 14:31:08.887 UTC [41] LOG:  received fast shutdown request
+identity-db-1  | 2026-10-24T14:31:08.888237873Z 2026-10-24 14:31:08.888 UTC [41] LOG:  aborting any active transactions
+proxy-1        | 2026-10-24T14:37:33.136582884Z 172.23.0.1 - - [24/Oct/2026:14:37:33 +0000] "PUT /cursos HTTP/1.1" 403 146 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:08.889544966Z 2026-10-24 14:31:08.889 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+proxy-1        | 2026-10-24T14:37:33.136588118Z 2026/10/24 14:37:33 [error] 25#25: *9 access forbidden by rule, client: 172.23.0.1, server: localhost, request: "PUT /cursos HTTP/1.1", host: "localhost:8443"
+proxy-1        | 2026-10-24T14:37:35.194295481Z 2026/10/24 14:37:35 [error] 26#26: *10 access forbidden by rule, client: 172.23.0.1, server: localhost, request: "PATCH /cursos HTTP/1.1", host: "localhost:8443"
+identity-db-1  | 2026-10-24T14:31:08.889607665Z 2026-10-24 14:31:08.889 UTC [42] LOG:  shutting down
+proxy-1        | 2026-10-24T14:37:35.194364234Z 172.23.0.1 - - [24/Oct/2026:14:37:35 +0000] "PATCH /cursos HTTP/1.1" 403 146 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:37:37.286678287Z 172.23.0.1 - - [24/Oct/2026:14:37:37 +0000] "DELETE /cursos HTTP/1.1" 403 146 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:37:37.286687844Z 2026/10/24 14:37:37 [error] 24#24: *12 access forbidden by rule, client: 172.23.0.1, server: localhost, request: "DELETE /cursos HTTP/1.1", host: "localhost:8443"
+identity-db-1  | 2026-10-24T14:31:08.890199716Z 2026-10-24 14:31:08.890 UTC [42] LOG:  checkpoint starting: shutdown immediate
+proxy-1        | 2026-10-24T14:37:39.356474472Z 172.23.0.1 - - [24/Oct/2026:14:37:39 +0000] "OPTIONS /cursos HTTP/1.1" 403 146 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:08.923079568Z 2026-10-24 14:31:08.922 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.021 s, total=0.034 s; sync files=301, longest=0.002 s, average=0.001 s; distance=4283 kB, estimate=4283 kB; lsn=0/1925D68, redo lsn=0/1925D68
+identity-db-1  | 2026-10-24T14:31:08.927110124Z 2026-10-24 14:31:08.927 UTC [41] LOG:  database system is shut down
+identity-db-1  | 2026-10-24T14:31:08.987345766Z  done
+identity-db-1  | 2026-10-24T14:31:08.987366767Z server stopped
+proxy-1        | 2026-10-24T14:37:39.356478100Z 2026/10/24 14:37:39 [error] 27#27: *13 access forbidden by rule, client: 172.23.0.1, server: localhost, request: "OPTIONS /cursos HTTP/1.1", host: "localhost:8443"
+proxy-1        | 2026-10-24T14:37:41.660458487Z 172.23.0.1 - - [24/Oct/2026:14:37:41 +0000] "GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1" 200 6649 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:37:44.030936676Z 172.23.0.1 - - [24/Oct/2026:14:37:44 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:08.988021530Z 
+proxy-1        | 2026-10-24T14:37:59.869189983Z 172.23.0.1 - - [24/Oct/2026:14:37:59 +0000] "GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1" 200 6649 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:08.988028632Z PostgreSQL init process complete; ready for start up.
+identity-db-1  | 2026-10-24T14:31:08.988029973Z 
+identity-db-1  | 2026-10-24T14:31:09.002156119Z 2026-10-24 14:31:09.001 UTC [1] LOG:  starting PostgreSQL 16.14 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+identity-db-1  | 2026-10-24T14:31:09.002171236Z 2026-10-24 14:31:09.002 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+proxy-1        | 2026-10-24T14:38:01.965681244Z 172.23.0.1 - - [24/Oct/2026:14:38:01 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:38:04.051400085Z 172.23.0.1 - - [24/Oct/2026:14:38:04 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:38:22.822062770Z 172.23.0.1 - - [24/Oct/2026:14:38:22 +0000] "GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1" 200 6649 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:38:24.943159376Z 172.23.0.1 - - [24/Oct/2026:14:38:24 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:38:27.056963279Z 172.23.0.1 - - [24/Oct/2026:14:38:27 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:40:28.159447163Z 172.23.0.1 - - [24/Oct/2026:14:40:28 +0000] "GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1" 200 6649 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:09.002172795Z 2026-10-24 14:31:09.002 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+proxy-1        | 2026-10-24T14:40:30.252717198Z 172.23.0.1 - - [24/Oct/2026:14:40:30 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:40:32.318049743Z 172.23.0.1 - - [24/Oct/2026:14:40:32 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:31:09.003532067Z 2026-10-24 14:31:09.003 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+identity-db-1  | 2026-10-24T14:31:09.005582832Z 2026-10-24 14:31:09.005 UTC [57] LOG:  database system was shut down at 2026-10-24 14:31:08 UTC
+identity-db-1  | 2026-10-24T14:31:09.008625508Z 2026-10-24 14:31:09.008 UTC [1] LOG:  database system is ready to accept connections
+proxy-1        | 2026-10-24T14:41:07.352297185Z 172.23.0.1 - - [24/Oct/2026:14:41:07 +0000] "GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1" 200 6649 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:32:20.295513489Z 2026-10-24 14:32:20.295 UTC [162] ERROR:  relation "migration_model" does not exist at character 25
+identity-db-1  | 2026-10-24T14:32:20.295533670Z 2026-10-24 14:32:20.295 UTC [162] STATEMENT:  SELECT ID, VERSION FROM MIGRATION_MODEL ORDER BY UPDATE_TIME DESC
+proxy-1        | 2026-10-24T14:41:09.434546600Z 172.23.0.1 - - [24/Oct/2026:14:41:09 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:11.606351866Z 172.23.0.1 - - [24/Oct/2026:14:41:11 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2029 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:13.709578996Z 172.23.0.1 - - [24/Oct/2026:14:41:13 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2013 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:15.827276038Z 172.23.0.1 - - [24/Oct/2026:14:41:15 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2038 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:17.947506257Z 172.23.0.1 - - [24/Oct/2026:14:41:17 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2065 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:32:20.915562332Z 2026-10-24 14:32:20.915 UTC [163] ERROR:  relation "public.databasechangeloglock" does not exist at character 22
+proxy-1        | 2026-10-24T14:41:20.062090552Z 172.23.0.1 - - [24/Oct/2026:14:41:20 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:32:20.915584289Z 2026-10-24 14:32:20.915 UTC [163] STATEMENT:  SELECT COUNT(*) FROM public.databasechangeloglock
+proxy-1        | 2026-10-24T14:41:22.121126861Z 172.23.0.1 - - [24/Oct/2026:14:41:22 +0000] "GET /perfil HTTP/1.1" 200 51 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:36:09.080068994Z 2026-10-24 14:36:09.079 UTC [55] LOG:  checkpoint starting: time
+identity-db-1  | 2026-10-24T14:37:15.866289734Z 2026-10-24 14:37:15.866 UTC [55] LOG:  checkpoint complete: wrote 668 buffers (4.1%); 1 WAL file(s) added, 0 removed, 0 recycled; write=66.728 s, sync=0.041 s, total=66.787 s; sync files=695, longest=0.002 s, average=0.001 s; distance=4981 kB, estimate=4981 kB; lsn=0/1E04880, redo lsn=0/1E03480
+identity-db-1  | 2026-10-24T14:41:09.945711281Z 2026-10-24 14:41:09.945 UTC [55] LOG:  checkpoint starting: time
+proxy-1        | 2026-10-24T14:41:24.195465662Z 172.23.0.1 - - [24/Oct/2026:14:41:24 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+identity-db-1  | 2026-10-24T14:41:15.287345123Z 2026-10-24 14:41:15.287 UTC [55] LOG:  checkpoint complete: wrote 54 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.323 s, sync=0.012 s, total=5.342 s; sync files=38, longest=0.003 s, average=0.001 s; distance=54 kB, estimate=4489 kB; lsn=0/1E16D28, redo lsn=0/1E11028
+proxy-1        | 2026-10-24T14:41:26.298281637Z 172.23.0.1 - - [24/Oct/2026:14:41:26 +0000] "GET /perfil HTTP/1.1" 200 47 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:28.372818616Z 172.23.0.1 - - [24/Oct/2026:14:41:28 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:30.426098055Z 172.23.0.1 - - [24/Oct/2026:14:41:30 +0000] "GET /perfil HTTP/1.1" 200 53 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:32.493684662Z 172.23.0.1 - - [24/Oct/2026:14:41:32 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:34.564874291Z 172.23.0.1 - - [24/Oct/2026:14:41:34 +0000] "GET /perfil HTTP/1.1" 200 61 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:36.646721177Z 172.23.0.1 - - [24/Oct/2026:14:41:36 +0000] "GET /docencia HTTP/1.1" 200 39 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:38.703357090Z 172.23.0.1 - - [24/Oct/2026:14:41:38 +0000] "GET /administracion HTTP/1.1" 200 45 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:40.764575265Z 172.23.0.1 - - [24/Oct/2026:14:41:40 +0000] "GET /docencia HTTP/1.1" 200 39 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:42.847652508Z 172.23.0.1 - - [24/Oct/2026:14:41:42 +0000] "GET /administracion HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:44.910160606Z 172.23.0.1 - - [24/Oct/2026:14:41:44 +0000] "GET /docencia HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:47.004812212Z 172.23.0.1 - - [24/Oct/2026:14:41:47 +0000] "GET /administracion HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:49.074279567Z 172.23.0.1 - - [24/Oct/2026:14:41:49 +0000] "GET /docencia HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:51.153990302Z 172.23.0.1 - - [24/Oct/2026:14:41:51 +0000] "GET /administracion HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:53.201373175Z 172.23.0.1 - - [24/Oct/2026:14:41:53 +0000] "GET /cursos HTTP/1.1" 401 26 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:55.311658289Z 172.23.0.1 - - [24/Oct/2026:14:41:55 +0000] "POST /auth/realms/master/protocol/openid-connect/token HTTP/1.1" 200 1561 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:41:57.364966433Z 172.23.0.1 - - [24/Oct/2026:14:41:57 +0000] "GET /auth/admin/realms/uvcg/events?max=100 HTTP/1.1" 200 5569 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:14.265655999Z 172.23.0.1 - - [24/Oct/2026:14:45:14 +0000] "GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1" 200 6649 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:16.443826353Z 172.23.0.1 - - [24/Oct/2026:14:45:16 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 400 72 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:18.637405217Z 172.23.0.1 - - [24/Oct/2026:14:45:18 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2029 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:20.762970440Z 172.23.0.1 - - [24/Oct/2026:14:45:20 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2013 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:22.844352384Z 172.23.0.1 - - [24/Oct/2026:14:45:22 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2038 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:24.961922316Z 172.23.0.1 - - [24/Oct/2026:14:45:24 +0000] "POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1" 200 2065 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:27.030876988Z 172.23.0.1 - - [24/Oct/2026:14:45:27 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:29.078764822Z 172.23.0.1 - - [24/Oct/2026:14:45:29 +0000] "GET /perfil HTTP/1.1" 200 51 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:31.109245214Z 172.23.0.1 - - [24/Oct/2026:14:45:31 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:33.187471926Z 172.23.0.1 - - [24/Oct/2026:14:45:33 +0000] "GET /perfil HTTP/1.1" 200 47 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:35.284261240Z 172.23.0.1 - - [24/Oct/2026:14:45:35 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:37.328183965Z 172.23.0.1 - - [24/Oct/2026:14:45:37 +0000] "GET /perfil HTTP/1.1" 200 53 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:39.392637697Z 172.23.0.1 - - [24/Oct/2026:14:45:39 +0000] "GET /cursos HTTP/1.1" 200 182 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:41.465407917Z 172.23.0.1 - - [24/Oct/2026:14:45:41 +0000] "GET /perfil HTTP/1.1" 200 61 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:43.516110435Z 172.23.0.1 - - [24/Oct/2026:14:45:43 +0000] "GET /docencia HTTP/1.1" 200 39 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:45.592049831Z 172.23.0.1 - - [24/Oct/2026:14:45:45 +0000] "GET /administracion HTTP/1.1" 200 45 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:47.674280980Z 172.23.0.1 - - [24/Oct/2026:14:45:47 +0000] "GET /docencia HTTP/1.1" 200 39 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:49.744050854Z 172.23.0.1 - - [24/Oct/2026:14:45:49 +0000] "GET /administracion HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:51.785767819Z 172.23.0.1 - - [24/Oct/2026:14:45:51 +0000] "GET /docencia HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:53.865955170Z 172.23.0.1 - - [24/Oct/2026:14:45:53 +0000] "GET /administracion HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:55.931052167Z 172.23.0.1 - - [24/Oct/2026:14:45:55 +0000] "GET /docencia HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:45:58.014140716Z 172.23.0.1 - - [24/Oct/2026:14:45:58 +0000] "GET /administracion HTTP/1.1" 403 37 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:46:00.128598618Z 172.23.0.1 - - [24/Oct/2026:14:46:00 +0000] "GET /cursos HTTP/1.1" 401 26 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:46:02.237176401Z 172.23.0.1 - - [24/Oct/2026:14:46:02 +0000] "POST /auth/realms/master/protocol/openid-connect/token HTTP/1.1" 200 1561 "-" "Python-urllib/3.10" "-"
+proxy-1        | 2026-10-24T14:46:04.325317238Z 172.23.0.1 - - [24/Oct/2026:14:46:04 +0000] "GET /auth/admin/realms/uvcg/events?max=100 HTTP/1.1" 200 8399 "-" "Python-urllib/3.10" "-"

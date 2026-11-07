@@ -1,0 +1,30 @@
+Consulta de precios: 2026-10-24T16:52:23+00:00 (UTC) — fuente https://prices.azure.com/api/retail/prices
+Totales: {'eastus2_menor': 183, 'igual': 494, 'solo_en_una_region': 7, 'southcentralus_menor': 26}
+  app_gateway            {'eastus2_menor': 13, 'igual': 14}
+  azure_firewall         {'igual': 16}
+  azure_monitor          {'igual': 182, 'eastus2_menor': 24}
+  backup                 {'eastus2_menor': 15, 'igual': 17, 'southcentralus_menor': 2}
+  bastion                {'igual': 20}
+  defender               {'igual': 44}
+  ip_publica             {'igual': 4}
+  key_vault              {'igual': 17}
+  log_analytics          {'igual': 7}
+  sentinel               {'eastus2_menor': 20, 'igual': 4}
+  storage_blob           {'southcentralus_menor': 24, 'igual': 117, 'eastus2_menor': 110}
+  transferencia_salida   {'igual': 23}
+  vpn_gateway            {'igual': 29, 'eastus2_menor': 1}
+Medidores clave (eastus2 | southcentralus):
+  eastus2         sentinel/Pay-as-you-go/Pay-as-you-go Analysis: [('Sentinel', 4.76, 0.0)]
+  southcentralus  sentinel/Pay-as-you-go/Pay-as-you-go Analysis: [('Sentinel', 5.16, 0.0)]
+  eastus2         app_gateway/Standard/Standard Fixed Cost: [('Application Gateway WAF v2 - Discounted', 0.2, 0.0), ('Application Gateway WAF v2', 0.36, 0.0), ('Application Gateway Standard v2', 0.2, 0.0)]
+  southcentralus  app_gateway/Standard/Standard Fixed Cost: [('Application Gateway WAF v2 - Discounted', 0.24, 0.0), ('Application Gateway WAF v2', 0.432, 0.0), ('Application Gateway Standard v2', 0.24, 0.0)]
+  eastus2         vpn_gateway/VpnGw1AZ/VpnGw1AZ: [('VPN Gateway', 0.21, 0.0)]
+  southcentralus  vpn_gateway/VpnGw1AZ/VpnGw1AZ: [('VPN Gateway', 0.21, 0.0)]
+  eastus2         azure_firewall/Basic/Basic Deployment: [('Azure Firewall', 0.395, 0.0)]
+  southcentralus  azure_firewall/Basic/Basic Deployment: [('Azure Firewall', 0.395, 0.0)]
+  eastus2         bastion/Basic/Basic Gateway: [('Azure Bastion', 0.19, 0.0)]
+  southcentralus  bastion/Basic/Basic Gateway: [('Azure Bastion', 0.19, 0.0)]
+  eastus2         log_analytics/Analytics Logs/Analytics Logs Data Ingestion: [('Log Analytics', 0.0, 0.0), ('Log Analytics', 2.76, 5.0)]
+  southcentralus  log_analytics/Analytics Logs/Analytics Logs Data Ingestion: [('Log Analytics', 0.0, 0.0), ('Log Analytics', 2.76, 5.0)]
+  eastus2         backup/On Premises Server/On Premises Server Protected Instance: [('Backup', 10.0, 0.0)]
+  southcentralus  backup/On Premises Server/On Premises Server Protected Instance: [('Backup', 10.0, 0.0)]

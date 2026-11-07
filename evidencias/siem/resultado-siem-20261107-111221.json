@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-11-07T17:12:21+00:00",
+  "events": 5,
+  "alerts": 3,
+  "by_source": {
+    "synthetic-control": 5
+  },
+  "by_category": {
+    "authentication": 3,
+    "authorization": 1,
+    "backup": 1
+  },
+  "rules": [
+    {
+      "rule_id": "SIEM-AUTH-001",
+      "rule_name": "Ráfaga de autenticaciones fallidas",
+      "severity": "high",
+      "event_count": 3,
+      "first_event_time": "2026-11-07T17:12:21+00:00",
+      "last_event_time": "2026-11-07T17:12:23+00:00"
+    },
+    {
+      "rule_id": "SIEM-RBAC-001",
+      "rule_name": "Acceso denegado por RBAC",
+      "severity": "medium",
+      "event_count": 1,
+      "first_event_time": "2026-11-07T17:12:25+00:00",
+      "last_event_time": "2026-11-07T17:12:25+00:00"
+    },
+    {
+      "rule_id": "SIEM-BACKUP-001",
+      "rule_name": "Fallo de respaldo programado",
+      "severity": "high",
+      "event_count": 1,
+      "first_event_time": "2026-11-07T17:12:26+00:00",
+      "last_event_time": "2026-11-07T17:12:26+00:00"
+    }
+  ],
+  "limitations": [
+    "Sin alta disponibilidad ni almacenamiento inmutable.",
+    "Sin agentes de endpoint, UEBA, inteligencia de amenazas ni respuesta automática.",
+    "Búsqueda local SQLite; no equivale a Wazuh/OpenSearch/Sentinel empresarial."
+  ]
+}

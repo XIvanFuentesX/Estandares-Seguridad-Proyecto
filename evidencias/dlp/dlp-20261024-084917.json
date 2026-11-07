@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-10-24T08:49:17-06:00",
+  "scope": "D:\\sgsi_laboratorio\\local\\dlp\\samples",
+  "synthetic_data_only": true,
+  "findings": [
+    {
+      "rule_id": "GT-DPI-13",
+      "file": "local\\dlp\\samples\\restringido-ficticio.txt",
+      "line": 3,
+      "value_sha256_prefix": "aa2f79dfbdfc",
+      "action": "blocked"
+    },
+    {
+      "rule_id": "CLASS-RESTRICTED",
+      "file": "local\\dlp\\samples\\restringido-ficticio.txt",
+      "line": 1,
+      "value_sha256_prefix": "7d5185f42015",
+      "action": "blocked"
+    }
+  ]
+}

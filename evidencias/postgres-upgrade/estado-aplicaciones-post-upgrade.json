@@ -1,0 +1,62 @@
+﻿{
+    "timestamp":  "2026-10-24T10:33:01.1984393-06:00",
+    "services":  [
+                     {
+                         "service":  "api",
+                         "image":  "local-api",
+                         "state":  "running",
+                         "health":  "healthy",
+                         "user":  "app",
+                         "restart_count":  0,
+                         "started_at":  "2026-10-24T16:23:26.500758912Z",
+                         "published_ports":  ""
+                     },
+                     {
+                         "service":  "db",
+                         "image":  "local-postgres-hardened:16",
+                         "state":  "running",
+                         "health":  "healthy",
+                         "user":  "70:70",
+                         "restart_count":  0,
+                         "started_at":  "2026-10-24T16:22:38.774810821Z",
+                         "published_ports":  ""
+                     },
+                     {
+                         "service":  "identity-db",
+                         "image":  "local-postgres-hardened:16",
+                         "state":  "running",
+                         "health":  "healthy",
+                         "user":  "70:70",
+                         "restart_count":  0,
+                         "started_at":  "2026-10-24T16:22:38.773946047Z",
+                         "published_ports":  ""
+                     },
+                     {
+                         "service":  "keycloak",
+                         "image":  "local-keycloak",
+                         "state":  "running",
+                         "health":  "healthy",
+                         "user":  "1000",
+                         "restart_count":  0,
+                         "started_at":  "2026-10-24T16:22:45.857539399Z",
+                         "published_ports":  ""
+                     },
+                     {
+                         "service":  "proxy",
+                         "image":  "local-proxy:latest",
+                         "state":  "running",
+                         "health":  "healthy",
+                         "user":  "101:101",
+                         "restart_count":  0,
+                         "started_at":  "2026-10-24T15:47:16.31873338Z",
+                         "published_ports":  "127.0.0.1:8080,127.0.0.1:8443"
+                     }
+                 ],
+    "http_checks":  {
+                        "https://localhost:8443/health":  "200 (API + Nginx)",
+                        "https://localhost:8443/auth/realms/uvcg/.well-known/openid-configuration":  "200 (Keycloak + identity-db)",
+                        "https://localhost:8443/cursos (sin token)":  "401 (esperado 401: ruta protegida)",
+                        "nota":  "Consultas con token y MFA: scripts/pruebas_identidad.py exitoso tras la actualización"
+                    },
+    "all_healthy":  true
+}

@@ -1,0 +1,11 @@
+﻿{
+    "fecha":  "2026-10-24",
+    "hora_inicio":  "10:29:56",
+    "origen":  "prueba-concurrencia-B",
+    "usuario":  "Ivan Fuentes",
+    "duracion_s":  0,
+    "resultado":  "omitido",
+    "detalle":  "Otra ejecución en curso; no se inicia una simultánea.",
+    "evidencia":  "",
+    "hora_fin":  "10:29:56"
+}

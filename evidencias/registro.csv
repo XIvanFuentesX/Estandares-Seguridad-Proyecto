@@ -1,0 +1,19 @@
+fecha,componente,prueba,resultado_esperado,resultado_observado,archivo_evidencia,responsable,estado
+2026-10-24 08:17:27 -06:00,Local,Validacion Compose,Configuracion valida,config --quiet retorno 0,validacion-local-20261024.md,Codex,Verificado
+2026-10-24 08:17:27 -06:00,Local,/health por Nginx,HTTP 200,HTTP 200 status ok,pruebas-funcionales-20261024.txt,Codex,Verificado
+2026-10-24 08:17:27 -06:00,Local,/cursos por Nginx,HTTP 200 y datos semilla,HTTP 200 y 3 registros esperados,pruebas-funcionales-20261024.txt,Codex,Verificado
+2026-10-24 08:17:27 -06:00,Local,Metodos no autorizados,HTTP 403,POST PUT PATCH DELETE OPTIONS retornaron 403,pruebas-funcionales-20261024.txt,Codex,Verificado
+2026-10-24 08:17:27 -06:00,Local,Conexion API a PostgreSQL,SELECT 1 correcto,Resultado 1,pruebas-funcionales-20261024.txt,Codex,Verificado
+2026-10-24 08:17:27 -06:00,Local,Persistencia tras reinicio DB,Mismos datos y volumen,3 registros antes y despues en volumen nombrado,pruebas-funcionales-20261024.txt,Codex,Verificado
+2026-10-24 08:17:27 -06:00,Local,Segmentacion de redes,Proxy sin acceso directo a DB,Proxy a DB y DB a proxy aislados,controles-seguridad-20261024.txt,Codex,Verificado
+,Azure,NSG bloquea trafico lateral,Denegado,,,Pendiente
+,Azure,Inventario de subredes,5 subredes,,,Pendiente
+2026-10-24 09:15:33 -06:00,IAM,MFA TOTP y RBAC,4 roles con permisos permitidos/denegados,Exit 0 y eventos LOGIN/LOGIN_ERROR,automatizacion/validacion-sgsi-20261024-091533.json,Codex,Implementado
+2026-10-24 09:14:40 -06:00,TLS,HTTPS y controles HTTP,Redireccion TLS headers y 401/403,Exit 0,automatizacion/validacion-sgsi-20261024-091533.json,Codex,Implementado
+2026-10-24 08:46:04 -06:00,Monitoreo,Centralizacion ligera,Eventos y alertas,282 eventos y 34 alertas,monitoring/tablero-20261024-084604.html,Codex,Parcial
+2026-10-24 08:48:00 -06:00,IDS,Suricata offline,Alerta SID esperada,1 alerta SID 1000001,ids/resultado.json,Codex,Parcial
+2026-10-24 09:19:17 -06:00,Recovery,Restore aislado,SHA valido y 3 registros,3 registros en 8.222 s sin modificar principal,recovery/restauracion-20261024_091909.json,Codex,Implementado
+2026-10-24 09:15:33 -06:00,DLP,Deteccion sintetica,2 hallazgos bloqueados,2 hallazgos action blocked,dlp/dlp-20261024-091533.json,Codex,Parcial
+2026-10-24 09:20:00 -06:00,Azure,Terraform validate,Configuracion valida,Success configuration is valid,../azure/main.tf,Codex,Preparado
+2026-10-24 09:14:11 -06:00,DevSecOps,Revalidacion vulnerabilidades,Dependencias API y proxy sin HIGH/CRITICAL,0 dependencias 0 secretos 0 misconfig API/proxy 0 HIGH/CRITICAL,security/registro-vulnerabilidades.json,Codex,Implementado-con-pendientes
+2026-10-24 08:49:17 -06:00,Continuidad,Interrupcion API,Recuperacion e integridad,HTTP 200-504-200 en 12.83 s y 3 registros,recovery/continuidad-api-20261024-084904.json,Codex,Implementado-laboratorio

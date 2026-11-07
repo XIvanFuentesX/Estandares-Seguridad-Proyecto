@@ -1,0 +1,209 @@
+{
+  "generated_at": "2026-10-24T08:46:04-06:00",
+  "alerts": [
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 50,
+      "event": "api-1          | 2026-10-24T14:37:29.000995777Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 110,
+      "event": "api-1          | 2026-10-24T14:41:42.847337260Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 112,
+      "event": "api-1          | 2026-10-24T14:41:44.909796349Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 114,
+      "event": "api-1          | 2026-10-24T14:41:47.004101420Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 116,
+      "event": "api-1          | 2026-10-24T14:41:49.073733980Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 117,
+      "event": "api-1          | 2026-10-24T14:41:51.152991650Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 118,
+      "event": "api-1          | 2026-10-24T14:41:53.200961769Z {\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+    },
+    {
+      "rule_id": "KEYCLOAK-LOGIN-ERROR",
+      "severity": "media",
+      "line": 139,
+      "event": "keycloak-1     | 2026-10-24T14:45:16.401805390Z 2026-10-24 14:45:16,401 WARN  [org.keycloak.events] (executor-thread-3) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 168,
+      "event": "api-1          | 2026-10-24T14:45:49.743674787Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 169,
+      "event": "api-1          | 2026-10-24T14:45:51.785262993Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 172,
+      "event": "api-1          | 2026-10-24T14:45:53.865564909Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 173,
+      "event": "api-1          | 2026-10-24T14:45:55.930422591Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 183,
+      "event": "proxy-1        | 2026-10-24T14:37:29.001425072Z 172.23.0.1 - - [24/Oct/2026:14:37:29 +0000] \"GET /cursos HTTP/1.1\" 401 36 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 184,
+      "event": "api-1          | 2026-10-24T14:45:58.013730676Z {\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 185,
+      "event": "proxy-1        | 2026-10-24T14:37:31.064799503Z 172.23.0.1 - - [24/Oct/2026:14:37:31 +0000] \"POST /cursos HTTP/1.1\" 403 146 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "AUTH-DENIED",
+      "severity": "media",
+      "line": 186,
+      "event": "api-1          | 2026-10-24T14:46:00.128097890Z {\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 190,
+      "event": "proxy-1        | 2026-10-24T14:37:33.136582884Z 172.23.0.1 - - [24/Oct/2026:14:37:33 +0000] \"PUT /cursos HTTP/1.1\" 403 146 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 195,
+      "event": "proxy-1        | 2026-10-24T14:37:35.194364234Z 172.23.0.1 - - [24/Oct/2026:14:37:35 +0000] \"PATCH /cursos HTTP/1.1\" 403 146 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 196,
+      "event": "proxy-1        | 2026-10-24T14:37:37.286678287Z 172.23.0.1 - - [24/Oct/2026:14:37:37 +0000] \"DELETE /cursos HTTP/1.1\" 403 146 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 199,
+      "event": "proxy-1        | 2026-10-24T14:37:39.356474472Z 172.23.0.1 - - [24/Oct/2026:14:37:39 +0000] \"OPTIONS /cursos HTTP/1.1\" 403 146 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "SERVICE-ERROR",
+      "severity": "media",
+      "line": 226,
+      "event": "identity-db-1  | 2026-10-24T14:32:20.295513489Z 2026-10-24 14:32:20.295 UTC [162] ERROR:  relation \"migration_model\" does not exist at character 25"
+    },
+    {
+      "rule_id": "SERVICE-ERROR",
+      "severity": "media",
+      "line": 233,
+      "event": "identity-db-1  | 2026-10-24T14:32:20.915562332Z 2026-10-24 14:32:20.915 UTC [163] ERROR:  relation \"public.databasechangeloglock\" does not exist at character 22"
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 250,
+      "event": "proxy-1        | 2026-10-24T14:41:42.847652508Z 172.23.0.1 - - [24/Oct/2026:14:41:42 +0000] \"GET /administracion HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 251,
+      "event": "proxy-1        | 2026-10-24T14:41:44.910160606Z 172.23.0.1 - - [24/Oct/2026:14:41:44 +0000] \"GET /docencia HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 252,
+      "event": "proxy-1        | 2026-10-24T14:41:47.004812212Z 172.23.0.1 - - [24/Oct/2026:14:41:47 +0000] \"GET /administracion HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 253,
+      "event": "proxy-1        | 2026-10-24T14:41:49.074279567Z 172.23.0.1 - - [24/Oct/2026:14:41:49 +0000] \"GET /docencia HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 254,
+      "event": "proxy-1        | 2026-10-24T14:41:51.153990302Z 172.23.0.1 - - [24/Oct/2026:14:41:51 +0000] \"GET /administracion HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 255,
+      "event": "proxy-1        | 2026-10-24T14:41:53.201373175Z 172.23.0.1 - - [24/Oct/2026:14:41:53 +0000] \"GET /cursos HTTP/1.1\" 401 26 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 275,
+      "event": "proxy-1        | 2026-10-24T14:45:49.744050854Z 172.23.0.1 - - [24/Oct/2026:14:45:49 +0000] \"GET /administracion HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 276,
+      "event": "proxy-1        | 2026-10-24T14:45:51.785767819Z 172.23.0.1 - - [24/Oct/2026:14:45:51 +0000] \"GET /docencia HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 277,
+      "event": "proxy-1        | 2026-10-24T14:45:53.865955170Z 172.23.0.1 - - [24/Oct/2026:14:45:53 +0000] \"GET /administracion HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 278,
+      "event": "proxy-1        | 2026-10-24T14:45:55.931052167Z 172.23.0.1 - - [24/Oct/2026:14:45:55 +0000] \"GET /docencia HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 279,
+      "event": "proxy-1        | 2026-10-24T14:45:58.014140716Z 172.23.0.1 - - [24/Oct/2026:14:45:58 +0000] \"GET /administracion HTTP/1.1\" 403 37 \"-\" \"Python-urllib/3.10\" \"-\""
+    },
+    {
+      "rule_id": "HTTP-DENIED",
+      "severity": "baja",
+      "line": 280,
+      "event": "proxy-1        | 2026-10-24T14:46:00.128598618Z 172.23.0.1 - - [24/Oct/2026:14:46:00 +0000] \"GET /cursos HTTP/1.1\" 401 26 \"-\" \"Python-urllib/3.10\" \"-\""
+    }
+  ]
+}

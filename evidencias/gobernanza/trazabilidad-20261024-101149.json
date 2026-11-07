@@ -1,0 +1,118 @@
+{
+  "timestamp": "2026-10-24T10:11:49-06:00",
+  "result": "success",
+  "counts": {
+    "activos": 21,
+    "procesos": 7,
+    "riesgos": 19,
+    "tratamientos": 19,
+    "controles_soa": 93
+  },
+  "checks": [
+    {
+      "check": "ids_unicos_activos",
+      "result": "success",
+      "detail": "21 registros"
+    },
+    {
+      "check": "ids_unicos_procesos",
+      "result": "success",
+      "detail": "7 registros"
+    },
+    {
+      "check": "ids_unicos_riesgos",
+      "result": "success",
+      "detail": "19 registros"
+    },
+    {
+      "check": "ids_unicos_controles",
+      "result": "success",
+      "detail": "93 registros"
+    },
+    {
+      "check": "bia_rpo_rto_mtpd",
+      "result": "success",
+      "detail": "incoherentes=[]"
+    },
+    {
+      "check": "bia_activos_en_inventario",
+      "result": "success",
+      "detail": "con_activos_inexistentes=[]"
+    },
+    {
+      "check": "riesgos_activos_en_inventario",
+      "result": "success",
+      "detail": "[]"
+    },
+    {
+      "check": "riesgos_procesos_en_bia",
+      "result": "success",
+      "detail": "[]"
+    },
+    {
+      "check": "riesgos_calculo_y_nivel",
+      "result": "success",
+      "detail": "[]"
+    },
+    {
+      "check": "residual_no_mayor_que_inherente",
+      "result": "success",
+      "detail": "[]"
+    },
+    {
+      "check": "riesgos_conocidos_cubiertos",
+      "result": "success",
+      "detail": "{\"vulnerabilidades PostgreSQL\": \"R-009\", \"vulnerabilidades Keycloak\": \"R-010\", \"fallos de autenticación\": \"R-002\", \"acceso no autorizado\": \"R-001\", \"exposición de información\": \"R-003\", \"interrupción de servicios\": \"R-004\", \"pérdida de datos\": \"R-005\", \"fallo de respaldos\": \"R-007\", \"configuración insegura\": \"R-008\", \"dependencia del equipo local\": \"R-011\", \"ausencia de despliegue híbrido\": \"R-017\"}"
+    },
+    {
+      "check": "matriz_calor_contiene_todos",
+      "result": "success",
+      "detail": "faltan=[] sobran=[]"
+    },
+    {
+      "check": "matriz_calor_dos_vistas",
+      "result": "success",
+      "detail": "inherente y residual"
+    },
+    {
+      "check": "tratamiento_cubre_riesgos",
+      "result": "success",
+      "detail": "sin_tratamiento=[]"
+    },
+    {
+      "check": "tratamiento_controles_en_soa",
+      "result": "success",
+      "detail": "inexistentes=[]"
+    },
+    {
+      "check": "estrategias_validas",
+      "result": "success",
+      "detail": ""
+    },
+    {
+      "check": "soa_93_controles",
+      "result": "success",
+      "detail": "93"
+    },
+    {
+      "check": "soa_formato_ids",
+      "result": "success",
+      "detail": ""
+    },
+    {
+      "check": "soa_riesgos_existentes",
+      "result": "success",
+      "detail": "[]"
+    },
+    {
+      "check": "soa_implementados_con_evidencia",
+      "result": "success",
+      "detail": "[]"
+    },
+    {
+      "check": "evidencias_referenciadas_existen",
+      "result": "success",
+      "detail": "faltantes=[]"
+    }
+  ]
+}

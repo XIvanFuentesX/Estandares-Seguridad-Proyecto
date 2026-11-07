@@ -1,0 +1,174 @@
+﻿{
+    "alcance":  "laboratorio SGSI UVCG",
+    "fecha":  "2026-11-07 11:12:35 -06:00",
+    "resultados":  [
+                       {
+                           "control":  "CORE-COMPOSE",
+                           "estado":  "exitoso",
+                           "detalle":  "compose_config=ok",
+                           "fecha":  "2026-11-07 11:10:55 -06:00"
+                       },
+                       {
+                           "control":  "APP-HTTPS",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: redireccion HTTPS, TLS de laboratorio, health=200, ruta protegida=401, cabeceras seguras y metodos no autorizados=403",
+                           "fecha":  "2026-11-07 11:11:10 -06:00"
+                       },
+                       {
+                           "control":  "IAM-RBAC-MFA",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: OIDC, MFA TOTP requerido y v�lido, 4 roles, matriz RBAC, token inv�lido rechazado y eventos LOGIN/LOGIN_ERROR registrados",
+                           "fecha":  "2026-11-07 11:12:02 -06:00"
+                       },
+                       {
+                           "control":  "NETWORK-SEGMENTATION",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: only_proxy_publishes=true api-db=allowed proxy-db=blocked db-proxy=blocked",
+                           "fecha":  "2026-11-07 11:12:21 -06:00"
+                       },
+                       {
+                           "control":  "SIEM-LIGHT",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: inserted=5 duplicate=0 source=synthetic-control\r\nOK: alerts_created=3\r\nOK: events=5 alerts=3 report=resultado-siem-20261107-111221.json\r\nOK: eventos=5 reglas=3 redaction=true",
+                           "fecha":  "2026-11-07 11:12:22 -06:00"
+                       },
+                       {
+                           "control":  "BACKUP-SCHEDULED",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: schedulers=2 encrypted_copies=2 sha256=true interval_seconds=86400",
+                           "fecha":  "2026-11-07 11:12:22 -06:00"
+                       },
+                       {
+                           "control":  "CONFIG-INTEGRITY",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: archivos_verificados=22 cambios=0",
+                           "fecha":  "2026-11-07 11:12:22 -06:00"
+                       },
+                       {
+                           "control":  "POSTGRES-HARDENED",
+                           "estado":  "exitoso",
+                           "detalle":  "local-db-1 image=local-postgres-hardened:16 uid=70 gosu=absent\r\nlocal-identity-db-1 image=local-postgres-hardened:16 uid=70 gosu=absent\r\nrollback_preparado=True compose=compose.yaml.pre-upgrade-20261024-102045.bak",
+                           "fecha":  "2026-11-07 11:12:23 -06:00"
+                       },
+                       {
+                           "control":  "SCHEDULED-RECOVERY-TASK",
+                           "estado":  "fallido",
+                           "detalle":  "Última ejecución con código 3221225786.",
+                           "fecha":  "2026-11-07 11:12:27 -06:00"
+                       },
+                       {
+                           "control":  "CONFIG-INTEGRITY-SELFTEST",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: autoprueba deteccion=True restaurado=True",
+                           "fecha":  "2026-11-07 11:12:27 -06:00"
+                       },
+                       {
+                           "control":  "CONTAINER-MONITORING",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: servicios=5 hallazgos=0 evidencia=evidencias/edr/vigilancia-20261107-111229-validacion.json",
+                           "fecha":  "2026-11-07 11:12:29 -06:00"
+                       },
+                       {
+                           "control":  "AVAILABILITY-MONITOR",
+                           "estado":  "exitoso",
+                           "detalle":  "monitor=running ultima_muestra_hace_s=15\r\n2026-11-07T17:12:14Z target=avail-nginx result=success latency_ms=6 detail=200\r\n2026-11-07T17:12:14Z target=avail-api result=success latency_ms=11 detail=200\r\n2026-11-07T17:12:14Z target=avail-keycloak result=success latency_ms=7 detail=200",
+                           "fecha":  "2026-11-07 11:12:29 -06:00"
+                       },
+                       {
+                           "control":  "DLP-GATE",
+                           "estado":  "exitoso",
+                           "detalle":  "BLOCKED: confidencial-ficticio.txt [CONFIDENCIAL] -\u003e externo: informaci�n confidencial hacia canal externo\r\nBLOCKED: credencial-ficticia.txt [INTERNA] -\u003e externo: credencial o secreto en el contenido\r\nALLOWED: publico.txt [PUBLICA] -\u003e externo: conforme a la pol�tica de clasificaci�n\r\nBLOCKED: restringido-ficticio.txt [RESTRINGIDA] -\u003e externo: informaci�n restringida fuera de canal aprobado\r\nBLOCKED: tarjeta-ficticia.txt [INTERNA] -\u003e externo: dato personal o de pago hacia canal externo\r\nOK: decisiones_esperadas=5 canal=externo\r\nALLOWED: confidencial-ficticio.txt [CONFIDENCIAL] -\u003e interno: conforme a la pol�tica de clasificaci�n\r\nBLOCKED: credencial-ficticia.txt [INTERNA] -\u003e interno: credencial o secreto en el contenido\r\nALLOWED: publico.txt [PUBLICA] -\u003e interno: conforme a la pol�tica de clasificaci�n\r\nBLOCKED: restringido-ficticio.txt [RESTRINGIDA] -\u003e interno: informaci�n restringida fuera de canal aprobado\r\nALLOWED: tarjeta-ficticia.txt [INTERNA] -\u003e interno: conforme a la pol�tica de clasificaci�n\r\nOK: decisiones_esperadas=3 canal=interno",
+                           "fecha":  "2026-11-07 11:12:29 -06:00"
+                       },
+                       {
+                           "control":  "MDM-SIMULATION",
+                           "estado":  "exitoso",
+                           "detalle":  "DEV-001 institucional CONFORME \r\nDEV-002 byod          CONFORME \r\nDEV-003 byod          NO CONFORME bloqueo_pantalla,pin_min_longitud,so_minimo,antimalware_activo,sin_root_jailbreak,borrado_selectivo,perfil_trabajo_separado\r\nDEV-004 institucional NO CONFORME cifrado_disco,so_minimo\r\nDEV-005 byod          CONFORME \r\nOK: simulacion=true conformes=3/5 evidencia=evidencias/mdm/cumplimiento-mdm-20261107-111229.json",
+                           "fecha":  "2026-11-07 11:12:29 -06:00"
+                       },
+                       {
+                           "control":  "SGSI-RECORDS",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: auditoria_verificada entradas=34",
+                           "fecha":  "2026-11-07 11:12:29 -06:00"
+                       },
+                       {
+                           "control":  "SIEM-INTEGRITY-SEAL",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: eventos_sellados=0\r\nOK: integridad_eventos=verificada sellos=4",
+                           "fecha":  "2026-11-07 11:12:29 -06:00"
+                       },
+                       {
+                           "control":  "PITR-PRINCIPALES",
+                           "estado":  "no_verificable",
+                           "detalle":  "archive_mode=off en db e identity-db; compose.pitr.yaml preparado, activación pendiente de autorización.",
+                           "fecha":  "2026-11-07 11:12:30 -06:00"
+                       },
+                       {
+                           "control":  "RETENTION-DRYRUN",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: dry_run=true conjuntos=26 conservar=4 protegidos=16 candidatos=6 bytes_candidatos=907210 evidencia=simulacion-retencion-20261107-111231.json\r\narchivos_antes=107 archivos_despues=107 (sin borrado)",
+                           "fecha":  "2026-11-07 11:12:31 -06:00"
+                       },
+                       {
+                           "control":  "GOVERNANCE-DOCS",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: activos=33 procesos_bia=7 riesgos=22 controles_soa=93 escenarios_octave=8\r\nOK: verificaciones=21 fallidas=0 riesgos=22 controles=93",
+                           "fecha":  "2026-11-07 11:12:31 -06:00"
+                       },
+                       {
+                           "control":  "AZURE-STATIC",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: modulos presentes (8)\r\nOK: raiz con variables, outputs, locals, versions y providers\r\nOK: proveedor azurerm 4.x compatible con lock 4.81.0\r\nOK: region restringida por validacion\r\nOK: ambientes dev/demo/inst de ejemplo\r\nOK: cinco zonas spoke + endpoints privados\r\nOK: topologia hub-spoke\r\nOK: peering bidireccional\r\nOK: NSG vinculados a subredes\r\nOK: bloqueo de trafico lateral (deny 4096)\r\nOK: UDR hacia Azure Firewall\r\nOK: DNS privado blob y vault\r\nOK: Key Vault RBAC, privado y purge protection\r\nOK: Storage privado, sin anonimo, TLS1.2, sin shared keys, versionado\r\nOK: endpoints privados (blob y vault)\r\nOK: identidades administradas\r\nOK: RBAC con separacion de funciones\r\nOK: roles privilegiados bloqueados\r\nOK: Azure Policy (ubicaciones, NIC sin IP publica, etiquetas, storage)\r\nOK: Defender for Cloud Free por defecto\r\nOK: firewall, bastion y WAF opcionales\r\nOK: Log Analytics, actividad, alertas y action group\r\nOK: Sentinel opcional\r\nOK: presupuesto con alertas\r\nOK: diagnostic settings\r\nOK: Recovery Services Vault opcional\r\nOK: VPN S2S opcional con IPsec explicito\r\nOK: Azure Arc (alternativa de bajo costo)\r\nOK: funciones con costo apagadas por defecto\r\nOK: backend remoto solo documentado (comentado)\r\nOK: sin estado ni tfvars reales en el repositorio\r\nOK: sin claves IPsec ni secretos literales",
+                           "fecha":  "2026-11-07 11:12:32 -06:00"
+                       },
+                       {
+                           "control":  "DLP-DEMO",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: hallazgos_sinteticos=3 action=blocked",
+                           "fecha":  "2026-11-07 11:12:32 -06:00"
+                       },
+                       {
+                           "control":  "IDS-OFFLINE",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeIds para ejecutar el perfil IDS.",
+                           "fecha":  "2026-11-07 11:12:32 -06:00"
+                       },
+                       {
+                           "control":  "SIEM-INTEGRATED",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: fuentes=12 reglas_disparadas=11 esperadas=8 secretos=0 evidencia=pipeline-siem-20261107-111232.json",
+                           "fecha":  "2026-11-07 11:12:35 -06:00"
+                       },
+                       {
+                           "control":  "BACKUP-RESTORE",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeRecovery; nunca altera la base principal.",
+                           "fecha":  "2026-11-07 11:12:35 -06:00"
+                       },
+                       {
+                           "control":  "DEVSECOPS",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeSecurity; requiere red para bases de vulnerabilidades.",
+                           "fecha":  "2026-11-07 11:12:35 -06:00"
+                       },
+                       {
+                           "control":  "CONTINUITY-API",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeContinuity; interrumpe deliberadamente la API por segundos.",
+                           "fecha":  "2026-11-07 11:12:35 -06:00"
+                       },
+                       {
+                           "control":  "CONTINUITY-IAM",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeContinuity; interrumpe deliberadamente Keycloak por segundos.",
+                           "fecha":  "2026-11-07 11:12:35 -06:00"
+                       }
+                   ],
+    "resumen":  {
+                    "exitosos":  20,
+                    "fallidos":  1,
+                    "omitidos":  5,
+                    "no_verificables":  1
+                }
+}

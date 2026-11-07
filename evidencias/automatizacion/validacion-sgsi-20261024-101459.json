@@ -1,0 +1,108 @@
+﻿{
+    "alcance":  "laboratorio SGSI UVCG",
+    "fecha":  "2026-10-24 10:14:59 -06:00",
+    "resultados":  [
+                       {
+                           "control":  "CORE-COMPOSE",
+                           "estado":  "exitoso",
+                           "detalle":  "compose_config=ok",
+                           "fecha":  "2026-10-24 10:10:22 -06:00"
+                       },
+                       {
+                           "control":  "APP-HTTPS",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: redireccion HTTPS, TLS de laboratorio, health=200, ruta protegida=401, cabeceras seguras y metodos no autorizados=403",
+                           "fecha":  "2026-10-24 10:10:36 -06:00"
+                       },
+                       {
+                           "control":  "IAM-RBAC-MFA",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: OIDC, MFA TOTP requerido y válido, 4 roles, matriz RBAC, token inválido rechazado y eventos LOGIN/LOGIN_ERROR registrados",
+                           "fecha":  "2026-10-24 10:11:29 -06:00"
+                       },
+                       {
+                           "control":  "NETWORK-SEGMENTATION",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: only_proxy_publishes=true api-db=allowed proxy-db=blocked db-proxy=blocked",
+                           "fecha":  "2026-10-24 10:11:48 -06:00"
+                       },
+                       {
+                           "control":  "SIEM-LIGHT",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: inserted=5 duplicate=0 source=synthetic-control\r\nOK: alerts_created=3\r\nOK: events=5 alerts=3 report=resultado-siem-20261024-101148.json\r\nOK: eventos=5 reglas=3 redaction=true",
+                           "fecha":  "2026-10-24 10:11:49 -06:00"
+                       },
+                       {
+                           "control":  "BACKUP-SCHEDULED",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: schedulers=2 encrypted_copies=2 sha256=true interval_seconds=86400",
+                           "fecha":  "2026-10-24 10:11:49 -06:00"
+                       },
+                       {
+                           "control":  "CONFIG-INTEGRITY",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: archivos_verificados=18 cambios=0",
+                           "fecha":  "2026-10-24 10:11:49 -06:00"
+                       },
+                       {
+                           "control":  "GOVERNANCE-DOCS",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: activos=21 procesos_bia=7 riesgos=19 controles_soa=93 escenarios_octave=8\r\nOK: verificaciones=21 fallidas=0 riesgos=19 controles=93",
+                           "fecha":  "2026-10-24 10:11:49 -06:00"
+                       },
+                       {
+                           "control":  "AZURE-STATIC",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: cinco zonas spoke\r\nOK: topologia hub-spoke\r\nOK: peering bidireccional\r\nOK: NSG vinculados a subredes\r\nOK: bloqueo de trafico lateral\r\nOK: RBAC parametrizado\r\nOK: monitorizacion opcional\r\nOK: backup privado opcional\r\nOK: gateway hibrido opcional\r\nOK: funciones con costo apagadas",
+                           "fecha":  "2026-10-24 10:11:49 -06:00"
+                       },
+                       {
+                           "control":  "DLP-DEMO",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: hallazgos_sinteticos=2 action=blocked",
+                           "fecha":  "2026-10-24 10:11:50 -06:00"
+                       },
+                       {
+                           "control":  "IDS-OFFLINE",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: pcap_sintetico=trafico-controlado.pcap escenarios=8 paquetes=46 destino=solo_archivo archivado=20261024-101150\r\n Container local-ids-run-72a760194c67 Creating \r\n Container local-ids-run-72a760194c67 Created \r\nChecking for capability sys_nice: no\r\nWarning: no sys_nice capability, use --cap-add sys_nice\r\nChecking for capability net_admin: no\r\nWarning: no net_admin capability, use --cap-add net_admin\r\nWarning: running as root due to missing capabilities\r\ni: suricata: This is Suricata version 7.0.17 RELEASE running in USER mode\r\nW: detect: rule 1000002: SYN-only to port(s) 5432:5432 w/o direction specified, disabling for toclient direction\r\nW: detect: rule 1000006: SYN-only to port(s) 9000:9000 w/o direction specified, disabling for toclient direction\r\ni: threads: Threads created -\u003e RX: 1 W: 20 FM: 1 FR: 1   Engine started.\r\ni: suricata: Signal Received.  Stopping engine.\r\ni: pcap: read 1 file, 46 packets, 4296 bytes\r\nOK: escenarios=8 verdaderos_positivos=7 falsos_positivos=0 total_alerts=7 mode=offline",
+                           "fecha":  "2026-10-24 10:11:51 -06:00"
+                       },
+                       {
+                           "control":  "SIEM-INTEGRATED",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: fuentes=10 reglas_disparadas=6 esperadas=5 secretos=0 evidencia=pipeline-siem-20261024-101151.json",
+                           "fecha":  "2026-10-24 10:11:53 -06:00"
+                       },
+                       {
+                           "control":  "BACKUP-RESTORE",
+                           "estado":  "exitoso",
+                           "detalle":  "Container local-backup-tool-run-c68c4e96ce0d Creating \r\n Container local-backup-tool-run-c68c4e96ce0d Created \r\nOK: target=Academic encrypted=true sha256=true\r\n Container local-identity-backup-tool-run-d200df4010a8 Creating \r\n Container local-identity-backup-tool-run-d200df4010a8 Created \r\nOK: target=Identity encrypted=true sha256=true\r\nevidencia=D:\\sgsi_laboratorio\\evidencias\\backup\\backup-dual-20261024-101155.json\r\n Container local-restore-db-1 Starting \r\n Container local-restore-db-1 Started \r\n Container local-backup-tool-run-41a3d6144f3b Creating \r\n Container local-backup-tool-run-41a3d6144f3b Created \r\n Container local-restore-db-1 Stopping \r\n Container local-restore-db-1 Stopped \r\n Container local-identity-restore-db-1 Starting \r\n Container local-identity-restore-db-1 Started \r\n Container local-identity-backup-tool-run-62a01e86ed2e Creating \r\n Container local-identity-backup-tool-run-62a01e86ed2e Created \r\n Container local-identity-restore-db-1 Stopping \r\n Container local-identity-restore-db-1 Stopped \r\nOK: restore_dual=success dentro_rto=2/2 brechas_rpo=2 evidencia=D:\\sgsi_laboratorio\\evidencias\\recovery\\recuperacion-periodica-20261024-101155.json",
+                           "fecha":  "2026-10-24 10:12:13 -06:00"
+                       },
+                       {
+                           "control":  "DEVSECOPS",
+                           "estado":  "exitoso",
+                           "detalle":  "Image local-security-python Building \r\n#1 [internal] load local bake definitions\r\n#1 reading from stdin 557B done\r\n#1 DONE 0.0s\r\n\r\n#2 [internal] load build definition from Dockerfile\r\n#2 transferring dockerfile: 371B 0.0s done\r\n#2 DONE 0.0s\r\n\r\n#3 [internal] load metadata for docker.io/library/python:3.12-alpine\r\n#3 DONE 1.0s\r\n\r\n#4 [internal] load .dockerignore\r\n#4 transferring context: 59B done\r\n#4 DONE 0.0s\r\n\r\n#5 [1/3] FROM docker.io/library/python:3.12-alpine@sha256:b658b05ce9c4eb97ec6fc19424818a1f31993659c2b505a532f470e83807815d\r\n#5 resolve docker.io/library/python:3.12-alpine@sha256:b658b05ce9c4eb97ec6fc19424818a1f31993659c2b505a532f470e83807815d 0.0s done\r\n#5 DONE 0.0s\r\n\r\n#6 [2/3] RUN addgroup -g 10001 -S scanner     \u0026\u0026 adduser -u 10001 -S scanner -G scanner     \u0026\u0026 pip install --no-cache-dir --no-compile        bandit==1.8.6        pip-audit==2.10.1        detect-secrets==1.5.0\r\n#6 CACHED\r\n\r\n#7 [3/3] WORKDIR /workspace\r\n#7 CACHED\r\n\r\n#8 exporting to image\r\n#8 exporting layers done\r\n#8 exporting manifest sha256:9c1bac67efa5e844effc305c76e644f95b64a9947b4ea2502d6d534339bffc6f\r\n#8 exporting manifest sha256:9c1bac67efa5e844effc305c76e644f95b64a9947b4ea2502d6d534339bffc6f done\r\n#8 exporting config sha256:a0823e4fbb654c7ff04b1762aaebc41b68d0a05aebe1b8cbf8ad0bbf9aa6bec8 done\r\n#8 exporting attestation manifest sha256:7cdc851b7d1ab6eea287abe9812f8052b97ab407dabb512c6bc0544ee2d069a8 0.0s done\r\n#8 exporting manifest list sha256:82a784b0d77ab9b6f38e0e625e18948313af0870c5aafd3c89563360a60671e1 done\r\n#8 naming to docker.io/library/local-security-python:latest done\r\n#8 unpacking to docker.io/library/local-security-python:latest done\r\n#8 DONE 0.2s\r\n\r\n#9 resolving provenance for metadata file\r\n#9 DONE 0.0s\r\n Image local-security-python Built \r\n Container local-security-python-run-f50853f3ec12 Creating \r\n Container local-security-python-run-f50853f3ec12 Created \r\n[main]\tINFO\tprofile include tests: None\r\n[main]\tINFO\tprofile exclude tests: None\r\n[main]\tINFO\tcli include tests: None\r\n[main]\tINFO\tcli exclude tests: None\r\n[json]\tINFO\tJSON output written to file: /reports/bandit.json\r\nSystem.Management.Automation.RemoteException\r\n Container local-security-python-run-fe13c101cf4e Creating \r\n Container local-security-python-run-fe13c101cf4e Created \r\nNo known vulnerabilities found\r\n Container local-trivy-run-0851b14aece6 Creating \r\n Container local-trivy-run-0851b14aece6 Created \r\n2026-10-24T16:12:28Z\tINFO\t[misconfig] Misconfiguration scanning is enabled\r\n2026-10-24T16:12:28Z\tINFO\t[checks-client] Using existing checks from cache\tpath=\"/root/.cache/trivy/policy/content\"\r\n2026-10-24T16:12:29Z\tINFO\t[secret] Secret scanning is enabled\r\n2026-10-24T16:12:29Z\tINFO\t[secret] If your scanning is slow, please try \u0027--scanners misconfig\u0027 to disable secret scanning\r\n2026-10-24T16:12:29Z\tINFO\t[secret] Please see https://trivy.dev/docs/v0.76/guide/scanner/secret#recommendation for faster secret detection\r\n2026-10-24T16:12:35Z\tINFO\t[terraform scanner] Scanning root module\tfile_path=\"azure\"\r\n2026-10-24T16:12:35Z\tWARN\t[terraform parser] Variable values were not found in the environment or variable files. Evaluating may not work correctly.\tmodule=\"root\" variables=\"subscription_id\"\r\n2026-10-24T16:12:35Z\tWARN\t[pip] Unable to find python `site-packages` directory. License detection is skipped.\terr=\"unable to find path to Python executable\"\r\n2026-10-24T16:12:35Z\tINFO\tNumber of language-specific files\tnum=1\r\n2026-10-24T16:12:35Z\tINFO\tDetected config files\tnum=7\r\n Container local-trivy-run-9e1968c6eccf Creating \r\n Container local-trivy-run-9e1968c6eccf Created \r\n2026-10-24T16:12:36Z\tINFO\t[vuln] Vulnerability scanning is enabled\r\n2026-10-24T16:12:52Z\tINFO\tDetected OS\tfamily=\"alpine\" version=\"3.24.3\"\r\n2026-10-24T16:12:52Z\tINFO\t[alpine] Detecting vulnerabilities...\tos_version=\"3.24\" repository=\"3.24\" pkg_num=38\r\n2026-10-24T16:12:52Z\tINFO\tNumber of language-specific files\tnum=1\r\n2026-10-24T16:12:52Z\tINFO\t[python-pkg] Detecting vulnerabilities...\r\n Container local-trivy-run-80fee867a87a Creating \r\n Container local-trivy-run-80fee867a87a Created \r\n2026-10-24T16:12:53Z\tINFO\t[vuln] Vulnerability scanning is enabled\r\n2026-10-24T16:12:57Z\tINFO\tDetected OS\tfamily=\"alpine\" version=\"3.24.3\"\r\n2026-10-24T16:12:57Z\tINFO\t[alpine] Detecting vulnerabilities...\tos_version=\"3.24\" repository=\"3.24\" pkg_num=71\r\n2026-10-24T16:12:57Z\tINFO\tNumber of language-specific files\tnum=0\r\n Container local-trivy-run-4367129901ef Creating \r\n Container local-trivy-run-4367129901ef Created \r\n2026-10-24T16:12:57Z\tINFO\t[vuln] Vulnerability scanning is enabled\r\n2026-10-24T16:13:13Z\tINFO\tDetected OS\tfamily=\"alpine\" version=\"3.24.3\"\r\n2026-10-24T16:13:13Z\tINFO\t[alpine] Detecting vulnerabilities...\tos_version=\"3.24\" repository=\"3.24\" pkg_num=45\r\n2026-10-24T16:13:13Z\tINFO\tNumber of language-specific files\tnum=1\r\n2026-10-24T16:13:13Z\tINFO\t[gobinary] Detecting vulnerabilities...\r\n2026-10-24T16:13:13Z\tWARN\tUsing severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.\r\n Container local-trivy-run-771d7a3d5ce1 Creating \r\n Container local-trivy-run-771d7a3d5ce1 Created \r\n2026-10-24T16:13:16Z\tINFO\t[vuln] Vulnerability scanning is enabled\r\n2026-10-24T16:13:24Z\tINFO\tDetected OS\tfamily=\"alpine\" version=\"3.24.3\"\r\n2026-10-24T16:13:24Z\tINFO\t[alpine] Detecting vulnerabilities...\tos_version=\"3.24\" repository=\"3.24\" pkg_num=45\r\n2026-10-24T16:13:24Z\tINFO\tNumber of language-specific files\tnum=0\r\n Container local-trivy-run-c8091ad41018 Creating \r\n Container local-trivy-run-c8091ad41018 Created \r\n2026-10-24T16:13:25Z\tINFO\t[vuln] Vulnerability scanning is enabled\r\n2026-10-24T16:13:36Z\tINFO\tDetected OS\tfamily=\"redhat\" version=\"9.8\"\r\n2026-10-24T16:13:36Z\tINFO\t[redhat] Detecting RHEL/CentOS vulnerabilities...\tos_version=\"9\" pkg_num=44\r\n2026-10-24T16:13:36Z\tINFO\tNumber of language-specific files\tnum=1\r\n2026-10-24T16:13:36Z\tINFO\t[jar] Detecting vulnerabilities...\r\n2026-10-24T16:13:36Z\tWARN\tUsing severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.\r\nOK: bandit=45 dependencias_vulnerables=0 misconfig=1 secretos=0\r\nOK: hallazgos_confirmados=28 brechas_cobertura=0",
+                           "fecha":  "2026-10-24 10:13:36 -06:00"
+                       },
+                       {
+                           "control":  "CONTINUITY-API",
+                           "estado":  "exitoso",
+                           "detalle":  "Container local-api-1 Stopping \r\n Container local-api-1 Stopped \r\n Container local-api-1 Starting \r\n Container local-api-1 Started \r\nOK: service=api outage_status=504 recovery_seconds=11.85 integrity_count=3",
+                           "fecha":  "2026-10-24 10:13:48 -06:00"
+                       },
+                       {
+                           "control":  "CONTINUITY-IAM",
+                           "estado":  "exitoso",
+                           "detalle":  "Container local-keycloak-1 Stopping \r\n Container local-keycloak-1 Stopped \r\n Container local-keycloak-1 Starting \r\n Container local-keycloak-1 Started \r\nOK: service=keycloak outage_status=0 recovery_seconds=70.482 integrity_count=5",
+                           "fecha":  "2026-10-24 10:14:59 -06:00"
+                       }
+                   ],
+    "resumen":  {
+                    "exitosos":  16,
+                    "fallidos":  0,
+                    "omitidos":  0,
+                    "no_verificables":  0
+                }
+}

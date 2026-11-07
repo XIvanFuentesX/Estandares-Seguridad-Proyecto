@@ -1,0 +1,112 @@
+[
+  {
+    "id": 8,
+    "created_at": "2026-10-24T17:06:17+00:00",
+    "rule_id": "SIEM-WAL-001",
+    "rule_name": "Fallo o advertencia de archivado WAL",
+    "severity": "high",
+    "event_count": 6,
+    "first_event_time": "2026-10-24T16:56:03+00:00",
+    "last_event_time": "2026-10-24T17:00:42+00:00",
+    "evidence_event_ids": "1914,1916,1918,1920,1922,1923"
+  },
+  {
+    "id": 9,
+    "created_at": "2026-10-24T17:06:17+00:00",
+    "rule_id": "SIEM-CFG-001",
+    "rule_name": "Modificación no autorizada de configuración",
+    "severity": "high",
+    "event_count": 5,
+    "first_event_time": "2026-10-24T17:03:42+00:00",
+    "last_event_time": "2026-10-24T17:06:03+00:00",
+    "evidence_event_ids": "1931,1932,1933,1934,1956"
+  },
+  {
+    "id": 10,
+    "created_at": "2026-10-24T17:06:17+00:00",
+    "rule_id": "SIEM-EDR-001",
+    "rule_name": "Proceso inesperado o deriva en contenedor",
+    "severity": "high",
+    "event_count": 4,
+    "first_event_time": "2026-10-24T17:04:22+00:00",
+    "last_event_time": "2026-10-24T17:04:41+00:00",
+    "evidence_event_ids": "1936,1938,1939,1947"
+  },
+  {
+    "id": 7,
+    "created_at": "2026-10-24T16:11:52+00:00",
+    "rule_id": "SIEM-BACKUP-001",
+    "rule_name": "Fallo de respaldo programado",
+    "severity": "high",
+    "event_count": 3,
+    "first_event_time": "2026-10-24T15:52:44+00:00",
+    "last_event_time": "2026-10-24T15:56:33+00:00",
+    "evidence_event_ids": "449,862,863"
+  },
+  {
+    "id": 5,
+    "created_at": "2026-10-24T15:55:33+00:00",
+    "rule_id": "SIEM-DB-001",
+    "rule_name": "Fallo de autenticación PostgreSQL",
+    "severity": "high",
+    "event_count": 2,
+    "first_event_time": "2026-10-24T15:55:33+00:00",
+    "last_event_time": "2026-10-24T15:55:33+00:00",
+    "evidence_event_ids": "296,321"
+  },
+  {
+    "id": 6,
+    "created_at": "2026-10-24T15:55:33+00:00",
+    "rule_id": "SIEM-BACKUP-001",
+    "rule_name": "Fallo de respaldo programado",
+    "severity": "high",
+    "event_count": 1,
+    "first_event_time": "2026-10-24T15:52:44+00:00",
+    "last_event_time": "2026-10-24T15:52:44+00:00",
+    "evidence_event_ids": "449"
+  },
+  {
+    "id": 1,
+    "created_at": "2026-10-24T15:36:28+00:00",
+    "rule_id": "SIEM-AUTH-001",
+    "rule_name": "Ráfaga de autenticaciones fallidas",
+    "severity": "high",
+    "event_count": 4,
+    "first_event_time": "2026-10-24T15:36:28+00:00",
+    "last_event_time": "2026-10-24T15:36:28+00:00",
+    "evidence_event_ids": "58,142,182,209"
+  },
+  {
+    "id": 2,
+    "created_at": "2026-10-24T15:36:28+00:00",
+    "rule_id": "SIEM-RBAC-001",
+    "rule_name": "Acceso denegado por RBAC",
+    "severity": "medium",
+    "event_count": 6,
+    "first_event_time": "2026-10-24T15:36:28+00:00",
+    "last_event_time": "2026-10-24T15:36:28+00:00",
+    "evidence_event_ids": "27,47,54,55,56,57"
+  },
+  {
+    "id": 3,
+    "created_at": "2026-10-24T15:36:28+00:00",
+    "rule_id": "SIEM-HTTP-001",
+    "rule_name": "Ráfaga HTTP 401/403",
+    "severity": "medium",
+    "event_count": 12,
+    "first_event_time": "2026-10-24T15:36:28+00:00",
+    "last_event_time": "2026-10-24T15:36:28+00:00",
+    "evidence_event_ids": "109,113,115,117,119,123,156,157,158,159,160,161"
+  },
+  {
+    "id": 4,
+    "created_at": "2026-10-24T15:36:28+00:00",
+    "rule_id": "SIEM-IDS-001",
+    "rule_name": "Alerta IDS Suricata",
+    "severity": "high",
+    "event_count": 2,
+    "first_event_time": "2026-10-24T15:36:28+00:00",
+    "last_event_time": "2026-10-24T15:36:28+00:00",
+    "evidence_event_ids": "222,226"
+  }
+]

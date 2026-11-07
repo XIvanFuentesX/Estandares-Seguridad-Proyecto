@@ -1,0 +1,29 @@
+﻿{
+    "timestamp":  "2026-10-24T09:36:48.4851707-06:00",
+    "result":  "success",
+    "only_proxy_publishes":  true,
+    "api_to_database_dns":  "allowed",
+    "proxy_to_database_dns":  "blocked",
+    "database_to_proxy_dns":  "blocked",
+    "networks":  {
+                     "local-proxy-1":  [
+                                           "local_apps",
+                                           "local_dmz"
+                                       ],
+                     "local-db-1":  [
+                                        "local_datos"
+                                    ],
+                     "local-identity-db-1":  [
+                                                 "local_identity"
+                                             ],
+                     "local-keycloak-1":  [
+                                              "local_apps",
+                                              "local_identity"
+                                          ],
+                     "local-api-1":  [
+                                         "local_apps",
+                                         "local_datos"
+                                     ]
+                 },
+    "limitations":  "Valida redes/DNS Docker; no sustituye una prueba de firewall fÃ­sico o captura en vivo."
+}

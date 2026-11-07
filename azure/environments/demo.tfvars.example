@@ -1,0 +1,55 @@
+# ESCENARIO 2 — ACADÉMICO RECOMENDADO (ambiente demo)
+# Igual que dev + respaldo en Recovery Services Vault, Defender for Servers P1 para el host Arc
+# y VPN S2S SÓLO durante la ventana de demostración (crear y destruir el gateway; no se "apaga").
+# Copie a demo.tfvars (ignorado por git). La PSK IPsec va sólo en TF_VAR_vpn_shared_key.
+
+environment   = "demo"
+location      = "eastus2"
+prefix        = "uvcg-sgsi"
+unique_suffix = "lab01"
+
+enable_policies       = true
+enable_budget         = true
+manage_defender_plans = true
+budget_amount         = 60
+budget_start_date     = "2026-11-01T00:00:00Z"
+budget_contact_emails = ["seguridad-ti@uvcg.example"]
+
+defender_plans = {
+  VirtualMachines = "Standard" # Defender for Servers (P1 por defecto en la suscripción; incluye servidores Arc)
+  StorageAccounts = "Free"
+  KeyVaults       = "Free"
+  Arm             = "Free"
+}
+
+enable_monitoring        = true
+log_retention_days       = 90
+log_daily_quota_gb       = 0.5
+enable_alerts            = true
+enable_key_vault         = true
+enable_storage           = true
+storage_replication_type = "LRS"
+enable_private_endpoints = true
+
+enable_backup                = true
+backup_storage_mode          = "LocallyRedundant"
+backup_immutability          = "Unlocked"
+backup_public_network_access = true # MARS sin VPN; documentado como riesgo aceptado RC-07
+
+# VPN sólo en la ventana de demostración (false fuera de ella).
+enable_vpn_gateway     = false
+vpn_gateway_sku        = "VpnGw1AZ"
+onprem_address_spaces  = ["192.168.50.0/24"]
+# onprem_gateway_address = "<IP pública del router del laboratorio>"
+
+enable_sentinel    = false
+enable_firewall    = false
+enable_bastion     = false
+enable_app_gateway = false
+
+alert_email_receivers = {
+  seguridad = "seguridad-ti@uvcg.example"
+}
+security_contact_email = "seguridad-ti@uvcg.example"
+
+principals = {}

@@ -1,0 +1,26 @@
+# Estado y artefactos locales de Terraform: nunca se versionan.
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+*.tfplan
+tfplan*
+plan*.json
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Variables reales (pueden contener IDs o datos del entorno). Sólo se versionan los *.example.
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+environments/backend-*.hcl
+!environments/backend-*.hcl.example
+
+# Salidas de revisión de plan generadas localmente.
+scripts/salidas/

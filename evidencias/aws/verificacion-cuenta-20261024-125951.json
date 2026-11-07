@@ -1,0 +1,8 @@
+﻿{
+    "timestamp":  "2026-10-24T12:59:51.9051626-06:00",
+    "checks":  {
+                   "cli_version":  "aws-cli/2.38.5 Python/3.14.8 Linux/6.18.54.1-microsoft-standard-WSL2 docker/x86_64.amzn.2023"
+               },
+    "eligible":  false,
+    "reason":  "Sin sesión válida: ejecute \u0027aws login\u0027 (credenciales temporales)."
+}

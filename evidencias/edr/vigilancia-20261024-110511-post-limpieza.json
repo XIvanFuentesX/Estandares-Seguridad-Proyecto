@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-10-24T11:05:10-06:00",
+  "label": "post-limpieza",
+  "services": {
+    "proxy": {
+      "processes": [
+        "nginx"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true
+      },
+      "issues": [],
+      "result": "success"
+    },
+    "api": {
+      "processes": [
+        "python3.12"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [],
+      "result": "success"
+    },
+    "keycloak": {
+      "processes": [
+        "java",
+        "sh"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [],
+      "result": "success"
+    },
+    "db": {
+      "processes": [
+        "postgres"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [],
+      "result": "success"
+    },
+    "identity-db": {
+      "processes": [
+        "postgres"
+      ],
+      "unexpected_processes": [],
+      "filesystem_drift": [],
+      "hardening": {
+        "read_only_rootfs": true,
+        "non_root_user": true,
+        "expected_user": true,
+        "cap_drop_all": true,
+        "no_new_privileges": true,
+        "not_privileged": true,
+        "ports_only_loopback": true,
+        "no_host_network": true,
+        "memory_limit": true
+      },
+      "issues": [],
+      "result": "success"
+    }
+  },
+  "result": "success"
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-24T11:06:03-06:00",
+  "result": "failure",
+  "files_verified": 22,
+  "changed": [
+    "compose.yaml"
+  ],
+  "missing": [],
+  "added": [
+    "monitoring/procesos-permitidos.json",
+    "monitoring/uptime_monitor.py"
+  ],
+  "secrets_missing": []
+}

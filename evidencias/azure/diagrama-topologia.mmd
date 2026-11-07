@@ -1,0 +1,51 @@
+%% Topología generada con valores calculados por el código (terraform console: local.*), ambiente dev por defecto.
+%% Línea discontinua = opcional/desactivado por defecto. Ningún recurso está desplegado.
+flowchart LR
+  subgraph LOCAL["Laboratorio local UVCG (Docker Desktop) — prefijo ficticio 192.168.50.0/24"]
+    NGINX["Nginx TLS 127.0.0.1:8443 (sólo localhost)"]
+    API["API Flask"]
+    KC["Keycloak OIDC + MFA TOTP"]
+    PG["PostgreSQL 16 x2"]
+    BK["Respaldos AES-256 + SHA-256"]
+    SIEM["SIEM ligero + Suricata offline"]
+    ARC["Agente Azure Arc (azcmagent) — opcional"]
+    VPNDEV["Router/VPN local — opcional"]
+  end
+  subgraph AZ["Azure eastus2 — rg-uvcg-sgsi-dev-eus2"]
+    subgraph HUB["vnet-uvcg-sgsi-dev-eus2-hub 10.20.0.0/16"]
+      GW["GatewaySubnet 10.20.255.0/27<br/>VPN Gateway VpnGw1AZ (opcional)"]
+      FW["AzureFirewallSubnet 10.20.0.0/26<br/>+ Mgmt 10.20.0.64/26<br/>Azure Firewall (opcional)"]
+      BAS["AzureBastionSubnet 10.20.1.0/26<br/>Bastion (opcional)"]
+      MGMT["snet-management 10.20.10.0/24"]
+    end
+    subgraph SPOKE["vnet-uvcg-sgsi-dev-eus2-spoke-academico 10.21.0.0/16"]
+      DMZ["snet-dmz 10.21.10.0/24<br/>App Gateway WAF_v2 (opcional)"]
+      APPS["snet-apps 10.21.20.0/24"]
+      DATOS["snet-datos 10.21.30.0/24"]
+      GES["snet-gestion 10.21.40.0/24"]
+      SEG["snet-seguridad 10.21.50.0/24"]
+      PE["snet-privateendpoints 10.21.60.0/24<br/>PE blob + PE vault"]
+    end
+    KV["Key Vault kv-uvcgsgsi-dev-lab01<br/>RBAC, sin acceso público, purge protection"]
+    ST["Storage stuvcgsgsidevlab01<br/>privado, sin shared keys, TLS 1.2, versionado"]
+    LAW["Log Analytics law-uvcg-sgsi-dev-eus2<br/>+ Sentinel (opcional)"]
+    RSV["Recovery Services Vault (opcional)"]
+    POL["Azure Policy (15 asignaciones)"]
+    DEF["Defender for Cloud (Free)"]
+    BUD["Presupuesto + alertas (no bloquea gasto)"]
+    DNS["DNS privado: privatelink.blob / privatelink.vaultcore"]
+  end
+  HUB <-->|peering| SPOKE
+  DMZ -->|"TCP 443"| APPS
+  APPS -->|"TCP 5432"| DATOS
+  APPS -->|"HTTPS 443"| PE
+  PE --- KV
+  PE --- ST
+  DNS -.-> PE
+  FW -.->|"UDR 0.0.0.0/0 y entre zonas"| SPOKE
+  BAS -.->|"SSH/RDP"| GES
+  VPNDEV -.->|"IPsec IKEv2 AES-256 (opcional)"| GW
+  ARC -.->|"HTTPS 443 saliente + identidad administrada"| AZ
+  BK -.->|"blob privado (vía VPN+PE) o MARS (vault)"| ST
+  BK -.-> RSV
+  KV & ST & RSV & SPOKE -.->|"diagnósticos"| LAW

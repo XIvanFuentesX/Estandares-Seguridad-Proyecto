@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-10-24T11:04:22-06:00",
+  "note": "Procesos observados en estado sano tras validación; cambios requieren gestión de cambios.",
+  "allowed": {
+    "proxy": [
+      "nginx"
+    ],
+    "api": [
+      "python3.12"
+    ],
+    "keycloak": [
+      "java",
+      "sh"
+    ],
+    "db": [
+      "postgres"
+    ],
+    "identity-db": [
+      "postgres"
+    ]
+  }
+}

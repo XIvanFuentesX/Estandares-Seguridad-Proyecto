@@ -1,0 +1,23 @@
+﻿riesgo_id,estrategia,control_propuesto,referencia_iso_27001_27002_2022,responsable,prioridad,plazo_academico,estado,evidencia,riesgo_residual_esperado
+R-001,Mitigar,Revisión trimestral de roles y pruebas RBAC,A.5.15; A.5.16; A.5.18; A.8.3,IAM,Alta,90 días,Implementado laboratorio,scripts/pruebas_identidad.py,4 Bajo
+R-002,Mitigar,Alertar ráfagas y revisar bloqueo/adopción de MFA,A.5.17; A.8.5; A.8.16,IAM/SOC,Alta,30 días,Implementado laboratorio,local/monitoring/rules.json,4 Bajo
+R-003,Mitigar,Compuerta DLP de transferencia (laboratorio) y DLP empresarial con etiquetado,A.5.12; A.5.13; A.5.14; A.8.12,Propietarios/Seguridad,Alta,180 días,Parcial (compuerta implementada),scripts/dlp_compuerta.py,6 Moderado
+R-004,Mitigar,Segundo nodo/sitio y automatización de recuperación,A.5.29; A.5.30; A.8.14,TI/Continuidad,Crítica,12 meses,Planificado,governance/drp.md,8 Moderado
+R-005,Mitigar,Copia offsite/inmutable y restore trimestral,A.8.13; A.5.30,DBA,Alta,90 días,Parcial (offsite pendiente),scripts/prueba_recuperacion_periodica.ps1,4 Bajo
+R-006,Mitigar,Mantener backup IAM cifrado y prueba trimestral,A.8.13; A.5.30,IAM/DBA,Alta,90 días,Implementado laboratorio,scripts/restaurar_prueba.ps1,4 Bajo
+R-007,Mitigar,"Monitorear scheduler, alertar fallos y probar recuperación periódicamente",A.8.13; A.8.16,DBA/SOC,Alta,30 días,Implementado laboratorio,scripts/siem_pipeline.py,4 Bajo
+R-008,Mitigar,"Control de cambios, CI y línea base de integridad de configuración",A.8.9; A.8.25; A.8.29; A.8.32,DevSecOps,Alta,90 días,Parcial,scripts/integridad_configuracion.py,4 Bajo
+R-009,Mitigar,Imagen PostgreSQL sin gosu aplicada a db e identity-db; reescaneo mensual y seguimiento de la imagen upstream,A.8.8; A.8.20; A.8.22,DBA/DevSecOps,Crítica,Aplicado 2026-10-24; revisión mensual,Implementado laboratorio,evidencias/postgres-upgrade/REPORTE-ACTUALIZACION-POSTGRESQL.md,4 Bajo
+R-010,Mitigar,Seguir publicación de OpenJDK corregido en imagen Keycloak; reescaneo mensual,A.8.8; A.8.29,IAM/DevSecOps,Alta,Revisión mensual,Pendiente upstream,evidencias/security/registro-vulnerabilidades-detallado.md,8 Moderado
+R-011,Mitigar,Aprobar copia offsite y arquitectura híbrida/DR,A.5.30; A.8.13; A.8.14,Dirección/TI,Crítica,12 meses,Requiere autorización,aws/main.tf,10 Alto
+R-012,Mitigar,SIEM ligero sellado + monitor continuo; adoptar SIEM con HA/agentes/retención inmutable,A.8.15; A.8.16,Seguridad TI,Alta,12 meses,Parcial,scripts/siem_ligero.py,6 Moderado
+R-013,Mitigar,Seleccionar MDM/EDR y acceso condicional (política y simulación de cumplimiento listas),A.6.7; A.8.1; A.8.7,Seguridad/Soporte,Crítica,12 meses,Requiere licencia; simulación lista,scripts/mdm_cumplimiento.py,10 Alto
+R-014,Transferir/Mitigar,"Seguro, sitio alterno, energía y copia externa",A.7.5; A.7.11; A.5.30,Administración/TI,Alta,12 meses,Pendiente,governance/bcp.md,8 Moderado
+R-015,Mitigar,"Restringir ACL de .env (propuesto CHG-005), Vault/rotación y separación de funciones",A.5.17; A.8.24; A.8.3,Seguridad TI,Alta,180 días,Parcial; ACL pendiente de autorización,governance/registros-operativos.md,4 Bajo
+R-016,Mitigar,"PAM, revisión de eventos admin y doble control",A.5.3; A.8.2; A.8.15,IAM/Auditoría,Alta,180 días,Parcial,local/identity/uvcg-realm.json,6 Moderado
+R-017,Evitar hasta aprobación,"No desplegar; revisar plan, costos y guardrails",A.5.23; A.8.9; A.8.20,Cloud/DevSecOps,Alta,Antes de despliegue,Preparado,aws/main.tf,6 Moderado
+R-018,Transferir/Mitigar,"Due diligence, SLA, seguridad contractual y salida",A.5.19; A.5.20; A.5.21; A.5.22; A.5.23,Compras/Legal/TI,Alta,Antes de contratar,Pendiente,governance/declaracion-aplicabilidad.md,8 Moderado
+R-019,Mitigar,"Archivado WAL/PITR (archive_timeout 900 s académico, 60 s identidad) en las bases principales",A.8.13; A.5.30,DBA/Continuidad,Alta,Al autorizar,Validado en réplicas; activación pendiente de autorización,local/compose.pitr.yaml,4 Bajo
+R-020,Mitigar,"Revisión del plan con revisar_plan.py, presupuesto con alertas y desactivación segura",A.5.23; A.8.32,Responsable SGSI,Alta,Antes de cada apply,Preparado,aws/scripts/revisar_plan.py,6 Moderado
+R-021,Mitigar,"Backend S3 privado con cifrado, versionado y bloqueo de estado",A.8.4; A.8.9,DevSecOps,Alta,Antes del despliegue institucional,Documentado,aws/.gitignore,6 Moderado
+R-022,Transferir/Aceptar,Adoptar MDM/EDR con licencia académica o alternativa de código abierto (Wazuh),A.5.15; A.8.2; A.8.1,Dirección TI,Media,Presupuesto institucional,Pendiente,evidencias/aws/COSTOS-AWS.md,6 Moderado

@@ -1,0 +1,182 @@
+VALIDACIÓN TERRAFORM — SGSI UVCG (Azure, NO desplegado)
+Fecha local: 2026-10-24 11:25:36 -0600
+Imágenes: hashicorp/terraform:1.14 | ghcr.io/terraform-linters/tflint:v0.59.1 | aquasec/trivy:0.76.1
+Alcance: sin credenciales, sin backend, sin suscripción. 'terraform test' usa mock_provider (no es un plan real).
+
+### terraform version
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 version
+Terraform v1.14.9
+on linux_amd64
++ provider registry.terraform.io/hashicorp/azurerm v4.81.0
+[exit=0]
+
+### terraform fmt -recursive -check
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 fmt -recursive -check -diff
+[exit=0]
+
+### terraform init -backend=false
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 init -backend=false -input=false -no-color
+Initializing modules...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/azurerm from the dependency lock file
+- Using previously-installed hashicorp/azurerm v4.81.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+[exit=0]
+
+### terraform validate (raíz + módulos)
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 validate -no-color
+Success! The configuration is valid.
+
+[exit=0]
+
+### terraform test (valores por defecto)
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 test -no-color
+tests/escenarios.tftest.hcl... in progress
+  run "plan_simulado"... pass
+  run "valores_por_defecto_sin_costo"... pass
+  run "region_no_permitida"... pass
+  run "separacion_de_funciones"... pass
+  run "rol_privilegiado_rechazado"... pass
+tests/escenarios.tftest.hcl... tearing down
+tests/escenarios.tftest.hcl... pass
+
+Success! 5 passed, 0 failed.
+[exit=0]
+
+### terraform test -var-file=environments/dev.tfvars.example
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 test -no-color -var-file=environments/dev.tfvars.example
+tests/escenarios.tftest.hcl... in progress
+  run "plan_simulado"... pass
+  run "valores_por_defecto_sin_costo"... pass
+  run "region_no_permitida"... pass
+  run "separacion_de_funciones"... pass
+  run "rol_privilegiado_rechazado"... pass
+tests/escenarios.tftest.hcl... tearing down
+tests/escenarios.tftest.hcl... pass
+
+Success! 5 passed, 0 failed.
+[exit=0]
+
+### terraform test -var-file=environments/demo.tfvars.example
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 test -no-color -var-file=environments/demo.tfvars.example
+tests/escenarios.tftest.hcl... in progress
+  run "plan_simulado"... pass
+  run "valores_por_defecto_sin_costo"... pass
+  run "region_no_permitida"... pass
+  run "separacion_de_funciones"... pass
+  run "rol_privilegiado_rechazado"... pass
+tests/escenarios.tftest.hcl... tearing down
+tests/escenarios.tftest.hcl... pass
+
+Success! 5 passed, 0 failed.
+[exit=0]
+
+### terraform test -var-file=environments/inst.tfvars.example
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 test -no-color -var-file=environments/inst.tfvars.example
+tests/escenarios.tftest.hcl... in progress
+  run "plan_simulado"... pass
+  run "valores_por_defecto_sin_costo"... pass
+  run "region_no_permitida"... pass
+  run "separacion_de_funciones"... pass
+  run "rol_privilegiado_rechazado"... pass
+tests/escenarios.tftest.hcl... tearing down
+tests/escenarios.tftest.hcl... pass
+
+Success! 5 passed, 0 failed.
+[exit=0]
+Plan simulado (default): Plan: 63 to add, 0 to change, 0 to destroy.
+Plan simulado (dev): Plan: 100 to add, 0 to change, 0 to destroy.
+Plan simulado (demo): Plan: 103 to add, 0 to change, 0 to destroy.
+Plan simulado (inst): Plan: 139 to add, 0 to change, 0 to destroy.
+
+### terraform plan (intento SIN credenciales; se espera error de autenticación)
+$ docker run --rm -m 1g -v D:/sgsi_laboratorio/azure:/ws -w /ws hashicorp/terraform:1.14 plan -input=false -no-color -lock=false -refresh=false -var-file=environments/dev.tfvars.example
+
+Changes to Outputs:
+  + cost_features_enabled = {
+      + alerta_consulta   = true
+      + app_gateway_waf   = false
+      + azure_firewall    = false
+      + backup_vault      = false
+      + bastion           = false
+      + defender_standard = []
+      + key_vault         = true
+      + log_analytics     = true
+      + private_endpoints = true
+      + sentinel          = false
+      + storage           = true
+      + vpn_gateway       = false
+    }
+  + naming                = {
+      + base            = "uvcg-sgsi-dev-eus2"
+      + key_vault       = "kv-uvcgsgsi-dev-lab01"
+      + storage_account = "stuvcgsgsidevlab01"
+    }
+
+You can apply this plan to save these new output values to the Terraform
+state, without changing any real infrastructure.
+
+Error: unable to build authorizer for Resource Manager API: could not configure AzureCli Authorizer: could not parse Azure CLI version: launching Azure CLI: exec: "az": executable file not found in $PATH
+
+  with provider["registry.terraform.io/hashicorp/azurerm"],
+  on providers.tf line 1, in provider "azurerm":
+   1: provider "azurerm" {
+
+[exit=1]
+
+### tflint --init
+$ docker run --rm -m 512m -v D:/sgsi_laboratorio/azure:/data -v D:/sgsi_laboratorio/azure/scripts/salidas/tflint-plugins:/plugins -e TFLINT_PLUGIN_DIR=/plugins -w /data ghcr.io/terraform-linters/tflint:v0.59.1 --init
+All plugins are already installed
+[exit=0]
+
+### tflint --version
+$ docker run --rm -m 512m -v D:/sgsi_laboratorio/azure:/data -v D:/sgsi_laboratorio/azure/scripts/salidas/tflint-plugins:/plugins -e TFLINT_PLUGIN_DIR=/plugins -w /data ghcr.io/terraform-linters/tflint:v0.59.1 --version
+TFLint version 0.59.1
++ ruleset.terraform (0.13.0-bundled)
++ ruleset.azurerm (0.28.0)
+[exit=0]
+
+### tflint (raíz con módulos locales)
+$ docker run --rm -m 512m -v D:/sgsi_laboratorio/azure:/data -v D:/sgsi_laboratorio/azure/scripts/salidas/tflint-plugins:/plugins -e TFLINT_PLUGIN_DIR=/plugins -w /data ghcr.io/terraform-linters/tflint:v0.59.1 --format compact
+[exit=0]
+
+### tflint --recursive
+$ docker run --rm -m 512m -v D:/sgsi_laboratorio/azure:/data -v D:/sgsi_laboratorio/azure/scripts/salidas/tflint-plugins:/plugins -e TFLINT_PLUGIN_DIR=/plugins -w /data ghcr.io/terraform-linters/tflint:v0.59.1 --recursive --config /data/.tflint.hcl --format compact
+[exit=0]
+
+### trivy config azure (valores por defecto) -> evidencias/azure/trivy-config-azure.json
+### trivy config --tf-vars environments/dev.tfvars.example -> evidencias/azure/trivy-config-azure-dev.json
+### trivy config --tf-vars environments/demo.tfvars.example -> evidencias/azure/trivy-config-azure-demo.json
+### trivy config --tf-vars environments/inst.tfvars.example -> evidencias/azure/trivy-config-azure-inst.json
+
+### Resumen Trivy (estado FAIL por escenario)
+default: exitosos=65 fallidos=4 por_severidad={'LOW': 4}
+   4 x AZU-0045 (LOW) Enable the standard security center subscription tier
+dev: exitosos=68 fallidos=8 por_severidad={'LOW': 6, 'MEDIUM': 2}
+   4 x AZU-0045 (LOW) Enable the standard security center subscription tier
+   1 x AZU-0046 (LOW) The required contact details should be set for security center
+   1 x AZU-0057 (MEDIUM) Storage account should have logging enabled
+   1 x AZU-0058 (LOW) Storage account should use geo-redundant replication
+   1 x AZU-0060 (MEDIUM) Storage account should use customer-managed keys for encryption
+demo: exitosos=68 fallidos=7 por_severidad={'LOW': 5, 'MEDIUM': 2}
+   3 x AZU-0045 (LOW) Enable the standard security center subscription tier
+   1 x AZU-0046 (LOW) The required contact details should be set for security center
+   1 x AZU-0057 (MEDIUM) Storage account should have logging enabled
+   1 x AZU-0058 (LOW) Storage account should use geo-redundant replication
+   1 x AZU-0060 (MEDIUM) Storage account should use customer-managed keys for encryption
+inst: exitosos=69 fallidos=4 por_severidad={'CRITICAL': 1, 'LOW': 1, 'MEDIUM': 2}
+   1 x AZU-0046 (LOW) The required contact details should be set for security center
+   1 x AZU-0047 (CRITICAL) A security group rule should not allow unrestricted ingress from any IP address.
+   1 x AZU-0057 (MEDIUM) Storage account should have logging enabled
+   1 x AZU-0060 (MEDIUM) Storage account should use customer-managed keys for encryption
+
+Fin. Ninguna de estas pruebas crea, modifica ni consulta recursos en Azure.

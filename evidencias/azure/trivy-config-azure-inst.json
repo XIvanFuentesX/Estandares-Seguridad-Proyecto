@@ -1,0 +1,534 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.76.1"
+  },
+  "ReportID": "01a16ef4-2a1e-7ab4-a4d4-26528743e417",
+  "CreatedAt": "2026-10-24T17:27:37.75870358Z",
+  "ArtifactName": "/src",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": ".",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 69,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "modules/networking/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AZU-0047",
+          "Title": "A security group rule should not allow unrestricted ingress from any IP address.",
+          "Description": "Opening up ports to allow connections from the public internet is generally to be avoided. You should restrict access to IP addresses or ranges that are explicitly required where possible.\n",
+          "Message": "Security group rule allows unrestricted ingress from any IP address.",
+          "Namespace": "builtin.azure.network.azure0047",
+          "Query": "data.builtin.azure.network.azure0047.deny",
+          "Resolution": "Set a more restrictive cidr range",
+          "Severity": "CRITICAL",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/azu-0047",
+          "References": [
+            "https://docs.microsoft.com/en-us/azure/security/fundamentals/network-best-practices",
+            "https://avd.aquasec.com/misconfig/azu-0047"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.networking",
+            "Provider": "Azure",
+            "Service": "network",
+            "StartLine": 161,
+            "EndLine": 161,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 153,
+                  "Content": "resource \"azurerm_network_security_rule\" \"explicit\" {",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"azurerm_network_security_rule\"\u001b[0m \u001b[38;5;37m\"explicit\"\u001b[0m {",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 154,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 161,
+                  "Content": "  source_address_prefix       = length(each.value.sources) == 1 ? each.value.sources[0] : null",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245msource_address_prefix\u001b[0m       =\u001b[38;5;33m length\u001b[0m(\u001b[38;5;33meach\u001b[0m.value.sources) \u001b[38;5;245m==\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m?\u001b[0m \u001b[38;5;33meach\u001b[0m.value.sources[\u001b[38;5;37m0\u001b[0m] \u001b[38;5;245m:\u001b[0m null",
+                  "FirstCause": true,
+                  "LastCause": true
+                },
+                {
+                  "Number": 168,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 169,
+                  "Content": "}",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m}",
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "azurerm_network_security_rule.explicit[\"dmz-permitir-internet-https\"]",
+                "Filename": "modules/networking/main.tf",
+                "Location": {
+                  "StartLine": 153,
+                  "EndLine": 169
+                }
+              },
+              {
+                "Resource": "module.networking",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 29,
+                  "EndLine": 52
+                }
+              }
+            ],
+            "RenderedCause": {
+              "Raw": "resource \"azurerm_network_security_rule\" \"explicit\" {\n  source_address_prefix = \"10.21.10.0/24\"\n}",
+              "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"azurerm_network_security_rule\"\u001b[0m \u001b[38;5;37m\"explicit\"\u001b[0m {\n  \u001b[38;5;245msource_address_prefix\u001b[0m = \u001b[38;5;37m\"10.21.10.0/24\"\n\u001b[0m}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Target": "modules/security/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 1
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AZU-0046",
+          "Title": "The required contact details should be set for security center",
+          "Description": "It is recommended that at least one valid contact is configured for the security center.\n\nMicrosoft will notify the security contact directly in the event of a security incident and will look to use a telephone number in cases where a prompt response is required.\n",
+          "Message": "Security contact does not have a phone number listed.",
+          "Namespace": "builtin.azure.securitycenter.azure0046",
+          "Query": "data.builtin.azure.securitycenter.azure0046.deny",
+          "Resolution": "Set a telephone number for security center contact",
+          "Severity": "LOW",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/azu-0046",
+          "References": [
+            "https://azure.microsoft.com/en-us/services/security-center/",
+            "https://avd.aquasec.com/misconfig/azu-0046"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.security",
+            "Provider": "Azure",
+            "Service": "security-center",
+            "StartLine": 346,
+            "EndLine": 352,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 346,
+                  "Content": "resource \"azurerm_security_center_contact\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"azurerm_security_center_contact\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 347,
+                  "Content": "  count               = var.manage_defender_plans \u0026\u0026 var.security_contact_email != null ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m               = \u001b[38;5;33mvar\u001b[0m.manage_defender_plans \u001b[38;5;245m\u0026\u0026\u001b[0m \u001b[38;5;33mvar\u001b[0m.security_contact_email \u001b[38;5;245m!=\u001b[0m null \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 348,
+                  "Content": "  name                = \"contacto-seguridad-uvcg\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245mname\u001b[0m                = \u001b[38;5;37m\"contacto-seguridad-uvcg\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 349,
+                  "Content": "  email               = var.security_contact_email",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245memail\u001b[0m               = \u001b[38;5;33mvar\u001b[0m.security_contact_email",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 350,
+                  "Content": "  alert_notifications = true",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245malert_notifications\u001b[0m = \u001b[38;5;166mtrue",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 351,
+                  "Content": "  alerts_to_admins    = true",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245malerts_to_admins\u001b[0m    = \u001b[38;5;166mtrue",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 352,
+                  "Content": "}",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m}",
+                  "FirstCause": false,
+                  "LastCause": true
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.security",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 77,
+                  "EndLine": 117
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "Target": "modules/storage/main.tf",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 0,
+        "Failures": 2
+      },
+      "Misconfigurations": [
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AZU-0057",
+          "Title": "Storage account should have logging enabled",
+          "Description": "Storage Analytics logs detailed information about successful and failed requests to a storage service.\nThis information can be used to monitor individual requests and to diagnose issues with a storage service.\nLogging should be enabled for at least one storage service type.\n",
+          "Message": "Storage account does not have logging enabled for any service.",
+          "Namespace": "builtin.azure.storage.azure0057",
+          "Query": "data.builtin.azure.storage.azure0057.deny",
+          "Resolution": "Enable logging for at least one storage service (Queue, Table, or Blob)",
+          "Severity": "MEDIUM",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/azu-0057",
+          "References": [
+            "https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging",
+            "https://avd.aquasec.com/misconfig/azu-0057"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.storage",
+            "Provider": "Azure",
+            "Service": "storage",
+            "StartLine": 12,
+            "EndLine": 58,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 12,
+                  "Content": "resource \"azurerm_storage_account\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"azurerm_storage_account\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 13,
+                  "Content": "  count                             = var.enable_storage ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m                             = \u001b[38;5;33mvar\u001b[0m.enable_storage \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 14,
+                  "Content": "  name                              = var.storage_account_name",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245mname\u001b[0m                              = \u001b[38;5;33mvar\u001b[0m.storage_account_name",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 15,
+                  "Content": "  location                          = var.location",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mlocation\u001b[0m                          = \u001b[38;5;33mvar\u001b[0m.location",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 16,
+                  "Content": "  resource_group_name               = var.resource_group_name",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mresource_group_name\u001b[0m               = \u001b[38;5;33mvar\u001b[0m.resource_group_name",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 17,
+                  "Content": "  account_kind                      = \"StorageV2\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245maccount_kind\u001b[0m                      = \u001b[38;5;37m\"StorageV2\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 18,
+                  "Content": "  account_tier                      = \"Standard\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245maccount_tier\u001b[0m                      = \u001b[38;5;37m\"Standard\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 19,
+                  "Content": "  account_replication_type          = var.replication_type",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245maccount_replication_type\u001b[0m          = \u001b[38;5;33mvar\u001b[0m.replication_type",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 20,
+                  "Content": "  access_tier                       = \"Hot\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245maccess_tier\u001b[0m                       = \u001b[38;5;37m\"Hot\"",
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 21,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.storage",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 119,
+                  "EndLine": 140
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Type": "Terraform Security Check",
+          "ID": "AZU-0060",
+          "Title": "Storage account should use customer-managed keys for encryption",
+          "Description": "Storage accounts should use customer-managed keys (CMK) for encryption to provide additional control over the encryption keys.\nCustomer-managed keys allow you to create, rotate, disable, and revoke access controls.\nThey also provide greater flexibility to audit the encryption keys that are used to protect your data.\n",
+          "Message": "Storage account with blob containers should use customer-managed keys for encryption.",
+          "Namespace": "builtin.azure.storage.azure0060",
+          "Query": "data.builtin.azure.storage.azure0060.deny",
+          "Resolution": "Configure customer-managed keys for storage account encryption",
+          "Severity": "MEDIUM",
+          "PrimaryURL": "https://avd.aquasec.com/misconfig/azu-0060",
+          "References": [
+            "https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+            "https://avd.aquasec.com/misconfig/azu-0060"
+          ],
+          "Status": "FAIL",
+          "CauseMetadata": {
+            "Resource": "module.storage",
+            "Provider": "Azure",
+            "Service": "storage",
+            "StartLine": 12,
+            "EndLine": 58,
+            "Code": {
+              "Lines": [
+                {
+                  "Number": 12,
+                  "Content": "resource \"azurerm_storage_account\" \"this\" {",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[38;5;33mresource\u001b[0m \u001b[38;5;37m\"azurerm_storage_account\"\u001b[0m \u001b[38;5;37m\"this\"\u001b[0m {",
+                  "FirstCause": true,
+                  "LastCause": false
+                },
+                {
+                  "Number": 13,
+                  "Content": "  count                             = var.enable_storage ? 1 : 0",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mcount\u001b[0m                             = \u001b[38;5;33mvar\u001b[0m.enable_storage \u001b[38;5;245m?\u001b[0m \u001b[38;5;37m1\u001b[0m \u001b[38;5;245m:\u001b[0m \u001b[38;5;37m0",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 14,
+                  "Content": "  name                              = var.storage_account_name",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245mname\u001b[0m                              = \u001b[38;5;33mvar\u001b[0m.storage_account_name",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 15,
+                  "Content": "  location                          = var.location",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mlocation\u001b[0m                          = \u001b[38;5;33mvar\u001b[0m.location",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 16,
+                  "Content": "  resource_group_name               = var.resource_group_name",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245mresource_group_name\u001b[0m               = \u001b[38;5;33mvar\u001b[0m.resource_group_name",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 17,
+                  "Content": "  account_kind                      = \"StorageV2\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245maccount_kind\u001b[0m                      = \u001b[38;5;37m\"StorageV2\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 18,
+                  "Content": "  account_tier                      = \"Standard\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245maccount_tier\u001b[0m                      = \u001b[38;5;37m\"Standard\"",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 19,
+                  "Content": "  account_replication_type          = var.replication_type",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "\u001b[0m  \u001b[38;5;245maccount_replication_type\u001b[0m          = \u001b[38;5;33mvar\u001b[0m.replication_type",
+                  "FirstCause": false,
+                  "LastCause": false
+                },
+                {
+                  "Number": 20,
+                  "Content": "  access_tier                       = \"Hot\"",
+                  "IsCause": true,
+                  "Annotation": "",
+                  "Truncated": false,
+                  "Highlighted": "  \u001b[38;5;245maccess_tier\u001b[0m                       = \u001b[38;5;37m\"Hot\"",
+                  "FirstCause": false,
+                  "LastCause": true
+                },
+                {
+                  "Number": 21,
+                  "Content": "",
+                  "IsCause": false,
+                  "Annotation": "",
+                  "Truncated": true,
+                  "FirstCause": false,
+                  "LastCause": false
+                }
+              ]
+            },
+            "Occurrences": [
+              {
+                "Resource": "module.storage",
+                "Filename": "main.tf",
+                "Location": {
+                  "StartLine": 119,
+                  "EndLine": 140
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

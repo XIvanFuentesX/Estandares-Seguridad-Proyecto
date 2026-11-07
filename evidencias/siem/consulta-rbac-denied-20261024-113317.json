@@ -1,0 +1,338 @@
+[
+  {
+    "id": 2605,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+  },
+  {
+    "id": 2656,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+  },
+  {
+    "id": 2657,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 2659,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 2662,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 2664,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 2054,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+  },
+  {
+    "id": 2090,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+  },
+  {
+    "id": 2091,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 2092,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 2097,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 2102,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 1530,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+  },
+  {
+    "id": 1581,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+  },
+  {
+    "id": 1590,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 1594,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 1599,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 1614,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 952,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+  },
+  {
+    "id": 986,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+  },
+  {
+    "id": 987,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 988,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 991,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 997,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 511,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+  },
+  {
+    "id": 569,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+  },
+  {
+    "id": 581,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 582,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 585,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 587,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 266,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+  },
+  {
+    "id": 314,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+  },
+  {
+    "id": 329,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 332,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 334,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 335,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 27,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"missing_token\"}"
+  },
+  {
+    "id": 47,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"docente.lab\"}"
+  },
+  {
+    "id": 54,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 55,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"estudiante.lab\"}"
+  },
+  {
+    "id": 56,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/docencia\", \"required_roles\": [\"administrador\", \"docente\"], \"subject\": \"administrativo.lab\"}"
+  },
+  {
+    "id": 57,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "api-1",
+    "category": "authorization",
+    "outcome": "denied",
+    "message": "{\"event\": \"authorization\", \"outcome\": \"denied\", \"path\": \"/administracion\", \"required_roles\": [\"administrador\"], \"subject\": \"administrativo.lab\"}"
+  }
+]

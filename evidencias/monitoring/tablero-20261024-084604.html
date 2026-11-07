@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Monitoreo SGSI UVCG</title>
+<style>body{font-family:system-ui;margin:2rem;background:#101820;color:#eef}
+table{border-collapse:collapse}td,th{border:1px solid #667;padding:.5rem}
+pre{white-space:pre-wrap;background:#172431;padding:1rem;max-height:40rem;overflow:auto}</style></head>
+<body><h1>Tablero ligero de eventos UVCG</h1>
+<p>Generado: 2026-10-24T08:46:04-06:00. Fuente: logs reales del laboratorio Docker.</p>
+<p>Esto es correlación demostrativa; no sustituye un SIEM empresarial.</p>
+<table><thead><tr><th>Regla</th><th>Coincidencias</th></tr></thead><tbody><tr><td>AUTH-DENIED</td><td>13</td></tr><tr><td>HTTP-DENIED</td><td>18</td></tr><tr><td>KEYCLOAK-LOGIN-ERROR</td><td>1</td></tr><tr><td>SERVICE-ERROR</td><td>2</td></tr></tbody></table>
+<h2>Últimos eventos saneados</h2><pre>proxy-1        | 2026-10-24T14:37:29.001425072Z 172.23.0.1 - - [24/Oct/2026:14:37:29 +0000] &quot;GET /cursos HTTP/1.1&quot; 401 36 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+api-1          | 2026-10-24T14:45:58.013730676Z {&quot;event&quot;: &quot;authorization&quot;, &quot;outcome&quot;: &quot;denied&quot;, &quot;path&quot;: &quot;/administracion&quot;, &quot;required_roles&quot;: [&quot;administrador&quot;], &quot;subject&quot;: &quot;administrativo.lab&quot;}
+proxy-1        | 2026-10-24T14:37:31.064799503Z 172.23.0.1 - - [24/Oct/2026:14:37:31 +0000] &quot;POST /cursos HTTP/1.1&quot; 403 146 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+api-1          | 2026-10-24T14:46:00.128097890Z {&quot;event&quot;: &quot;authentication&quot;, &quot;outcome&quot;: &quot;denied&quot;, &quot;path&quot;: &quot;/cursos&quot;, &quot;reason&quot;: &quot;DecodeError&quot;}
+proxy-1        | 2026-10-24T14:37:31.064807323Z 2026/10/24 14:37:31 [error] 23#23: *8 access forbidden by rule, client: 172.23.0.1, server: localhost, request: &quot;POST /cursos HTTP/1.1&quot;, host: &quot;localhost:8443&quot;
+identity-db-1  | 2026-10-24T14:31:08.887160338Z waiting for server to shut down....2026-10-24 14:31:08.887 UTC [41] LOG:  received fast shutdown request
+identity-db-1  | 2026-10-24T14:31:08.888237873Z 2026-10-24 14:31:08.888 UTC [41] LOG:  aborting any active transactions
+proxy-1        | 2026-10-24T14:37:33.136582884Z 172.23.0.1 - - [24/Oct/2026:14:37:33 +0000] &quot;PUT /cursos HTTP/1.1&quot; 403 146 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:31:08.889544966Z 2026-10-24 14:31:08.889 UTC [41] LOG:  background worker &quot;logical replication launcher&quot; (PID 47) exited with exit code 1
+proxy-1        | 2026-10-24T14:37:33.136588118Z 2026/10/24 14:37:33 [error] 25#25: *9 access forbidden by rule, client: 172.23.0.1, server: localhost, request: &quot;PUT /cursos HTTP/1.1&quot;, host: &quot;localhost:8443&quot;
+proxy-1        | 2026-10-24T14:37:35.194295481Z 2026/10/24 14:37:35 [error] 26#26: *10 access forbidden by rule, client: 172.23.0.1, server: localhost, request: &quot;PATCH /cursos HTTP/1.1&quot;, host: &quot;localhost:8443&quot;
+identity-db-1  | 2026-10-24T14:31:08.889607665Z 2026-10-24 14:31:08.889 UTC [42] LOG:  shutting down
+proxy-1        | 2026-10-24T14:37:35.194364234Z 172.23.0.1 - - [24/Oct/2026:14:37:35 +0000] &quot;PATCH /cursos HTTP/1.1&quot; 403 146 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:37:37.286678287Z 172.23.0.1 - - [24/Oct/2026:14:37:37 +0000] &quot;DELETE /cursos HTTP/1.1&quot; 403 146 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:37:37.286687844Z 2026/10/24 14:37:37 [error] 24#24: *12 access forbidden by rule, client: 172.23.0.1, server: localhost, request: &quot;DELETE /cursos HTTP/1.1&quot;, host: &quot;localhost:8443&quot;
+identity-db-1  | 2026-10-24T14:31:08.890199716Z 2026-10-24 14:31:08.890 UTC [42] LOG:  checkpoint starting: shutdown immediate
+proxy-1        | 2026-10-24T14:37:39.356474472Z 172.23.0.1 - - [24/Oct/2026:14:37:39 +0000] &quot;OPTIONS /cursos HTTP/1.1&quot; 403 146 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:31:08.923079568Z 2026-10-24 14:31:08.922 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.021 s, total=0.034 s; sync files=301, longest=0.002 s, average=0.001 s; distance=4283 kB, estimate=4283 kB; lsn=0/1925D68, redo lsn=0/1925D68
+identity-db-1  | 2026-10-24T14:31:08.927110124Z 2026-10-24 14:31:08.927 UTC [41] LOG:  database system is shut down
+identity-db-1  | 2026-10-24T14:31:08.987345766Z  done
+identity-db-1  | 2026-10-24T14:31:08.987366767Z server stopped
+proxy-1        | 2026-10-24T14:37:39.356478100Z 2026/10/24 14:37:39 [error] 27#27: *13 access forbidden by rule, client: 172.23.0.1, server: localhost, request: &quot;OPTIONS /cursos HTTP/1.1&quot;, host: &quot;localhost:8443&quot;
+proxy-1        | 2026-10-24T14:37:41.660458487Z 172.23.0.1 - - [24/Oct/2026:14:37:41 +0000] &quot;GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1&quot; 200 6649 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:37:44.030936676Z 172.23.0.1 - - [24/Oct/2026:14:37:44 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:31:08.988021530Z 
+proxy-1        | 2026-10-24T14:37:59.869189983Z 172.23.0.1 - - [24/Oct/2026:14:37:59 +0000] &quot;GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1&quot; 200 6649 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:31:08.988028632Z PostgreSQL init process complete; ready for start up.
+identity-db-1  | 2026-10-24T14:31:08.988029973Z 
+identity-db-1  | 2026-10-24T14:31:09.002156119Z 2026-10-24 14:31:09.001 UTC [1] LOG:  starting PostgreSQL 16.14 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+identity-db-1  | 2026-10-24T14:31:09.002171236Z 2026-10-24 14:31:09.002 UTC [1] LOG:  listening on IPv4 address &quot;0.0.0.0&quot;, port 5432
+proxy-1        | 2026-10-24T14:38:01.965681244Z 172.23.0.1 - - [24/Oct/2026:14:38:01 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:38:04.051400085Z 172.23.0.1 - - [24/Oct/2026:14:38:04 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:38:22.822062770Z 172.23.0.1 - - [24/Oct/2026:14:38:22 +0000] &quot;GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1&quot; 200 6649 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:38:24.943159376Z 172.23.0.1 - - [24/Oct/2026:14:38:24 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:38:27.056963279Z 172.23.0.1 - - [24/Oct/2026:14:38:27 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:40:28.159447163Z 172.23.0.1 - - [24/Oct/2026:14:40:28 +0000] &quot;GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1&quot; 200 6649 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:31:09.002172795Z 2026-10-24 14:31:09.002 UTC [1] LOG:  listening on IPv6 address &quot;::&quot;, port 5432
+proxy-1        | 2026-10-24T14:40:30.252717198Z 172.23.0.1 - - [24/Oct/2026:14:40:30 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:40:32.318049743Z 172.23.0.1 - - [24/Oct/2026:14:40:32 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:31:09.003532067Z 2026-10-24 14:31:09.003 UTC [1] LOG:  listening on Unix socket &quot;/var/run/postgresql/.s.PGSQL.5432&quot;
+identity-db-1  | 2026-10-24T14:31:09.005582832Z 2026-10-24 14:31:09.005 UTC [57] LOG:  database system was shut down at 2026-10-24 14:31:08 UTC
+identity-db-1  | 2026-10-24T14:31:09.008625508Z 2026-10-24 14:31:09.008 UTC [1] LOG:  database system is ready to accept connections
+proxy-1        | 2026-10-24T14:41:07.352297185Z 172.23.0.1 - - [24/Oct/2026:14:41:07 +0000] &quot;GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1&quot; 200 6649 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:32:20.295513489Z 2026-10-24 14:32:20.295 UTC [162] ERROR:  relation &quot;migration_model&quot; does not exist at character 25
+identity-db-1  | 2026-10-24T14:32:20.295533670Z 2026-10-24 14:32:20.295 UTC [162] STATEMENT:  SELECT ID, VERSION FROM MIGRATION_MODEL ORDER BY UPDATE_TIME DESC
+proxy-1        | 2026-10-24T14:41:09.434546600Z 172.23.0.1 - - [24/Oct/2026:14:41:09 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:11.606351866Z 172.23.0.1 - - [24/Oct/2026:14:41:11 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2029 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:13.709578996Z 172.23.0.1 - - [24/Oct/2026:14:41:13 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2013 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:15.827276038Z 172.23.0.1 - - [24/Oct/2026:14:41:15 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2038 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:17.947506257Z 172.23.0.1 - - [24/Oct/2026:14:41:17 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2065 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:32:20.915562332Z 2026-10-24 14:32:20.915 UTC [163] ERROR:  relation &quot;public.databasechangeloglock&quot; does not exist at character 22
+proxy-1        | 2026-10-24T14:41:20.062090552Z 172.23.0.1 - - [24/Oct/2026:14:41:20 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:32:20.915584289Z 2026-10-24 14:32:20.915 UTC [163] STATEMENT:  SELECT COUNT(*) FROM public.databasechangeloglock
+proxy-1        | 2026-10-24T14:41:22.121126861Z 172.23.0.1 - - [24/Oct/2026:14:41:22 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 51 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:36:09.080068994Z 2026-10-24 14:36:09.079 UTC [55] LOG:  checkpoint starting: time
+identity-db-1  | 2026-10-24T14:37:15.866289734Z 2026-10-24 14:37:15.866 UTC [55] LOG:  checkpoint complete: wrote 668 buffers (4.1%); 1 WAL file(s) added, 0 removed, 0 recycled; write=66.728 s, sync=0.041 s, total=66.787 s; sync files=695, longest=0.002 s, average=0.001 s; distance=4981 kB, estimate=4981 kB; lsn=0/1E04880, redo lsn=0/1E03480
+identity-db-1  | 2026-10-24T14:41:09.945711281Z 2026-10-24 14:41:09.945 UTC [55] LOG:  checkpoint starting: time
+proxy-1        | 2026-10-24T14:41:24.195465662Z 172.23.0.1 - - [24/Oct/2026:14:41:24 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+identity-db-1  | 2026-10-24T14:41:15.287345123Z 2026-10-24 14:41:15.287 UTC [55] LOG:  checkpoint complete: wrote 54 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.323 s, sync=0.012 s, total=5.342 s; sync files=38, longest=0.003 s, average=0.001 s; distance=54 kB, estimate=4489 kB; lsn=0/1E16D28, redo lsn=0/1E11028
+proxy-1        | 2026-10-24T14:41:26.298281637Z 172.23.0.1 - - [24/Oct/2026:14:41:26 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 47 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:28.372818616Z 172.23.0.1 - - [24/Oct/2026:14:41:28 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:30.426098055Z 172.23.0.1 - - [24/Oct/2026:14:41:30 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 53 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:32.493684662Z 172.23.0.1 - - [24/Oct/2026:14:41:32 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:34.564874291Z 172.23.0.1 - - [24/Oct/2026:14:41:34 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 61 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:36.646721177Z 172.23.0.1 - - [24/Oct/2026:14:41:36 +0000] &quot;GET /docencia HTTP/1.1&quot; 200 39 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:38.703357090Z 172.23.0.1 - - [24/Oct/2026:14:41:38 +0000] &quot;GET /administracion HTTP/1.1&quot; 200 45 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:40.764575265Z 172.23.0.1 - - [24/Oct/2026:14:41:40 +0000] &quot;GET /docencia HTTP/1.1&quot; 200 39 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:42.847652508Z 172.23.0.1 - - [24/Oct/2026:14:41:42 +0000] &quot;GET /administracion HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:44.910160606Z 172.23.0.1 - - [24/Oct/2026:14:41:44 +0000] &quot;GET /docencia HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:47.004812212Z 172.23.0.1 - - [24/Oct/2026:14:41:47 +0000] &quot;GET /administracion HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:49.074279567Z 172.23.0.1 - - [24/Oct/2026:14:41:49 +0000] &quot;GET /docencia HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:51.153990302Z 172.23.0.1 - - [24/Oct/2026:14:41:51 +0000] &quot;GET /administracion HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:53.201373175Z 172.23.0.1 - - [24/Oct/2026:14:41:53 +0000] &quot;GET /cursos HTTP/1.1&quot; 401 26 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:55.311658289Z 172.23.0.1 - - [24/Oct/2026:14:41:55 +0000] &quot;POST /auth/realms/master/protocol/openid-connect/token HTTP/1.1&quot; 200 1561 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:41:57.364966433Z 172.23.0.1 - - [24/Oct/2026:14:41:57 +0000] &quot;GET /auth/admin/realms/uvcg/events?max=100 HTTP/1.1&quot; 200 5569 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:14.265655999Z 172.23.0.1 - - [24/Oct/2026:14:45:14 +0000] &quot;GET /auth/realms/uvcg/.well-known/openid-configuration HTTP/1.1&quot; 200 6649 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:16.443826353Z 172.23.0.1 - - [24/Oct/2026:14:45:16 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 400 72 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:18.637405217Z 172.23.0.1 - - [24/Oct/2026:14:45:18 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2029 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:20.762970440Z 172.23.0.1 - - [24/Oct/2026:14:45:20 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2013 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:22.844352384Z 172.23.0.1 - - [24/Oct/2026:14:45:22 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2038 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:24.961922316Z 172.23.0.1 - - [24/Oct/2026:14:45:24 +0000] &quot;POST /auth/realms/uvcg/protocol/openid-connect/token HTTP/1.1&quot; 200 2065 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:27.030876988Z 172.23.0.1 - - [24/Oct/2026:14:45:27 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:29.078764822Z 172.23.0.1 - - [24/Oct/2026:14:45:29 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 51 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:31.109245214Z 172.23.0.1 - - [24/Oct/2026:14:45:31 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:33.187471926Z 172.23.0.1 - - [24/Oct/2026:14:45:33 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 47 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:35.284261240Z 172.23.0.1 - - [24/Oct/2026:14:45:35 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:37.328183965Z 172.23.0.1 - - [24/Oct/2026:14:45:37 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 53 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:39.392637697Z 172.23.0.1 - - [24/Oct/2026:14:45:39 +0000] &quot;GET /cursos HTTP/1.1&quot; 200 182 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:41.465407917Z 172.23.0.1 - - [24/Oct/2026:14:45:41 +0000] &quot;GET /perfil HTTP/1.1&quot; 200 61 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:43.516110435Z 172.23.0.1 - - [24/Oct/2026:14:45:43 +0000] &quot;GET /docencia HTTP/1.1&quot; 200 39 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:45.592049831Z 172.23.0.1 - - [24/Oct/2026:14:45:45 +0000] &quot;GET /administracion HTTP/1.1&quot; 200 45 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:47.674280980Z 172.23.0.1 - - [24/Oct/2026:14:45:47 +0000] &quot;GET /docencia HTTP/1.1&quot; 200 39 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:49.744050854Z 172.23.0.1 - - [24/Oct/2026:14:45:49 +0000] &quot;GET /administracion HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:51.785767819Z 172.23.0.1 - - [24/Oct/2026:14:45:51 +0000] &quot;GET /docencia HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:53.865955170Z 172.23.0.1 - - [24/Oct/2026:14:45:53 +0000] &quot;GET /administracion HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:55.931052167Z 172.23.0.1 - - [24/Oct/2026:14:45:55 +0000] &quot;GET /docencia HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:45:58.014140716Z 172.23.0.1 - - [24/Oct/2026:14:45:58 +0000] &quot;GET /administracion HTTP/1.1&quot; 403 37 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:46:00.128598618Z 172.23.0.1 - - [24/Oct/2026:14:46:00 +0000] &quot;GET /cursos HTTP/1.1&quot; 401 26 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:46:02.237176401Z 172.23.0.1 - - [24/Oct/2026:14:46:02 +0000] &quot;POST /auth/realms/master/protocol/openid-connect/token HTTP/1.1&quot; 200 1561 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;
+proxy-1        | 2026-10-24T14:46:04.325317238Z 172.23.0.1 - - [24/Oct/2026:14:46:04 +0000] &quot;GET /auth/admin/realms/uvcg/events?max=100 HTTP/1.1&quot; 200 8399 &quot;-&quot; &quot;Python-urllib/3.10&quot; &quot;-&quot;</pre></body></html>

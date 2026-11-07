@@ -1,0 +1,11 @@
+﻿{
+    "fecha":  "2026-10-24",
+    "hora_inicio":  "10:29:53",
+    "origen":  "prueba-concurrencia-A",
+    "usuario":  "Ivan Fuentes",
+    "duracion_s":  18.8,
+    "resultado":  "exitoso",
+    "detalle":  "OK: restore_dual=success dentro_rto=2/2 brechas_rpo=2 evidencia=D:\\sgsi_laboratorio\\evidencias\\recovery\\recuperacion-periodica-20261024-102953.json",
+    "evidencia":  "evidencias/recovery/recuperacion-periodica-20261024-102953.json",
+    "hora_fin":  "10:30:12"
+}

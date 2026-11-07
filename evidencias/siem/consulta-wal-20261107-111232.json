@@ -1,0 +1,274 @@
+[
+  {
+    "id": 3708,
+    "event_time": "2026-11-07T17:12:30+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-11-07T17:12:30Z target=wal-academic-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 3709,
+    "event_time": "2026-11-07T17:12:30+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-11-07T17:12:30Z target=wal-identity-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 3159,
+    "event_time": "2026-10-24T17:33:16+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:33:16Z target=wal-identity-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 3158,
+    "event_time": "2026-10-24T17:33:15+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:33:15Z target=wal-academic-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 3157,
+    "event_time": "2026-10-24T17:16:44+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:16:44Z target=wal-identity result=success pitr_rto_s=2.1 rpo_obs_s=55.7"
+  },
+  {
+    "id": 3156,
+    "event_time": "2026-10-24T17:16:40+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:16:40Z target=wal-identity-pitr-lab-fallo-inyectado result=failure issues=archive_command_failed(1)"
+  },
+  {
+    "id": 3154,
+    "event_time": "2026-10-24T17:16:39+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:16:39Z target=wal-identity-pitr-lab result=success issues=none"
+  },
+  {
+    "id": 3155,
+    "event_time": "2026-10-24T17:16:39+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "warning",
+    "message": "2026-10-24T17:16:39Z target=wal-identity-pitr-lab-umbral-prueba result=warning issues=wal_growth_over_1MB"
+  },
+  {
+    "id": 3153,
+    "event_time": "2026-10-24T17:15:33+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:15:33Z target=wal-academic result=success pitr_rto_s=2.1 rpo_obs_s=55.6"
+  },
+  {
+    "id": 3152,
+    "event_time": "2026-10-24T17:15:29+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:15:29Z target=wal-academic-pitr-lab-fallo-inyectado result=failure issues=archive_command_failed(1)"
+  },
+  {
+    "id": 3150,
+    "event_time": "2026-10-24T17:15:28+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:15:28Z target=wal-academic-pitr-lab result=success issues=none"
+  },
+  {
+    "id": 3151,
+    "event_time": "2026-10-24T17:15:28+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "warning",
+    "message": "2026-10-24T17:15:28Z target=wal-academic-pitr-lab-umbral-prueba result=warning issues=wal_growth_over_1MB"
+  },
+  {
+    "id": 2441,
+    "event_time": "2026-10-24T17:13:57+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:13:57Z target=wal-academic-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 2442,
+    "event_time": "2026-10-24T17:13:57+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:13:57Z target=wal-identity-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 1929,
+    "event_time": "2026-10-24T17:06:16+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:06:16Z target=wal-academic-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 1930,
+    "event_time": "2026-10-24T17:06:16+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:06:16Z target=wal-identity-principal result=failure issues=archive_mode_off"
+  },
+  {
+    "id": 1928,
+    "event_time": "2026-10-24T17:02:01+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:02:01Z target=wal-identity result=success pitr_rto_s=2.8 rpo_obs_s=57.8"
+  },
+  {
+    "id": 1927,
+    "event_time": "2026-10-24T17:01:57+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:01:57Z target=wal-identity-pitr-lab-fallo-inyectado result=failure issues=archive_command_failed(1)"
+  },
+  {
+    "id": 1926,
+    "event_time": "2026-10-24T17:01:56+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "warning",
+    "message": "2026-10-24T17:01:56Z target=wal-identity-pitr-lab-umbral-prueba result=warning issues=wal_growth_over_1MB"
+  },
+  {
+    "id": 1925,
+    "event_time": "2026-10-24T17:01:55+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:01:55Z target=wal-identity-pitr-lab result=success issues=none"
+  },
+  {
+    "id": 1924,
+    "event_time": "2026-10-24T17:00:45+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:00:45Z target=wal-academic result=success pitr_rto_s=2.5 rpo_obs_s=57.6"
+  },
+  {
+    "id": 1923,
+    "event_time": "2026-10-24T17:00:42+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T17:00:42Z target=wal-academic-pitr-lab-fallo-inyectado result=failure issues=archive_command_failed(1)"
+  },
+  {
+    "id": 1921,
+    "event_time": "2026-10-24T17:00:40+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T17:00:40Z target=wal-academic-pitr-lab result=success issues=none"
+  },
+  {
+    "id": 1922,
+    "event_time": "2026-10-24T17:00:40+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "warning",
+    "message": "2026-10-24T17:00:40Z target=wal-academic-pitr-lab-umbral-prueba result=warning issues=wal_growth_over_1MB"
+  },
+  {
+    "id": 1920,
+    "event_time": "2026-10-24T16:59:23+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T16:59:23Z target=wal-identity result=failure pitr_rto_s=2.2 rpo_obs_s=55.5"
+  },
+  {
+    "id": 1919,
+    "event_time": "2026-10-24T16:59:19+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T16:59:19Z target=wal-identity-pitr-lab-fallo-inyectado result=success issues=none"
+  },
+  {
+    "id": 1918,
+    "event_time": "2026-10-24T16:58:17+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "warning",
+    "message": "2026-10-24T16:58:17Z target=wal-identity-pitr-lab-umbral-prueba result=warning issues=wal_growth_over_1MB"
+  },
+  {
+    "id": 1917,
+    "event_time": "2026-10-24T16:58:16+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T16:58:16Z target=wal-identity-pitr-lab result=success issues=none"
+  },
+  {
+    "id": 1916,
+    "event_time": "2026-10-24T16:57:09+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "failure",
+    "message": "2026-10-24T16:57:09Z target=wal-academic result=failure pitr_rto_s=2.1 rpo_obs_s=55.5"
+  },
+  {
+    "id": 1915,
+    "event_time": "2026-10-24T16:57:06+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T16:57:06Z target=wal-academic-pitr-lab-fallo-inyectado result=success issues=none"
+  },
+  {
+    "id": 1913,
+    "event_time": "2026-10-24T16:56:03+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T16:56:03Z target=wal-academic-pitr-lab result=success issues=none"
+  },
+  {
+    "id": 1914,
+    "event_time": "2026-10-24T16:56:03+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "warning",
+    "message": "2026-10-24T16:56:03Z target=wal-academic-pitr-lab-umbral-prueba result=warning issues=wal_growth_over_1MB"
+  },
+  {
+    "id": 1912,
+    "event_time": "2026-10-24T16:54:04+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T16:54:04Z target=wal-identity result=success pitr_rto_s=2.1 rpo_obs_s=55.7"
+  },
+  {
+    "id": 1911,
+    "event_time": "2026-10-24T16:52:54+00:00",
+    "source": "backup-scheduler",
+    "category": "wal_archiving",
+    "outcome": "success",
+    "message": "2026-10-24T16:52:54Z target=wal-academic result=success pitr_rto_s=2.1 rpo_obs_s=55.6"
+  }
+]

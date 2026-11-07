@@ -1,0 +1,17 @@
+{
+  "descripcion": "Prueba de la compuerta de costo con planes SINTÉTICOS (no son planes reales de AWS)",
+  "resultados": {
+    "conforme": {
+      "exit": 0,
+      "ultima_linea": "APROBADO: 11 recursos, todos en la lista de gratuidad verificada"
+    },
+    "con_nat_gateway": {
+      "exit": 1,
+      "ultima_linea": "RECHAZADO: module.x.aws_nat_gateway.n (aws_nat_gateway, ['create'])"
+    }
+  },
+  "esperado": {
+    "conforme": 0,
+    "con_nat_gateway": 1
+  }
+}

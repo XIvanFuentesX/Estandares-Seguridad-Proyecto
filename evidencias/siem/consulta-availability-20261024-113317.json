@@ -1,0 +1,802 @@
+[
+  {
+    "id": 3406,
+    "event_time": "2026-10-24T17:33:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:33:08Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3407,
+    "event_time": "2026-10-24T17:33:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:33:08Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3408,
+    "event_time": "2026-10-24T17:33:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:33:08Z target=avail-keycloak result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3403,
+    "event_time": "2026-10-24T17:32:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:53Z target=avail-nginx result=success latency_ms=13 detail=200"
+  },
+  {
+    "id": 3404,
+    "event_time": "2026-10-24T17:32:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:53Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3405,
+    "event_time": "2026-10-24T17:32:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:53Z target=avail-keycloak result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3400,
+    "event_time": "2026-10-24T17:32:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:38Z target=avail-nginx result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3401,
+    "event_time": "2026-10-24T17:32:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:38Z target=avail-api result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3402,
+    "event_time": "2026-10-24T17:32:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:38Z target=avail-keycloak result=success latency_ms=17 detail=200"
+  },
+  {
+    "id": 3397,
+    "event_time": "2026-10-24T17:32:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:23Z target=avail-nginx result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3398,
+    "event_time": "2026-10-24T17:32:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:23Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3399,
+    "event_time": "2026-10-24T17:32:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:23Z target=avail-keycloak result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3394,
+    "event_time": "2026-10-24T17:32:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:08Z target=avail-nginx result=success latency_ms=10 detail=200"
+  },
+  {
+    "id": 3395,
+    "event_time": "2026-10-24T17:32:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:08Z target=avail-api result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3396,
+    "event_time": "2026-10-24T17:32:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:32:08Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3391,
+    "event_time": "2026-10-24T17:31:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:53Z target=avail-nginx result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3392,
+    "event_time": "2026-10-24T17:31:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:53Z target=avail-api result=success latency_ms=16 detail=200"
+  },
+  {
+    "id": 3393,
+    "event_time": "2026-10-24T17:31:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:53Z target=avail-keycloak result=success latency_ms=26 detail=200"
+  },
+  {
+    "id": 3388,
+    "event_time": "2026-10-24T17:31:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:38Z target=avail-nginx result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3389,
+    "event_time": "2026-10-24T17:31:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:38Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3390,
+    "event_time": "2026-10-24T17:31:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:38Z target=avail-keycloak result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3385,
+    "event_time": "2026-10-24T17:31:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:23Z target=avail-nginx result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3386,
+    "event_time": "2026-10-24T17:31:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:23Z target=avail-api result=success latency_ms=13 detail=200"
+  },
+  {
+    "id": 3387,
+    "event_time": "2026-10-24T17:31:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:23Z target=avail-keycloak result=success latency_ms=30 detail=200"
+  },
+  {
+    "id": 3382,
+    "event_time": "2026-10-24T17:31:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:08Z target=avail-nginx result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3383,
+    "event_time": "2026-10-24T17:31:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:08Z target=avail-api result=success latency_ms=13 detail=200"
+  },
+  {
+    "id": 3384,
+    "event_time": "2026-10-24T17:31:08+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:31:08Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3379,
+    "event_time": "2026-10-24T17:30:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:53Z target=avail-nginx result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3380,
+    "event_time": "2026-10-24T17:30:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:53Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3381,
+    "event_time": "2026-10-24T17:30:53+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:53Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3376,
+    "event_time": "2026-10-24T17:30:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:38Z target=avail-nginx result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3377,
+    "event_time": "2026-10-24T17:30:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:38Z target=avail-api result=success latency_ms=16 detail=200"
+  },
+  {
+    "id": 3378,
+    "event_time": "2026-10-24T17:30:38+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:38Z target=avail-keycloak result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3374,
+    "event_time": "2026-10-24T17:30:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:23Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3375,
+    "event_time": "2026-10-24T17:30:23+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:23Z target=avail-keycloak result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3373,
+    "event_time": "2026-10-24T17:30:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:22Z target=avail-nginx result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3370,
+    "event_time": "2026-10-24T17:30:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:07Z target=avail-nginx result=success latency_ms=13 detail=200"
+  },
+  {
+    "id": 3371,
+    "event_time": "2026-10-24T17:30:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:07Z target=avail-api result=success latency_ms=16 detail=200"
+  },
+  {
+    "id": 3372,
+    "event_time": "2026-10-24T17:30:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:30:07Z target=avail-keycloak result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3367,
+    "event_time": "2026-10-24T17:29:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:52Z target=avail-nginx result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3368,
+    "event_time": "2026-10-24T17:29:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:52Z target=avail-api result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3369,
+    "event_time": "2026-10-24T17:29:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:52Z target=avail-keycloak result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3364,
+    "event_time": "2026-10-24T17:29:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:37Z target=avail-nginx result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3365,
+    "event_time": "2026-10-24T17:29:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:37Z target=avail-api result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3366,
+    "event_time": "2026-10-24T17:29:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:37Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3361,
+    "event_time": "2026-10-24T17:29:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:22Z target=avail-nginx result=success latency_ms=13 detail=200"
+  },
+  {
+    "id": 3362,
+    "event_time": "2026-10-24T17:29:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:22Z target=avail-api result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3363,
+    "event_time": "2026-10-24T17:29:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:22Z target=avail-keycloak result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3358,
+    "event_time": "2026-10-24T17:29:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:07Z target=avail-nginx result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3359,
+    "event_time": "2026-10-24T17:29:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:07Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3360,
+    "event_time": "2026-10-24T17:29:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:29:07Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3355,
+    "event_time": "2026-10-24T17:28:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:52Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3356,
+    "event_time": "2026-10-24T17:28:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:52Z target=avail-api result=success latency_ms=13 detail=200"
+  },
+  {
+    "id": 3357,
+    "event_time": "2026-10-24T17:28:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:52Z target=avail-keycloak result=success latency_ms=18 detail=200"
+  },
+  {
+    "id": 3352,
+    "event_time": "2026-10-24T17:28:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:37Z target=avail-nginx result=success latency_ms=9 detail=200"
+  },
+  {
+    "id": 3353,
+    "event_time": "2026-10-24T17:28:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:37Z target=avail-api result=success latency_ms=26 detail=200"
+  },
+  {
+    "id": 3354,
+    "event_time": "2026-10-24T17:28:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:37Z target=avail-keycloak result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3349,
+    "event_time": "2026-10-24T17:28:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:22Z target=avail-nginx result=success latency_ms=19 detail=200"
+  },
+  {
+    "id": 3350,
+    "event_time": "2026-10-24T17:28:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:22Z target=avail-api result=success latency_ms=17 detail=200"
+  },
+  {
+    "id": 3351,
+    "event_time": "2026-10-24T17:28:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:22Z target=avail-keycloak result=success latency_ms=9 detail=200"
+  },
+  {
+    "id": 3346,
+    "event_time": "2026-10-24T17:28:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:07Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3347,
+    "event_time": "2026-10-24T17:28:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:07Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3348,
+    "event_time": "2026-10-24T17:28:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:28:07Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3343,
+    "event_time": "2026-10-24T17:27:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:52Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3344,
+    "event_time": "2026-10-24T17:27:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:52Z target=avail-api result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3345,
+    "event_time": "2026-10-24T17:27:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:52Z target=avail-keycloak result=success latency_ms=9 detail=200"
+  },
+  {
+    "id": 3340,
+    "event_time": "2026-10-24T17:27:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:37Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3341,
+    "event_time": "2026-10-24T17:27:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:37Z target=avail-api result=success latency_ms=18 detail=200"
+  },
+  {
+    "id": 3342,
+    "event_time": "2026-10-24T17:27:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:37Z target=avail-keycloak result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3337,
+    "event_time": "2026-10-24T17:27:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:22Z target=avail-nginx result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3338,
+    "event_time": "2026-10-24T17:27:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:22Z target=avail-api result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3339,
+    "event_time": "2026-10-24T17:27:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:22Z target=avail-keycloak result=success latency_ms=16 detail=200"
+  },
+  {
+    "id": 3334,
+    "event_time": "2026-10-24T17:27:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:07Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3335,
+    "event_time": "2026-10-24T17:27:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:07Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3336,
+    "event_time": "2026-10-24T17:27:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:27:07Z target=avail-keycloak result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3331,
+    "event_time": "2026-10-24T17:26:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:52Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3332,
+    "event_time": "2026-10-24T17:26:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:52Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3333,
+    "event_time": "2026-10-24T17:26:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:52Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3328,
+    "event_time": "2026-10-24T17:26:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:37Z target=avail-nginx result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3329,
+    "event_time": "2026-10-24T17:26:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:37Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3330,
+    "event_time": "2026-10-24T17:26:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:37Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3325,
+    "event_time": "2026-10-24T17:26:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:22Z target=avail-nginx result=success latency_ms=6 detail=200"
+  },
+  {
+    "id": 3326,
+    "event_time": "2026-10-24T17:26:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:22Z target=avail-api result=success latency_ms=13 detail=200"
+  },
+  {
+    "id": 3327,
+    "event_time": "2026-10-24T17:26:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:22Z target=avail-keycloak result=success latency_ms=9 detail=200"
+  },
+  {
+    "id": 3322,
+    "event_time": "2026-10-24T17:26:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:07Z target=avail-nginx result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3323,
+    "event_time": "2026-10-24T17:26:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:07Z target=avail-api result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3324,
+    "event_time": "2026-10-24T17:26:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:26:07Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3319,
+    "event_time": "2026-10-24T17:25:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:52Z target=avail-nginx result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3320,
+    "event_time": "2026-10-24T17:25:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:52Z target=avail-api result=success latency_ms=14 detail=200"
+  },
+  {
+    "id": 3321,
+    "event_time": "2026-10-24T17:25:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:52Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3316,
+    "event_time": "2026-10-24T17:25:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:37Z target=avail-nginx result=success latency_ms=11 detail=200"
+  },
+  {
+    "id": 3317,
+    "event_time": "2026-10-24T17:25:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:37Z target=avail-api result=success latency_ms=18 detail=200"
+  },
+  {
+    "id": 3318,
+    "event_time": "2026-10-24T17:25:37+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:37Z target=avail-keycloak result=success latency_ms=8 detail=200"
+  },
+  {
+    "id": 3313,
+    "event_time": "2026-10-24T17:25:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:22Z target=avail-nginx result=success latency_ms=10 detail=200"
+  },
+  {
+    "id": 3314,
+    "event_time": "2026-10-24T17:25:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:22Z target=avail-api result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3315,
+    "event_time": "2026-10-24T17:25:22+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:22Z target=avail-keycloak result=success latency_ms=16 detail=200"
+  },
+  {
+    "id": 3310,
+    "event_time": "2026-10-24T17:25:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:07Z target=avail-nginx result=success latency_ms=12 detail=200"
+  },
+  {
+    "id": 3311,
+    "event_time": "2026-10-24T17:25:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:07Z target=avail-api result=success latency_ms=10 detail=200"
+  },
+  {
+    "id": 3312,
+    "event_time": "2026-10-24T17:25:07+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:25:07Z target=avail-keycloak result=success latency_ms=7 detail=200"
+  },
+  {
+    "id": 3307,
+    "event_time": "2026-10-24T17:24:52+00:00",
+    "source": "disponibilidad",
+    "category": "availability",
+    "outcome": "success",
+    "message": "2026-10-24T17:24:52Z target=avail-nginx result=success latency_ms=7 detail=200"
+  }
+]

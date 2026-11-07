@@ -1,0 +1,7 @@
+.env
+*.log
+backups/
+tls/*.key
+tls/*.crt
+identity/export/
+rollback/volumes/

@@ -1,0 +1,67 @@
+{
+  "bandit_findings": 75,
+  "python_dependency_vulnerabilities": [],
+  "trivy_misconfigurations": 5,
+  "trivy_secret_findings": 0,
+  "image_reports": {
+    "trivy-python-image.json": {
+      "present": true,
+      "high": 0,
+      "critical": 0,
+      "fixable": 0,
+      "scope": [
+        "lang-pkgs",
+        "os-pkgs"
+      ]
+    },
+    "trivy-nginx-image.json": {
+      "present": true,
+      "high": 0,
+      "critical": 0,
+      "fixable": 0,
+      "scope": [
+        "os-pkgs"
+      ]
+    },
+    "trivy-postgres-image.json": {
+      "present": true,
+      "high": 25,
+      "critical": 1,
+      "fixable": 26,
+      "scope": [
+        "lang-pkgs",
+        "os-pkgs"
+      ]
+    },
+    "trivy-postgres-hardened-image.json": {
+      "present": true,
+      "high": 0,
+      "critical": 0,
+      "fixable": 0,
+      "scope": [
+        "os-pkgs"
+      ]
+    },
+    "trivy-keycloak-image.json": {
+      "present": true,
+      "high": 2,
+      "critical": 0,
+      "fixable": 0,
+      "scope": [
+        "lang-pkgs",
+        "os-pkgs"
+      ]
+    },
+    "trivy-keycloak-full-image.json": {
+      "present": true,
+      "high": 2,
+      "critical": 0,
+      "fixable": 0,
+      "scope": [
+        "lang-pkgs",
+        "os-pkgs"
+      ]
+    }
+  },
+  "notes": "Los valores de secretos y coincidencias sensibles no se copian a este resumen."
+}

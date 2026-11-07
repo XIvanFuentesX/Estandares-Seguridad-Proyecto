@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "status": "Propuesta académica pendiente de validación; no se ha verificado su cumplimiento institucional ni regulatorio.",
+  "mode": "dry-run",
+  "backups": {
+    "path": "local/backups",
+    "targets": ["academic", "identity"],
+    "daily_days": 7,
+    "weekly_weeks": 4,
+    "monthly_months": 3,
+    "always_keep_latest_per_target": 1
+  },
+  "protected_paths": [
+    "local/rollback",
+    "evidencias"
+  ],
+  "evidence_retention": "Conservar durante el desarrollo y la evaluación del proyecto."
+}

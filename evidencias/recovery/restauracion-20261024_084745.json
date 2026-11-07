@@ -1,0 +1,11 @@
+﻿{
+    "timestamp":  "2026-10-24T08:47:46.6145037-06:00",
+    "source_backup":  "universidad-20261024-084707.dump",
+    "sha256_verified":  true,
+    "isolated_service":  "restore-db",
+    "isolated_database":  "restore_20261024_084745",
+    "restored_course_count":  3,
+    "elapsed_seconds":  1.399,
+    "primary_database_modified":  false,
+    "result":  "success"
+}

@@ -1,0 +1,12 @@
+﻿{
+    "timestamp":  "2026-10-24T10:00:48.6742902-06:00",
+    "scenario":  "iam_keycloak_interruption",
+    "service":  "keycloak",
+    "baseline_http_status":  200,
+    "interruption_http_status":  "timeout_5s",
+    "recovery_http_status":  200,
+    "recovery_seconds":  70.822,
+    "identity_user_count":  5,
+    "scope_warning":  "Medición de laboratorio; no constituye garantía institucional.",
+    "result":  "success"
+}

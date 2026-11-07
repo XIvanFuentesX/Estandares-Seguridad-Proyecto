@@ -1,0 +1,54 @@
+[1 - Suricata-Main] 2026-10-24 14:52:09 Notice: suricata: This is Suricata version 7.0.17 RELEASE running in USER mode
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: cpu: CPUs/cores online: 20
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: suricata: Setting engine mode to IDS mode by default
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: exception-policy: master exception-policy set to: auto
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: logopenfile: fast output device (regular) initialized: fast.log
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: logopenfile: stats output device (regular) initialized: stats.log
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: detect: 1 rule files processed. 2 rules successfully loaded, 0 rules failed, 0
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: detect: 2 signatures processed. 0 are IP-only rules, 0 are inspecting packet payload, 1 inspect application layer, 0 are decoder event only
+[1 - Suricata-Main] 2026-10-24 14:52:09 Warning: detect: rule 1000002: SYN-only to port(s) 5432:5432 w/o direction specified, disabling for toclient direction
+[16 - RX#01] 2026-10-24 14:52:09 Info: pcap: Starting file run for /pcap/trafico-controlado.pcap
+[1 - Suricata-Main] 2026-10-24 14:52:09 Notice: threads: Threads created -> RX: 1 W: 20 FM: 1 FR: 1   Engine started.
+[16 - RX#01] 2026-10-24 14:52:09 Info: pcap: pcap file /pcap/trafico-controlado.pcap end of file reached (pcap err code 0)
+[1 - Suricata-Main] 2026-10-24 14:52:09 Notice: suricata: Signal Received.  Stopping engine.
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: suricata: time elapsed 0.157s
+[16 - RX#01] 2026-10-24 14:52:09 Notice: pcap: read 1 file, 4 packets, 294 bytes
+[1 - Suricata-Main] 2026-10-24 14:52:09 Info: counters: Alerts: 0
+[1 - Suricata-Main] 2026-10-24 14:52:25 Notice: suricata: This is Suricata version 7.0.17 RELEASE running in USER mode
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: cpu: CPUs/cores online: 20
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: suricata: Setting engine mode to IDS mode by default
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: exception-policy: master exception-policy set to: auto
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: logopenfile: fast output device (regular) initialized: fast.log
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: logopenfile: stats output device (regular) initialized: stats.log
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: detect: 1 rule files processed. 2 rules successfully loaded, 0 rules failed, 0
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: detect: 2 signatures processed. 0 are IP-only rules, 0 are inspecting packet payload, 1 inspect application layer, 0 are decoder event only
+[1 - Suricata-Main] 2026-10-24 14:52:25 Warning: detect: rule 1000002: SYN-only to port(s) 5432:5432 w/o direction specified, disabling for toclient direction
+[16 - RX#01] 2026-10-24 14:52:25 Info: pcap: Starting file run for /pcap/trafico-controlado.pcap
+[1 - Suricata-Main] 2026-10-24 14:52:25 Notice: threads: Threads created -> RX: 1 W: 20 FM: 1 FR: 1   Engine started.
+[16 - RX#01] 2026-10-24 14:52:25 Info: pcap: pcap file /pcap/trafico-controlado.pcap end of file reached (pcap err code 0)
+[1 - Suricata-Main] 2026-10-24 14:52:25 Notice: suricata: Signal Received.  Stopping engine.
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: suricata: time elapsed 0.124s
+[16 - RX#01] 2026-10-24 14:52:25 Notice: pcap: read 1 file, 4 packets, 294 bytes
+[1 - Suricata-Main] 2026-10-24 14:52:25 Info: counters: Alerts: 1
+[1 - Suricata-Main] 2026-10-24 15:36:27 Notice: suricata: This is Suricata version 7.0.17 RELEASE running in USER mode
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: cpu: CPUs/cores online: 20
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: suricata: Setting engine mode to IDS mode by default
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: exception-policy: master exception-policy set to: auto
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: logopenfile: fast output device (regular) initialized: fast.log
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: logopenfile: eve-log output device (regular) initialized: eve.json
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: logopenfile: stats output device (regular) initialized: stats.log
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: detect: 1 rule files processed. 2 rules successfully loaded, 0 rules failed, 0
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: threshold-config: Threshold config parsed: 0 rule(s) found
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: detect: 2 signatures processed. 0 are IP-only rules, 0 are inspecting packet payload, 1 inspect application layer, 0 are decoder event only
+[1 - Suricata-Main] 2026-10-24 15:36:27 Warning: detect: rule 1000002: SYN-only to port(s) 5432:5432 w/o direction specified, disabling for toclient direction
+[16 - RX#01] 2026-10-24 15:36:27 Info: pcap: Starting file run for /pcap/trafico-controlado.pcap
+[1 - Suricata-Main] 2026-10-24 15:36:27 Notice: threads: Threads created -> RX: 1 W: 20 FM: 1 FR: 1   Engine started.
+[16 - RX#01] 2026-10-24 15:36:27 Info: pcap: pcap file /pcap/trafico-controlado.pcap end of file reached (pcap err code 0)
+[1 - Suricata-Main] 2026-10-24 15:36:27 Notice: suricata: Signal Received.  Stopping engine.
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: suricata: time elapsed 0.155s
+[16 - RX#01] 2026-10-24 15:36:27 Notice: pcap: read 1 file, 5 packets, 348 bytes
+[1 - Suricata-Main] 2026-10-24 15:36:27 Info: counters: Alerts: 2

@@ -1,0 +1,12 @@
+﻿{
+    "timestamp":  "2026-10-24T09:58:27.1523944-06:00",
+    "scenario":  "api_container_interruption",
+    "service":  "api",
+    "baseline_http_status":  200,
+    "interruption_http_status":  504,
+    "recovery_http_status":  200,
+    "recovery_seconds":  11.927,
+    "database_course_count":  3,
+    "scope_warning":  "Medición de laboratorio; no constituye garantía institucional.",
+    "result":  "success"
+}

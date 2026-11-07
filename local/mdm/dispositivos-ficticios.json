@@ -1,0 +1,10 @@
+{
+  "nota": "Inventario FICTICIO para simular la evaluación; no corresponde a equipos reales ni al equipo del laboratorio.",
+  "dispositivos": [
+    {"id": "DEV-001", "propietario": "docente01", "tipo": "institucional", "so": "windows", "version": "10.0.22631", "cifrado_disco": true, "bloqueo_min": 5, "pin_longitud": 8, "antimalware_activo": true, "root_jailbreak": false, "borrado_selectivo": true, "perfil_trabajo": true},
+    {"id": "DEV-002", "propietario": "estudiante01", "tipo": "byod", "so": "android", "version": "14", "cifrado_disco": true, "bloqueo_min": 2, "pin_longitud": 6, "antimalware_activo": true, "root_jailbreak": false, "borrado_selectivo": true, "perfil_trabajo": true},
+    {"id": "DEV-003", "propietario": "estudiante02", "tipo": "byod", "so": "android", "version": "11", "cifrado_disco": true, "bloqueo_min": 10, "pin_longitud": 4, "antimalware_activo": false, "root_jailbreak": true, "borrado_selectivo": false, "perfil_trabajo": false},
+    {"id": "DEV-004", "propietario": "administrativo01", "tipo": "institucional", "so": "windows", "version": "10.0.19044", "cifrado_disco": false, "bloqueo_min": 5, "pin_longitud": 6, "antimalware_activo": true, "root_jailbreak": false, "borrado_selectivo": true, "perfil_trabajo": true},
+    {"id": "DEV-005", "propietario": "docente02", "tipo": "byod", "so": "ios", "version": "17.5", "cifrado_disco": true, "bloqueo_min": 1, "pin_longitud": 6, "antimalware_activo": true, "root_jailbreak": false, "borrado_selectivo": true, "perfil_trabajo": true}
+  ]
+}

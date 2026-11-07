@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-10-24T10:54:04-06:00",
+  "run_id": "20261024-105147",
+  "scope": "Réplicas aisladas cargadas con los respaldos reales; bases principales sin cambios",
+  "result": "success",
+  "results": [
+    {
+      "target": "academic",
+      "run_id": "20261024-105147",
+      "archive_timeout_s": 60,
+      "steps": [
+        {
+          "step": "replica_cargada",
+          "source_backup": "academic-20261024-165047.dump.enc",
+          "sha256_verified": true,
+          "dataset_count": 3
+        },
+        {
+          "step": "respaldo_base",
+          "seconds": 0.58
+        },
+        {
+          "step": "archivado_wal",
+          "segment": "000000010000000000000005",
+          "seconds_commit_to_archive": 55.6,
+          "archived_count": 6,
+          "failed_count": 0
+        }
+      ],
+      "target_time_utc": "2026-10-24 16:51:53.429282+00",
+      "integrity_manifest_files": 8,
+      "restore": {
+        "rows_before_present": 3,
+        "rows_after_present": 0,
+        "dataset_count": 3,
+        "rto_technical_seconds": 2.1,
+        "recovery_log": "recovery stopping before commit of transaction 739, time 2026-10-24 16:51:55.552885+00"
+      },
+      "rpo": {
+        "objective_seconds": 14400,
+        "observed_seconds_commit_to_archive": 55.6,
+        "worst_case_bound_seconds": 60,
+        "meets_objective": true
+      },
+      "result": "success"
+    },
+    {
+      "target": "identity",
+      "run_id": "20261024-105147",
+      "archive_timeout_s": 60,
+      "steps": [
+        {
+          "step": "replica_cargada",
+          "source_backup": "identity-20261024-165048.dump.enc",
+          "sha256_verified": true,
+          "dataset_count": 5
+        },
+        {
+          "step": "respaldo_base",
+          "seconds": 0.61
+        },
+        {
+          "step": "archivado_wal",
+          "segment": "000000010000000000000005",
+          "seconds_commit_to_archive": 55.7,
+          "archived_count": 6,
+          "failed_count": 0
+        }
+      ],
+      "target_time_utc": "2026-10-24 16:53:02.672976+00",
+      "integrity_manifest_files": 8,
+      "restore": {
+        "rows_before_present": 3,
+        "rows_after_present": 0,
+        "dataset_count": 5,
+        "rto_technical_seconds": 2.1,
+        "recovery_log": "recovery stopping before commit of transaction 1206, time 2026-10-24 16:53:04.844618+00"
+      },
+      "rpo": {
+        "objective_seconds": 900,
+        "observed_seconds_commit_to_archive": 55.7,
+        "worst_case_bound_seconds": 60,
+        "meets_objective": true
+      },
+      "result": "success"
+    }
+  ]
+}

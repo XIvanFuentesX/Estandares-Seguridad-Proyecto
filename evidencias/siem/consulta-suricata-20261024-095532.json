@@ -1,0 +1,402 @@
+[
+  {
+    "id": 450,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Attempted Information Leak\", \"dest_port\": 5432, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 2, \"signature\": \"UVCG LAB intento directo a PostgreSQL\", \"signature_id\": 1000002}"
+  },
+  {
+    "id": 451,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Attempted Information Leak\", \"dest_port\": 9000, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 2, \"signature\": \"UVCG LAB conexion al puerto de gestion Keycloak\", \"signature_id\": 1000006}"
+  },
+  {
+    "id": 452,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Web Application Attack\", \"dest_port\": 8080, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 1, \"signature\": \"UVCG LAB intento de path traversal controlado\", \"signature_id\": 1000001}"
+  },
+  {
+    "id": 453,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":461864394219060,\"event_type\":\"http\",\"src_ip\":\"10.10.10.16\",\"src_port\":54900,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/health\",\"http_user_agent\":\"Mozilla/5.0 UVCG-lab\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 454,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":461864394219060,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.16\",\"src_port\":54900,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":264,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.042000+0000\",\"end\":\"2026-10-24T15:54:09.045000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":false},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 455,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":281479040679916,\"event_type\":\"http\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/../../etc/passwd\",\"http_user_agent\":\"Mozilla/5.0 UVCG-lab\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 456,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":281479040679916,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":274,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.000000+0000\",\"end\":\"2026-10-24T15:54:09.003000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 457,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":427505368238018,\"event_type\":\"fileinfo\",\"src_ip\":\"10.10.10.15\",\"src_port\":54804,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0},\"app_proto\":\"http\",\"fileinfo\":{\"filename\":\"/auth/realms/uvcg/login-actions/authenticate\",\"gaps\":false,\"state\":\"CLOSED\",\"stored\":false,\"size\":27,\"tx_id\":0}}"
+  },
+  {
+    "id": 458,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":358786345968361,\"event_type\":\"fileinfo\",\"src_ip\":\"10.10.10.15\",\"src_port\":54800,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0},\"app_proto\":\"http\",\"fileinfo\":{\"filename\":\"/auth/realms/uvcg/login-actions/authenticate\",\"gaps\":false,\"state\":\"CLOSED\",\"stored\":false,\"size\":27,\"tx_id\":0}}"
+  },
+  {
+    "id": 459,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":375964789710485,\"event_type\":\"fileinfo\",\"src_ip\":\"10.10.10.15\",\"src_port\":54801,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0},\"app_proto\":\"http\",\"fileinfo\":{\"filename\":\"/auth/realms/uvcg/login-actions/authenticate\",\"gaps\":false,\"state\":\"CLOSED\",\"stored\":false,\"size\":27,\"tx_id\":0}}"
+  },
+  {
+    "id": 460,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Potential Corporate Privacy Violation\", \"dest_port\": 8080, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 1, \"signature\": \"UVCG LAB acceso a consola administrativa Keycloak\", \"signature_id\": 1000005}"
+  },
+  {
+    "id": 461,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":427505368238018,\"event_type\":\"http\",\"src_ip\":\"10.10.10.15\",\"src_port\":54804,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 462,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":358786345968361,\"event_type\":\"http\",\"src_ip\":\"10.10.10.15\",\"src_port\":54800,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 463,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":375964789710485,\"event_type\":\"http\",\"src_ip\":\"10.10.10.15\",\"src_port\":54801,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 464,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":337311031856919,\"event_type\":\"http\",\"src_ip\":\"10.10.10.13\",\"src_port\":54600,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/admin/master/console/\",\"http_user_agent\":\"Mozilla/5.0 UVCG-lab\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 465,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":427505368238018,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.15\",\"src_port\":54804,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":364,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.034000+0000\",\"end\":\"2026-10-24T15:54:09.037000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":false},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 466,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":358786345968361,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.15\",\"src_port\":54800,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":364,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.018000+0000\",\"end\":\"2026-10-24T15:54:09.021000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":false},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 467,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":375964789710485,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.15\",\"src_port\":54801,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":364,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.022000+0000\",\"end\":\"2026-10-24T15:54:09.025000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":false},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 468,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":337311031856919,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.13\",\"src_port\":54600,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":284,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.013000+0000\",\"end\":\"2026-10-24T15:54:09.016000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 469,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Web Application Attack\", \"dest_port\": 8080, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 1, \"signature\": \"UVCG LAB agente de escaneo automatizado conocido\", \"signature_id\": 1000004}"
+  },
+  {
+    "id": 470,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":320130957284525,\"event_type\":\"http\",\"src_ip\":\"10.10.10.12\",\"src_port\":54500,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/health\",\"http_user_agent\":\"sqlmap/1.8 (https://sqlmap.org)\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 471,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":320130957284525,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.12\",\"src_port\":54500,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":275,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.009000+0000\",\"end\":\"2026-10-24T15:54:09.012000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 472,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":393144555469909,\"event_type\":\"fileinfo\",\"src_ip\":\"10.10.10.15\",\"src_port\":54802,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0},\"app_proto\":\"http\",\"fileinfo\":{\"filename\":\"/auth/realms/uvcg/login-actions/authenticate\",\"gaps\":false,\"state\":\"CLOSED\",\"stored\":false,\"size\":27,\"tx_id\":0}}"
+  },
+  {
+    "id": 473,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":410326837414950,\"event_type\":\"fileinfo\",\"src_ip\":\"10.10.10.15\",\"src_port\":54803,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0},\"app_proto\":\"http\",\"fileinfo\":{\"filename\":\"/auth/realms/uvcg/login-actions/authenticate\",\"gaps\":false,\"state\":\"CLOSED\",\"stored\":false,\"size\":27,\"tx_id\":0}}"
+  },
+  {
+    "id": 474,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":393144555469909,\"event_type\":\"http\",\"src_ip\":\"10.10.10.15\",\"src_port\":54802,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 475,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":410326837414950,\"event_type\":\"http\",\"src_ip\":\"10.10.10.15\",\"src_port\":54803,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 476,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":410326837414950,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.15\",\"src_port\":54803,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":364,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.030000+0000\",\"end\":\"2026-10-24T15:54:09.033000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":false},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 477,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":393144555469909,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.15\",\"src_port\":54802,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":364,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.026000+0000\",\"end\":\"2026-10-24T15:54:09.029000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":false},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 478,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Web Application Attack\", \"dest_port\": 8080, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 1, \"signature\": \"UVCG LAB posible inyeccion SQL UNION SELECT en URI\", \"signature_id\": 1000003}"
+  },
+  {
+    "id": 479,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Attempted User Privilege Gain\", \"dest_port\": 8080, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 1, \"signature\": \"UVCG LAB rafaga de intentos de login Keycloak\", \"signature_id\": 1000007}"
+  },
+  {
+    "id": 480,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":444685592831835,\"event_type\":\"fileinfo\",\"src_ip\":\"10.10.10.15\",\"src_port\":54805,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0},\"app_proto\":\"http\",\"fileinfo\":{\"filename\":\"/auth/realms/uvcg/login-actions/authenticate\",\"gaps\":false,\"state\":\"CLOSED\",\"stored\":false,\"size\":27,\"tx_id\":0}}"
+  },
+  {
+    "id": 481,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":302950472947234,\"event_type\":\"http\",\"src_ip\":\"10.10.10.11\",\"src_port\":54400,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/cursos?id=1%20UNION%20SELECT%20usuario,clave%20FROM%20x\",\"http_user_agent\":\"Mozilla/5.0 UVCG-lab\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 482,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":302950472947234,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.11\",\"src_port\":54400,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":313,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.005000+0000\",\"end\":\"2026-10-24T15:54:09.008000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 483,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":444685592831835,\"event_type\":\"http\",\"src_ip\":\"10.10.10.15\",\"src_port\":54805,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/auth/realms/uvcg/login-actions/authenticate\",\"http_method\":\"POST\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 484,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":444685592831835,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.15\",\"src_port\":54805,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":364,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:54:09.038000+0000\",\"end\":\"2026-10-24T15:54:09.041000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 485,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":354492687465744,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.14\",\"src_port\":54700,\"dest_ip\":\"10.10.10.50\",\"dest_port\":9000,\"proto\":\"TCP\",\"flow\":{\"pkts_toserver\":1,\"pkts_toclient\":0,\"bytes_toserver\":54,\"bytes_toclient\":0,\"start\":\"2026-10-24T15:54:09.017000+0000\",\"end\":\"2026-10-24T15:54:09.017000+0000\",\"age\":0,\"state\":\"new\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"02\",\"tcp_flags_ts\":\"02\",\"tcp_flags_tc\":\"00\",\"syn\":true,\"state\":\"syn_sent\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 486,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:09.000000+0000\",\"flow_id\":298658008370399,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.30\",\"src_port\":55222,\"dest_ip\":\"10.10.10.40\",\"dest_port\":5432,\"proto\":\"TCP\",\"flow\":{\"pkts_toserver\":1,\"pkts_toclient\":0,\"bytes_toserver\":54,\"bytes_toclient\":0,\"start\":\"2026-10-24T15:54:09.004000+0000\",\"end\":\"2026-10-24T15:54:09.004000+0000\",\"age\":0,\"state\":\"new\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"02\",\"tcp_flags_ts\":\"02\",\"tcp_flags_tc\":\"00\",\"syn\":true,\"state\":\"syn_sent\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 487,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:54:10.245506+0000\",\"event_type\":\"stats\",\"stats\":{\"uptime\":0,\"decoder\":{\"pkts\":46,\"bytes\":4296,\"invalid\":0,\"ipv4\":46,\"ipv6\":0,\"ethernet\":46,\"arp\":0,\"unknown_ethertype\":0,\"chdlc\":0,\"raw\":0,\"null\":0,\"sll\":0,\"tcp\":46,\"udp\":0,\"sctp\":0,\"esp\":0,\"icmpv4\":0,\"icmpv6\":0,\"ppp\":0,\"pppoe\":0,\"geneve\":0,\"gre\":0,\"vlan\":0,\"vlan_qinq\":0,\"vlan_qinqinq\":0,\"vxlan\":0,\"vntag\":0,\"ieee8021ah\":0,\"teredo\":0,\"ipv4_in_ipv4\":0,\"ipv6_in_ipv4\":0,\"ipv4_in_ipv6\":0,\"ipv6_in_ipv6\":0,\"mpls\":0,\"avg_pkt_size\":93,\"max_pkt_size\":256,\"max_mac_addrs_src\":0,\"max_mac_addrs_dst\":0,\"erspan\":0,\"nsh\":0,\"event\":{\"afpacket\":{\"trunc_pkt\":0},\"ipv4\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"iplen_smaller_than_hlen\":0,\"trunc_pkt\":0,\"opt_invalid\":0,\"opt_invalid_len\":0,\"opt_malformed\":0,\"opt_pad_required\":0,\"opt_eol_required\":0,\"opt_duplicate\":0,\"opt_unknown\":0,\"wrong_ip_version\":0,\"icmpv6\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_ignored\":0},\"icmpv4\":{\"pkt_too_small\":0,\"unknown_type\":0,\"unknown_code\":0,\"ipv4_trunc_pkt\":0,\"ipv4_unknown_ver\":0},\"icmpv6\":{\"unknown_type\":0,\"unknown_code\":0,\"pkt_too_small\":0,\"ipv6_unknown_version\":0,\"ipv6_trunc_pkt\":0,\"mld_message_with_invalid_hl\":0,\"unassigned_type\":0,\"experimentation_type\":0},\"ipv6\":{\"pkt_too_small\":0,\"trunc_pkt\":0,\"trunc_exthdr\":0,\"exthdr_dupl_fh\":0,\"exthdr_useless_fh\":0,\"exthdr_dupl_rh\":0,\"exthdr_dupl_hh\":0,\"exthdr_dupl_dh\":0,\"exthdr_dupl_ah\":0,\"exthdr_dupl_eh\":0,\"exthdr_invalid_optlen\":0,\"wrong_ip_version\":0,\"exthdr_ah_res_not_null\":0,\"hopopts_unknown_opt\":0,\"hopopts_only_padding\":0,\"dstopts_unknown_opt\":0,\"dstopts_only_padding\":0,\"rh_type_0\":0,\"zero_len_padn\":0,\"fh_non_zero_reserved_field\":0,\"data_after_none_header\":0,\"unknown_next_header\":0,\"icmpv4\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_invalid_length\":0,\"frag_ignored\":0,\"ipv4_in_ipv6_too_small\":0,\"ipv4_in_ipv6_wrong_version\":0,\"ipv6_in_ipv6_too_small\":0,\"ipv6_in_ipv6_wrong_version\":0},\"tcp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"invalid_optlen\":0,\"opt_invalid_len\":0,\"opt_duplicate\":0},\"udp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"hlen_invalid\":0,\"len_invalid\":0},\"sll\":{\"pkt_too_small\":0},\"ethernet\":{\"pkt_too_small\":0},\"ppp\":{\"pkt_too_small\":0,\"vju_pkt_too_small\":0,\"ip4_pkt_too_small\":0,\"ip6_pkt_too_small\":0,\"wrong_type\":0,\"unsup_proto\":0},\"pppoe\":{\"pkt_too_small\":0,\"wrong_code\":0,\"malformed_tags\":0},\"gre\":{\"pkt_too_small\":0,\"wrong_version\":0,\"version0_recur\":0,\"version0_flags\":0,\"version0_hdr_too_big\":0,\"version0_malformed_sre_hdr\":0,\"version1_chksum\":0,\"version1_route\":0,\"version1_ssr\":0,\"version1_recur\":0,\"version1_flags\":0,\"version1_no_key\":0,\"version1_wrong_protocol\":0,\"version1_malformed_sre_hdr\":0,\"version1_hdr_too_big\":0},\"vlan\":{\"header_too_small\":0,\"unknown_type\":0,\"too_many_layers\":0},\"ieee8021ah\":{\"header_too_small\":0},\"vntag\":{\"header_too_small\":0,\"unknown_type\":0},\"ipraw\":{\"invalid_ip_version\":0},\"ltnull\":{\"pkt_too_small\":0,\"unsupported_type\":0},\"sctp\":{\"pkt_too_small\":0},\"esp\":{\"pkt_too_small\":0},\"mpls\":{\"header_too_small\":0,\"pkt_too_small\":0,\"bad_label_router_alert\":0,\"bad_label_implicit_null\":0,\"bad_label_reserved\":0,\"unknown_payload_type\":0},\"vxlan\":{\"unknown_payload_type\":0},\"geneve\":{\"unknown_payload_type\":0},\"erspan\":{\"header_too_small\":0,\"unsupported_version\":0,\"too_many_vlan_layers\":0},\"dce\":{\"pkt_too_small\":0},\"chdlc\":{\"pkt_too_small\":0},\"nsh\":{\"header_too_small\":0,\"unsupported_version\":0,\"bad_header_length\":0,\"reserved_type\":0,\"unsupported_type\":0,\"unknown_payload\":0}},\"too_many_layers\":0},\"tcp\":{\"syn\":13,\"synack\":11,\"rst\":0,\"urg\":0,\"active_sessions\":0,\"sessions\":13,\"ssn_memcap_drop\":0,\"ssn_from_cache\":0,\"ssn_from_pool\":13,\"pseudo\":0,\"pseudo_failed\":0,\"invalid_checksum\":0,\"midstream_pickups\":0,\"pkt_on_wrong_thread\":0,\"ack_unseen_data\":0,\"segment_memcap_drop\":0,\"segment_from_cache\":0,\"segment_from_pool\":11,\"stream_depth_reached\":0,\"reassembly_gap\":0,\"overlap\":0,\"overlap_diff_data\":0,\"insert_data_normal_fail\":0,\"insert_data_overlap_fail\":0,\"urgent_oob_data\":0,\"memuse\":12451840,\"reassembly_memuse\":2293760},\"flow\":{\"memcap\":0,\"total\":13,\"active\":0,\"tcp\":13,\"udp\":0,\"icmpv4\":0,\"icmpv6\":0,\"tcp_reuse\":0,\"get_used\":0,\"get_used_eval\":0,\"get_used_eval_reject\":0,\"get_used_eval_busy\":0,\"get_used_failed\":0,\"wrk\":{\"spare_sync_avg\":100,\"spare_sync\":11,\"spare_sync_incomplete\":0,\"spare_sync_empty\":0,\"flows_evicted_needs_work\":11,\"flows_evicted_pkt_inject\":22,\"flows_evicted\":0,\"flows_injected\":11,\"flows_injected_max\":0},\"end\":{\"state\":{\"new\":2,\"established\":11,\"closed\":0,\"local_bypassed\":0,\"capture_bypassed\":0},\"tcp_state\":{\"none\":0,\"syn_sent\":2,\"syn_recv\":0,\"established\":11,\"fin_wait1\":0,\"fin_wait2\":0,\"time_wait\":0,\"last_ack\":0,\"close_wait\":0,\"closing\":0,\"closed\":0},\"tcp_liberal\":0},\"mgr\":{\"full_hash_pass\":0,\"rows_per_sec\":11796,\"rows_maxlen\":0,\"flows_checked\":0,\"flows_notimeout\":0,\"flows_timeout\":0,\"flows_evicted\":0,\"flows_evicted_needs_work\":0},\"spare\":9800,\"emerg_mode_entered\":0,\"emerg_mode_over\":0,\"recycler\":{\"recycled\":2,\"queue_avg\":0,\"queue_max\":2},\"memuse\":7154304},\"defrag\":{\"ipv4\":{\"fragments\":0,\"reassembled\":0},\"ipv6\":{\"fragments\":0,\"reassembled\":0},\"max_frag_hits\":0},\"flow_bypassed\":{\"local_pkts\":0,\"local_bytes\":0,\"local_capture_pkts\":0,\"local_capture_bytes\":0,\"closed\":0,\"pkts\":0,\"bytes\":0},\"detect\":{\"engines\":[{\"id\":0,\"last_reload\":\"2026-10-24T15:54:10.028968+0000\",\"rules_loaded\":7,\"rules_failed\":0,\"rules_skipped\":0}],\"alert\":7,\"alert_queue_overflow\":0,\"alerts_suppressed\":5},\"app_layer\":{\"flow\":{\"http\":11,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"failed_tcp\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0,\"failed_udp\":0},\"tx\":{\"http\":11,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0},\"error\":{\"http\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smtp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tls\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ssh\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"imap\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dcerpc_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ntp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp-data\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ike\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"quic\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dhcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"snmp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"sip\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rfb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"mqtt\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"telnet\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rdp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"http2\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"bittorrent-dht\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"failed_tcp\":{\"gap\":0},\"dcerpc_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0}},\"expectations\":0},\"memcap_pressure\":18,\"memcap_pressure_max\":18,\"http\":{\"memuse\":0,\"memcap\":0},\"ftp\":{\"memuse\":0,\"memcap\":0},\"file_store\":{\"open_files\":0}}}"
+  },
+  {
+    "id": 219,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T14:50:39.000000+0000\",\"flow_id\":1970325930018928,\"event_type\":\"http\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/../../etc/passwd\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 220,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T14:50:39.000000+0000\",\"flow_id\":1970325930018928,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":240,\"bytes_toclient\":54,\"start\":\"2026-10-24T14:50:39.000000+0000\",\"end\":\"2026-10-24T14:50:39.003000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":false},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 221,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T14:52:09.455496+0000\",\"event_type\":\"stats\",\"stats\":{\"uptime\":0,\"decoder\":{\"pkts\":4,\"bytes\":294,\"invalid\":0,\"ipv4\":4,\"ipv6\":0,\"ethernet\":4,\"arp\":0,\"unknown_ethertype\":0,\"chdlc\":0,\"raw\":0,\"null\":0,\"sll\":0,\"tcp\":4,\"udp\":0,\"sctp\":0,\"esp\":0,\"icmpv4\":0,\"icmpv6\":0,\"ppp\":0,\"pppoe\":0,\"geneve\":0,\"gre\":0,\"vlan\":0,\"vlan_qinq\":0,\"vlan_qinqinq\":0,\"vxlan\":0,\"vntag\":0,\"ieee8021ah\":0,\"teredo\":0,\"ipv4_in_ipv4\":0,\"ipv6_in_ipv4\":0,\"ipv4_in_ipv6\":0,\"ipv6_in_ipv6\":0,\"mpls\":0,\"avg_pkt_size\":73,\"max_pkt_size\":132,\"max_mac_addrs_src\":0,\"max_mac_addrs_dst\":0,\"erspan\":0,\"nsh\":0,\"event\":{\"afpacket\":{\"trunc_pkt\":0},\"ipv4\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"iplen_smaller_than_hlen\":0,\"trunc_pkt\":0,\"opt_invalid\":0,\"opt_invalid_len\":0,\"opt_malformed\":0,\"opt_pad_required\":0,\"opt_eol_required\":0,\"opt_duplicate\":0,\"opt_unknown\":0,\"wrong_ip_version\":0,\"icmpv6\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_ignored\":0},\"icmpv4\":{\"pkt_too_small\":0,\"unknown_type\":0,\"unknown_code\":0,\"ipv4_trunc_pkt\":0,\"ipv4_unknown_ver\":0},\"icmpv6\":{\"unknown_type\":0,\"unknown_code\":0,\"pkt_too_small\":0,\"ipv6_unknown_version\":0,\"ipv6_trunc_pkt\":0,\"mld_message_with_invalid_hl\":0,\"unassigned_type\":0,\"experimentation_type\":0},\"ipv6\":{\"pkt_too_small\":0,\"trunc_pkt\":0,\"trunc_exthdr\":0,\"exthdr_dupl_fh\":0,\"exthdr_useless_fh\":0,\"exthdr_dupl_rh\":0,\"exthdr_dupl_hh\":0,\"exthdr_dupl_dh\":0,\"exthdr_dupl_ah\":0,\"exthdr_dupl_eh\":0,\"exthdr_invalid_optlen\":0,\"wrong_ip_version\":0,\"exthdr_ah_res_not_null\":0,\"hopopts_unknown_opt\":0,\"hopopts_only_padding\":0,\"dstopts_unknown_opt\":0,\"dstopts_only_padding\":0,\"rh_type_0\":0,\"zero_len_padn\":0,\"fh_non_zero_reserved_field\":0,\"data_after_none_header\":0,\"unknown_next_header\":0,\"icmpv4\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_invalid_length\":0,\"frag_ignored\":0,\"ipv4_in_ipv6_too_small\":0,\"ipv4_in_ipv6_wrong_version\":0,\"ipv6_in_ipv6_too_small\":0,\"ipv6_in_ipv6_wrong_version\":0},\"tcp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"invalid_optlen\":0,\"opt_invalid_len\":0,\"opt_duplicate\":0},\"udp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"hlen_invalid\":0,\"len_invalid\":0},\"sll\":{\"pkt_too_small\":0},\"ethernet\":{\"pkt_too_small\":0},\"ppp\":{\"pkt_too_small\":0,\"vju_pkt_too_small\":0,\"ip4_pkt_too_small\":0,\"ip6_pkt_too_small\":0,\"wrong_type\":0,\"unsup_proto\":0},\"pppoe\":{\"pkt_too_small\":0,\"wrong_code\":0,\"malformed_tags\":0},\"gre\":{\"pkt_too_small\":0,\"wrong_version\":0,\"version0_recur\":0,\"version0_flags\":0,\"version0_hdr_too_big\":0,\"version0_malformed_sre_hdr\":0,\"version1_chksum\":0,\"version1_route\":0,\"version1_ssr\":0,\"version1_recur\":0,\"version1_flags\":0,\"version1_no_key\":0,\"version1_wrong_protocol\":0,\"version1_malformed_sre_hdr\":0,\"version1_hdr_too_big\":0},\"vlan\":{\"header_too_small\":0,\"unknown_type\":0,\"too_many_layers\":0},\"ieee8021ah\":{\"header_too_small\":0},\"vntag\":{\"header_too_small\":0,\"unknown_type\":0},\"ipraw\":{\"invalid_ip_version\":0},\"ltnull\":{\"pkt_too_small\":0,\"unsupported_type\":0},\"sctp\":{\"pkt_too_small\":0},\"esp\":{\"pkt_too_small\":0},\"mpls\":{\"header_too_small\":0,\"pkt_too_small\":0,\"bad_label_router_alert\":0,\"bad_label_implicit_null\":0,\"bad_label_reserved\":0,\"unknown_payload_type\":0},\"vxlan\":{\"unknown_payload_type\":0},\"geneve\":{\"unknown_payload_type\":0},\"erspan\":{\"header_too_small\":0,\"unsupported_version\":0,\"too_many_vlan_layers\":0},\"dce\":{\"pkt_too_small\":0},\"chdlc\":{\"pkt_too_small\":0},\"nsh\":{\"header_too_small\":0,\"unsupported_version\":0,\"bad_header_length\":0,\"reserved_type\":0,\"unsupported_type\":0,\"unknown_payload\":0}},\"too_many_layers\":0},\"tcp\":{\"syn\":1,\"synack\":1,\"rst\":0,\"urg\":0,\"active_sessions\":0,\"sessions\":1,\"ssn_memcap_drop\":0,\"ssn_from_cache\":0,\"ssn_from_pool\":1,\"pseudo\":0,\"pseudo_failed\":0,\"invalid_checksum\":0,\"midstream_pickups\":0,\"pkt_on_wrong_thread\":0,\"ack_unseen_data\":0,\"segment_memcap_drop\":0,\"segment_from_cache\":0,\"segment_from_pool\":1,\"stream_depth_reached\":0,\"reassembly_gap\":0,\"overlap\":0,\"overlap_diff_data\":0,\"insert_data_normal_fail\":0,\"insert_data_overlap_fail\":0,\"urgent_oob_data\":0,\"memuse\":12451840,\"reassembly_memuse\":2293760},\"flow\":{\"memcap\":0,\"total\":1,\"active\":0,\"tcp\":1,\"udp\":0,\"icmpv4\":0,\"icmpv6\":0,\"tcp_reuse\":0,\"get_used\":0,\"get_used_eval\":0,\"get_used_eval_reject\":0,\"get_used_eval_busy\":0,\"get_used_failed\":0,\"wrk\":{\"spare_sync_avg\":100,\"spare_sync\":1,\"spare_sync_incomplete\":0,\"spare_sync_empty\":0,\"flows_evicted_needs_work\":1,\"flows_evicted_pkt_inject\":2,\"flows_evicted\":0,\"flows_injected\":1,\"flows_injected_max\":0},\"end\":{\"state\":{\"new\":0,\"established\":1,\"closed\":0,\"local_bypassed\":0,\"capture_bypassed\":0},\"tcp_state\":{\"none\":0,\"syn_sent\":0,\"syn_recv\":0,\"established\":1,\"fin_wait1\":0,\"fin_wait2\":0,\"time_wait\":0,\"last_ack\":0,\"close_wait\":0,\"closing\":0,\"closed\":0},\"tcp_liberal\":0},\"mgr\":{\"full_hash_pass\":0,\"rows_per_sec\":11796,\"rows_maxlen\":0,\"flows_checked\":0,\"flows_notimeout\":0,\"flows_timeout\":0,\"flows_evicted\":0,\"flows_evicted_needs_work\":0},\"spare\":9900,\"emerg_mode_entered\":0,\"emerg_mode_over\":0,\"recycler\":{\"recycled\":0,\"queue_avg\":0,\"queue_max\":0},\"memuse\":7154304},\"defrag\":{\"ipv4\":{\"fragments\":0,\"reassembled\":0},\"ipv6\":{\"fragments\":0,\"reassembled\":0},\"max_frag_hits\":0},\"flow_bypassed\":{\"local_pkts\":0,\"local_bytes\":0,\"local_capture_pkts\":0,\"local_capture_bytes\":0,\"closed\":0,\"pkts\":0,\"bytes\":0},\"detect\":{\"engines\":[{\"id\":0,\"last_reload\":\"2026-10-24T14:52:09.293679+0000\",\"rules_loaded\":2,\"rules_failed\":0,\"rules_skipped\":0}],\"alert\":0,\"alert_queue_overflow\":0,\"alerts_suppressed\":0},\"app_layer\":{\"flow\":{\"http\":1,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"failed_tcp\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0,\"failed_udp\":0},\"tx\":{\"http\":1,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0},\"error\":{\"http\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smtp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tls\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ssh\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"imap\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dcerpc_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ntp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp-data\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ike\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"quic\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dhcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"snmp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"sip\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rfb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"mqtt\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"telnet\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rdp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"http2\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"bittorrent-dht\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"failed_tcp\":{\"gap\":0},\"dcerpc_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0}},\"expectations\":0},\"memcap_pressure\":18,\"memcap_pressure_max\":18,\"http\":{\"memuse\":0,\"memcap\":0},\"ftp\":{\"memuse\":0,\"memcap\":0},\"file_store\":{\"open_files\":0}}}"
+  },
+  {
+    "id": 222,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Web Application Attack\", \"dest_port\": 8080, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 1, \"signature\": \"UVCG LAB intento de path traversal controlado\", \"signature_id\": 1000001}"
+  },
+  {
+    "id": 223,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T14:50:39.000000+0000\",\"flow_id\":1970326045241328,\"event_type\":\"http\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/../../etc/passwd\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 224,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T14:50:39.000000+0000\",\"flow_id\":1970326045241328,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":240,\"bytes_toclient\":54,\"start\":\"2026-10-24T14:50:39.000000+0000\",\"end\":\"2026-10-24T14:50:39.003000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 225,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T14:52:25.451201+0000\",\"event_type\":\"stats\",\"stats\":{\"uptime\":0,\"decoder\":{\"pkts\":4,\"bytes\":294,\"invalid\":0,\"ipv4\":4,\"ipv6\":0,\"ethernet\":4,\"arp\":0,\"unknown_ethertype\":0,\"chdlc\":0,\"raw\":0,\"null\":0,\"sll\":0,\"tcp\":4,\"udp\":0,\"sctp\":0,\"esp\":0,\"icmpv4\":0,\"icmpv6\":0,\"ppp\":0,\"pppoe\":0,\"geneve\":0,\"gre\":0,\"vlan\":0,\"vlan_qinq\":0,\"vlan_qinqinq\":0,\"vxlan\":0,\"vntag\":0,\"ieee8021ah\":0,\"teredo\":0,\"ipv4_in_ipv4\":0,\"ipv6_in_ipv4\":0,\"ipv4_in_ipv6\":0,\"ipv6_in_ipv6\":0,\"mpls\":0,\"avg_pkt_size\":73,\"max_pkt_size\":132,\"max_mac_addrs_src\":0,\"max_mac_addrs_dst\":0,\"erspan\":0,\"nsh\":0,\"event\":{\"afpacket\":{\"trunc_pkt\":0},\"ipv4\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"iplen_smaller_than_hlen\":0,\"trunc_pkt\":0,\"opt_invalid\":0,\"opt_invalid_len\":0,\"opt_malformed\":0,\"opt_pad_required\":0,\"opt_eol_required\":0,\"opt_duplicate\":0,\"opt_unknown\":0,\"wrong_ip_version\":0,\"icmpv6\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_ignored\":0},\"icmpv4\":{\"pkt_too_small\":0,\"unknown_type\":0,\"unknown_code\":0,\"ipv4_trunc_pkt\":0,\"ipv4_unknown_ver\":0},\"icmpv6\":{\"unknown_type\":0,\"unknown_code\":0,\"pkt_too_small\":0,\"ipv6_unknown_version\":0,\"ipv6_trunc_pkt\":0,\"mld_message_with_invalid_hl\":0,\"unassigned_type\":0,\"experimentation_type\":0},\"ipv6\":{\"pkt_too_small\":0,\"trunc_pkt\":0,\"trunc_exthdr\":0,\"exthdr_dupl_fh\":0,\"exthdr_useless_fh\":0,\"exthdr_dupl_rh\":0,\"exthdr_dupl_hh\":0,\"exthdr_dupl_dh\":0,\"exthdr_dupl_ah\":0,\"exthdr_dupl_eh\":0,\"exthdr_invalid_optlen\":0,\"wrong_ip_version\":0,\"exthdr_ah_res_not_null\":0,\"hopopts_unknown_opt\":0,\"hopopts_only_padding\":0,\"dstopts_unknown_opt\":0,\"dstopts_only_padding\":0,\"rh_type_0\":0,\"zero_len_padn\":0,\"fh_non_zero_reserved_field\":0,\"data_after_none_header\":0,\"unknown_next_header\":0,\"icmpv4\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_invalid_length\":0,\"frag_ignored\":0,\"ipv4_in_ipv6_too_small\":0,\"ipv4_in_ipv6_wrong_version\":0,\"ipv6_in_ipv6_too_small\":0,\"ipv6_in_ipv6_wrong_version\":0},\"tcp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"invalid_optlen\":0,\"opt_invalid_len\":0,\"opt_duplicate\":0},\"udp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"hlen_invalid\":0,\"len_invalid\":0},\"sll\":{\"pkt_too_small\":0},\"ethernet\":{\"pkt_too_small\":0},\"ppp\":{\"pkt_too_small\":0,\"vju_pkt_too_small\":0,\"ip4_pkt_too_small\":0,\"ip6_pkt_too_small\":0,\"wrong_type\":0,\"unsup_proto\":0},\"pppoe\":{\"pkt_too_small\":0,\"wrong_code\":0,\"malformed_tags\":0},\"gre\":{\"pkt_too_small\":0,\"wrong_version\":0,\"version0_recur\":0,\"version0_flags\":0,\"version0_hdr_too_big\":0,\"version0_malformed_sre_hdr\":0,\"version1_chksum\":0,\"version1_route\":0,\"version1_ssr\":0,\"version1_recur\":0,\"version1_flags\":0,\"version1_no_key\":0,\"version1_wrong_protocol\":0,\"version1_malformed_sre_hdr\":0,\"version1_hdr_too_big\":0},\"vlan\":{\"header_too_small\":0,\"unknown_type\":0,\"too_many_layers\":0},\"ieee8021ah\":{\"header_too_small\":0},\"vntag\":{\"header_too_small\":0,\"unknown_type\":0},\"ipraw\":{\"invalid_ip_version\":0},\"ltnull\":{\"pkt_too_small\":0,\"unsupported_type\":0},\"sctp\":{\"pkt_too_small\":0},\"esp\":{\"pkt_too_small\":0},\"mpls\":{\"header_too_small\":0,\"pkt_too_small\":0,\"bad_label_router_alert\":0,\"bad_label_implicit_null\":0,\"bad_label_reserved\":0,\"unknown_payload_type\":0},\"vxlan\":{\"unknown_payload_type\":0},\"geneve\":{\"unknown_payload_type\":0},\"erspan\":{\"header_too_small\":0,\"unsupported_version\":0,\"too_many_vlan_layers\":0},\"dce\":{\"pkt_too_small\":0},\"chdlc\":{\"pkt_too_small\":0},\"nsh\":{\"header_too_small\":0,\"unsupported_version\":0,\"bad_header_length\":0,\"reserved_type\":0,\"unsupported_type\":0,\"unknown_payload\":0}},\"too_many_layers\":0},\"tcp\":{\"syn\":1,\"synack\":1,\"rst\":0,\"urg\":0,\"active_sessions\":0,\"sessions\":1,\"ssn_memcap_drop\":0,\"ssn_from_cache\":0,\"ssn_from_pool\":1,\"pseudo\":0,\"pseudo_failed\":0,\"invalid_checksum\":0,\"midstream_pickups\":0,\"pkt_on_wrong_thread\":0,\"ack_unseen_data\":0,\"segment_memcap_drop\":0,\"segment_from_cache\":0,\"segment_from_pool\":1,\"stream_depth_reached\":0,\"reassembly_gap\":0,\"overlap\":0,\"overlap_diff_data\":0,\"insert_data_normal_fail\":0,\"insert_data_overlap_fail\":0,\"urgent_oob_data\":0,\"memuse\":12451840,\"reassembly_memuse\":2293760},\"flow\":{\"memcap\":0,\"total\":1,\"active\":0,\"tcp\":1,\"udp\":0,\"icmpv4\":0,\"icmpv6\":0,\"tcp_reuse\":0,\"get_used\":0,\"get_used_eval\":0,\"get_used_eval_reject\":0,\"get_used_eval_busy\":0,\"get_used_failed\":0,\"wrk\":{\"spare_sync_avg\":100,\"spare_sync\":1,\"spare_sync_incomplete\":0,\"spare_sync_empty\":0,\"flows_evicted_needs_work\":1,\"flows_evicted_pkt_inject\":2,\"flows_evicted\":0,\"flows_injected\":1,\"flows_injected_max\":0},\"end\":{\"state\":{\"new\":0,\"established\":1,\"closed\":0,\"local_bypassed\":0,\"capture_bypassed\":0},\"tcp_state\":{\"none\":0,\"syn_sent\":0,\"syn_recv\":0,\"established\":1,\"fin_wait1\":0,\"fin_wait2\":0,\"time_wait\":0,\"last_ack\":0,\"close_wait\":0,\"closing\":0,\"closed\":0},\"tcp_liberal\":0},\"mgr\":{\"full_hash_pass\":0,\"rows_per_sec\":11796,\"rows_maxlen\":0,\"flows_checked\":0,\"flows_notimeout\":0,\"flows_timeout\":0,\"flows_evicted\":0,\"flows_evicted_needs_work\":0},\"spare\":9900,\"emerg_mode_entered\":0,\"emerg_mode_over\":0,\"recycler\":{\"recycled\":0,\"queue_avg\":0,\"queue_max\":0},\"memuse\":7154304},\"defrag\":{\"ipv4\":{\"fragments\":0,\"reassembled\":0},\"ipv6\":{\"fragments\":0,\"reassembled\":0},\"max_frag_hits\":0},\"flow_bypassed\":{\"local_pkts\":0,\"local_bytes\":0,\"local_capture_pkts\":0,\"local_capture_bytes\":0,\"closed\":0,\"pkts\":0,\"bytes\":0},\"detect\":{\"engines\":[{\"id\":0,\"last_reload\":\"2026-10-24T14:52:25.322589+0000\",\"rules_loaded\":2,\"rules_failed\":0,\"rules_skipped\":0}],\"alert\":1,\"alert_queue_overflow\":0,\"alerts_suppressed\":0},\"app_layer\":{\"flow\":{\"http\":1,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"failed_tcp\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0,\"failed_udp\":0},\"tx\":{\"http\":1,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0},\"error\":{\"http\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smtp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tls\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ssh\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"imap\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dcerpc_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ntp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp-data\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ike\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"quic\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dhcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"snmp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"sip\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rfb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"mqtt\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"telnet\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rdp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"http2\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"bittorrent-dht\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"failed_tcp\":{\"gap\":0},\"dcerpc_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0}},\"expectations\":0},\"memcap_pressure\":18,\"memcap_pressure_max\":18,\"http\":{\"memuse\":0,\"memcap\":0},\"ftp\":{\"memuse\":0,\"memcap\":0},\"file_store\":{\"open_files\":0}}}"
+  },
+  {
+    "id": 226,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"category\": \"Attempted Information Leak\", \"dest_port\": 5432, \"event\": \"suricata_alert\", \"proto\": \"TCP\", \"severity\": 2, \"signature\": \"UVCG LAB intento directo a PostgreSQL\", \"signature_id\": 1000002}"
+  },
+  {
+    "id": 227,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:36:26.000000+0000\",\"flow_id\":562951186478985,\"event_type\":\"http\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"pkt_src\":\"stream (flow timeout)\",\"tx_id\":0,\"http\":{\"hostname\":\"laboratorio.local\",\"url\":\"/../../etc/passwd\",\"http_method\":\"GET\",\"protocol\":\"HTTP/1.1\",\"length\":0}}"
+  },
+  {
+    "id": 228,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:36:26.000000+0000\",\"flow_id\":562951186478985,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.10\",\"src_port\":54321,\"dest_ip\":\"10.10.10.20\",\"dest_port\":8080,\"proto\":\"TCP\",\"app_proto\":\"http\",\"flow\":{\"pkts_toserver\":3,\"pkts_toclient\":1,\"bytes_toserver\":240,\"bytes_toclient\":54,\"start\":\"2026-10-24T15:36:26.000000+0000\",\"end\":\"2026-10-24T15:36:26.003000+0000\",\"age\":0,\"state\":\"established\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"1a\",\"tcp_flags_ts\":\"1a\",\"tcp_flags_tc\":\"12\",\"syn\":true,\"psh\":true,\"ack\":true,\"state\":\"established\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 229,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:36:26.000000+0000\",\"flow_id\":580132601692782,\"event_type\":\"flow\",\"src_ip\":\"10.10.10.30\",\"src_port\":55222,\"dest_ip\":\"10.10.10.40\",\"dest_port\":5432,\"proto\":\"TCP\",\"flow\":{\"pkts_toserver\":1,\"pkts_toclient\":0,\"bytes_toserver\":54,\"bytes_toclient\":0,\"start\":\"2026-10-24T15:36:26.004000+0000\",\"end\":\"2026-10-24T15:36:26.004000+0000\",\"age\":0,\"state\":\"new\",\"reason\":\"shutdown\",\"alerted\":true},\"tcp\":{\"tcp_flags\":\"02\",\"tcp_flags_ts\":\"02\",\"tcp_flags_tc\":\"00\",\"syn\":true,\"state\":\"syn_sent\",\"ts_max_regions\":1,\"tc_max_regions\":1}}"
+  },
+  {
+    "id": 230,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "suricata",
+    "category": "ids_alert",
+    "outcome": "detected",
+    "message": "{\"timestamp\":\"2026-10-24T15:36:27.879577+0000\",\"event_type\":\"stats\",\"stats\":{\"uptime\":0,\"decoder\":{\"pkts\":5,\"bytes\":348,\"invalid\":0,\"ipv4\":5,\"ipv6\":0,\"ethernet\":5,\"arp\":0,\"unknown_ethertype\":0,\"chdlc\":0,\"raw\":0,\"null\":0,\"sll\":0,\"tcp\":5,\"udp\":0,\"sctp\":0,\"esp\":0,\"icmpv4\":0,\"icmpv6\":0,\"ppp\":0,\"pppoe\":0,\"geneve\":0,\"gre\":0,\"vlan\":0,\"vlan_qinq\":0,\"vlan_qinqinq\":0,\"vxlan\":0,\"vntag\":0,\"ieee8021ah\":0,\"teredo\":0,\"ipv4_in_ipv4\":0,\"ipv6_in_ipv4\":0,\"ipv4_in_ipv6\":0,\"ipv6_in_ipv6\":0,\"mpls\":0,\"avg_pkt_size\":69,\"max_pkt_size\":132,\"max_mac_addrs_src\":0,\"max_mac_addrs_dst\":0,\"erspan\":0,\"nsh\":0,\"event\":{\"afpacket\":{\"trunc_pkt\":0},\"ipv4\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"iplen_smaller_than_hlen\":0,\"trunc_pkt\":0,\"opt_invalid\":0,\"opt_invalid_len\":0,\"opt_malformed\":0,\"opt_pad_required\":0,\"opt_eol_required\":0,\"opt_duplicate\":0,\"opt_unknown\":0,\"wrong_ip_version\":0,\"icmpv6\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_ignored\":0},\"icmpv4\":{\"pkt_too_small\":0,\"unknown_type\":0,\"unknown_code\":0,\"ipv4_trunc_pkt\":0,\"ipv4_unknown_ver\":0},\"icmpv6\":{\"unknown_type\":0,\"unknown_code\":0,\"pkt_too_small\":0,\"ipv6_unknown_version\":0,\"ipv6_trunc_pkt\":0,\"mld_message_with_invalid_hl\":0,\"unassigned_type\":0,\"experimentation_type\":0},\"ipv6\":{\"pkt_too_small\":0,\"trunc_pkt\":0,\"trunc_exthdr\":0,\"exthdr_dupl_fh\":0,\"exthdr_useless_fh\":0,\"exthdr_dupl_rh\":0,\"exthdr_dupl_hh\":0,\"exthdr_dupl_dh\":0,\"exthdr_dupl_ah\":0,\"exthdr_dupl_eh\":0,\"exthdr_invalid_optlen\":0,\"wrong_ip_version\":0,\"exthdr_ah_res_not_null\":0,\"hopopts_unknown_opt\":0,\"hopopts_only_padding\":0,\"dstopts_unknown_opt\":0,\"dstopts_only_padding\":0,\"rh_type_0\":0,\"zero_len_padn\":0,\"fh_non_zero_reserved_field\":0,\"data_after_none_header\":0,\"unknown_next_header\":0,\"icmpv4\":0,\"frag_pkt_too_large\":0,\"frag_overlap\":0,\"frag_invalid_length\":0,\"frag_ignored\":0,\"ipv4_in_ipv6_too_small\":0,\"ipv4_in_ipv6_wrong_version\":0,\"ipv6_in_ipv6_too_small\":0,\"ipv6_in_ipv6_wrong_version\":0},\"tcp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"invalid_optlen\":0,\"opt_invalid_len\":0,\"opt_duplicate\":0},\"udp\":{\"pkt_too_small\":0,\"hlen_too_small\":0,\"hlen_invalid\":0,\"len_invalid\":0},\"sll\":{\"pkt_too_small\":0},\"ethernet\":{\"pkt_too_small\":0},\"ppp\":{\"pkt_too_small\":0,\"vju_pkt_too_small\":0,\"ip4_pkt_too_small\":0,\"ip6_pkt_too_small\":0,\"wrong_type\":0,\"unsup_proto\":0},\"pppoe\":{\"pkt_too_small\":0,\"wrong_code\":0,\"malformed_tags\":0},\"gre\":{\"pkt_too_small\":0,\"wrong_version\":0,\"version0_recur\":0,\"version0_flags\":0,\"version0_hdr_too_big\":0,\"version0_malformed_sre_hdr\":0,\"version1_chksum\":0,\"version1_route\":0,\"version1_ssr\":0,\"version1_recur\":0,\"version1_flags\":0,\"version1_no_key\":0,\"version1_wrong_protocol\":0,\"version1_malformed_sre_hdr\":0,\"version1_hdr_too_big\":0},\"vlan\":{\"header_too_small\":0,\"unknown_type\":0,\"too_many_layers\":0},\"ieee8021ah\":{\"header_too_small\":0},\"vntag\":{\"header_too_small\":0,\"unknown_type\":0},\"ipraw\":{\"invalid_ip_version\":0},\"ltnull\":{\"pkt_too_small\":0,\"unsupported_type\":0},\"sctp\":{\"pkt_too_small\":0},\"esp\":{\"pkt_too_small\":0},\"mpls\":{\"header_too_small\":0,\"pkt_too_small\":0,\"bad_label_router_alert\":0,\"bad_label_implicit_null\":0,\"bad_label_reserved\":0,\"unknown_payload_type\":0},\"vxlan\":{\"unknown_payload_type\":0},\"geneve\":{\"unknown_payload_type\":0},\"erspan\":{\"header_too_small\":0,\"unsupported_version\":0,\"too_many_vlan_layers\":0},\"dce\":{\"pkt_too_small\":0},\"chdlc\":{\"pkt_too_small\":0},\"nsh\":{\"header_too_small\":0,\"unsupported_version\":0,\"bad_header_length\":0,\"reserved_type\":0,\"unsupported_type\":0,\"unknown_payload\":0}},\"too_many_layers\":0},\"tcp\":{\"syn\":2,\"synack\":1,\"rst\":0,\"urg\":0,\"active_sessions\":0,\"sessions\":2,\"ssn_memcap_drop\":0,\"ssn_from_cache\":0,\"ssn_from_pool\":2,\"pseudo\":0,\"pseudo_failed\":0,\"invalid_checksum\":0,\"midstream_pickups\":0,\"pkt_on_wrong_thread\":0,\"ack_unseen_data\":0,\"segment_memcap_drop\":0,\"segment_from_cache\":0,\"segment_from_pool\":1,\"stream_depth_reached\":0,\"reassembly_gap\":0,\"overlap\":0,\"overlap_diff_data\":0,\"insert_data_normal_fail\":0,\"insert_data_overlap_fail\":0,\"urgent_oob_data\":0,\"memuse\":12451840,\"reassembly_memuse\":2293760},\"flow\":{\"memcap\":0,\"total\":2,\"active\":0,\"tcp\":2,\"udp\":0,\"icmpv4\":0,\"icmpv6\":0,\"tcp_reuse\":0,\"get_used\":0,\"get_used_eval\":0,\"get_used_eval_reject\":0,\"get_used_eval_busy\":0,\"get_used_failed\":0,\"wrk\":{\"spare_sync_avg\":100,\"spare_sync\":2,\"spare_sync_incomplete\":0,\"spare_sync_empty\":0,\"flows_evicted_needs_work\":1,\"flows_evicted_pkt_inject\":2,\"flows_evicted\":0,\"flows_injected\":1,\"flows_injected_max\":0},\"end\":{\"state\":{\"new\":1,\"established\":1,\"closed\":0,\"local_bypassed\":0,\"capture_bypassed\":0},\"tcp_state\":{\"none\":0,\"syn_sent\":1,\"syn_recv\":0,\"established\":1,\"fin_wait1\":0,\"fin_wait2\":0,\"time_wait\":0,\"last_ack\":0,\"close_wait\":0,\"closing\":0,\"closed\":0},\"tcp_liberal\":0},\"mgr\":{\"full_hash_pass\":0,\"rows_per_sec\":11796,\"rows_maxlen\":0,\"flows_checked\":0,\"flows_notimeout\":0,\"flows_timeout\":0,\"flows_evicted\":0,\"flows_evicted_needs_work\":0},\"spare\":9800,\"emerg_mode_entered\":0,\"emerg_mode_over\":0,\"recycler\":{\"recycled\":1,\"queue_avg\":0,\"queue_max\":1},\"memuse\":7154304},\"defrag\":{\"ipv4\":{\"fragments\":0,\"reassembled\":0},\"ipv6\":{\"fragments\":0,\"reassembled\":0},\"max_frag_hits\":0},\"flow_bypassed\":{\"local_pkts\":0,\"local_bytes\":0,\"local_capture_pkts\":0,\"local_capture_bytes\":0,\"closed\":0,\"pkts\":0,\"bytes\":0},\"detect\":{\"engines\":[{\"id\":0,\"last_reload\":\"2026-10-24T15:36:27.715963+0000\",\"rules_loaded\":2,\"rules_failed\":0,\"rules_skipped\":0}],\"alert\":2,\"alert_queue_overflow\":0,\"alerts_suppressed\":0},\"app_layer\":{\"flow\":{\"http\":1,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"failed_tcp\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0,\"failed_udp\":0},\"tx\":{\"http\":1,\"ftp\":0,\"smtp\":0,\"tls\":0,\"ssh\":0,\"imap\":0,\"smb\":0,\"dcerpc_tcp\":0,\"dns_tcp\":0,\"nfs_tcp\":0,\"ntp\":0,\"ftp-data\":0,\"tftp\":0,\"ike\":0,\"krb5_tcp\":0,\"quic\":0,\"dhcp\":0,\"snmp\":0,\"sip\":0,\"rfb\":0,\"mqtt\":0,\"telnet\":0,\"rdp\":0,\"http2\":0,\"bittorrent-dht\":0,\"dcerpc_udp\":0,\"dns_udp\":0,\"nfs_udp\":0,\"krb5_udp\":0},\"error\":{\"http\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smtp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tls\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ssh\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"imap\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"smb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dcerpc_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ntp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ftp-data\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"tftp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"ike\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_tcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"quic\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"dhcp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"snmp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"sip\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rfb\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"mqtt\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"telnet\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"rdp\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"http2\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"bittorrent-dht\":{\"gap\":0,\"alloc\":0,\"parser\":0,\"internal\":0},\"failed_tcp\":{\"gap\":0},\"dcerpc_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"dns_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"nfs_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0},\"krb5_udp\":{\"alloc\":0,\"parser\":0,\"internal\":0}},\"expectations\":0},\"memcap_pressure\":18,\"memcap_pressure_max\":18,\"http\":{\"memuse\":0,\"memcap\":0},\"ftp\":{\"memuse\":0,\"memcap\":0},\"file_store\":{\"open_files\":0}}}"
+  }
+]

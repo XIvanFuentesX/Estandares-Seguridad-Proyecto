@@ -1,0 +1,22 @@
+﻿{
+    "timestamp":  "2026-10-24T09:56:31.6661928-06:00",
+    "scenario":  "prueba_periodica_backup_restore_aislado",
+    "frequency_proposed":  "Trimestral (DRP); puede programarse con el Programador de tareas tras autorización",
+    "steps":  [
+                  {
+                      "step":  "schedulers_y_hash",
+                      "result":  "success",
+                      "detail":  "OK: schedulers=2 encrypted_copies=2 sha256=true interval_seconds=86400"
+                  },
+                  {
+                      "step":  "error",
+                      "result":  "failure",
+                      "detail":  " Container local-restore-db-1 Stopping "
+                  }
+              ],
+    "comparison":  [
+
+                   ],
+    "result":  "failure",
+    "elapsed_seconds":  1.382
+}

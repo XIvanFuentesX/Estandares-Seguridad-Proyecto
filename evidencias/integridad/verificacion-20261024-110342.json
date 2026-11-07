@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-24T11:03:42-06:00",
+  "result": "failure",
+  "files_verified": 21,
+  "changed": [
+    "monitoring/controles.log"
+  ],
+  "missing": [],
+  "added": [],
+  "secrets_missing": []
+}

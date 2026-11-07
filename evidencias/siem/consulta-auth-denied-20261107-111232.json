@@ -1,0 +1,258 @@
+[
+  {
+    "id": 3534,
+    "event_time": "2026-11-07T17:12:32+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 3570,
+    "event_time": "2026-11-07T17:12:32+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-11-07 17:10:02,136 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 3595,
+    "event_time": "2026-11-07T17:12:32+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-11-07 17:11:14,649 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 2611,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:34:29,098 WARN  [org.keycloak.events] (executor-thread-7) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 2665,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 2807,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 17:12:41,760 WARN  [org.keycloak.events] (executor-thread-24) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 2896,
+    "event_time": "2026-10-24T17:33:18+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 17:32:00,267 WARN  [org.keycloak.events] (executor-thread-6) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 2103,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 2227,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:24:03,303 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 2264,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:34:29,098 WARN  [org.keycloak.events] (executor-thread-7) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 2422,
+    "event_time": "2026-10-24T17:13:59+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 17:12:41,760 WARN  [org.keycloak.events] (executor-thread-24) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1542,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:10:41,477 WARN  [org.keycloak.events] (executor-thread-8) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1625,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 1774,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:24:03,303 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1811,
+    "event_time": "2026-10-24T17:06:17+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:34:29,098 WARN  [org.keycloak.events] (executor-thread-7) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1003,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 1007,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:47:46,771 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1033,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:54:45,230 WARN  [org.keycloak.events] (executor-thread-6) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1249,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:10:41,477 WARN  [org.keycloak.events] (executor-thread-8) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1428,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:24:03,303 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 1459,
+    "event_time": "2026-10-24T16:35:42+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:34:29,098 WARN  [org.keycloak.events] (executor-thread-7) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 589,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 592,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:47:46,771 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 625,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:54:45,230 WARN  [org.keycloak.events] (executor-thread-6) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 852,
+    "event_time": "2026-10-24T16:11:51+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 16:10:41,477 WARN  [org.keycloak.events] (executor-thread-8) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 324,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:47:46,771 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 336,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 356,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:54:45,230 WARN  [org.keycloak.events] (executor-thread-6) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 58,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "api-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "{\"event\": \"authentication\", \"outcome\": \"denied\", \"path\": \"/cursos\", \"reason\": \"DecodeError\"}"
+  },
+  {
+    "id": 142,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:14:45,234 WARN  [org.keycloak.events] (executor-thread-1) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 182,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:18:21,549 WARN  [org.keycloak.events] (executor-thread-3) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  },
+  {
+    "id": 209,
+    "event_time": "2026-10-24T15:36:28+00:00",
+    "source": "keycloak-1",
+    "category": "authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:35:39,168 WARN  [org.keycloak.events] (executor-thread-3) type=\"LOGIN_ERROR\", realmId=\"18ad14fd-3039-4f71-b4cc-58b11a2b1dca\", realmName=\"uvcg\", clientId=\"sgsi-cli\", userId=\"804bf319-0398-4f0f-8e73-b124234efd6d\", ipAddress=\"172.23.0.1\", error=\"invalid_user_credentials\", auth_method=\"openid-connect\", grant_type=\"password\", client_auth_method=\"client-secret\", username=\"admin.lab\""
+  }
+]

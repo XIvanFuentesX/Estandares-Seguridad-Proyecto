@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-10-24T11:33:15-06:00",
+  "synthetic_data_only": true,
+  "results": [
+    {
+      "file": "confidencial-ficticio.txt",
+      "label": "CONFIDENCIAL",
+      "detections": [],
+      "channel": "externo",
+      "decision": "blocked",
+      "reason": "información confidencial hacia canal externo"
+    },
+    {
+      "file": "credencial-ficticia.txt",
+      "label": "INTERNA",
+      "detections": [
+        {
+          "rule": "CREDENCIAL",
+          "value_sha256_prefix": "9770e3dfd81b"
+        }
+      ],
+      "channel": "externo",
+      "decision": "blocked",
+      "reason": "credencial o secreto en el contenido"
+    },
+    {
+      "file": "publico.txt",
+      "label": "PUBLICA",
+      "detections": [],
+      "channel": "externo",
+      "decision": "allowed",
+      "reason": "conforme a la política de clasificación",
+      "copied_to": "local/dlp/salida/externo/publico.txt"
+    },
+    {
+      "file": "restringido-ficticio.txt",
+      "label": "RESTRINGIDA",
+      "detections": [
+        {
+          "rule": "GT-DPI-13",
+          "value_sha256_prefix": "aa2f79dfbdfc"
+        }
+      ],
+      "channel": "externo",
+      "decision": "blocked",
+      "reason": "información restringida fuera de canal aprobado"
+    },
+    {
+      "file": "tarjeta-ficticia.txt",
+      "label": "INTERNA",
+      "detections": [
+        {
+          "rule": "TARJETA-PAGO",
+          "value_sha256_prefix": "6a7e0e79b018"
+        }
+      ],
+      "channel": "externo",
+      "decision": "blocked",
+      "reason": "dato personal o de pago hacia canal externo"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+OK: modulos presentes (8)
+OK: raiz con variables, outputs, locals, versions y providers
+OK: proveedor azurerm 4.x compatible con lock 4.81.0
+OK: region restringida por validacion
+OK: ambientes dev/demo/inst de ejemplo
+OK: cinco zonas spoke + endpoints privados
+OK: topologia hub-spoke
+OK: peering bidireccional
+OK: NSG vinculados a subredes
+OK: bloqueo de trafico lateral (deny 4096)
+OK: UDR hacia Azure Firewall
+OK: DNS privado blob y vault
+OK: Key Vault RBAC, privado y purge protection
+OK: Storage privado, sin anonimo, TLS1.2, sin shared keys, versionado
+OK: endpoints privados (blob y vault)
+OK: identidades administradas
+OK: RBAC con separacion de funciones
+OK: roles privilegiados bloqueados
+OK: Azure Policy (ubicaciones, NIC sin IP publica, etiquetas, storage)
+OK: Defender for Cloud Free por defecto
+OK: firewall, bastion y WAF opcionales
+OK: Log Analytics, actividad, alertas y action group
+OK: Sentinel opcional
+OK: presupuesto con alertas
+OK: diagnostic settings
+OK: Recovery Services Vault opcional
+OK: VPN S2S opcional con IPsec explicito
+OK: Azure Arc (alternativa de bajo costo)
+OK: funciones con costo apagadas por defecto
+OK: backend remoto solo documentado (comentado)
+OK: sin estado ni tfvars reales en el repositorio
+OK: sin claves IPsec ni secretos literales

@@ -1,0 +1,343 @@
+{
+  "timestamp": "2026-10-24T10:35:40-06:00",
+  "mode": "dry-run (simulación; no se eliminó ningún archivo)",
+  "policy": {
+    "version": 1,
+    "status": "Propuesta académica pendiente de validación; no se ha verificado su cumplimiento institucional ni regulatorio.",
+    "mode": "dry-run",
+    "backups": {
+      "path": "local/backups",
+      "targets": [
+        "academic",
+        "identity"
+      ],
+      "daily_days": 7,
+      "weekly_weeks": 4,
+      "monthly_months": 3,
+      "always_keep_latest_per_target": 1
+    },
+    "protected_paths": [
+      "local/rollback",
+      "evidencias"
+    ],
+    "evidence_retention": "Conservar durante el desarrollo y la evaluación del proyecto."
+  },
+  "summary": {
+    "sets_total": 16,
+    "conservar": 2,
+    "protegido": 10,
+    "candidato": 4,
+    "bytes_candidatos": 603196,
+    "bytes_total": 2420768
+  },
+  "rows": [
+    {
+      "base": "academic",
+      "copia": "academic-20261024-153259.dump.enc",
+      "creada_utc": "2026-10-24T15:32:59+00:00",
+      "antiguedad_h": 1.0,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "academic-20261024-153259.dump.enc",
+        "academic-20261024-153259.dump.enc.sha256",
+        "academic-20261024-153259.json",
+        "academic-20261024-153259.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-153259.dump.enc"
+    },
+    {
+      "base": "academic",
+      "copia": "academic-20261024-153444.dump.enc",
+      "creada_utc": "2026-10-24T15:34:44+00:00",
+      "antiguedad_h": 1.0,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "candidato",
+      "motivo": "copia intradía o fuera de las ventanas diaria/semanal/mensual (no es la última de su periodo)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "academic-20261024-153444.dump.enc",
+        "academic-20261024-153444.dump.enc.sha256",
+        "academic-20261024-153444.json",
+        "academic-20261024-153444.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-153444.dump.enc"
+    },
+    {
+      "base": "academic",
+      "copia": "academic-20261024-154629.dump.enc",
+      "creada_utc": "2026-10-24T15:46:29+00:00",
+      "antiguedad_h": 0.8,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "candidato",
+      "motivo": "copia intradía o fuera de las ventanas diaria/semanal/mensual (no es la última de su periodo)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "academic-20261024-154629.dump.enc",
+        "academic-20261024-154629.dump.enc.sha256",
+        "academic-20261024-154629.json",
+        "academic-20261024-154629.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-154629.dump.enc"
+    },
+    {
+      "base": "academic",
+      "copia": "academic-20261024-155231.dump.enc",
+      "creada_utc": "2026-10-24T15:52:31+00:00",
+      "antiguedad_h": 0.7,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "academic-20261024-155231.dump.enc",
+        "academic-20261024-155231.dump.enc.sha256",
+        "academic-20261024-155231.json",
+        "academic-20261024-155231.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-155231.dump.enc"
+    },
+    {
+      "base": "academic",
+      "copia": "academic-20261024-160159.dump.enc",
+      "creada_utc": "2026-10-24T16:01:59+00:00",
+      "antiguedad_h": 0.6,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "academic-20261024-160159.dump.enc",
+        "academic-20261024-160159.dump.enc.sha256",
+        "academic-20261024-160159.json",
+        "academic-20261024-160159.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-160159.dump.enc"
+    },
+    {
+      "base": "academic",
+      "copia": "academic-20261024-161153.dump.enc",
+      "creada_utc": "2026-10-24T16:11:53+00:00",
+      "antiguedad_h": 0.4,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "academic-20261024-161153.dump.enc",
+        "academic-20261024-161153.dump.enc.sha256",
+        "academic-20261024-161153.json",
+        "academic-20261024-161153.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-161153.dump.enc"
+    },
+    {
+      "base": "academic",
+      "copia": "academic-20261024-162047.dump.enc",
+      "creada_utc": "2026-10-24T16:20:47+00:00",
+      "antiguedad_h": 0.2,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "academic-20261024-162047.dump.enc",
+        "academic-20261024-162047.dump.enc.sha256",
+        "academic-20261024-162047.json",
+        "academic-20261024-162047.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-162047.dump.enc"
+    },
+    {
+      "base": "academic",
+      "copia": "academic-20261024-162333.dump.enc",
+      "creada_utc": "2026-10-24T16:23:33+00:00",
+      "antiguedad_h": 0.2,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "conservar",
+      "motivo": "más reciente de la base; última copia diaria (≤ 7 días); última copia semanal (≤ 4 semanas); última copia mensual (≤ 3 meses)",
+      "proteccion_adicional": "usada en una restauración o en la actualización (evidencia)",
+      "archivos": [
+        "academic-20261024-162333.dump.enc",
+        "academic-20261024-162333.dump.enc.sha256",
+        "academic-20261024-162333.json",
+        "academic-20261024-162333.toc"
+      ],
+      "bytes": 2600,
+      "ruta": "local/backups/academic-20261024-162333.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-153300.dump.enc",
+      "creada_utc": "2026-10-24T15:33:00+00:00",
+      "antiguedad_h": 1.0,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "identity-20261024-153300.dump.enc",
+        "identity-20261024-153300.dump.enc.sha256",
+        "identity-20261024-153300.json",
+        "identity-20261024-153300.toc"
+      ],
+      "bytes": 299110,
+      "ruta": "local/backups/identity-20261024-153300.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-153444.dump.enc",
+      "creada_utc": "2026-10-24T15:34:44+00:00",
+      "antiguedad_h": 1.0,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "candidato",
+      "motivo": "copia intradía o fuera de las ventanas diaria/semanal/mensual (no es la última de su periodo)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "identity-20261024-153444.dump.enc",
+        "identity-20261024-153444.dump.enc.sha256",
+        "identity-20261024-153444.json",
+        "identity-20261024-153444.toc"
+      ],
+      "bytes": 298774,
+      "ruta": "local/backups/identity-20261024-153444.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-154629.dump.enc",
+      "creada_utc": "2026-10-24T15:46:29+00:00",
+      "antiguedad_h": 0.8,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "candidato",
+      "motivo": "copia intradía o fuera de las ventanas diaria/semanal/mensual (no es la última de su periodo)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "identity-20261024-154629.dump.enc",
+        "identity-20261024-154629.dump.enc.sha256",
+        "identity-20261024-154629.json",
+        "identity-20261024-154629.toc"
+      ],
+      "bytes": 299222,
+      "ruta": "local/backups/identity-20261024-154629.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-155231.dump.enc",
+      "creada_utc": "2026-10-24T15:52:31+00:00",
+      "antiguedad_h": 0.7,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "identity-20261024-155231.dump.enc",
+        "identity-20261024-155231.dump.enc.sha256",
+        "identity-20261024-155231.json",
+        "identity-20261024-155231.toc"
+      ],
+      "bytes": 300070,
+      "ruta": "local/backups/identity-20261024-155231.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-160159.dump.enc",
+      "creada_utc": "2026-10-24T16:01:59+00:00",
+      "antiguedad_h": 0.6,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "identity-20261024-160159.dump.enc",
+        "identity-20261024-160159.dump.enc.sha256",
+        "identity-20261024-160159.json",
+        "identity-20261024-160159.toc"
+      ],
+      "bytes": 300470,
+      "ruta": "local/backups/identity-20261024-160159.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-161154.dump.enc",
+      "creada_utc": "2026-10-24T16:11:54+00:00",
+      "antiguedad_h": 0.4,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "identity-20261024-161154.dump.enc",
+        "identity-20261024-161154.dump.enc.sha256",
+        "identity-20261024-161154.json",
+        "identity-20261024-161154.toc"
+      ],
+      "bytes": 300998,
+      "ruta": "local/backups/identity-20261024-161154.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-162048.dump.enc",
+      "creada_utc": "2026-10-24T16:20:48+00:00",
+      "antiguedad_h": 0.2,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "protegido",
+      "motivo": "usada en una restauración o en la actualización (evidencia)",
+      "proteccion_adicional": "",
+      "archivos": [
+        "identity-20261024-162048.dump.enc",
+        "identity-20261024-162048.dump.enc.sha256",
+        "identity-20261024-162048.json",
+        "identity-20261024-162048.toc"
+      ],
+      "bytes": 300662,
+      "ruta": "local/backups/identity-20261024-162048.dump.enc"
+    },
+    {
+      "base": "identity",
+      "copia": "identity-20261024-162333.dump.enc",
+      "creada_utc": "2026-10-24T16:23:33+00:00",
+      "antiguedad_h": 0.2,
+      "politica": "GFS diaria/semanal/mensual",
+      "decision": "conservar",
+      "motivo": "más reciente de la base; última copia diaria (≤ 7 días); última copia semanal (≤ 4 semanas); última copia mensual (≤ 3 meses)",
+      "proteccion_adicional": "usada en una restauración o en la actualización (evidencia)",
+      "archivos": [
+        "identity-20261024-162333.dump.enc",
+        "identity-20261024-162333.dump.enc.sha256",
+        "identity-20261024-162333.json",
+        "identity-20261024-162333.toc"
+      ],
+      "bytes": 300662,
+      "ruta": "local/backups/identity-20261024-162333.dump.enc"
+    }
+  ],
+  "files_not_in_policy": [
+    ".gitkeep",
+    "execution.log",
+    "universidad-20261024-084707.dump",
+    "universidad-20261024-084707.dump.sha256",
+    "universidad-20261024-084707.dump.toc"
+  ],
+  "findings": [
+    "Copia sin cifrar fuera de la política: universidad-20261024-084707.dump"
+  ],
+  "excluded_paths": [
+    "local/rollback",
+    "evidencias"
+  ],
+  "siem_retention_simulation": {
+    "retention_days": 30,
+    "events_total": 903,
+    "candidates": 0
+  },
+  "not_evaluated": "Bases restauradas en volúmenes aislados: su eliminación no está autorizada; se inventarían aparte."
+}

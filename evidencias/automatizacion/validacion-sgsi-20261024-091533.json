@@ -1,0 +1,66 @@
+﻿{
+    "alcance":  "laboratorio SGSI UVCG",
+    "fecha":  "2026-10-24 09:15:33 -06:00",
+    "resultados":  [
+                       {
+                           "control":  "CORE-COMPOSE",
+                           "estado":  "exitoso",
+                           "detalle":  "compose_config=ok",
+                           "fecha":  "2026-10-24 09:14:25 -06:00"
+                       },
+                       {
+                           "control":  "APP-HTTPS",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: redireccion HTTPS, TLS de laboratorio, health=200, ruta protegida=401, cabeceras seguras y metodos no autorizados=403",
+                           "fecha":  "2026-10-24 09:14:40 -06:00"
+                       },
+                       {
+                           "control":  "IAM-RBAC-MFA",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: OIDC, MFA TOTP requerido y v�lido, 4 roles, matriz RBAC, token inv�lido rechazado y eventos LOGIN/LOGIN_ERROR registrados",
+                           "fecha":  "2026-10-24 09:15:33 -06:00"
+                       },
+                       {
+                           "control":  "AZURE-STATIC",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: cinco zonas spoke\r\nOK: topologia hub-spoke\r\nOK: peering bidireccional\r\nOK: NSG vinculados a subredes\r\nOK: bloqueo de trafico lateral\r\nOK: RBAC parametrizado\r\nOK: monitorizacion opcional\r\nOK: backup privado opcional\r\nOK: gateway hibrido opcional\r\nOK: funciones con costo apagadas",
+                           "fecha":  "2026-10-24 09:15:33 -06:00"
+                       },
+                       {
+                           "control":  "DLP-DEMO",
+                           "estado":  "exitoso",
+                           "detalle":  "OK: hallazgos_sinteticos=2 action=blocked",
+                           "fecha":  "2026-10-24 09:15:33 -06:00"
+                       },
+                       {
+                           "control":  "IDS-OFFLINE",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeIds para ejecutar el perfil IDS.",
+                           "fecha":  "2026-10-24 09:15:33 -06:00"
+                       },
+                       {
+                           "control":  "BACKUP-RESTORE",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeRecovery; nunca altera la base principal.",
+                           "fecha":  "2026-10-24 09:15:33 -06:00"
+                       },
+                       {
+                           "control":  "DEVSECOPS",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeSecurity; requiere red para bases de vulnerabilidades.",
+                           "fecha":  "2026-10-24 09:15:33 -06:00"
+                       },
+                       {
+                           "control":  "CONTINUITY-API",
+                           "estado":  "omitido",
+                           "detalle":  "Use -IncludeContinuity; interrumpe deliberadamente la API por segundos.",
+                           "fecha":  "2026-10-24 09:15:33 -06:00"
+                       }
+                   ],
+    "resumen":  {
+                    "exitosos":  5,
+                    "fallidos":  0,
+                    "omitidos":  4,
+                    "no_verificables":  0
+                }
+}

@@ -1,0 +1,58 @@
+# PREPARADO, NO APLICADO. Activa archivado WAL continuo en las bases principales.
+# Requiere recrear db e identity-db (interrupción breve) => necesita autorización expresa.
+# Uso (tras autorización):  docker compose -f compose.yaml -f compose.pitr.yaml up -d --no-deps --force-recreate db identity-db
+# Reversión: volver a levantar sólo con compose.yaml (los volúmenes no se modifican).
+# Parámetros validados en réplicas aisladas: scripts/pitr_prueba.py (evidencias/pitr/).
+services:
+  db:
+    command:
+      - postgres
+      - -c
+      - wal_level=replica
+      - -c
+      - archive_mode=on
+      - -c
+      - archive_timeout=900          # RPO objetivo académico 4 h; peor caso de archivado 15 min
+      - -c
+      - archive_command=test ! -f /wal_archive/%f && cp %p /wal_archive/%f
+    volumes:
+      - wal_archive_academic:/wal_archive
+    depends_on:
+      wal-archive-init:
+        condition: service_completed_successfully
+
+  identity-db:
+    command:
+      - postgres
+      - -c
+      - wal_level=replica
+      - -c
+      - archive_mode=on
+      - -c
+      - archive_timeout=60           # RPO objetivo identidad 15 min; peor caso de archivado 1 min
+      - -c
+      - archive_command=test ! -f /wal_archive/%f && cp %p /wal_archive/%f
+    volumes:
+      - wal_archive_identity:/wal_archive
+    depends_on:
+      wal-archive-init:
+        condition: service_completed_successfully
+
+  # Prepara la propiedad de los volúmenes de archivo para el UID 70 (no privilegiado, sin red).
+  wal-archive-init:
+    image: local-postgres-hardened:16
+    user: "0:0"
+    entrypoint: ["sh", "-c", "chown 70:70 /a /i && chmod 700 /a /i"]
+    volumes:
+      - wal_archive_academic:/a
+      - wal_archive_identity:/i
+    network_mode: none
+    read_only: true
+    restart: "no"
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, FOWNER]
+
+volumes:
+  wal_archive_academic:
+  wal_archive_identity:

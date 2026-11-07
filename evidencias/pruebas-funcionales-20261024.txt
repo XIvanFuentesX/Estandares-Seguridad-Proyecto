@@ -1,0 +1,26 @@
+Ejecución real: 2026-10-24, entorno Docker Desktop local
+
+Compose config: OK
+PostgreSQL health: healthy
+API healthcheck: healthy
+Nginx healthcheck: healthy
+Gunicorn: 2 workers iniciados
+API -> PostgreSQL: SELECT 1 devolvió 1
+Nginx -> API: /health devolvió status=ok
+Host -> Nginx -> API: /health HTTP 200
+Host -> Nginx -> API: /cursos HTTP 200; 3 registros esperados presentes
+Cabeceras: X-Content-Type-Options=nosniff; X-Frame-Options=DENY; Referrer-Policy=no-referrer
+POST /cursos: 403
+PUT /cursos: 403
+PATCH /cursos: 403
+DELETE /cursos: 403
+OPTIONS /cursos: 403
+
+Persistencia:
+- Antes de reiniciar PostgreSQL: 3 cursos
+- Acción: docker compose -f compose.yaml restart db
+- Después del reinicio: 3 cursos
+- Volumen nombrado PostgreSQL presente: sí
+- Recuperación posterior: /health HTTP 200 y db healthy
+
+Resultado general: APROBADO

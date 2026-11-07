@@ -1,0 +1,10 @@
+﻿{
+    "bandit_exit":  1,
+    "pip_audit_exit":  0,
+    "trivy_fs_exit":  0,
+    "trivy_trivy-python-image.json":  0,
+    "trivy_trivy-nginx-image.json":  0,
+    "trivy_trivy-postgres-image.json":  0,
+    "trivy_trivy-postgres-hardened-image.json":  0,
+    "trivy_trivy-keycloak-image.json":  0
+}

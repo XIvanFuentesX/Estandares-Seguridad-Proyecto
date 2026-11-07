@@ -1,0 +1,15 @@
+Verificación de definiciones integradas — 2026-10-24T17:18:46+00:00
+Fuente: https://raw.githubusercontent.com/Azure/azure-policy/master/built-in-policies/policyDefinitions/
+GUID referenciados en modules/policies/main.tf: 11
+OK: e56962a6-4747-49cd-b67b-bf8b01975c4c | Allowed locations | parámetros=['listOfAllowedLocations', 'effect'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=General/AllowedLocations_Deny.json
+OK: 83a86a26-fd1f-447c-b59d-e51f44264114 | Network interfaces should not have public IPs | parámetros=[] | efectos=None | archivo=Network/NetworkPublicIPNic_Deny.json
+OK: 871b6d14-10aa-478d-b590-94f262ecfa99 | Require a tag on resources | parámetros=['tagName'] | efectos=None | archivo=Tags/RequireTag_Deny.json
+OK: 404c3081-a854-4457-ae30-26a93ef643f9 | Secure transfer to storage accounts should be enabled | parámetros=['effect'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=Storage/Storage_AuditForHTTPSEnabled_Audit.json
+OK: 4fa4b6c0-31ca-4c0d-b10d-24b96f62a751 | Storage account public access should be disallowed | parámetros=['effect'] | efectos=['audit', 'Audit', 'deny', 'Deny', 'disabled', 'Disabled'] | archivo=Storage/ASC_Storage_DisallowPublicBlobAccess_Audit.json
+OK: 8c6a50c6-9ffd-4ae7-986f-5fa6111f9a54 | Storage accounts should prevent shared key access | parámetros=['effect', 'excludedManagedByResourceProviders'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=Storage/StorageAccountAllowSharedKeyAccess_Audit.json
+OK: fe83a0eb-a853-422d-aac2-1bffd182c5d0 | Storage accounts should have the specified minimum TLS version | parámetros=['effect', 'minimumTlsVersion'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=Storage/StorageAccountMinimumTLSVersion_Audit.json
+OK: b2982f36-99f2-4db5-8eff-283140c09693 | Storage accounts should disable public network access | parámetros=['effect'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=Storage/StoragePublicNetworkAccess_AuditDeny.json
+OK: 0b60c0b2-2dc2-4e1c-b5c9-abbed971de53 | Key vaults should have deletion protection enabled | parámetros=['effect'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=Key%20Vault/Recoverable_Audit.json
+OK: 405c5871-3e91-4644-8a63-58e19d68ff5b | Azure Key Vault should disable public network access | parámetros=['effect'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=Key%20Vault/PublicNetworkAccess_Audit.json
+OK: 12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 | Azure Key Vault should use RBAC permission model | parámetros=['effect'] | efectos=['Audit', 'Deny', 'Disabled'] | archivo=Key%20Vault/Should_Use_RBAC.json
+GUID sin verificar: ninguno

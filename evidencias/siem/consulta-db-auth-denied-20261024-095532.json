@@ -1,0 +1,18 @@
+[
+  {
+    "id": 296,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "db-1",
+    "category": "database_authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:52:53.789 UTC [1768] FATAL:  password authentication failed for user \"siem_usuario_sintetico\""
+  },
+  {
+    "id": 321,
+    "event_time": "2026-10-24T15:55:33+00:00",
+    "source": "db-1",
+    "category": "database_authentication",
+    "outcome": "denied",
+    "message": "2026-10-24 15:52:54.510 UTC [1769] FATAL:  password authentication failed for user \"siem_usuario_sintetico\""
+  }
+]

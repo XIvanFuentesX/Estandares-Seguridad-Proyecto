@@ -1,0 +1,37 @@
+Controles observados el 2026-10-24
+
+api:
+- usuario: app
+- root filesystem: read-only verificado
+- /tmp tmpfs: escribible verificado
+- no-new-privileges: true
+- cap_drop: ALL
+- puertos publicados al host: ninguno
+- redes: apps y datos
+
+proxy:
+- usuario: 101:101
+- root filesystem: read-only verificado
+- /tmp tmpfs: escribible verificado
+- no-new-privileges: true
+- cap_drop: ALL
+- publicación: 127.0.0.1:8080 únicamente
+- redes: dmz y apps
+
+db:
+- privileged: false
+- no-new-privileges: true
+- puerto publicado al host: ninguno
+- red: datos
+- volumen nombrado para /var/lib/postgresql/data: presente
+- procesos PostgreSQL observados con UID 70 (postgres)
+
+redes:
+- local_dmz: externa; miembro proxy
+- local_apps: internal=true; miembros proxy y api
+- local_datos: internal=true; miembros api y db
+- proxy -> db: aislado
+- db -> proxy: aislado
+- api -> proxy y db: alcanzables según función
+
+No se incluyen secretos ni valores completos de variables de entorno.

@@ -1,0 +1,45 @@
+﻿{
+    "timestamp":  "2026-10-24T11:33:23.0161253-06:00",
+    "scenario":  "prueba_periodica_backup_restore_aislado",
+    "frequency_proposed":  "Trimestral (DRP); puede programarse con el Programador de tareas tras autorización",
+    "steps":  [
+                  {
+                      "step":  "schedulers_y_hash",
+                      "result":  "success",
+                      "detail":  "OK: schedulers=2 encrypted_copies=2 sha256=true interval_seconds=86400"
+                  },
+                  {
+                      "step":  "restore_aislado_dual",
+                      "result":  "success",
+                      "detail":  "OK: target=Academic count=3 encrypted=true isolated=true\r OK: target=Identity count=5 encrypted=true isolated=true\r evidencia=D:\\sgsi_laboratorio\\evidencias\\recovery\\restauracion-dual-20261024_113323.json"
+                  }
+              ],
+    "comparison":  [
+                       {
+                           "target":  "academic",
+                           "bia_process":  "PROC-002",
+                           "observed_restore_seconds":  8.33,
+                           "proposed_rto_seconds":  28800,
+                           "restore_within_rto":  true,
+                           "backup_interval_seconds":  86400,
+                           "proposed_rpo_seconds":  14400,
+                           "rpo_achievable_with_current_schedule":  false,
+                           "verification":  "course_count=3",
+                           "note":  "El tiempo observado sólo cubre la restauración técnica de una base pequeña en laboratorio; no incluye detección, decisión, comunicación ni validación funcional."
+                       },
+                       {
+                           "target":  "identity",
+                           "bia_process":  "PROC-004",
+                           "observed_restore_seconds":  8.965,
+                           "proposed_rto_seconds":  7200,
+                           "restore_within_rto":  true,
+                           "backup_interval_seconds":  86400,
+                           "proposed_rpo_seconds":  900,
+                           "rpo_achievable_with_current_schedule":  false,
+                           "verification":  "identity_count=5",
+                           "note":  "El tiempo observado sólo cubre la restauración técnica de una base pequeña en laboratorio; no incluye detección, decisión, comunicación ni validación funcional."
+                       }
+                   ],
+    "result":  "success",
+    "elapsed_seconds":  18.397
+}

@@ -1,0 +1,93 @@
+{
+  "retention_days": 30,
+  "rules": [
+    {
+      "id": "SIEM-AUTH-001",
+      "name": "Ráfaga de autenticaciones fallidas",
+      "severity": "high",
+      "pattern": "LOGIN_ERROR|authentication.*denied|invalid_token",
+      "threshold": 3,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-RBAC-001",
+      "name": "Acceso denegado por RBAC",
+      "severity": "medium",
+      "pattern": "authorization.*denied|insufficient_permissions",
+      "threshold": 1,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-HTTP-001",
+      "name": "Ráfaga HTTP 401/403",
+      "severity": "medium",
+      "pattern": "HTTP/[0-9.]+[\\\" ]+(401|403)",
+      "threshold": 5,
+      "window_seconds": 120
+    },
+    {
+      "id": "SIEM-DB-001",
+      "name": "Fallo de autenticación PostgreSQL",
+      "severity": "high",
+      "pattern": "password authentication failed|no pg_hba.conf entry",
+      "threshold": 1,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-IDS-001",
+      "name": "Alerta IDS Suricata",
+      "severity": "high",
+      "pattern": "suricata_alert|signature_id",
+      "threshold": 1,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-BACKUP-001",
+      "name": "Fallo de respaldo programado",
+      "severity": "high",
+      "pattern": "target=(?!wal-|config-|avail-|edr-|dlp-)\\S+ result=failure|backup.*failure",
+      "threshold": 1,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-WAL-001",
+      "name": "Fallo o advertencia de archivado WAL",
+      "severity": "high",
+      "pattern": "target=wal-\\S+ result=(failure|warning)",
+      "threshold": 1,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-CFG-001",
+      "name": "Modificación no autorizada de configuración",
+      "severity": "high",
+      "pattern": "target=config-integrity result=failure",
+      "threshold": 1,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-AVAIL-001",
+      "name": "Servicio no disponible",
+      "severity": "high",
+      "pattern": "target=avail-\\S+ result=failure",
+      "threshold": 2,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-EDR-001",
+      "name": "Proceso inesperado o deriva en contenedor",
+      "severity": "high",
+      "pattern": "target=edr-\\S+ result=failure",
+      "threshold": 1,
+      "window_seconds": 300
+    },
+    {
+      "id": "SIEM-DLP-001",
+      "name": "Incidente DLP bloqueado",
+      "severity": "medium",
+      "pattern": "target=dlp-\\S+ result=(blocked|failure)",
+      "threshold": 1,
+      "window_seconds": 300
+    }
+  ]
+}

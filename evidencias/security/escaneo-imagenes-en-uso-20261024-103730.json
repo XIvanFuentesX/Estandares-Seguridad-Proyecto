@@ -1,0 +1,95 @@
+﻿{
+    "timestamp":  "2026-10-24T10:37:30.6654107-06:00",
+    "label":  "20261024-103730",
+    "images":  [
+                   {
+                       "image":  "local-backup-tool:latest",
+                       "services":  [
+                                        "academic-backup-scheduler",
+                                        "identity-backup-scheduler"
+                                    ],
+                       "image_id":  "e797d5bcbcfb9a364f3",
+                       "scope":  [
+                                     "os-pkgs"
+                                 ],
+                       "critical":  0,
+                       "high":  0,
+                       "fixable":  0,
+                       "packages":  [
+
+                                    ],
+                       "report":  "evidencias/security/trivy-enuso-local-backup-tool-latest-20261024-103730.json"
+                   },
+                   {
+                       "image":  "local-api",
+                       "services":  [
+                                        "api"
+                                    ],
+                       "image_id":  "b07d354917a40f21360",
+                       "scope":  [
+                                     "lang-pkgs",
+                                     "os-pkgs"
+                                 ],
+                       "critical":  0,
+                       "high":  0,
+                       "fixable":  0,
+                       "packages":  [
+
+                                    ],
+                       "report":  "evidencias/security/trivy-enuso-local-api-20261024-103730.json"
+                   },
+                   {
+                       "image":  "local-postgres-hardened:16",
+                       "services":  [
+                                        "db",
+                                        "identity-db"
+                                    ],
+                       "image_id":  "a8d6247ae7355e0b734",
+                       "scope":  [
+                                     "os-pkgs"
+                                 ],
+                       "critical":  0,
+                       "high":  0,
+                       "fixable":  0,
+                       "packages":  [
+
+                                    ],
+                       "report":  "evidencias/security/trivy-enuso-local-postgres-hardened-16-20261024-103730.json"
+                   },
+                   {
+                       "image":  "local-keycloak",
+                       "services":  [
+                                        "keycloak"
+                                    ],
+                       "image_id":  "b7b5bfe1d773b190321",
+                       "scope":  [
+                                     "lang-pkgs",
+                                     "os-pkgs"
+                                 ],
+                       "critical":  0,
+                       "high":  2,
+                       "fixable":  0,
+                       "packages":  [
+                                        "java-21-openjdk-headless"
+                                    ],
+                       "report":  "evidencias/security/trivy-enuso-local-keycloak-20261024-103730.json"
+                   },
+                   {
+                       "image":  "local-proxy:latest",
+                       "services":  [
+                                        "proxy"
+                                    ],
+                       "image_id":  "0b74fb9ca7832b57ab0",
+                       "scope":  [
+                                     "os-pkgs"
+                                 ],
+                       "critical":  0,
+                       "high":  0,
+                       "fixable":  0,
+                       "packages":  [
+
+                                    ],
+                       "report":  "evidencias/security/trivy-enuso-local-proxy-latest-20261024-103730.json"
+                   }
+               ]
+}

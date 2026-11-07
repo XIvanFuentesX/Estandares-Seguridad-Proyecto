@@ -1,0 +1,154 @@
+{
+  "timestamp": "2026-10-24T11:02:02-06:00",
+  "run_id": "20261024-105933",
+  "scope": "Réplicas aisladas cargadas con los respaldos reales; bases principales sin cambios",
+  "result": "success",
+  "results": [
+    {
+      "target": "academic",
+      "run_id": "20261024-105933",
+      "archive_timeout_s": 60,
+      "steps": [
+        {
+          "step": "replica_cargada",
+          "source_backup": "academic-20261024-165047.dump.enc",
+          "sha256_verified": true,
+          "dataset_count": 3
+        },
+        {
+          "step": "respaldo_base",
+          "seconds": 0.59
+        },
+        {
+          "step": "archivado_wal",
+          "segment": "000000010000000000000005",
+          "seconds_commit_to_archive": 57.6,
+          "archived_count": 6,
+          "failed_count": 0
+        }
+      ],
+      "target_time_utc": "2026-10-24 16:59:39.175869+00",
+      "integrity_manifest": {
+        "./base/base.tar.gz": "a5df12185de88ae185ebf1c774d28f1b9d00394cceef0f2c9367658016896ee0",
+        "./base/backup_manifest": "8a9d3608701b88112fdd325a3b7db670c7b115873855c62eb1a0067665557b18",
+        "./wal/000000010000000000000001": "826250d3f224f0e22c441aa7df2e624b18ca5150fa5f06c75c57e7ba77637d37",
+        "./wal/000000010000000000000003": "f94559d3cfcdfec7200120574a92e3a372919cfc7667371cfbdfcafe4321fd1a",
+        "./wal/000000010000000000000002": "5bc6409105e2169ebbe35b741ba2ab8997ace4d0e32bc0d705948b8845c84f79",
+        "./wal/000000010000000000000004": "137c4f5ee0b0249ba912000fdc80f606a1d381511c1fc491b9aa01caceefbd4b",
+        "./wal/000000010000000000000003.00000028.backup": "adcb0b281af3c5bf00b2d058d555d3c2aa2ebcaec496c0f0c4c8b660dd77767e",
+        "./wal/000000010000000000000005": "b94680628d72243b7bb5ea3db6a7c35f55704fc6f81628184edee981d2cbfd69"
+      },
+      "wal_monitoring": {
+        "normal": {
+          "result": "success",
+          "issues": [],
+          "archived_count": 6,
+          "pg_wal_mb": 64.0,
+          "archive_mb": 80.0
+        },
+        "growth_threshold_test": {
+          "result": "warning",
+          "issues": [
+            "wal_growth_over_1MB"
+          ]
+        },
+        "injected_archive_failure": {
+          "result": "failure",
+          "issues": [
+            "archive_command_failed(1)"
+          ],
+          "failed_count": 1
+        },
+        "detected_ok": true
+      },
+      "integrity_verified_before_restore": true,
+      "restore": {
+        "rows_before_present": 3,
+        "rows_after_present": 0,
+        "dataset_count": 3,
+        "rto_technical_seconds": 2.5,
+        "recovery_log": "recovery stopping before commit of transaction 739, time 2026-10-24 16:59:41.300899+00"
+      },
+      "rpo": {
+        "objective_seconds": 14400,
+        "observed_seconds_commit_to_archive": 57.6,
+        "worst_case_bound_seconds": 60,
+        "meets_objective": true
+      },
+      "result": "success"
+    },
+    {
+      "target": "identity",
+      "run_id": "20261024-105933",
+      "archive_timeout_s": 60,
+      "steps": [
+        {
+          "step": "replica_cargada",
+          "source_backup": "identity-20261024-165048.dump.enc",
+          "sha256_verified": true,
+          "dataset_count": 5
+        },
+        {
+          "step": "respaldo_base",
+          "seconds": 0.73
+        },
+        {
+          "step": "archivado_wal",
+          "segment": "000000010000000000000005",
+          "seconds_commit_to_archive": 57.8,
+          "archived_count": 6,
+          "failed_count": 0
+        }
+      ],
+      "target_time_utc": "2026-10-24 17:00:54.314798+00",
+      "integrity_manifest": {
+        "./base/base.tar.gz": "013e679f02f71cd798e8c9a57ba42a7a725dee4b0278dc97aef10c8065a8c078",
+        "./base/backup_manifest": "606f7a935f38dad42d2065d86fed05358545ec1d4e7bddaf832b197c41858149",
+        "./wal/000000010000000000000001": "5cac50109d9e8b6af058db3cc8a68c3af7a8e3392088d727d8a4319dd852d3a0",
+        "./wal/000000010000000000000003": "3ffd43d777e27e48411032b3a0e4eec4d8e712614a0469206cb5dd950c389ddc",
+        "./wal/000000010000000000000002": "80d315a4d7a11602eb63737bbff01442fb02c5e043b76e75ce51d8759661e18d",
+        "./wal/000000010000000000000004": "7947b241367950e2f4667f121437c94062147fda08a6f03c30759b30bd302732",
+        "./wal/000000010000000000000003.00000028.backup": "19596b5448c42e41032daef18f603356e9aa7a598fa8111bbc52180e6482471c",
+        "./wal/000000010000000000000005": "dc51b452fdfa2148d7e190875d1841a665a07e7c8bca918020c36422c0f86f4c"
+      },
+      "wal_monitoring": {
+        "normal": {
+          "result": "success",
+          "issues": [],
+          "archived_count": 6,
+          "pg_wal_mb": 48.0,
+          "archive_mb": 80.0
+        },
+        "growth_threshold_test": {
+          "result": "warning",
+          "issues": [
+            "wal_growth_over_1MB"
+          ]
+        },
+        "injected_archive_failure": {
+          "result": "failure",
+          "issues": [
+            "archive_command_failed(1)"
+          ],
+          "failed_count": 1
+        },
+        "detected_ok": true
+      },
+      "integrity_verified_before_restore": true,
+      "restore": {
+        "rows_before_present": 3,
+        "rows_after_present": 0,
+        "dataset_count": 5,
+        "rto_technical_seconds": 2.8,
+        "recovery_log": "recovery stopping before commit of transaction 1206, time 2026-10-24 17:00:56.440546+00"
+      },
+      "rpo": {
+        "objective_seconds": 900,
+        "observed_seconds_commit_to_archive": 57.8,
+        "worst_case_bound_seconds": 60,
+        "meets_objective": true
+      },
+      "result": "success"
+    }
+  ]
+}

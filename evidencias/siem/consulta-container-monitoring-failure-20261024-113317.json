@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1947,
+    "event_time": "2026-10-24T17:04:41+00:00",
+    "source": "controles",
+    "category": "container_monitoring",
+    "outcome": "failure",
+    "message": "2026-10-24T17:04:41Z target=edr-api result=failure issues=proceso_inesperado:sleep"
+  },
+  {
+    "id": 1938,
+    "event_time": "2026-10-24T17:04:23+00:00",
+    "source": "controles",
+    "category": "container_monitoring",
+    "outcome": "failure",
+    "message": "2026-10-24T17:04:23Z target=edr-keycloak result=failure issues=deriva:C /opt,deriva:C /opt/keycloak,deriva:C /opt/keycloak/data,deriva:A /opt/keycloak/data/import,deriva:A /opt/keycloak/data/import/uvcg-realm.json,deriva:A /opt/keycloak/data/tmp"
+  },
+  {
+    "id": 1939,
+    "event_time": "2026-10-24T17:04:23+00:00",
+    "source": "controles",
+    "category": "container_monitoring",
+    "outcome": "failure",
+    "message": "2026-10-24T17:04:23Z target=edr-db result=failure issues=deriva:C /docker-entrypoint-initdb.d,deriva:A /docker-entrypoint-initdb.d/init.sql"
+  },
+  {
+    "id": 1936,
+    "event_time": "2026-10-24T17:04:22+00:00",
+    "source": "controles",
+    "category": "container_monitoring",
+    "outcome": "failure",
+    "message": "2026-10-24T17:04:22Z target=edr-proxy result=failure issues=deriva:C /etc,deriva:C /etc/nginx,deriva:A /etc/nginx/tls"
+  }
+]

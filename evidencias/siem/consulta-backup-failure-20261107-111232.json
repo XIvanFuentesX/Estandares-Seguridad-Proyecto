@@ -1,0 +1,50 @@
+[
+  {
+    "id": 3706,
+    "event_time": "2026-11-07T17:08:58+00:00",
+    "source": "backup-scheduler",
+    "category": "backup",
+    "outcome": "failure",
+    "message": "2026-11-07T17:08:58Z target=identity result=failure"
+  },
+  {
+    "id": 3705,
+    "event_time": "2026-10-26T15:33:39+00:00",
+    "source": "backup-scheduler",
+    "category": "backup",
+    "outcome": "failure",
+    "message": "2026-10-26T15:33:39Z target=recovery-test result=failure reason=docker_unavailable"
+  },
+  {
+    "id": 1477,
+    "event_time": "2026-10-24T16:30:12+00:00",
+    "source": "backup-scheduler",
+    "category": "backup",
+    "outcome": "failure",
+    "message": "2026-10-24T16:30:12Z target=recovery-test result=failure reason=docker_unavailable"
+  },
+  {
+    "id": 863,
+    "event_time": "2026-10-24T15:56:33+00:00",
+    "source": "backup-scheduler",
+    "category": "backup",
+    "outcome": "failure",
+    "message": "2026-10-24T15:56:33Z target=recovery-test result=failure"
+  },
+  {
+    "id": 862,
+    "event_time": "2026-10-24T15:56:32+00:00",
+    "source": "backup-scheduler",
+    "category": "backup",
+    "outcome": "failure",
+    "message": "2026-10-24T15:56:32Z target=restore-academic result=failure"
+  },
+  {
+    "id": 449,
+    "event_time": "2026-10-24T15:52:44+00:00",
+    "source": "backup-scheduler",
+    "category": "backup",
+    "outcome": "failure",
+    "message": "2026-10-24T15:52:44Z target=identity result=failure"
+  }
+]

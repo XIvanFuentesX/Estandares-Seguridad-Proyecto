@@ -1,0 +1,50 @@
+[
+  {
+    "id": "IDS-T01",
+    "description": "Path traversal en URI",
+    "expected_sid": 1000001,
+    "src_ip": "10.10.10.10"
+  },
+  {
+    "id": "IDS-T02",
+    "description": "SYN directo a PostgreSQL",
+    "expected_sid": 1000002,
+    "src_ip": "10.10.10.30"
+  },
+  {
+    "id": "IDS-T03",
+    "description": "Inyección SQL UNION SELECT",
+    "expected_sid": 1000003,
+    "src_ip": "10.10.10.11"
+  },
+  {
+    "id": "IDS-T04",
+    "description": "Agente de escaneo sqlmap",
+    "expected_sid": 1000004,
+    "src_ip": "10.10.10.12"
+  },
+  {
+    "id": "IDS-T05",
+    "description": "Acceso a consola admin Keycloak",
+    "expected_sid": 1000005,
+    "src_ip": "10.10.10.13"
+  },
+  {
+    "id": "IDS-T06",
+    "description": "SYN al puerto de gestión Keycloak",
+    "expected_sid": 1000006,
+    "src_ip": "10.10.10.14"
+  },
+  {
+    "id": "IDS-T07",
+    "description": "Ráfaga de 6 POST de login en < 60 s",
+    "expected_sid": 1000007,
+    "src_ip": "10.10.10.15"
+  },
+  {
+    "id": "IDS-N01",
+    "description": "Tráfico benigno GET /health (no debe alertar)",
+    "expected_sid": null,
+    "src_ip": "10.10.10.16"
+  }
+]

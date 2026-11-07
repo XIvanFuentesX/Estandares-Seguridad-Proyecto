@@ -1,0 +1,6 @@
+# Configuración parcial del backend (copiar a backend-dev.hcl, ignorado por git).
+resource_group_name  = "rg-uvcg-sgsi-tfstate"
+storage_account_name = "REEMPLAZAR"
+container_name       = "tfstate"
+key                  = "sgsi-uvcg/dev.tfstate"
+use_azuread_auth     = true

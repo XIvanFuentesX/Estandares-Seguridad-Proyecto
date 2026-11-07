@@ -1,0 +1,72 @@
+﻿{
+    "timestamp":  "2026-10-24T10:22:29.2611178-06:00",
+    "elapsed_seconds":  66.6,
+    "result":  "success",
+    "services_updated":  [
+                             "db",
+                             "identity-db"
+                         ],
+    "previous_image":  "postgres:16-alpine",
+    "new_image":  "local-postgres-hardened:16",
+    "volumes_preserved":  [
+                              "local_pgdata",
+                              "local_identity_data"
+                          ],
+    "rollback_compose":  "compose.yaml.pre-upgrade-20261024-102045.bak",
+    "steps":  [
+                  {
+                      "time":  "2026-10-24T10:22:30.5423885-06:00",
+                      "step":  "prerrequisitos",
+                      "result":  "success",
+                      "detail":  "postgres (PostgreSQL) 16.15; binario postgres idéntico (6705048937384211…)"
+                  },
+                  {
+                      "time":  "2026-10-24T10:22:34.4441765-06:00",
+                      "step":  "parada_controlada",
+                      "result":  "success",
+                      "detail":  "api, keycloak, schedulers, db, identity-db detenidos"
+                  },
+                  {
+                      "time":  "2026-10-24T10:22:36.1894572-06:00",
+                      "step":  "copia_frio_local_pgdata",
+                      "result":  "success",
+                      "detail":  "local_pgdata-20261024-102229.tgz bytes=6770467 sha256=2F82AA2209CD810B1F23C7D1C4DEBFD655AC535C8022D5AA103E9F5902AE6982"
+                  },
+                  {
+                      "time":  "2026-10-24T10:22:38.3086665-06:00",
+                      "step":  "copia_frio_local_identity_data",
+                      "result":  "success",
+                      "detail":  "local_identity_data-20261024-102229.tgz bytes=8696567 sha256=6491C2028A0D5BBBAF661AC67AC7542DB22582058A05FEB4212FD3C63FB272DB"
+                  },
+                  {
+                      "time":  "2026-10-24T10:22:45.6405740-06:00",
+                      "step":  "bases_recreadas",
+                      "result":  "success",
+                      "detail":  "healthy en 7.3 s"
+                  },
+                  {
+                      "time":  "2026-10-24T10:23:34.0631512-06:00",
+                      "step":  "servicios_recuperados",
+                      "result":  "success",
+                      "detail":  "cinco servicios healthy; interrupción total 55.7 s desde la recreación"
+                  },
+                  {
+                      "time":  "2026-10-24T10:23:34.3601676-06:00",
+                      "step":  "verificacion_local-db-1",
+                      "result":  "success",
+                      "detail":  "image=local-postgres-hardened:16 uid=70 gosu=absent"
+                  },
+                  {
+                      "time":  "2026-10-24T10:23:34.6185344-06:00",
+                      "step":  "verificacion_local-identity-db-1",
+                      "result":  "success",
+                      "detail":  "image=local-postgres-hardened:16 uid=70 gosu=absent"
+                  },
+                  {
+                      "time":  "2026-10-24T10:23:35.8235551-06:00",
+                      "step":  "integridad_datos",
+                      "result":  "success",
+                      "detail":  "OK: label=post-upgrade academic_rows=3 identity_rows=1718 evidencia=D:\\sgsi_laboratorio\\evidencias\\postgres-upgrade\\huella-post-upgrade-20261024-102335.json"
+                  }
+              ]
+}
