@@ -1,0 +1,9 @@
+# Los archivos que se ejecutan dentro de contenedores Linux deben conservar LF aunque el clon
+# se haga en Windows con core.autocrlf=true (CRLF rompe backup-encrypted.sh, nginx y SQL).
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.docx binary
+*.pdf binary
+*.png binary
+*.db binary
+*.pcap binary
